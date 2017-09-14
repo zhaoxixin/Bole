@@ -121,14 +121,20 @@ $(function(){
 	            	dataType:'json'
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
-	            		alert("登录成功")
+	            		alert("登录成功！")
 	            		window.location.href='/.action';	
 	            	}else{
-	            		alert("账户或密码有错啊！")
+	            		alert("账户或密码有错！")
 						$('#beError').text(result.msg).show();
 	            	}
 					$(form).find(":submit").attr("disabled", false);
 	            }); 
+	            
+	            
+	            
+	            
+	            
+	            
 	        }  
 		});
 })

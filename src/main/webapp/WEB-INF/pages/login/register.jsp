@@ -159,7 +159,7 @@ var youdao_conv_id = 271546;
 		            		$('#resubmitToken').val(result.resubmitToken);
 			            	if(result.msg=='success'){
 			            		alert("注册成功，点击继续")
-			            		window.location.href='/.action';	
+			            		window.location.href='/toLogin.action';	
 			            	}else{
 			            		alert("参数不合法！")
 								$('#beError').text(result.msg).show();
