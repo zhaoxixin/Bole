@@ -48,6 +48,7 @@ public class LoginController {
 	        //将用户加入到session中
 	        s.getSession().setAttribute("user1",user1);
 	        result.put("msg", "success"); 
+	        //for test git  zhxn
  	        return result; 	
 	}
 }
