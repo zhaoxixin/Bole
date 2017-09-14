@@ -3,6 +3,7 @@ package cn.bole.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,39 +16,39 @@ import cn.bole.pojo.User;
 import cn.bole.service.UserService;
 @Controller
 public class LoginController {
-
 	@Autowired
 	UserService userService;
-	@RequestMapping("/")
-	public String home(){
-		
-		return "login/index";
+	//去登陆
+	@RequestMapping("/toLogin")
+	public String toLogin(){
+		return "login/login";
 	}
-	
-	@RequestMapping("/toRegister")
-	public String toregist(HttpServletRequest request){
-		System.out.println(request.getContextPath());
-		return "login/register";
+	@RequestMapping("/logout")
+	public String toLoout(HttpServletRequest s){
+		if(s.getSession(false) != null){
+			s.getSession().invalidate();
+		}
+		return "/login/index";
 	}
-	
-	@RequestMapping("/register")
+	//登录
+	@RequestMapping("/login")
 	@ResponseBody
-	public Map<String, Object> register(User user){
-		
+	public Map<String, Object> login(User user,HttpServletRequest s){
 	     Map<String, Object> result = new HashMap<String, Object>();  
-	        if(StringUtils.isEmpty(user.getPassword()) || StringUtils.isEmpty(user.getEmail())){  
-	              
-	            result.put("msg", "failed");  
-	            return result;  
-	        } 
-	        
+	        if(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(user.getPassword())){  
+		 	       result.put("msg", "failed");  
+		            return result;          
+	        }        
 	        //业务逻辑
-	        userService.save(user);
-	        result.put("msg", "success");
-	        
-	        	          
-	        return result;  
-	
+	        User user1 =userService.findUser(user.getEmail(),user.getPassword());
+	        if(user1==null){        	
+	 	       result.put("msg", "failed");  
+	            return result;  
+	        }
+	        //将用户加入到session中
+	        s.getSession().setAttribute("user1",user1);
+	        result.put("msg", "success"); 
+	        //for test git  zhxn
+ 	        return result; 	
 	}
-
 }

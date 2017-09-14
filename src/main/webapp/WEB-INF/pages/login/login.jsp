@@ -121,7 +121,9 @@ $(function(){
 	            	dataType:'json'
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
-	            		alert("登录成功，点击继续~~~777")
+
+	            		alert("登录成功！")
+
 	            		window.location.href='/.action';	
 	            	}else{
 	            		alert("账户或密码有错！")
@@ -129,6 +131,12 @@ $(function(){
 	            	}
 					$(form).find(":submit").attr("disabled", false);
 	            }); 
+	            
+	            
+	            
+	            
+	            
+	            
 	        }  
 		});
 })

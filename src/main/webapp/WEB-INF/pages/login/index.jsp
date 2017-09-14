@@ -32,7 +32,6 @@
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
-var ctx = "h";
 console.log(1);
 </script>
 <link rel="Shortcut Icon" href="h/images/favicon.ico">
@@ -103,6 +102,7 @@ $("#ctname").html($(this).html());
     			<li class="current"><a href="${ctx }">首页</a></li>
     			<li ><a href="${ctx }/companyhome" >公司</a></li>
     			<li ><a href="#" target="_blank">论坛</a></li>
+
     		    <li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
 	    	</ul>
@@ -140,6 +140,7 @@ $("#ctname").html($(this).html());
 								<span class="ct_links"></span><span class="ct_links"></span><span class="ct_links"></span><span class="ct_links"></span>
 						</div>
 					</div>
+
     </div><!-- end #header -->
    
     <div id="container">
