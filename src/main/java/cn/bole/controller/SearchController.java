@@ -17,7 +17,7 @@ public class SearchController {
 	public String home(Model model){
 		List<Industry> industryList = industryService.findAllIndustry();
 		model.addAttribute("industryList",industryList);
-		return "login/index.txt";
+		return "login/index";
 	}
 
 }
