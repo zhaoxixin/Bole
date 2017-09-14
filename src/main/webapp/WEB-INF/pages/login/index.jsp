@@ -16,7 +16,6 @@
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
-var ctx = "h";
 console.log(1);
 </script>
 <link rel="Shortcut Icon" href="h/images/favicon.ico">
@@ -50,11 +49,16 @@ var youdao_conv_id = 271546;
 	    							    			<li ><a href="create.html" rel="nofollow">发布职位</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
-            	 
-            	<li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
-            	<li>|</li>
-             	<!--<li><a href="register.html" rel="nofollow">注册</a></li> -->
-            	<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li>
+            	<c:if test="${ sessionScope.user1 == null }">
+				<li><a href="${ ctx }/toLogin.action" rel="nofollow">登录</a></li>
+				<li><a href="${ ctx }/toRegister.action" rel="nofollow">注册</a></li>
+			    </c:if>
+			<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
+			<c:if test="${ sessionScope.user1 != null }">
+				欢迎 ${ user1.email } 回来
+				&nbsp;|&nbsp;
+				<a href="${ ctx }/logout.action" rel="nofollow">退出</a>
+			</c:if>
             </ul>
                                 </div>
     </div><!-- end #header -->

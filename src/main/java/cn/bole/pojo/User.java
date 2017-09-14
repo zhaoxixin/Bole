@@ -1,9 +1,10 @@
 package cn.bole.pojo;
 
-public class User {
+public class User extends BasicInfo{
     private String email;
     private String password;
     private String id;
+    
     
     public String getId() {
 		return id;
