@@ -72,7 +72,7 @@ $("#ctname").html($(this).html());
 			"url" : "${ctx}/login/index/searchTrade",
 			"async" : true,
 			"success" : function(result){
-				${pageContext.}
+				
 			}
 		});
   		
