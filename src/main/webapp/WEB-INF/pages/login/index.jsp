@@ -74,7 +74,11 @@ $("#ctname").html($(this).html());
 			"url" : "${ctx}/login/index/searchTrade",
 			"async" : true,
 			"success" : function(result){
+<<<<<<< HEAD
 				$("#tradeResult").val(result);
+=======
+				
+>>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
 			}
 		});
   		
@@ -129,7 +133,7 @@ $("#ctname").html($(this).html());
              </div>
              <div class="ct f_l">
 						<div class="ct_now" id="ctname">全国</div>
-							<div class="ct_swich"><span class="ct_nav">[切换城市]</span></div>
+							<div class="ct_swich"><span class="ct_nav">[切换城市11]</span></div>
 							<div class="ct_link">
 							<div class="ct_show"><span id="closect" class="f_r" title="关闭窗口">X</span><span class="f_l">城市列表</span></div>
 								<a class="ct_links" href="javascript:">全国</a><a class="ct_links" href="javascript:">北京</a><a class="ct_links" href="javascript:">广州</a>
