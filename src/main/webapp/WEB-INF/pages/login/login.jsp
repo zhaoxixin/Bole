@@ -124,7 +124,7 @@ $(function(){
 	            		alert("登录成功")
 	            		window.location.href='/.action';	
 	            	}else{
-	            		alert("账户或密码有错！")
+	            		alert("账户或密码有错啊！")
 						$('#beError').text(result.msg).show();
 	            	}
 					$(form).find(":submit").attr("disabled", false);
