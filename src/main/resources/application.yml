@@ -9,7 +9,7 @@ spring:
     password: root
   mvc:
     view:
-      prefix: /WEB-INF/
+      prefix: /WEB-INF/pages/
       suffix: .jsp
 mybatis:
   config-location: classpath:/mybatis/mybatis-config.xml
