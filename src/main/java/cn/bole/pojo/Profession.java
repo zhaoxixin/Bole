@@ -1,20 +1,21 @@
 package cn.bole.pojo;
 
 public class Profession {
-	private String profession_id;
-	private String profession_name;
-	public String getProfession_id() {
-		return profession_id;
+	private String professionId;
+	private String professionName;
+	public String getProfessionId() {
+		return professionId;
 	}
-	public void setProfession_id(String profession_id) {
-		this.profession_id = profession_id;
+	public void setProfessionId(String professionId) {
+		this.professionId = professionId;
 	}
-	public String getProfession_name() {
-		return profession_name;
+	public String getProfessionName() {
+		return professionName;
 	}
-	public void setProfession_name(String profession_name) {
-		this.profession_name = profession_name;
+	public void setProfessionName(String professionName) {
+		this.professionName = professionName;
 	}
+	
 	
 	
 

@@ -4,8 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bole.mapper.IndustryMapper">
 	<select id="IndustryMapper" resultMap="industryRM">
-		select 
+		SELECT * FROM industry i
+	   LEFT JOIN
+	    (SELECT industry_id t_iid,profession_id t_pid FROM industry_pro ) t
+	   ON i.INDUSTRY_ID=t.t_iid
+	    LEFT JOIN profession p
+	    ON t.t_pid=p.PROFESSION_ID
 	</select>
+	<resultMap type="Industry" id="industryRM" autoMapping="true">
+		<id column="industry_id" property="industryId"/>
+		<association property="profession" javaType="Profession">
+			<id column="profession_id" property="professionId"/>
+			<result column="profession_name" property="professionName"/>
+		</association>
+		
+	</resultMap>
 
 
 </mapper>

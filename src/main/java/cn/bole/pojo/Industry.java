@@ -1,21 +1,21 @@
 package cn.bole.pojo;
 
 public class Industry {
-	private String industry_id;
-	private String industry_name;
+	private String industryId;
+	private String industryName;
 	private Integer isHot;
 	private Profession profession;
-	public String getIndustry_id() {
-		return industry_id;
+	public String getIndustryId() {
+		return industryId;
 	}
-	public void setIndustry_id(String industry_id) {
-		this.industry_id = industry_id;
+	public void setIndustryId(String industryId) {
+		this.industryId = industryId;
 	}
-	public String getIndustry_name() {
-		return industry_name;
+	public String getIndustryName() {
+		return industryName;
 	}
-	public void setIndustry_name(String industry_name) {
-		this.industry_name = industry_name;
+	public void setIndustryName(String industryName) {
+		this.industryName = industryName;
 	}
 	public Integer getIsHot() {
 		return isHot;
@@ -29,6 +29,7 @@ public class Industry {
 	public void setProfession(Profession profession) {
 		this.profession = profession;
 	}
+	
 	
 	
 

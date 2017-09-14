@@ -154,9 +154,10 @@ $("#ctname").html($(this).html());
 			<div class="mainNavs">
 					<div class="menu_box">
 					
-					<c:forEach items="" var="trade">
+					<c:forEach items="${industryList }" var="in">
 						<div class="menu_main">
-							<h2>销售客服市场<span></span></h2>
+							<h2>${in.industryName }<span></span></h2>
+							<input hidden="hidden" name="industryName" value="${in.industryId }"/>
 						</div>
 					
 					   	<div class="menu_sub dn">
