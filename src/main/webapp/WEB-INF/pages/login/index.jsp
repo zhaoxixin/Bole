@@ -8,7 +8,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>拉勾网-最专业的互联网招聘平台</title>
+<title>伯乐-古有伯乐识马行千里 今朝我将伴你度百年</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="" name="description">
 <meta content="" name="keywords">
@@ -39,11 +39,11 @@ var youdao_conv_id = 271546;
 <div id="body">
 	<div id="header">
     	<div class="wrapper">
-    		<a href="index.html" class="logo">
+    		<a href="${ctx }" class="logo">
     			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li class="current"><a href="index.html">首页</a></li>
+    			<li class="current"><a href="${ctx }">首页</a></li>
     			<li ><a href="companylist.html" >公司</a></li>
     			<li ><a href="#" target="_blank">论坛</a></li>
     				    			<li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
@@ -53,7 +53,7 @@ var youdao_conv_id = 271546;
             	 
             	<li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
             	<li>|</li>
-<!--             	<li><a href="register.html" rel="nofollow">注册</a></li> -->
+             	<!--<li><a href="register.html" rel="nofollow">注册</a></li> -->
             	<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li>
             </ul>
                                 </div>
@@ -63,23 +63,12 @@ var youdao_conv_id = 271546;
 		<div id="sidebar">
 			<div class="mainNavs">
 						
-									<div class="menu_box">
+						<div class="menu_box">
 						<div class="menu_main">
-							<h2>技术 <span></span></h2>
-											            					            		<a href="h/jobs/list_Java?labelWords=label">Java</a>
-				<a href="h/jobs/list_PHP?labelWords=label">PHP</a>
-				<a href="h/jobs/list_C?labelWords=label">C</a>
-				<a href="h/jobs/list_C++?labelWords=label">C++</a>
-				<a href="h/jobs/list_Android?labelWords=label">Android</a>
-				<a href="h/jobs/list_iOS?labelWords=label">iOS</a>
-				<a href="h/jobs/list_前端开发?labelWords=label">前端开发</a>
-				<a href="h/jobs/list_测试?labelWords=label">测试</a>
-				<a href="h/jobs/list_技术经理?labelWords=label">技术经理</a>
-				<a href="h/jobs/list_项目经理?labelWords=label">项目经理</a>
-				<a href="h/jobs/list_架构师?labelWords=label">架构师</a>
-			</div>
+							<h2>技术lllllll <span></span></h2>
+						</div>
 					   	<div class="menu_sub dn">
-					   								    	<dl class="reset">
+					   		<dl class="reset">
 					        							        		<dt>
 					        			<a href="h/jobs/list_后端开发?labelWords=label">
 					        									            								            							            								            							            								            							            								            							            								            							            								            						        				后端开发
