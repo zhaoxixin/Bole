@@ -31,6 +31,8 @@
 </style>
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
+<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
+<script src="js/jquery-1.4.2.js"></script>
 <script type="text/javascript">
 console.log(1);
 </script>
@@ -49,7 +51,7 @@ console.log(1);
 var youdao_conv_id = 271546; 
 </script> 
 <script type="text/javascript" src="style/js/conv.js"></script>
-<script language="javascript" type="text/javascript" src="jquery.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
 $(function () {
@@ -66,13 +68,13 @@ $("#ctname").html($(this).html());
 });
 });
   </script>
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
   	$(function ajaxTrade(){
   		$.ajax({
 			"url" : "${ctx}/login/index/searchTrade",
 			"async" : true,
 			"success" : function(result){
-				${pageContext.}
+				$("#tradeResult").val(result);
 			}
 		});
   		
@@ -80,7 +82,7 @@ $("#ctname").html($(this).html());
   	
   	
   
-  </script>
+  </script> -->
   
 </head>
 <body>
@@ -148,6 +150,7 @@ $("#ctname").html($(this).html());
 		<div id="sidebar">
 			<div class="mainNavs">
 					<div class="menu_box">
+					
 					<c:forEach items="" var="trade">
 						<div class="menu_main">
 							<h2>销售客服市场<span></span></h2>
