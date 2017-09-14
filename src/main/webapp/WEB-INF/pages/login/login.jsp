@@ -122,7 +122,7 @@ $(function(){
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
 
-	            		alert("登录成功")
+	            		alert("登录成功~~~testBranch")
 
 	            		window.location.href='/.action';	
 	            	}else{
