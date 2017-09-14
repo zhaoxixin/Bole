@@ -1,12 +1,23 @@
 package cn.bole.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.bole.pojo.User;
+import cn.bole.service.UserService;
 @Controller
 public class LoginController {
 
+	@Autowired
+	UserService userService;
 	@RequestMapping("/")
 	public String home(){
 		
@@ -20,11 +31,23 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/register")
-	public String register(HttpServletRequest request){
+	@ResponseBody
+	public Map<String, Object> register(User user){
 		
-		String email = (String) request.getAttribute("email");
-		System.out.println(email);
-		return "login/index";
+	     Map<String, Object> result = new HashMap<String, Object>();  
+	        if(StringUtils.isEmpty(user.getPassword()) || StringUtils.isEmpty(user.getEmail())){  
+	              
+	            result.put("msg", "failed");  
+	            return result;  
+	        } 
+	        
+	        //业务逻辑
+	        userService.save(user);
+	        result.put("msg", "success");
+	        
+	        	          
+	        return result;  
+	
 	}
 
 }

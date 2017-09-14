@@ -4,8 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bole.mapper.UserMapper">
 
-    <select id="findAll" resultType="cn.bole.pojo.User">
-        select * from user
-    </select>
+    
+    <insert id="save" parameterType="cn.bole.pojo.User">
+    	insert into user (user_id,email,password) values(
+    		#{id},
+    		#{email},
+    		#{password}
+    	)
+    	
+    	
+    
+    </insert>
 
 </mapper>

@@ -1,6 +1,7 @@
 package cn.bole.serviceImpl;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,11 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	UserMapper userMapper;
-	public List<User> findAll() {
-		return userMapper.findAll();
+	@Override
+	public void save(User user) {
+		user.setId(UUID.randomUUID().toString());
+		
+		userMapper.save(user);
 	}
 
 }
