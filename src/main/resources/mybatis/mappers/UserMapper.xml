@@ -10,10 +10,9 @@
     		#{id},
     		#{email},
     		#{password}
-    	)
-    	
-    	
-    
+    	) 
     </insert>
-
+	<select id="findUser" resultType="cn.bole.pojo.User">
+    	select email,password from user where email=#{email} and password=#{password}
+    </select>
 </mapper>

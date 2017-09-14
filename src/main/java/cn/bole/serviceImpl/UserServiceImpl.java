@@ -20,5 +20,10 @@ public class UserServiceImpl implements UserService{
 		
 		userMapper.save(user);
 	}
+	@Override
+	public User findUser(String email, String password) {
+		return userMapper.findUser(email,password);
+		
+	}
 
 }
