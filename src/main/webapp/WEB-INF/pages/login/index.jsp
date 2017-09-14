@@ -50,7 +50,8 @@ var youdao_conv_id = 271546;
 	    							    			<li ><a href="create.html" rel="nofollow">发布职位</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
-            	<li><a href="login.html" rel="nofollow">登录</a></li> 
+            	 
+            	<li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
             	<li>|</li>
 <!--             	<li><a href="register.html" rel="nofollow">注册</a></li> -->
             	<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li>
