@@ -14,33 +14,32 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.bole.pojo.User;
 import cn.bole.service.UserService;
 @Controller
-public class LoginController2 {
+public class RegistController {
 	@Autowired
 	UserService userService;
-	@RequestMapping("/toLogin")
-	public String toregist(HttpServletRequest request){
-		return "login/login";
-	}
-	
-	@RequestMapping("/login")
-	@ResponseBody
-	public Map<String, Object> register(User user){
+	@RequestMapping("/")
+	public String home(){
 		
+		return "login/index";
+	}
+	//去注册
+	@RequestMapping("/toRegister")
+	public String toregist(HttpServletRequest request){
+		System.out.println(request.getContextPath());
+		return "login/register";
+	}
+	//注册
+	@RequestMapping("/register")
+	@ResponseBody
+	public Map<String, Object> register(User user){		
 	     Map<String, Object> result = new HashMap<String, Object>();  
-	        if(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(user.getPassword())){  
-		 	       result.put("msg", "failed");  
-		            return result;          
-	        } 
-	        
-	        //业务逻辑
-	        User user1 =userService.findUser(user.getEmail(),user.getPassword());
-	        if(user1==null){
-	        	
-	 	       result.put("msg", "failed");  
+	        if(StringUtils.isEmpty(user.getPassword()) || StringUtils.isEmpty(user.getEmail())){  	              
+	            result.put("msg", "failed");  
 	            return result;  
-	        }
-	        result.put("msg", "success"); 
- 	        return result; 
-	
+	        } 
+	        //业务逻辑
+	        userService.save(user);
+	        result.put("msg", "success");	          
+	        return result;  
 	}
 }
