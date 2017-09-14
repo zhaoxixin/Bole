@@ -1393,7 +1393,7 @@ var youdao_conv_id = 271546;
 								
 				<div class="greybg qrcode mt20">
                 	<img width="242" height="242" alt="拉勾微信公众号二维码" src="style/images/qr_resume.png">
-                    <span class="c7">微信扫一扫，轻松找工作</span>
+                    <span class="c7">微信扫一扫，轻松找工作11111</span>
                 </div>
             </div><!--end .content_r-->
         </div>
