@@ -137,9 +137,10 @@ var youdao_conv_id = 271546;
 			    		};	
 			    	},
 			    	submitHandler:function(form){
+			    		var user={}
 			    		var type =$('input[type="radio"]:checked',form).val();
-			    		var email =$('#email').val();
-			    		var password =$('#password').val();
+			    		user.email =$('#email').val();
+			    		user.password =$('#password').val();
 			    		var resubmitToken = $('#resubmitToken').val();
 			    		
 			    		var callback = $('#callback').val();
@@ -151,21 +152,17 @@ var youdao_conv_id = 271546;
 
 			            $.ajax({
 			            	type:'POST',
-			            	data: {email:email,password:password,type:type,resubmitToken:resubmitToken, callback:callback, authType:authType, signature:signature, timestamp:timestamp},
-			            	//url:ctx+'/user/register.json',
-			            	contentType: "application/json",
-			            	url:ctx+'/register.action',
+			            	data: user,
+			            	url:'/register.action',
 			            	dataType:'json'
 			            }).done(function(result) {
 		            		$('#resubmitToken').val(result.resubmitToken);
-			            	if(result.success){
-			            		//window.location.href=result.content;
-			            		alert("success")
-			            		window.location.href=ctx+'/register.action';	
+			            	if(result.msg=='success'){
+			            		alert("注册成功，点击继续")
+			            		window.location.href='/.action';	
 			            	}else{
-			            		alert("failed")
-							//	$('#beError').text(result.msg).show();
-			            		window.location.href=ctx+'/register.action';
+			            		alert("参数不合法！")
+								$('#beError').text(result.msg).show();
 			            	}
 			            	$(form).find(":submit").attr("disabled", false);			           		
 			            });
