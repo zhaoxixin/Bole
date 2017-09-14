@@ -121,7 +121,9 @@ $(function(){
 	            	dataType:'json'
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
+
 	            		alert("登录成功！")
+
 	            		window.location.href='/.action';	
 	            	}else{
 	            		alert("账户或密码有错！")
