@@ -74,10 +74,14 @@ $("#ctname").html($(this).html());
 			"url" : "${ctx}/login/index/searchTrade",
 			"async" : true,
 			"success" : function(result){
+<<<<<<< HEAD
 
 				$("#tradeResult").val(result);
 
 
+=======
+				
+>>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
 			}
 		});
   		
