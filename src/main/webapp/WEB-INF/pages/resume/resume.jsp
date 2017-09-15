@@ -63,7 +63,7 @@ var youdao_conv_id = 271546;
                                     <div class="dn" id="noticeTip">
             	<span class="bot"></span>
 				<span class="top"></span>
-				<a target="_blank" href="delivery.html"><strong>0</strong>条新投递反馈12</a>
+				<a target="_blank" href="delivery.html"><strong>0</strong>条新投递反馈123</a>
 				<a class="closeNT" href="javascript:;"></a>
             </div>
                     </div>
