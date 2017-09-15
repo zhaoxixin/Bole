@@ -1,10 +1,12 @@
 package cn.bole.pojo;
 
+import java.util.List;
+
 public class Industry {
 	private String industryId;
 	private String industryName;
 	private Integer isHot;
-	private Profession profession;
+	private List<Profession> professionList;
 	public String getIndustryId() {
 		return industryId;
 	}
@@ -23,12 +25,13 @@ public class Industry {
 	public void setIsHot(Integer isHot) {
 		this.isHot = isHot;
 	}
-	public Profession getProfession() {
-		return profession;
+	public List<Profession> getProfessionList() {
+		return professionList;
 	}
-	public void setProfession(Profession profession) {
-		this.profession = profession;
+	public void setProfessionList(List<Profession> professionList) {
+		this.professionList = professionList;
 	}
+	
 	
 	
 	
