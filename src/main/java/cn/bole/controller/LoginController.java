@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,22 +34,29 @@ public class LoginController {
 	//登录
 	@RequestMapping("/login")
 	@ResponseBody
-	public Map<String, Object> login(User user,HttpServletRequest s){
+	public Map<String, Object> login(String type, String email,String password,HttpSession session){
 	     Map<String, Object> result = new HashMap<String, Object>();  
-	        if(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(user.getPassword())){  
+	        if(StringUtils.isEmpty(email) || StringUtils.isEmpty(password)){  
 		 	       result.put("msg", "failed");  
 		            return result;          
 	        }        
-	        //业务逻辑
-	        User user1 =userService.findUser(user.getEmail(),user.getPassword());
-	        if(user1==null){        	
-	 	       result.put("msg", "failed");  
-	            return result;  
+	        //是否为普通用户
+	        if(Integer.parseInt(type)==0){
+	        	User user1 =userService.findUser(email,password);
+		        if(user1==null){        	
+		 	       result.put("msg", "failed");  
+		            return result;  
+		        }
+		        //将用户加入到session中
+		        session.setAttribute("user1",user1);
+		        result.put("msg", "success"); 
+		        //for test git  zhxn
+	 	        return result; 	
 	        }
-	        //将用户加入到session中
-	        s.getSession().setAttribute("user1",user1);
-	        result.put("msg", "success"); 
-	        //for test git  zhxn
- 	        return result; 	
+	        //判断是否为一个公司
+	        if(Integer.parseInt(type)==1){
+	        	//这需要你来写逻辑
+	        }
+	        return result;   
 	}
 }

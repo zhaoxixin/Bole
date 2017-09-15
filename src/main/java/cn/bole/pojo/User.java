@@ -24,5 +24,10 @@ public class User extends BasicInfo{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", password=" + password + ", id=" + id + "]";
+	}
+	
+	
 }
