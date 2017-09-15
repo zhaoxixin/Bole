@@ -55,7 +55,7 @@ public class LoginController {
 	        }
 	        //判断是否为一个公司
 	        if(Integer.parseInt(type)==1){
-	        	
+	        	//这需要你来写逻辑
 	        }
 	        return result;   
 	}
