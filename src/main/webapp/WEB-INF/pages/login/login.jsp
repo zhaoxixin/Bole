@@ -46,7 +46,7 @@ var youdao_conv_id = 271546;
         
     	<input type="hidden" id="resubmitToken" value="" />		
 		 <div class="login_box">
-        	<form id="loginForm" action="index.html">
+        	<form id="loginForm" >
 				<input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" />
 			  	<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
 				<span class="error" style="display:none;" id="beError"></span>
@@ -107,7 +107,7 @@ $(function(){
 	    		user.email= $('#email').val();
 	    		user.password= $('#password').val();
 	    		var remember = $('#remember').val();
-	    		
+	    		var type = $('#authType').val();
 	    		var callback = $('#callback').val();
 	    		var authType = $('#authType').val();
 	    		var signature = $('#signature').val();
