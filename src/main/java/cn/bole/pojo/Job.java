@@ -8,6 +8,8 @@ public class Job {
 	private String professionId;
 	private String companyId;
 	private String jobName;
+	private String highistEducation;
+	private String jobNature;
 	private Date announceTime;
 	private Date updateTime;
 	private Integer state;

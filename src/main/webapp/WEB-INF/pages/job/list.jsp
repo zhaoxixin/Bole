@@ -8,7 +8,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>前端开发全国-职位搜索-拉勾网-最专业的互联网招聘平台</title>
+<title>伯乐网-只要您是千里马</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="前端开发招聘  全国地区招聘 紫色医疗招聘前端开发,月薪:10k-20k,要求:本科及以上学历,3-5年工作经验。职位诱惑：借移动医疗大势享受坐直升飞机的职场发展 公司规模:15-50人移动互联网 ,健康医疗类公司招聘信息汇总  最新最热门互联网行业招聘信息，尽在拉勾网" name="description">
 <meta content="前端开发招聘,全国地区前端开发招聘,紫色医疗招聘前端开发,移动互联网 类公司招聘信息汇总,健康医疗类公司招聘信息汇总,拉勾招聘,拉勾网,互联网招聘" name="keywords">
@@ -44,8 +44,7 @@ var youdao_conv_id = 271546;
     		</a>
     		<ul class="reset" id="navheader">
     			<li ><a href="index.html">首页</a></li>
-    			<li ><a href="companylist.html" >公司</a></li>
-    			<li ><a href="#" target="_blank">论坛</a></li>
+    			<li ><a href="#" target="_blank">名企专区</a></li>
     				    			<li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
 	    							    			<li ><a href="create.html" rel="nofollow">发布职位</a></li>
 	    		    		</ul>
@@ -59,62 +58,55 @@ var youdao_conv_id = 271546;
     <div id="container">
         
        	<div class="sidebar">
-       		            <div id="options" class="greybg">
-                                <dl >
-                   	<dt>月薪范围 <em ></em></dt>
-	                <dd >
-	                    	                    	<div>2k以下</div>
-	                    	                    	<div>2k-5k</div>
-	                    	                    	<div>5k-10k</div>
-	                    	                    	<div>10k-15k</div>
-	                    	                    	<div>15k-25k</div>
-	                    	                    	<div>25k-50k</div>
-	                    	                    	<div>50k以上</div>
-	                    	                </dd> 
-                </dl>
-                                <dl >
-                   	<dt>工作经验 <em ></em></dt>
-	                <dd >
-	                    	                    	<div>不限</div>
-	                    	                    	<div>应届毕业生</div>
-	                    	                    	<div>1年以下</div>
-	                    	                    	<div>1-3年</div>
-	                    	                    	<div>3-5年</div>
-	                    	                    	<div>5-10年</div>
-	                    	                    	<div>10年以上</div>
-	                    	                </dd> 
-                </dl>
-                                <dl >
-                   	<dt>最低学历 <em ></em></dt>
-	                <dd >
-	                    	                    	<div>不限</div>
-	                    	                    	<div>大专</div>
-	                    	                    	<div>本科</div>
-	                    	                    	<div>硕士</div>
-	                    	                    	<div>博士</div>
-	                    	                </dd> 
-                </dl>
-                                <dl >
-                   	<dt>工作性质 <em ></em></dt>
-	                <dd >
-	                    	                    	<div>全职</div>
-	                    	                    	<div>兼职</div>
-	                    	                    	<div>实习</div>
-	                    	                </dd> 
-                </dl>
-                                <dl >
-                   	<dt>发布时间 <em ></em></dt>
-	                <dd >
-	                    	                    	<div>今天</div>
-	                    	                    	<div>3天内</div>
-	                    	                    	<div>一周内</div>
-	                    	                    	<div>一月内</div>
-	                    	                </dd> 
-                </dl>
-                            </div>
+       		<div id="options" class="greybg">
+       			<form action="" method="post">
+       			<div style="hight:40px">
+       			<select name="salaryRange" style="width:121px;height:30px">
+        			<option value="1">2001-4000</option>
+        			<option value="2">4001-6000</option>
+        			<option value="3">6001-8000</option>
+        			<option value="4">8001-10000</option>
+        			<option value="5">10001-15000</option>
+        			<option value="6">15001-20000</option>
+        			<option value="7">20001-30000</option>
+        			<option value="8">面议</option>
+        		</select>
+        		</div>
+        		<br/>
+        		<div style="hight:40px">
+        		<select name="highistEducation" style="width:121px;height:30px">
+        			<option value="博士">博士</option>
+        			<option value="硕士">硕士</option>
+        			<option value="本科">本科</option>
+        			<option value="大专">大专</option>
+        			<option value="不限">不限</option>
+        		</select>
+        		</div>
+        		<br/>
+        		<div style="hight:40px">
+        		<select name="jobNature" style="width:121px;height:30px">
+        			<option value="全职">全职</option>
+        			<option value="兼职">兼职</option>
+        			<option value="实习">实习</option>
+        		</select>
+        		</div>
+        		<br/>
+        		<div style="hight:40px">
+        		<select name="jobNature" style="width:121px;height:30px">
+        			<option value="今天">今天</option>
+        			<option value="3天内">3天内</option>
+        			<option value="一周内">一周内</option>
+        			<option value="一月内">一月内</option>
+        		</select>
+               </div>
+               <div style="width:10px;hight:40px;cursor:pointer;background-color:green">
+               		<input type="submit" name="提交"/>
+               </div>
+              </form>      
+     </div>
             
             <!-- QQ群 -->
-            	            		            <div class="qq_group">
+            	    <div class="qq_group">
 		            	加入<span>前端</span>QQ群
 		            	<div class="f18">跟同行聊聊</div>
 		            	<p>160541839</p>
@@ -143,28 +135,7 @@ var youdao_conv_id = 271546;
         </div>
         
         <div class="content">
-        	<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
-        <ul id="searchType">
-        	        	<li data-searchtype="1" class="type_selected">职位</li>
-        	<li data-searchtype="4">公司</li>
-        	        </ul>
-        <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value="前端开发"  placeholder="请输入职位名称，如：产品经理"  />
-        <input type="hidden" name="spc" id="spcInput" value="1"/>
-        <input type="hidden" name="pl" id="plInput" value=""/>
-        <input type="hidden" name="gj" id="gjInput" value=""/>
-        <input type="hidden" name="xl" id="xlInput" value=""/>
-        <input type="hidden" name="yx" id="yxInput" value=""/>
-        <input type="hidden" name="gx" id="gxInput" value="" />
-        <input type="hidden" name="st" id="stInput" value="" />
-        <input type="hidden" name="labelWords" id="labelWords" value="label" />
-        <input type="hidden" name="lc" id="lc" value="" />
-        <input type="hidden" name="workAddress" id="workAddress" value=""/>
-                <input type="hidden" name="city" id="cityInput" value="全国"/>
-                <input type="submit" id="search_button" value="搜索" />
-    </form>
-</div>
+       
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
 .ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
@@ -172,149 +143,17 @@ var youdao_conv_id = 271546;
 .ui-menu-item a{display:block;overflow:hidden;}
 </style>
 <script type="text/javascript" src="style/js/search.min.js"></script>
-<dl class="hotSearch">
-	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=全国">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=全国">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=全国">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=全国">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=全国">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=全国">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=全国">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=全国">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=全国">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=全国">实习</a></dd>
-</dl>			<div class="breakline"></div>
-            <dl class="workplace" id="workplaceSelect">
-                <dt class="fl">工作地点：</dt>
-               	               	<dd >
-                	<a href="javascript:;" class="current">全国</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >北京</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >上海</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >广州</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >深圳</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >成都</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >杭州</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >武汉</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd >
-                	<a href="javascript:;" >南京</a> 
-                	                	|
-                	               	</dd>
-               	               	<dd  class="more" >
-                	<a href="javascript:;" >其他</a> 
-                	                	<div class="triangle citymore_arrow"></div>
-                	               	</dd>
-               	                <dd id="box_expectCity" class="searchlist_expectCity dn">
-	            	<span class="bot"></span>
-	            	<span class="top"></span>
-		    				    						    			    						    		<dl>
-			    			<dt>ABCDEF</dt>
-			    			<dd>
-			     						     				<span>北京</span>
-			     						     				<span>长春</span>
-			     						     				<span>成都</span>
-			     						     				<span>重庆</span>
-			     						     				<span>长沙</span>
-			     						     				<span>常州</span>
-			     						     				<span>东莞</span>
-			     						     				<span>大连</span>
-			     						     				<span>佛山</span>
-			     						     				<span>福州</span>
-			     						    			</dd>
-			    	  	</dl>
-			    	  				    			    						    		<dl>
-			    			<dt>GHIJ</dt>
-			    			<dd>
-			     						     				<span>贵阳</span>
-			     						     				<span>广州</span>
-			     						     				<span>哈尔滨</span>
-			     						     				<span>合肥</span>
-			     						     				<span>海口</span>
-			     						     				<span>杭州</span>
-			     						     				<span>惠州</span>
-			     						     				<span>金华</span>
-			     						     				<span>济南</span>
-			     						     				<span>嘉兴</span>
-			     						    			</dd>
-			    	  	</dl>
-			    	  				    			    						    		<dl>
-			    			<dt>KLMN</dt>
-			    			<dd>
-			     						     				<span>昆明</span>
-			     						     				<span>廊坊</span>
-			     						     				<span>宁波</span>
-			     						     				<span>南昌</span>
-			     						     				<span>南京</span>
-			     						     				<span>南宁</span>
-			     						     				<span>南通</span>
-			     						    			</dd>
-			    	  	</dl>
-			    	  				    			    						    		<dl>
-			    			<dt>OPQR</dt>
-			    			<dd>
-			     						     				<span>青岛</span>
-			     						     				<span>泉州</span>
-			     						    			</dd>
-			    	  	</dl>
-			    	  				    			    						    		<dl>
-			    			<dt>STUV</dt>
-			    			<dd>
-			     						     				<span>上海</span>
-			     						     				<span>石家庄</span>
-			     						     				<span>绍兴</span>
-			     						     				<span>沈阳</span>
-			     						     				<span>深圳</span>
-			     						     				<span>苏州</span>
-			     						     				<span>天津</span>
-			     						     				<span>太原</span>
-			     						     				<span>台州</span>
-			     						    			</dd>
-			    	  	</dl>
-			    	  				    			    						    		<dl>
-			    			<dt>WXYZ</dt>
-			    			<dd>
-			     						     				<span>武汉</span>
-			     						     				<span>无锡</span>
-			     						     				<span>温州</span>
-			     						     				<span>西安</span>
-			     						     				<span>厦门</span>
-			     						     				<span>烟台</span>
-			     						     				<span>珠海</span>
-			     						     				<span>中山</span>
-			     						     				<span>郑州</span>
-			     						    			</dd>
-			    	  	</dl>
-			    	  				    				    </dd>  
-            </dl>
+		<div class="breakline"></div>
+            
+			    			
          
             <div id="tip_didi" class="dn">
             	<span>亲，“嘀嘀打车”已更名为“滴滴打车”了哦，我们已帮您自动跳转~</span>
             	<a href="javascript:;">我知道了</a>
             </div>
-            
+            				
+            					<h2 style="color:7706625">职位列表</h2>
+            				
             	            <ul class="hot_pos reset">
 	                    		                    			                <li class="odd clearfix">
 			                			                				                	<div class="hot_pos_l">
