@@ -14,10 +14,10 @@
 	</select>
 	<resultMap type="Industry" id="industryRM" autoMapping="true">
 		<id column="industry_id" property="industryId"/>
-		<association property="profession" javaType="Profession">
+		<collection property="professionList" ofType="Profession">
 			<id column="profession_id" property="professionId"/>
 			<result column="profession_name" property="professionName"/>
-		</association>
+		</collection>
 		
 	</resultMap>
 

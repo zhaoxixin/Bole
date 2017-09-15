@@ -105,8 +105,8 @@ $("#ctname").html($(this).html());
     		</a>
     		<ul class="reset" id="navheader">
     			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/companyhome" >公司</a></li>
-    			<li ><a href="#" target="_blank">论坛</a></li>
+    			<li ><a href="${ctx }/companyhome" >企业入口</a></li>
+    			<li ><a href="#" target="_blank">名企专区</a></li>
 
     		    <li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
@@ -132,7 +132,7 @@ $("#ctname").html($(this).html());
              </div>
              <div class="ct f_l">
 						<div class="ct_now" id="ctname">全国</div>
-							<div class="ct_swich"><span class="ct_nav">[切换城市11]</span></div>
+							<div class="ct_swich"><span class="ct_nav">[切换城市]</span></div>
 							<div class="ct_link">
 							<div class="ct_show"><span id="closect" class="f_r" title="关闭窗口">X</span><span class="f_l">城市列表</span></div>
 								<a class="ct_links" href="javascript:">全国</a><a class="ct_links" href="javascript:">北京</a><a class="ct_links" href="javascript:">广州</a>
@@ -159,16 +159,17 @@ $("#ctname").html($(this).html());
 							<h2>${in.industryName }<span></span></h2>
 							<input hidden="hidden" name="industryName" value="${in.industryId }"/>
 						</div>
-					
+						
+					  <c:forEach items="${professionList }" var="p" varStatus="status">
 					   	<div class="menu_sub dn">
 					   		<dl class="reset">
 					          <dt>
-					        	<a href="h/jobs/list_后端开发?labelWords=label">销售业务</a>
-					        	<a href="h/jobs/list_后端开发?labelWords=label">销售管理</a>
+					        	<a href="h/jobs/list_后端开发?labelWords=label">${p.professionName }</a>
 					        </dt>
 						        	
 					       </dl>
-					  </div>
+					   </div>
+					  </c:forEach>
 					 </c:forEach>
 					</div>
 				</div>	
@@ -185,16 +186,17 @@ $("#ctname").html($(this).html());
         	        </ul>
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
-        <input type="hidden" name="spc" id="spcInput" value=""/>
-        <input type="hidden" name="pl" id="plInput" value=""/>
-        <input type="hidden" name="gj" id="gjInput" value=""/>
-        <input type="hidden" name="xl" id="xlInput" value=""/>
-        <input type="hidden" name="yx" id="yxInput" value=""/>
-        <input type="hidden" name="gx" id="gxInput" value="" />
-        <input type="hidden" name="st" id="stInput" value="" />
-        <input type="hidden" name="labelWords" id="labelWords" value="" />
-        <input type="hidden" name="lc" id="lc" value="" />
-        <input type="hidden" name="workAddress" id="workAddress" value=""/>
+        
+        <input type="text" name="spc" id="spcInput" value=""/>
+        <input type="text" name="pl" id="plInput" value=""/>
+        <input type="text" name="gj" id="gjInput" value=""/>
+        <input type="text" name="xl" id="xlInput" value=""/>
+        <input type="text" name="yx" id="yxInput" value=""/>
+        <input type="text" name="gx" id="gxInput" value="" />
+        <input type="text" name="st" id="stInput" value="" />
+        <input type="text" name="labelWords" id="labelWords" value="" />
+        <input type="text" name="lc" id="lc" value="" />
+        <input type="text" name="workAddress" id="workAddress" value=""/>
                 <input type="hidden" name="city" id="cityInput" value=""/>
                 <input type="submit" id="search_button" value="搜索" />
 				
