@@ -68,28 +68,11 @@ $("#ctname").html($(this).html());
 });
 });
   </script>
- <!-- <script type="text/javascript">
-  	$(function ajaxTrade(){
-  		$.ajax({
-			"url" : "${ctx}/login/index/searchTrade",
-			"async" : true,
-			"success" : function(result){
-<<<<<<< HEAD
-
-				$("#tradeResult").val(result);
-
-
-=======
-				
->>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
-			}
-		});
-  		
-  	});
-  	
-  	
-  
-  </script> -->
+ <script type="text/javascript">
+ 	function getCity(this){
+ 		
+ 	}
+ </script>
   
 </head>
 <body>
@@ -135,7 +118,7 @@ $("#ctname").html($(this).html());
 
              </div>
              <div class="ct f_l">
-						<div class="ct_now" id="ctname">全国</div>
+						<div class="ct_now" id="ctname"><font color="7706625" onchange="getCity(this)">全国</font></div>
 							<div class="ct_swich"><span class="ct_nav">[切换城市]</span></div>
 							<div class="ct_link">
 							<div class="ct_show"><span id="closect" class="f_r" title="关闭窗口">X</span><span class="f_l">城市列表</span></div>
@@ -169,7 +152,9 @@ $("#ctname").html($(this).html());
 			            </dt>
 				       <dd>
 				         <c:forEach items="${in.professionList }" var="p" varStatus="status">
-					     	<a href="h/jobs/list_后端开发?labelWords=label">${p.professionName }</a>
+				         	
+				         	
+					     	<a onclick="submit(${in.industryId},${p.professionId })"href="${ctx }/findJob?industryId=${in.industryId}&professionId=${p.professionId}&city=">${p.professionName }</a>
 					      </c:forEach>
 					   </dd>
 			         </dl>
@@ -181,13 +166,13 @@ $("#ctname").html($(this).html());
 			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
 		</div>
 		
-        <div class="content">	
-	        			<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
+      <div class="content">	
+	   <div id="search_box">
+		<form id="searchForm" name="searchForm" action="${ctx }/findJobByName" method="post">
         <ul id="searchType">
-        	        	<li data-searchtype="1" class="type_selected">职位</li>
+        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
-        	        </ul>
+        </ul>
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
@@ -203,6 +188,37 @@ $("#ctname").html($(this).html());
         <input type="hidden" name="workAddress" id="workAddress" value=""/>
                 <input type="hidden" name="city" id="cityInput" value=""/>
                 <input type="submit" id="search_button" value="搜索" />
+         <!-- <div>
+        	更多：
+        		<select name="salaryRange">
+        			<option value="1">2001-4000</option>
+        			<option value="2">4001-6000</option>
+        			<option value="3">6001-8000</option>
+        			<option value="4">8001-10000</option>
+        			<option value="5">10001-15000</option>
+        			<option value="6">15001-20000</option>
+        			<option value="7">20001-30000</option>
+        			<option value="8">面议</option>
+        		</select>
+        		
+        		<select name="scale">
+        			<option value="1">小于50人</option>
+        			<option value="2">50-150人</option>
+        			<option value="3">150-300人</option>
+        			<option value="4">300-500人</option>
+        			<option value="5">500-1000人</option>
+        			<option value="6">1000人以上</option>			
+        		</select>
+        		
+        		<select name="nature">
+        			<option value="1">民营企业</option>
+        			<option value="2">国有企业</option>
+        			<option value="3">外资企业</option>
+        			<option value="4">上市企业</option>
+        			<option value="5">其他</option>
+        		</select>
+  
+        </div> -->
 				
     </form>
 </div>
@@ -333,78 +349,12 @@ $("#ctname").html($(this).html());
                             </ul>
             
             <ul class="reset hotabbing">
-            	            		<li class="current">热门职位</li>
-            	            	    <li>最新职位</li>
+            	            		<li class="current"><a href="${ctx }/findNewJob">热门职位</a></li>
+            	            	    <li><a href="${ctx }/findHotJob">最新职位</a></li>
             </ul>
-            <div id="hotList">
-	            <ul class="hot_pos reset">
-	            		           <li class="clearfix">
-		            				<div class="hot_pos_l">
-			                    	<div class="mb10">
-			                        	<a href="h/jobs/147822.html" target="_blank">运营总监</a> 
-			                            &nbsp;
-			                            <span class="c9">[北京]</span>
-			                            			                        </div>
-			                        <span><em class="c7">月薪： </em>15k-20k</span>
-			                        <span><em class="c7">经验：</em> 3-5年</span>
-			                        <span><em class="c7">最低学历： </em>本科</span>
-			                        <br />
-			                        <span><em class="c7">职位诱惑：</em>发展前景</span>
-			                        <br />
-				                    <span>1天前发布</span>
-			                        <!-- <a  class="wb">分享到微博</a> -->
-			                    </div>
-			                	<div class="hot_pos_r">
-			                    	<div class="mb10 recompany"><a href="h/c/399.html" target="_blank">节操精选</a></div>
-			                        <span><em class="c7">领域：</em> 移动互联网</span>
-			                        			                        <span><em class="c7">创始人：</em>陈桦</span>
-			                        			                        <br />
-			                        <span><em class="c7">阶段：</em> 初创型(天使轮)</span>
-			                        <span><em class="c7">规模：</em>少于15人</span>
-			                        <ul class="companyTags reset">
-			                     		<li>移动互联网</li>
-			                        		<li>五险一金</li>
-			                        		<li>扁平管理</li>
-			                        </ul>
-			                    </div>
-			                   </li>
-			     <a href="list.html" class="btn fr" target="_blank">查看更多</a>
-	                	            
-	             <ul class="hot_pos hot_posHotPosition reset" style="display:none;"></ul>
-	                     <li class="clearfix">
-		            		<div class="hot_pos_l">
-			                    	<div class="mb10">
-			                        	<a href="h/jobs/149389.html" target="_blank">高级PHP研发工程师</a> 
-			                            &nbsp;
-			                            <span class="c9">[南京]</span>
-			                            			                        </div>
-			                        <span><em class="c7">月薪： </em>12k-24k</span>
-			                        <span><em class="c7">经验：</em>3-5年</span>
-			                        <span><em class="c7">最低学历：</em> 本科</span>
-			                        <br />
-			                        <span><em class="c7">职位诱惑：</em>IPO了的互联网创业公司，潜力无限！</span>
-			                        <br />
-				                    <span>15:11发布</span>
-			                        <!-- <a  class="wb">分享到微博</a> -->
-			                    </div>
-			                	<div class="hot_pos_r">
-			                    	<div class="mb10"><a href="h/c/8250.html" target="_blank">途牛旅游网</a></div>
-			                        <span><em class="c7">领域：</em> 电子商务,在线旅游</span>
-			                        			                        <span><em class="c7">创始人：</em>于敦德</span>
-			                        			                        <br />
-			                        <span> <em class="c7">阶段： </em>上市公司</span>
-			                        <span> <em class="c7">规模：</em>500-2000人</span>
-			                        <ul class="companyTags reset">
-			                        	<li>绩效奖金</li>
-			                        	<li>股票期权</li>
-			                        	<li>五险一金</li>
-			                        </ul>
-			                    </div>
-			                </li>
+            
 	                        	            				            		
-	             <a href="list.html?city=%E5%85%A8%E5%9B%BD" class="btn fr" target="_blank">查看更多</a>
-	            </ul>
-            </div>
+	            
             
             <div class="clear"></div>
 			<div id="linkbox">
