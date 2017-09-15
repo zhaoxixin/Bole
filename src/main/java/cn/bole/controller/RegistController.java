@@ -17,11 +17,7 @@ import cn.bole.service.UserService;
 public class RegistController {
 	@Autowired
 	UserService userService;
-	@RequestMapping("/")
-	public String home(){
-		
-		return "login/index";
-	}
+	
 	//去注册
 	@RequestMapping("/toRegister")
 	public String toregist(HttpServletRequest request){
