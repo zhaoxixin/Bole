@@ -40,5 +40,11 @@ public class SearchController {
 		model.addAttribute("industryList",industryList);
 		return "login/index";
 	}
+	@RequestMapping("/findJob")
+	public String searchJob(Model model){
+		List<Industry> industryList = industryService.findAllIndustry();
+		model.addAttribute("industryList",industryList);
+		return "login/index";
+	}
 
 }

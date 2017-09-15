@@ -69,9 +69,7 @@ $("#ctname").html($(this).html());
 });
   </script>
  <script type="text/javascript">
- 	function getCity(this){
- 		
- 	}
+ 	
  </script>
   
 </head>
@@ -118,7 +116,7 @@ $("#ctname").html($(this).html());
 
              </div>
              <div class="ct f_l">
-						<div class="ct_now" id="ctname"><font color="7706625" onchange="getCity(this)">全国</font></div>
+						<div class="ct_now" id="ctname"><font color="7706625">全国</font></div>
 							<div class="ct_swich"><span class="ct_nav">[切换城市]</span></div>
 							<div class="ct_link">
 							<div class="ct_show"><span id="closect" class="f_r" title="关闭窗口">X</span><span class="f_l">城市列表</span></div>
@@ -152,9 +150,7 @@ $("#ctname").html($(this).html());
 			            </dt>
 				       <dd>
 				         <c:forEach items="${in.professionList }" var="p" varStatus="status">
-				         	
-				         	
-					     	<a onclick="submit(${in.industryId},${p.professionId })"href="${ctx }/findJob?industryId=${in.industryId}&professionId=${p.professionId}&city=">${p.professionName }</a>
+					     	<a href="" onclick="findJob(this,index)">${p.professionName }</a>
 					      </c:forEach>
 					   </dd>
 			         </dl>
