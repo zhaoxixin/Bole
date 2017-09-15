@@ -3,15 +3,38 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bole.mapper.CompanyMapper" >
-  <select id="findCompanyAll" resultType="cn.bole.pojo.Company" >
-    select * from com c ,com_info ci
+ <!--  <select id="findCompanyAll" resultType="cn.bole.pojo.Company" >
+  select company_id,company_name from com
+    
+  </select> -->
+  <select id="findCompanyAll" resultMap="companyRM" >
+  select * from com c ,com_info ci
      where ci.company_info_id =c.company_id 
   </select>
-<!-- <resultMap type="cn.bole.pojo.Company" id="cn.bole.pojo.CompanyRM" autoMapping="true">
+<resultMap type="cn.bole.pojo.Company" id="companyRM" autoMapping="true">
    <id column="company_id" property="companyId"/>
-   <association property="companyInfo" javaType="cn.bole.pojo.CompanyInfo" resultMap="cn.bole.pojo.CompanyInfoRM">
+   <association property="companyInfo" javaType="cn.bole.pojo.CompanyInfo" resultMap="companyInfoRM">
    </association>
   </resultMap>
-  <resultMap type="cn.bole.pojo.CompanyInfo" id="cn.bole.pojo.CompanyInfoRM" autoMapping="true">  
-  </resultMap>resultType="cn.bole.pojo.CompanyRM"  -->
+  <resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true">  
+  </resultMap> 
+  
+  <!--通过验证email和password来验证-->
+  <select id="findCompanyEmailAndPassword" resultType="cn.bole.pojo.Company">
+  select * from com where email=#{email} and password=#{password}
+  </select>
+  
+  
+<!--通过Id获取company-->
+<select id="findCompanyById" resultMap="companyRM">
+     select * from com c ,com_info ci
+     where company_info_id = #{companyInfoId}    
+</select>
+
+
+
 </mapper>
+
+
+
+
