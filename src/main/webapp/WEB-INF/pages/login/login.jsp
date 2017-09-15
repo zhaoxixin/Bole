@@ -47,6 +47,16 @@ var youdao_conv_id = 271546;
     	<input type="hidden" id="resubmitToken" value="" />		
 		 <div class="login_box">
         	<form id="loginForm" >
+        		<ul class="register_radio clearfix">
+		            <li>
+		            	找工作
+		              	<input type="radio" value="0" name="type" /> 
+		            </li>
+		            <li>
+		           	           招人
+		              	<input type="radio" value="1" name="type" /> 
+		            </li>
+		        </ul> 
 				<input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" />
 			  	<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
 				<span class="error" style="display:none;" id="beError"></span>
@@ -80,6 +90,9 @@ $(function(){
 	 		/* onkeyup: false,
 	    	focusCleanup:true, */
 	        rules: {
+	        	type:{
+	        		required: true
+	        	},
 	    	   	email: {
 	    	    	required: true,
 	    	    	email: true
@@ -89,6 +102,9 @@ $(function(){
 	    	   	}
 	    	},
 	    	messages: {
+	    		type:{
+	        		required:"请选择使用拉勾的目的"
+	        	},
 	    	   	email: {
 	    	    	required: "请输入登录邮箱地址",
 	    	    	email: "请输入有效的邮箱地址，如：vivi@lagou.com"
@@ -103,11 +119,11 @@ $(function(){
 	      		}else{
 	      			$('#remember').val(null);
 	      		}
-	    		var user={}
-	    		user.email= $('#email').val();
-	    		user.password= $('#password').val();
+	    		var type =$('input[type="radio"]:checked',form).val();
+	    		var email =$('#email').val();
+	    		var password =$('#password').val();
+	    		
 	    		var remember = $('#remember').val();
-	    		var type = $('#authType').val();
 	    		var callback = $('#callback').val();
 	    		var authType = $('#authType').val();
 	    		var signature = $('#signature').val();
@@ -116,12 +132,11 @@ $(function(){
 	    		$(form).find(":submit").attr("disabled", true);
 	            $.ajax({
 	            	type:'POST',
-	            	data: user,
+	            	data:{email:email,password:password,type:type},
 	            	url:'/login.action',
 	            	dataType:'json'
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
-
 	            		alert("登录成功！")
 
 	            		window.location.href='/.action';	

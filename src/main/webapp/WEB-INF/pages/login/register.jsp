@@ -159,12 +159,7 @@ var youdao_conv_id = 271546;
 		            		$('#resubmitToken').val(result.resubmitToken);
 			            	if(result.msg=='success' ){
 			            		alert("注册成功，点击继续")
-			            		if(result.type==0){
 			            		window.location.href='/toLogin.action';	//应聘者主页
-			            		}
-			            		if(result.type==1){
-			            		window.location.href='/toLogin.action';	//公司主页
-			            		}
 			            	}else{
 			            		alert("参数不合法！")
 								$('#beError').text(result.msg).show();
