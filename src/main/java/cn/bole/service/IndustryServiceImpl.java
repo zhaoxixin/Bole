@@ -3,10 +3,11 @@ package cn.bole.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import cn.bole.mapper.IndustryMapper;
 import cn.bole.pojo.Industry;
-
+@Service
 public class IndustryServiceImpl implements IndustryService {
 	@Autowired
 	private IndustryMapper industryMapper;
