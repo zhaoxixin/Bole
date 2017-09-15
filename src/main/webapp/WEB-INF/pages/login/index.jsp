@@ -152,31 +152,31 @@ $("#ctname").html($(this).html());
         				
 		<div id="sidebar">
 			<div class="mainNavs">
-					<div class="menu_box">
-					
-					<c:forEach items="${industryList }" var="in">
-						<div class="menu_main">
-							<h2>${in.industryName }<span></span></h2>
-							<input hidden="hidden" name="industryName" value="${in.industryId }"/>
-						</div>
-						
-					  <c:forEach items="${professionList }" var="p" varStatus="status">
-					   	<div class="menu_sub dn">
-					   		<dl class="reset">
-					          <dt>
-					        	<a href="h/jobs/list_后端开发?labelWords=label">${p.professionName }</a>
-					        </dt>
-						        	
-					       </dl>
-					   </div>
-					  </c:forEach>
-					 </c:forEach>
-					</div>
-				</div>	
-						    	
-										
+				
+			   <div class="menu_box">
+				<c:forEach items="${industryList }" var="in">
+				     <div class="menu_main">
+					   <h2>${in.industryName } <span></span></h2>            		
+		            </div>
+			    	<div class="menu_sub dn">
+			   		  <dl class="reset">
+			        	<dt>
+			        		
+			            </dt>
+				       <dd>
+				         <c:forEach items="${in.professionList }" var="p" varStatus="status">
+					     	<a href="h/jobs/list_后端开发?labelWords=label">${p.professionName }</a>
+					     </c:forEach>
+					   </dd>
+			         </dl>
+				   </div>
+				</c:forEach>
+		     </div>
+		</div>
+				 					
 			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
 		</div>
+		
         <div class="content">	
 	        			<div id="search_box">
 		<form id="searchForm" name="searchForm" action="list.html" method="get">
@@ -187,16 +187,16 @@ $("#ctname").html($(this).html());
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
-        <input type="text" name="spc" id="spcInput" value=""/>
-        <input type="text" name="pl" id="plInput" value=""/>
-        <input type="text" name="gj" id="gjInput" value=""/>
-        <input type="text" name="xl" id="xlInput" value=""/>
-        <input type="text" name="yx" id="yxInput" value=""/>
-        <input type="text" name="gx" id="gxInput" value="" />
-        <input type="text" name="st" id="stInput" value="" />
-        <input type="text" name="labelWords" id="labelWords" value="" />
-        <input type="text" name="lc" id="lc" value="" />
-        <input type="text" name="workAddress" id="workAddress" value=""/>
+        <input type="hidden" name="spc" id="spcInput" value=""/>
+        <input type="hidden" name="pl" id="plInput" value=""/>
+        <input type="hidden" name="gj" id="gjInput" value=""/>
+        <input type="hidden" name="xl" id="xlInput" value=""/>
+        <input type="hidden" name="yx" id="yxInput" value=""/>
+        <input type="hidden" name="gx" id="gxInput" value="" />
+        <input type="hidden" name="st" id="stInput" value="" />
+        <input type="hidden" name="labelWords" id="labelWords" value="" />
+        <input type="hidden" name="lc" id="lc" value="" />
+        <input type="hidden" name="workAddress" id="workAddress" value=""/>
                 <input type="hidden" name="city" id="cityInput" value=""/>
                 <input type="submit" id="search_button" value="搜索" />
 				

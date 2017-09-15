@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import cn.bole.mapper.IndustryMapper;
 import cn.bole.pojo.Industry;
+import cn.bole.service.IndustryService;
 @Service
 public class IndustryServiceImpl implements IndustryService {
 	@Autowired
