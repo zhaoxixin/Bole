@@ -33,7 +33,7 @@ public class LoginController {
 	//登录
 	@RequestMapping("/login")
 	@ResponseBody
-	public Map<String, Object> login(User user,HttpServletRequest s){
+	public Map<String, Object> login(User user,HttpServletRequest s,String type){
 	     Map<String, Object> result = new HashMap<String, Object>();  
 	        if(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(user.getPassword())){  
 		 	       result.put("msg", "failed");  
@@ -49,6 +49,7 @@ public class LoginController {
 	        s.getSession().setAttribute("user1",user1);
 	        result.put("msg", "success"); 
 	        //for test git  zhxn
+	        System.out.println(type);
  	        return result; 	
 	}
 }
