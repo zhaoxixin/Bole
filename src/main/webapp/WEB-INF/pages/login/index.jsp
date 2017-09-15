@@ -156,9 +156,9 @@ $("#ctname").html($(this).html());
         				
 		<div id="sidebar">
 			<div class="mainNavs">
-				
-			   <div class="menu_box">
 				<c:forEach items="${industryList }" var="in">
+			   <div class="menu_box">
+				
 				     <div class="menu_main">
 					   <h2>${in.industryName } <span></span></h2>            		
 		            </div>
@@ -170,12 +170,12 @@ $("#ctname").html($(this).html());
 				       <dd>
 				         <c:forEach items="${in.professionList }" var="p" varStatus="status">
 					     	<a href="h/jobs/list_后端开发?labelWords=label">${p.professionName }</a>
-					     </c:forEach>
+					      </c:forEach>
 					   </dd>
 			         </dl>
 				   </div>
-				</c:forEach>
 		     </div>
+		    </c:forEach>
 		</div>
 				 					
 			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
