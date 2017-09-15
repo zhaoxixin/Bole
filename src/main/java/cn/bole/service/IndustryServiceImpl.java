@@ -16,5 +16,5 @@ public class IndustryServiceImpl implements IndustryService {
 	public List<Industry> findAllIndustry() {
 		return industryMapper.findAllIndustry();
 	}
-
+	
 }

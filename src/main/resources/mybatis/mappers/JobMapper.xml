@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.JobMapper">
+
+	<select id="findJob" resultMap="jobRM">
+		select * from 
+		job,job_info
+		where job.job_id=job_info.job_info_id
+		and industry_id=#{industryId}
+		and profession_id=#{professionId}
+		and city=#{city}
+		and state=1
+	</select>
+	
+	<select id="findNewJob" resultMap="jobRM">
+		 select * from
+		(select * from
+		job
+		left join
+		job_info
+		on job.job_id=job_info.job_info_id
+		and state=1) uup 
+		where uup.job_id in
+		(
+		select job_id from job where
+		job.announce_time=(select max(job.announce_time) from job)
+		) 
+		
+	</select> 
+	 <select id="findHotJob" resultMap="jobRM">
+		select * from 
+		job,job_info
+		where job.job_id=job_info.job_info_id
+		and is_hot=1
+		and state=1
+	</select>
+	
+	<select id="findJobByName" resultMap="jobRM">
+		select * from 
+		job,job_info
+		where job.job_id=job_info.job_info_id
+		and job_name=#{jobName}
+		and state=1
+	</select>
+	 
+	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
+		<id column="job_id" property="jobId"/>
+		<association property="jobInfo" resultMap="jobInfoRM">
+			
+		</association>
+		
+	</resultMap>
+	<resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
+		<id column="job_info_id" property="jobInfoId"/>
+	</resultMap>
+	
+	
+</mapper>
