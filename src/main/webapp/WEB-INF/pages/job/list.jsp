@@ -60,9 +60,16 @@ var youdao_conv_id = 271546;
     			<li ><a href="#" target="_blank">名企专区</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
-            	<li><a href="login.html" rel="nofollow">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="register.html" rel="nofollow">注册</a></li>
+            	<c:if test="${ sessionScope.user1 == null }">
+						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
+					 </c:if>
+					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
+					 <c:if test="${ sessionScope.user1 != null }">
+						    欢迎 ${ user1.email } 回来
+						  &nbsp;|&nbsp;
+						<a href="${ ctx }/logout.action">退出</a>
+					 </c:if>
             </ul>
                                 </div>
     </div><!-- end #header -->
