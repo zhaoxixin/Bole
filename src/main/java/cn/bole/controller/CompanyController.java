@@ -2,11 +2,13 @@ package cn.bole.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import cn.bole.pojo.Company;
 import cn.bole.service.CompanyService;
@@ -23,12 +25,21 @@ public class CompanyController {
     	 return "/company/companylist";
      }
      
+     //跳转到公司招聘首页
+     
+     @RequestMapping("/companyResumes")
+     public String reserver(){
+    	 //return "/company/autoFilterResumes";
+    	 return "/company/companyResumes";
+     }
+     
      
      //跳转到公司详细页面
      @RequestMapping("/myhome")
-     public String findCompanyInfobyId(String companyInfoId,Model model){
+     public String findCompanyInfobyId(String companyInfoId,Model model,HttpSession session){
     	 Company company = companyService.findCompanyById(companyInfoId);
     	 model.addAttribute("company", company);
+    	 session.setAttribute("company", company);
     	 return "myhome";
      }
 }

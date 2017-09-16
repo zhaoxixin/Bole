@@ -1,4 +1,4 @@
-﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <!DOCTYPE HTML>
 <html>
@@ -140,7 +140,7 @@ $(function(){
 	            		alert("登录成功！")
 
 	            		if(result.type==0){
-	            			window.location.href='/.action';	
+	            			window.location.href='/userhome.action';	
 	            		}
 	            		if(result.type==1){
 	            			window.location.href='/companyhome.action';

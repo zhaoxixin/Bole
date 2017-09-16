@@ -11,10 +11,24 @@ public class CompanyInfo {
    private String location;
    private String telphone;
    private Integer isFamous;
-
+   private Integer resum_num;
+   private Job job;
    //private Job job;
+   
 public Integer getCompanyInfoId() {
 	return companyInfoId;
+}
+public Integer getResum_num() {
+	return resum_num;
+}
+public void setResum_num(Integer resum_num) {
+	this.resum_num = resum_num;
+}
+public Job getJob() {
+	return job;
+}
+public void setJob(Job job) {
+	this.job = job;
 }
 public void setCompanyInfoId(Integer companyInfoId) {
 	this.companyInfoId = companyInfoId;
