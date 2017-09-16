@@ -407,7 +407,7 @@ $("#ctname").html($(this).html());
 			    </dl>
 			</div>
         </div>	
- 	    <input type="hidden" value="" name="userid" id="userid" />
+ 	    <input type="hidden" value="${user1.userId }" name="userId" id="userId" />
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 

@@ -19,8 +19,9 @@ public class ResumeController {
 		return "resume/resume";
 	}
 	@RequestMapping("/renameResumeName")
-	public String renameResumeName(String userId,Model model){
+	public String renameResumeName(String userId,String resumeName,Model model){
 		System.out.println(userId);
+		System.out.println(resumeName);
 		
 		return "resume/resume";
 	}

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 
@@ -32,6 +33,7 @@
 	<script src="style/js/jquery.lib.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="style/js/ajaxfileupload.js"></script>
 	<script src="style/js/additional-methods.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/staticfile/js/datepicker/WdatePicker.js"></script>
 	<!--[if lte IE 8]>
     <script type="text/javascript" src="style/js/excanvas.js"></script>
 <![endif]-->
@@ -99,16 +101,15 @@
 							<span class="rename">重命名</span> | <a target="_blank" href="h/resume/preview.html">预览</a>
 						</div>
 						<form class="fl dn" id="resumeNameForm" >
-							<input type="text" value="${resumeName }" name="resumeName" class="nameEdit c9">
-							<input type="submit" value="保存" onclick="formSubmit('save','_self');this.blur();"> | <a target="_blank" href="h/resume/preview.html">预览</a>
-							<!-- <ul>
-								<li id="save"><a href="#" onclick="formSubmit('save','_self');this.blur();">保存</a></li>
-								<li id="back"><a href="#" onclick=" window.history.go(-1)">返回</a></li>
-							</ul> -->
+							<input type="text" id="resumeName" value="${resumeName }" name="resumeName" class="nameEdit c9">
+							  
+							<input  type="button" value="保存" onclick="ajax_fun()" /> | <a target="_blank" href="h/resume/preview.html">预览</a> 
+							
+							<%-- <a href="${ctx }/renameResumeName.action" ><input type="button" value="保存"></a>| <a target="_blank" href="h/resume/preview.html">预览</a>  --%>
 						</form>
 					</div>
 					<!--end #resume_name-->
-					<div class="fr c5" id="lastChangedTime">最后一次更新：<span>2014-07-01 15:14 </span></div>
+					<div class="fr c5" id="lastChangedTime">最后一次更新：<span><fmt:formatDate value="${resume.updateTime}" pattern="yyyy-MM-dd"/> </td> </span></div>
 					<!--end #lastChangedTime-->
 					<div id="resumeScore">
 						<div class="score fl">
@@ -147,19 +148,19 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="姓名" value="jason" name="name" id="name">
+												<input type="text" placeholder="姓名" value="${resume.userInfo.realName}" name="realName" id="name">
 											</td>
 											<td valign="top"></td>
 											<td>
 												<ul id="profileGenderRadio" class="profile_radio clearfix reset">
-													<input type="hidden" id="gender" value="男">
+													<input type="hidden" id="gender" value="${resume.userInfo.sex}">
 													<li class="current">
 														男<em></em>
-														<input type="radio" checked="checked" name="gender" value="男">
+														<input type="radio" checked="checked" name="sex" value="男">
 													</li>
 													<li>
 														女<em></em>
-														<input type="radio" name="gender" value="女">
+														<input type="radio" name="sex" value="女">
 													</li>
 												</ul>
 											</td>
@@ -169,8 +170,8 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" id="topDegree" value="大专" name="topDegree">
-												<input type="button" value="大专" id="select_topDegree" class="profile_select_190 profile_select_normal">
+												<input type="hidden" id="topDegree" value="${resume.userInfo.education}" name="education">
+												<input type="button" value="${resume.userInfo.education}" id="select_topDegree" class="profile_select_190 profile_select_normal">
 												<div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
 													<ul>
 														<li>大专</li>
@@ -185,8 +186,8 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" id="workyear" value="" name="workyear">
-												<input type="button" value="" id="select_workyear" class="profile_select_190 profile_select_normal">
+												<input type="hidden" id="workyear" value="" name="workPre">
+												<input type="button" value="${resume.userInfo.workPre}" id="select_workyear" class="profile_select_190 profile_select_normal">
 												<div class="boxUpDown boxUpDown_190 dn" id="box_workyear" style="display: none;">
 													<ul>
 														<li>应届毕业生</li>
@@ -210,7 +211,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td colspan="3">
-												<input type="text" placeholder="手机号码" value="18644444444" name="tel" id="tel">
+												<input type="text" placeholder="手机号码" value="${resume.userInfo.telphone}" name="telphone" id="tel">
 											</td>
 										</tr>
 										<tr>
@@ -218,14 +219,14 @@
 												<span class="redstar">*</span>
 											</td>
 											<td colspan="3">
-												<input type="text" placeholder="接收面试通知的邮箱" value="jason@qq.com" name="email" id="email">
+												<input type="text" placeholder="接收面试通知的邮箱" value="${resume.userInfo.email}" name="email" id="email">
 											</td>
 										</tr>
 										<tr>
 											<td valign="top"> </td>
 											<td colspan="3">
 												<input type="hidden" id="currentState" value="" name="currentState">
-												<input type="button" value="目前状态" id="select_currentState" class="profile_select_410 profile_select_normal">
+												<input type="button" value="${resume.currentState }" id="select_currentState" class="profile_select_410 profile_select_normal">
 												<div class="boxUpDown boxUpDown_410 dn" id="box_currentState" style="display: none;">
 													<ul>
 														<li>我目前已离职，可快速到岗</li>
@@ -1823,6 +1824,21 @@
 			},
 		};
 		ResumeService.init();
+	</script>
+	<script>
+        function ajax_fun(){
+                     $.ajax({
+                              type:'post',
+                              data:$('#resumeName').val(),
+                              url:'/renameResumeName.action',
+                              success:function(response){
+                                          alert(response);
+
+                               }
+
+                    });
+
+       }
 	</script>
 
 	<div id="cboxOverlay" style="display: none;"></div>
