@@ -254,11 +254,11 @@ var youdao_conv_id = 271546;
 			                        	<c:if test="${job.jobInfo.workExperience==6 }">5年以上</c:if>
 			                        	
 			                        </span>
-			                        <span><em class="c7">最低学历： </em>${job.highistEducation }</span>
+			                        <span><em class="c7">最低学历： </em>${job.highistEducation}</span>
 			                        <br />
-			                        <span><em class="c7">职位诱惑：</em>${job.jobInfo.discription }</span>
+			                        <span><em class="c7">职位诱惑：</em>${job.jobInfo.discription}</span>
 			                        <br />
-			                        <span><fmt:formatDate value="${job.announceTime }" pattern="yyyy-MM-dd"/></span>
+			                        <span><fmt:formatDate value="${job.announceTime}" pattern="yyyy-MM-dd"/></span>
 			                    </div> 
 			                    
 						       <div class="hot_pos_r">

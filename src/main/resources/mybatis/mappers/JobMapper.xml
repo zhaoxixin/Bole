@@ -73,7 +73,7 @@
 		</association>
 		
 	</resultMap>
-	<resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
+	<!-- <resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
 		<id column="job_info_id" property="jobInfoId"/>
 	</resultMap>
 	<resultMap type="cn.bole.pojo.Company" id="companyRM" autoMapping="true">
@@ -85,7 +85,7 @@
 	</resultMap>
 	<resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true">
 		<id column="company_info_id" property="companyInfoId"/>
-	</resultMap>
+	</resultMap> -->
 	
 	
 </mapper>
