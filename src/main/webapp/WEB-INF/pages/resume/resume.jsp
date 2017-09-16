@@ -79,6 +79,7 @@
 					<dd><a href="collections.html">我收藏的职位</a></dd>
 					<dd class="btm"><a href="subscribe.html">我的订阅</a></dd>
 					<dd><a href="create.html">我要招人</a></dd>
+					<dd><a href="${ ctx }/userhome.action">我的个人主页</a></dd>
 					<dd><a href="accountBind.html">帐号设置</a></dd>
 					<dd class="logout"><a rel="nofollow" href="login.html">退出</a></dd>
 				</dl>
@@ -148,7 +149,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="姓名" value="${resume.userInfo.realName}" name="realName" id="name">
+												<input type="text" placeholder="姓名" value="${resume.userInfo.realName}" name="userInfo.realName" id="name">
 											</td>
 											<td valign="top"></td>
 											<td>
@@ -156,11 +157,13 @@
 													<input type="hidden" id="gender" value="${resume.userInfo.sex}">
 													<li class="current">
 														男<em></em>
-														<input type="radio" checked="checked" name="sex" value="男">
+														<!-- <input type="radio" checked="checked" name="userInfo.sex" value="男"> -->
+														<input type="radio" name="userInfo.gender" value="男" <c:if test="${resume.userInfo.gender =='男'}">checked="checked"</c:if>/>
 													</li>
 													<li>
 														女<em></em>
-														<input type="radio" name="sex" value="女">
+														<!-- <input type="radio" name="userInfo.sex" value="女"> -->
+														<input type="radio" name="userInfo.gender" value="女" <c:if test="${resume.userInfo.gender =='女'}">checked="checked"</c:if>/>
 													</li>
 												</ul>
 											</td>
@@ -170,7 +173,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" id="topDegree" value="${resume.userInfo.education}" name="education">
+												<input type="hidden" id="topDegree" value="${resume.userInfo.education}" name="userInfo.education">
 												<input type="button" value="${resume.userInfo.education}" id="select_topDegree" class="profile_select_190 profile_select_normal">
 												<div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
 													<ul>
@@ -186,7 +189,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" id="workyear" value="" name="workPre">
+												<input type="hidden" id="workyear" value="${resume.userInfo.workPre}" name="workPre">
 												<input type="button" value="${resume.userInfo.workPre}" id="select_workyear" class="profile_select_190 profile_select_normal">
 												<div class="boxUpDown boxUpDown_190 dn" id="box_workyear" style="display: none;">
 													<ul>
@@ -240,7 +243,7 @@
 										<tr>
 											<td></td>
 											<td colspan="3">
-												<input type="submit" value="保 存" class="">
+												<a href="${ctx }/saveUserinfo.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -268,13 +271,13 @@
 							<!--end .new_portrait-->
 						</div>
 						<!--end .basicEdit-->
-						<input type="hidden" id="nameVal" value="jason">
-						<input type="hidden" id="genderVal" value="男">
-						<input type="hidden" id="topDegreeVal" value="大专">
-						<input type="hidden" id="workyearVal" value="3年">
-						<input type="hidden" id="currentStateVal" value="">
-						<input type="hidden" id="emailVal" value="jason@qq.com">
-						<input type="hidden" id="telVal" value="18644444444">
+						<input type="hidden" id="nameVal" value="${resume.userInfo.realname}">
+						<input type="hidden" id="genderVal" value="${resume.userInfo.sex}">
+						<input type="hidden" id="topDegreeVal" value="${resume.userInfo.education}">
+						<input type="hidden" id="workyearVal" value="${resume.userInfo.currentState}">
+						<input type="hidden" id="currentStateVal" value="${resume.userInfo.realname}">
+						<input type="hidden" id="emailVal" value="${resume.userInfo.email}">
+						<input type="hidden" id="telVal" value="${resume.userInfo.telphone}">
 						<input type="hidden" id="pageType" value="1">
 					</div>
 					<!--end #basicInfo-->
@@ -389,7 +392,7 @@
 												<ul class="profile_radio clearfix reset">
 													<li class="current">
 														全职<em></em>
-														<input type="radio" checked="" name="type" value="全职">
+														<input type="radio" checked="checked" name="type" value="全职">
 													</li>
 													<li>
 														兼职<em></em>
@@ -404,11 +407,11 @@
 										</tr>
 										<tr>
 											<td>
-												<input type="text" placeholder="期望职位，如：产品经理" value="" name="expectPosition" id="expectPosition">
+												<input type="text" placeholder="期望职位，如：产品经理" value="${resume.expectJob.expectPosition }" name="expectJob.expectPosition" id="expectPosition">
 											</td>
 											<td>
-												<input type="hidden" id="expectSalary" value="" name="expectSalary">
-												<input type="button" value="期望月薪" id="select_expectSalary" class="profile_select_287 profile_select_normal">
+												<input type="hidden" id="expectSalary" value="${resume.expectJob.expectSalary }" name="expectJob.expectSalary">
+												<input type="button" value="${resume.expectJob.expectSalary }" id="select_expectSalary" class="profile_select_287 profile_select_normal">
 												<div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
 													<ul>
 														<li>2k以下</li>
@@ -424,7 +427,8 @@
 										</tr>
 										<tr>
 											<td colspan="2">
-												<input type="submit" value="保 存" class="btn_profile_save">
+												<!-- <input type="submit" value="保 存" class="btn_profile_save"> -->
+												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -440,11 +444,11 @@
 						</div>
 						<!--end .expectAdd-->
 
-						<input type="hidden" id="expectJobVal" value="">
-						<input type="hidden" id="expectCityVal" value="">
-						<input type="hidden" id="typeVal" value="">
-						<input type="hidden" id="expectPositionVal" value="">
-						<input type="hidden" id="expectSalaryVal" value="">
+						<input type="hidden" id="expectJobVal" value="${resume.expectJob.expectJob }">
+						<input type="hidden" id="expectCityVal" value="${resume.expectJob.expectCity }">
+						<input type="hidden" id="typeVal" value="${resume.expectJob.type }">
+						<input type="hidden" id="expectPositionVal" value="${resume.expectJob.expectPosition }">
+						<input type="hidden" id="expectSalaryVal" value="${resume.expectJob.expectSalary }">
 					</div>
 					<!--end #expectJob-->
 
@@ -460,13 +464,13 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="公司名称" name="companyName" class="companyName">
+												<input type="text" placeholder="公司名称" name="workExperience.companyName" class="companyName">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="positionName">
+												<input type="text" placeholder="职位名称，如：产品经理" name="workExperience.positionName" class="positionName">
 											</td>
 										</tr>
 										<tr>
@@ -475,8 +479,8 @@
 											</td>
 											<td>
 												<div class="fl">
-													<input type="hidden" class="companyYearStart" value="" name="companyYearStart">
-													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart">
+													<input type="hidden" class="companyYearStart" value="" name="workExperience.companyYearStart">
+													<input type="button" value="${resume.workExperience.companyYearStart }" class="profile_select_139 profile_select_normal select_companyYearStart">
 													<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>2014</li>
@@ -528,8 +532,8 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart">
+													<input type="hidden" class="companyMonthStart" value="" name="workExperience.companyMonthStart">
+													<input type="button" value="${resume.workExperience.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -554,8 +558,8 @@
 											</td>
 											<td>
 												<div class="fl">
-													<input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd">
+													<input type="hidden" class="companyYearEnd" value="" name="workExperience.companyYearEnd">
+													<input type="button" value="${resume.workExperience.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyYearEnd">
 													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>至今</li>
@@ -608,8 +612,8 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd">
+													<input type="hidden" class="companyMonthEnd" value="" name="workExperience.companyMonthEnd">
+													<input type="button" value="${resume.workExperience.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -633,7 +637,8 @@
 										<tr>
 											<td></td>
 											<td colspan="3">
-												<input type="submit" value="保 存" class="btn_profile_save">
+												<!-- <input type="submit" value="保 存" class="btn_profile_save"> -->
+												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -830,6 +835,7 @@
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
+												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -1053,6 +1059,7 @@
 											<td valign="top"></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
+												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -1233,6 +1240,7 @@
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
+												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -1551,7 +1559,7 @@
 				<!--end .content_r-->
 			</div>
 
-			<input type="hidden" id="userid" name="userid" value="314873">
+			<input type="hidden" id="userId" name="userId" value="${user.userId }">
 
 			<!-------------------------------------弹窗lightbox ----------------------------------------->
 			<div style="display:none;">
