@@ -11,34 +11,54 @@ public class CompanyInfo {
    private String location;
    private String telphone;
    private Integer isFamous;
-   private Integer resum_num;
+   private Integer resumNum;
    private Job job;
-   private Integer userresum_state;
-   private String charge_person;
+   private Integer userresumState;
+   private String chargePerson;
    //private Job job;
    
 public Integer getCompanyInfoId() {
 	return companyInfoId;
 }
-public Integer getUserresum_state() {
-	return userresum_state;
-}
-public void setUserresum_state(Integer userresum_state) {
-	this.userresum_state = userresum_state;
-}
-public String getCharge_person() {
-	return charge_person;
-}
-public void setCharge_person(String charge_person) {
-	this.charge_person = charge_person;
+
+
+
+public Integer getResumNum() {
+	return resumNum;
 }
 
-public Integer getResum_num() {
-	return resum_num;
+
+
+public void setResumNum(Integer resumNum) {
+	this.resumNum = resumNum;
 }
-public void setResum_num(Integer resum_num) {
-	this.resum_num = resum_num;
+
+
+
+public Integer getUserresumState() {
+	return userresumState;
 }
+
+
+
+public void setUserresumState(Integer userresumState) {
+	this.userresumState = userresumState;
+}
+
+
+
+public String getChargePerson() {
+	return chargePerson;
+}
+
+
+
+public void setChargePerson(String chargePerson) {
+	this.chargePerson = chargePerson;
+}
+
+
+
 public Job getJob() {
 	return job;
 }

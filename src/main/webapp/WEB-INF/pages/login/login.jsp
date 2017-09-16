@@ -143,7 +143,7 @@ $(function(){
 	            			window.location.href='/userhome.action';	
 	            		}
 	            		if(result.type==1){
-	            			window.location.href='/companyhome.action';
+	            			window.location.href='/companyResumes.action';
 	            		}
 	            	}else{
 	            		alert("账户或密码有错")
