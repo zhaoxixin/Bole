@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
-<script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
+<script id="allmobilize" charset="utf-8" src="${ctx}/style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
@@ -23,20 +23,20 @@
 } 
 </style>
  
-<script type="text/javascript" src="${ctx }/style/js/chosen.jquery.js"></script>
+<script type="text/javascript" src="${ctx}/style/js/chosen.jquery.js"></script>
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
 var ctx = "h";
 console.log(1);
 </script>
 <link rel="Shortcut Icon" href="http://www.lagou.com/h/images/favicon.ico">
-<link rel="stylesheet" type="text/css" href="style/css/style.css"/>
-<link rel="stylesheet" type="text/css" href="style/css/external.min.css"/>
-<link rel="stylesheet" type="text/css" href="style/css/popup.css"/>
-<script src="style/js/jquery.1.10.1.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="style/js/jquery.lib.min.js"></script>
-<script src="style/js/ajaxfileupload.js" type="text/javascript"></script>
-<script type="text/javascript" src="style/js/additional-methods.js"></script>
+<link rel="stylesheet" type="text/css" href="${ctx}/style/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="${ctx}/style/css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="${ctx}/style/css/popup.css"/>
+<script src="${ctx}/style/js/jquery.1.10.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="${ctx}/style/js/jquery.lib.min.js"></script>
+<script src="${ctx}/style/js/ajaxfileupload.js" type="text/javascript"></script>
+<script type="text/javascript" src="${ctx}/style/js/additional-methods.js"></script>
 
 <!--[if lte IE 8]>
     <script type="text/javascript" src="style/js/excanvas.js"></script>
@@ -46,18 +46,18 @@ var youdao_conv_id = 271546;
 
 
 </script> 
-<script type="text/javascript" src="style/js/conv.js"></script>
+<script type="text/javascript" src="${ctx}/style/js/conv.js"></script>
 </head>
 <body>
 <div id="body">
 	<div id="header">
     	<div class="wrapper">
     		<a href="index.html" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
+    			<img src="${ctx}/style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li ><a href="index.html">首页</a></li>
-    			<li ><a href="#" target="_blank">名企专区</a></li>
+    			<li ><a href="${ctx}">首页</a></li>
+    			<li ><a href="${ctx}/companyhome" target="_blank">名企专区</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
             	<c:if test="${ sessionScope.user1 == null }">
@@ -139,20 +139,20 @@ var youdao_conv_id = 271546;
 		            </div>
 		                                
             <!-- 对外合作广告位  -->
-             	            		        	<a href="http://www.w3cplus.com/" target="_blank" class="partnersAd">
-		            	<img src="style/images/w3cplus.png" width="230" height="80" alt="w3cplus" />
+             	  <a href="http://www.w3cplus.com/" target="_blank" class="partnersAd">
+		            	<img src="${ctx}/style/images/w3cplus.png" width="230" height="80" alt="w3cplus" />
 		            </a>
 		            <a href="" target="_blank" class="partnersAd">
-		            	<img src="style/images/jquery_school.jpg" width="230" height="80" alt="JQ学校" />
+		            	<img src="${ctx}/style/images/jquery_school.jpg" width="230" height="80" alt="JQ学校" />
 		            </a>
 		                                	            <a href="http://linux.cn/" target="_blank" class="partnersAd">
-	            	<img src="style/images/linuxcn.png" width="230" height="80" alt="Linux中文社区"  />
+	            	<img src="${ctx}/style/images/linuxcn.png" width="230" height="80" alt="Linux中文社区"  />
 	            </a>
 	            <a href="http://zt.zhubajie.com/zt/makesite? utm_source=lagou.com&utm_medium=referral&utm_campaign=BD-yl" target="_blank" class="partnersAd">
-	            	<img src="style/images/zhubajie.jpg" width="230" height="80" alt="猪八戒" />
+	            	<img src="${ctx}/style/images/zhubajie.jpg" width="230" height="80" alt="猪八戒" />
 	            </a>
 	            <a href="http://www.imooc.com" target="_blank" class="partnersAd">
-	            	<img src="style/images/muke.jpg" width="230" height="80" alt="幕课网" />
+	            	<img src="${ctx}/style/images/muke.jpg" width="230" height="80" alt="幕课网" />
 	            </a>
 	        	       	<!-- 	            <a href="http://www.osforce.cn/" target="_blank" class="partnersAd">
 	            	<img src="style/images/osf-lg.jpg" width="230" height="80" alt="开源力量"  />
@@ -265,7 +265,8 @@ var youdao_conv_id = 271546;
 			                        <br />
 			                        <span><em class="c7">职位诱惑：</em>${job.jobInfo.discription}</span>
 			                        <br />
-			                        <%-- <span><fmt:formatDate value="${job.announceTime}" pattern="yyyy-MM-dd"/></span> --%>
+			                       <%-- <span><fmt:formatDate value="${job.announceTime}" pattern="yyyy-MM-dd"/></span> --%>
+			                        
 			                    </div>  
 			                    
 						       <div class="hot_pos_r">

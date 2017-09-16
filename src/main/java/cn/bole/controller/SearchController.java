@@ -50,6 +50,7 @@ public class SearchController {
 			@PathVariable String industryId,
 			@PathVariable String professionId){
 		List<Job> jobList = jobService.findJob(city,industryId,professionId);
+		System.out.println(jobList.get(0).getAnnounceTime());
 		model.addAttribute("jobList",jobList);
 		return "job/list";
 	}

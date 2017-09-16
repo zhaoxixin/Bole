@@ -96,8 +96,8 @@ $("#ctname").html($(this).html());
     		</a>
     		<ul class="reset" id="navheader">
     			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/companyhome" >企业入口</a></li>
-    			<li ><a href="#" target="_blank">名企专区</a></li>
+    			<li ><a href="${ctx }/toLogin.action" >企业入口</a></li>
+    			<li ><a href="${ctx }/companyhome" target="_blank">名企专区</a></li>
 
     		    <li ><a href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
