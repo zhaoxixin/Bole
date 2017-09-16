@@ -146,7 +146,7 @@ $(function(){
 	            			window.location.href='/companyhome.action';
 	            		}
 	            	}else{
-	            		alert("账户或密码有错！")
+	            		alert("账户或密码有错")
 						$('#beError').text(result.msg).show();
 	            	}
 					$(form).find(":submit").attr("disabled", false);
