@@ -45,7 +45,7 @@ public class SearchController {
 		model.addAttribute("jobList",jobList);
 		return "job/list";
 	}
-	@RequestMapping("/findJob/{city}/{industryId}/{professionId}")
+	@RequestMapping("/{city}/{industryId}/{professionId}/findJob")
 	public String searchJob(Model model,@PathVariable String city,
 			@PathVariable String industryId,
 			@PathVariable String professionId){

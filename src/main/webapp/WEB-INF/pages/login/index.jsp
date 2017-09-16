@@ -71,7 +71,8 @@ $("#ctname").html($(this).html());
  <script type="text/javascript">
  	function findJob(industryId,professionId){
  		var city = $("#ctname").text();
- 		location.href="${ctx}/findJob/city/industryId/professionId";
+
+ 		location.href='${ctx}/'+city+'/'+industryId+'/'+professionId+'/findJob.action';
  		
  	}
  	
@@ -183,7 +184,7 @@ $("#ctname").html($(this).html());
         	<li data-searchtype="4">公司</li>
         </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="text" id="search_input" name = "jobName"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
         <input type="hidden" name="spc" id="spcInput" value=""/>
         <input type="hidden" name="pl" id="plInput" value=""/>
