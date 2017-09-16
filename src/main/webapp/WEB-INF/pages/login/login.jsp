@@ -43,8 +43,7 @@ var youdao_conv_id = 271546;
             <div id="cloud_s"><img src="style/images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
             <div id="cloud_m"><img src="style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>
         </div>
-        
-    	<input type="hidden" id="resubmitToken" value="" />		
+        <input type="hidden" id="resubmitToken" value="9b207beb1e014a93bc852b7ba450db27" />		
 		 <div class="login_box">
         	<form id="loginForm" >
         		<ul class="register_radio clearfix">
@@ -85,6 +84,9 @@ var youdao_conv_id = 271546;
 
 <script type="text/javascript">
 $(function(){
+	$('.register_radio li input').click(function(e){
+		$(this).parent('li').addClass('current').append('<em></em>').siblings().removeClass('current').find('em').remove();
+	});
 	//验证表单
 	 	$("#loginForm").validate({
 	 		/* onkeyup: false,

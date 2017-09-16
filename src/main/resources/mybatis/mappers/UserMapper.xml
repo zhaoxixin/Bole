@@ -12,7 +12,16 @@
     		#{password}
     	) 
     </insert>
-	<select id="findUser" resultType="cn.bole.pojo.User">
-    	select * from user where email=#{email} and password=#{password}
+	<select id="findUser" resultMap="UserRm">
+    	select USER_ID,password,USER_INFO_ID,realname,u.email
+		from user u,user_info i 
+		where u.email=#{email} and u.password=#{password} and i.email=#{email}
     </select>
+    <resultMap type="cn.bole.pojo.User" id="UserRm" autoMapping="true">
+    	<id column="user_id" property="userId"/>
+    	<association property="userInfo" javaType="cn.bole.pojo.UserInfo">
+    		<id column="user_id"  property="userInfoId"/>
+    		<result column="realname" property="realname"/>
+    	</association>
+    </resultMap>
 </mapper>

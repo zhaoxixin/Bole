@@ -16,7 +16,7 @@
 
 <!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
 <script type="text/javascript">
-var ctx = "http://www.lagou.com";
+//var ctx = "http://www.lagou.com";
 console.log(1);
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
@@ -63,21 +63,22 @@ var youdao_conv_id = 271546;
 		                    <div class="formWrapper">
 		                    	<input type="hidden" name="userInfoId" value="${userId}">
 		                        <h3>你的真实名称(⊙o⊙)哦</h3>
-		                        <input type="text" placeholder="${userInfo.realname}" name="realname" id="name0">		                        
+		                        <input type="text" placeholder="${userInfo.realname}" name="realname" id="name0" readonly="readonly">		                        
 		                        <h3>你的性别(⊙o⊙)哦</h3>				         
-						        <input type="text" placeholder="${userInfo.sex}" name="realname" id="name1">
+						        <input type="text" placeholder="${userInfo.sex}" name="realname" id="name1" readonly="readonly">
 		                        <h3>你的学历(⊙o⊙)哦</h3> 	                        
-								<input type="text" placeholder=" ${userInfo.education}   " name="education" id="education">	                                    
+								<input type="text" placeholder=" ${userInfo.education}   " name="education" id="education" readonly="readonly">	                                    
 		                        <h3>你的工作时间(⊙o⊙)哦</h3>
-								<input type="text" placeholder="${userInfo.workPre}" name="workPre" id="workPre">
+								<input type="text" placeholder="${userInfo.workPre}" name="workPre" id="workPre" readonly="readonly">
 		                        <h3>你的手机号(⊙o⊙)哦</h3>
-		                        <input type="text" placeholder="${userInfo.telphone}" name="telphone" id="telphone">	
+		                        <input type="text" placeholder="${userInfo.telphone}" name="telphone" id="telphone" readonly="readonly">	
 		                        <h3>你的邮箱(⊙o⊙)哦</h3>
 		                        <input type="text" placeholder="${userInfo.email}" name="email" id="email"  readonly="readonly">
 		                    </div>
 	                    </div>                 
                    		<div class="clear"></div>
-                    	<input type="submit" value="保存" id="step4Submit" class="btn_big fr">
+                    	<input type="button" value="回到个人主页" id="step4Submit" class="btn_big fr" onClick="location='/userhome.action'">
+                               	
                     </form>
                 </dd>
             </dl>

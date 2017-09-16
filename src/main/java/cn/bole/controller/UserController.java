@@ -16,7 +16,9 @@ public class UserController {
 	@Autowired
 	UserInfoService userInfoService;
 	@RequestMapping("/userhome.action")
-	public String toUserHome(){
+	public String toUserHome(HttpSession session,Model model){
+		User user1=(User)session.getAttribute("User1");
+		model.addAttribute("user1", user1);
 		return "/user/userhome";
 	}
 	@RequestMapping("/userinfo.action")

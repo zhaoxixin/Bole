@@ -7,6 +7,6 @@
 		select * from user_info where user_info_id=#{userId}
 	</select>
 	<insert id="save">
-		insert into user_info(user_info_id) values(#{userInfoId})
+		insert into user_info(user_info_id,email,realname) values(#{userInfoId},#{email},#{realname})
 	</insert>
 </mapper>

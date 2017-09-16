@@ -100,7 +100,7 @@ $("#ctname").html($(this).html());
 
     		    <li ><a href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
-	    		<li ><a href="/home.action" rel="nofollow">后台管理</a></li>
+	    		<!-- <li ><a href="/home.action" rel="nofollow">后台管理</a></li> -->
 	    	</ul>
             <ul class="loginTop">
 					<!-- <li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
@@ -108,16 +108,23 @@ $("#ctname").html($(this).html());
 					<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li> -->
 					
 					
-					<c:if test="${ sessionScope.user1 == null }">
+					<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null}">
 						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
-					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+					<c:if test="${ sessionScope.user1 != null }">
+						    欢迎 ${ user1.userInfo.realname } 回来
 						  &nbsp;|&nbsp;
 						<a href="${ ctx }/logout.action">退出</a>
-					 </c:if>
+					</c:if>
+					<c:if test="${ sessionScope.admin != null }">
+						    欢迎 ${ admin.userInfo.realname } 回来
+						  &nbsp;|&nbsp;
+						<a href="${ ctx }/logout.action">退出</a>
+						 &nbsp;|&nbsp;
+						<a href="/home.action" >后台管理</a>
+					</c:if>
 				</ul>
 
              </div>
