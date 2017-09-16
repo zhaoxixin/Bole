@@ -130,9 +130,9 @@ var youdao_conv_id = 271546;
     	//验证表单
 	    	 $("#userForm").validate({
 	    	        rules: {
-	    	        	realName:{
+	    	        	realname:{
 	    	        		required: true,
-	    	        		rangelength: [6,11]
+	    	        		rangelength: [1,11]
 	    	        	},
 	    	        	telphone:{
 	    	        		required: true,
@@ -140,13 +140,13 @@ var youdao_conv_id = 271546;
 	    	        	}
 			    	},
 			    	messages: {
-			    		realName:{
+			    		realname:{
 	    	        		required: "请写出你的真实姓名",
-	    	        		rangelength: "请输入6-11位的姓名"
+	    	        		rangelength: "请输入11位以下的姓名"
 	    	        	},
 	    	        	telphone: {
 			    	    	required: "请输入手机号",
-			    	    	email: "请输入正确的手机号"
+			    	    	rangelength: "请输入正确的手机号"
 			    	   	}
 			    	}
 	    	});

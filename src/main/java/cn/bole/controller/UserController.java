@@ -39,9 +39,30 @@ public class UserController {
 		return "user/updateUserInfo";		
 	}
 	//编写详细信息页面
-		@RequestMapping("/updateUserInfo.action")
-		public String updateUserInfo(UserInfo userInfo){	
-			userInfoService.updateUserInfo(userInfo);		
-			return "user/userhome";
-		}
+	@RequestMapping("/updateUserInfo.action")
+	public String updateUserInfo(UserInfo userInfo){	
+		userInfoService.updateUserInfo(userInfo);		
+		return "user/userhome";
+	}
+	@RequestMapping("/toFindJob.action")
+	public String toFindJob(){
+		return "user/userlookJob";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

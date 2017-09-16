@@ -53,19 +53,19 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                	<dd style="display: none;"><a rel="nofollow" href="jianli.html">我的简历</a></dd>
-                	                	<dd style="display: none;"><a href="collections.html">我收藏的职位</a></dd>
-                	                	                	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn">(0)</span></a></dd>
+                                		<dd style="display: none;"><a rel="nofollow" href="jianli.html">我的简历</a></dd>
+                	                	<!-- <dd style="display: none;"><a href="collections.html">我收藏的职位</a></dd>
                 	                	<dd class="btm" style="display: none;"><a href="subscribe.html">我的订阅</a></dd>
+                	                	<dd style="display: none;"><a href="create.html">我要招人</a></dd> -->
+                	                	<dd style="display: none;"><a href="${ctx }/toFindJob.action">搜索职位 <span id="searchPosition" class="red dn"></span></a></dd>
+                	                	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn"></span></a></dd>
                 	                	<dd class="btm" style="display: none;"><a href="/userinfo.action">我的基本信息</a></dd>
-                	<dd style="display: none;"><a href="create.html">我要招人</a></dd>
-                                                <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
-                                <dd class="logout" style="display: none;"><a rel="nofollow" href="${ctx}/logout.action">退出</a></dd>
+                                		<dd class="logout" style="display: none;"><a rel="nofollow" href="${ctx}/logout.action">退出</a></dd>
             </dl>
                                     <div class="dn" id="noticeTip">
             	<span class="bot"></span>
-				<span class="top"></span>
-				<a target="_blank" href="delivery.html"><strong>0</strong>条新投递反馈</a>
+				<span class="top"></span> 
+				<a target="_blank" href="delivery.html"><strong>0</strong>简历投递反馈</a>
 				<a class="closeNT" href="javascript:;"></a>
             </div>
                     </div>

@@ -113,17 +113,17 @@ $("#ctname").html($(this).html());
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
-					<c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.userInfo.realname } 回来
+					<c:if test="${sessionScope.user1 != null }">
+						 <font color="6633745">欢迎 ${user1.userInfo.realname }回来</font>
 						  &nbsp;|&nbsp;
-						<a href="${ ctx }/logout.action">退出</a>
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 					</c:if>
-					<c:if test="${ sessionScope.admin != null }">
-						    欢迎 ${ admin.userInfo.realname } 回来
+					<c:if test="${sessionScope.admin != null }">
+						  <font color="6633745">欢迎 ${admin.userInfo.realname }回来</font>
 						  &nbsp;|&nbsp;
-						<a href="${ ctx }/logout.action">退出</a>
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 						 &nbsp;|&nbsp;
-						<a href="/home.action" >后台管理</a>
+						<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
 					</c:if>
 				</ul>
 

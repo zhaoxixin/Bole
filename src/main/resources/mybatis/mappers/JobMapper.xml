@@ -6,21 +6,29 @@
 
 	<select id="findJob" resultMap="jobRM">
 		select * from 
-		job,job_info
-		where job.job_id=job_info.job_info_id
-		and industry_id=#{industryId}
-		and profession_id=#{professionId}
+		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.j_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and industry_id=#{industryid}
+		and profession_id=#{professionid}
 		and city=#{city}
 		and state=1
 	</select>
 	
 	<select id="findNewJob" resultMap="jobRM">
 		 select * from
-		(select * from
-		job
-		left join
-		job_info
-		on job.job_id=job_info.job_info_id
+		(select * from 
+		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.j_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
 		and state=1) uup 
 		where uup.job_id in
 		(
@@ -31,30 +39,53 @@
 	</select> 
 	 <select id="findHotJob" resultMap="jobRM">
 		select * from 
-		job,job_info
-		where job.job_id=job_info.job_info_id
+		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.j_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
 		and is_hot=1
 		and state=1
 	</select>
 	
 	<select id="findJobByName" resultMap="jobRM">
 		select * from 
-		job,job_info
-		where job.job_id=job_info.job_info_id
-		and job_name=#{jobName}
+		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.j_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and job_name=#{jobname}
 		and state=1
 	</select>
 	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
 		<id column="job_id" property="jobId"/>
 		<association property="jobInfo" resultMap="jobInfoRM">
-			
+			<id column="job_info_id" property="jobInfoId"/>
+		</association>
+		<association property="company" resultMap="companyRM" >
+			<id column="company_id" property="companyId"/>			
 		</association>
 		
 	</resultMap>
-	<resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
+	<!-- <resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
 		<id column="job_info_id" property="jobInfoId"/>
 	</resultMap>
+	<resultMap type="cn.bole.pojo.Company" id="companyRM" autoMapping="true">
+		<id column="company_id" property="companyId"/>
+		<association property="companyInfo" resultMap="companyInfoRM">
+			<id column="company_info_id" property="companyId"/>
+		</association>
+	
+	</resultMap>
+	<resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true">
+		<id column="company_info_id" property="companyInfoId"/>
+	</resultMap> -->
 	
 	
 </mapper>

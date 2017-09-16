@@ -170,7 +170,7 @@ var youdao_conv_id = 271546;
 			                                    <i></i>
 			                                </label>
 			                                <!--开始更改简历显示-->
-			                                <c:forEach>
+			                               <%--  <c:forEach> --%>
 			                                <div class="resumeShow">
 			                                		<a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
 			                                    	<img src="style/images/default_headpic.png">
@@ -203,7 +203,7 @@ var youdao_conv_id = 271546;
                                               </a>
 			                                    </div>
 			                                </div>
-			                                </c:forEach>
+			                                <%-- </c:forEach> --%>
 			                            </li>
 		                            		                    	</ul><!-- end .resumeLists -->
 		                    		                    				            </form>
