@@ -8,4 +8,5 @@ public interface IndustryService {
 
 	public List<Industry> findAllIndustry();
 
+	
 }

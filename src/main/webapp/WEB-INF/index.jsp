@@ -1,5 +1,5 @@
 ﻿<%@ page contentType="text/html; charset=utf-8"%>
-<%@ include file="../base.jsp" %>
+
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE HTML>
@@ -175,7 +175,7 @@ $("#ctname").html($(this).html());
         	<li data-searchtype="4">公司</li>
         </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="text" id="search_input" name = "jobName"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
         <input type="hidden" name="spc" id="spcInput" value=""/>
         <input type="hidden" name="pl" id="plInput" value=""/>

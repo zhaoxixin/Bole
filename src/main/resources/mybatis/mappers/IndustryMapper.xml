@@ -7,9 +7,10 @@
 	<select id="findAllIndustry" resultMap="industryRM">
 		select * from industry i
 		left join 
-		(select profession_id,profession_name,industry_id p_id from profession)p
+		(select profession_id,profession_name,industry_id p_id from profession) p
 		on i.industry_id=p.p_id
 	</select>
+	
 	<resultMap type="cn.bole.pojo.Industry" id="industryRM" autoMapping="true">
 		<id column="industry_id" property="industryId"/>
 		<collection property="professionList" ofType="cn.bole.pojo.Profession">
@@ -18,7 +19,5 @@
 		</collection>
 		
 	</resultMap>
-
-
 
 </mapper>

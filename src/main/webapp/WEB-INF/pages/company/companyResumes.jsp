@@ -43,7 +43,7 @@ var youdao_conv_id = 271546;
     		</a>
     		<ul id="navheader" class="reset">
     			<li><a href="index.jsp">首页</a></li>
-    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">公司</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='createcompany.action'">公司</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='/.action'">公司简历管理</a></li>
 	    				</ul>
         	        	<dl class="collapsible_menu">
@@ -52,17 +52,14 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                <dd><a href="javascript:void(0)" onclick="location.href='/.action'">简历管理</a></dd>
-                <dd><a href="javascript:void(0)" onclick="location.href='/.action'">发布职位 <span id="noticeNo" class="red dn">(0)</span></a></dd>
-                <dd class="btm"><a href="subscribe.html">我的订阅</a></dd>
+                <dd><a href="javascript:void(0)" onclick="location.href='/.action'">公司信息更改</a></dd>
                 <dd><a href="create.html">我要招人</a></dd>
-                <dd><a href="accountBind.html">帐号设置</a></dd>
-                <dd class="logout"><a rel="nofollow" href="login.html">退出</a></dd>
+                <dd class="logout"><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></dd>
             </dl>
                                     <div class="dn" id="noticeTip">
             	<span class="bot"></span>
 				<span class="top"></span>
-				<a target="_blank" href="delivery.html"><strong>0</strong>条新投递反馈</a>
+				<a target="_blank" href="delivery.html"><strong>${company.}</strong>条简历数量</a>
 				<a class="closeNT" href="javascript:;"></a>
             </div>
                     </div>

@@ -11,6 +11,7 @@ public class CompanyInfo {
    private String location;
    private String telphone;
    private Integer isFamous;
+
    //private Job job;
 public Integer getCompanyInfoId() {
 	return companyInfoId;
