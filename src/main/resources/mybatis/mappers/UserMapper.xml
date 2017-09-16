@@ -7,7 +7,7 @@
     
     <insert id="save" parameterType="cn.bole.pojo.User">
     	insert into user (user_id,email,password) values(
-    		#{id},
+    		#{userId},
     		#{email},
     		#{password}
     	) 

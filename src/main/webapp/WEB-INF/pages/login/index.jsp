@@ -91,15 +91,16 @@ $("#ctname").html($(this).html());
     	  <div id="header">
     	     <div class="wrapper">
     		<a href="${ctx }" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
+    			<img src="${ctx }/style/images/logo.png" width="229" height="43" alt="伯乐招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
     			<li class="current"><a href="${ctx }">首页</a></li>
     			<li ><a href="${ctx }/companyhome" >企业入口</a></li>
     			<li ><a href="#" target="_blank">名企专区</a></li>
 
-    		    <li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
+    		    <li ><a href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
+	    		<li ><a href="/home.action" rel="nofollow">后台管理</a></li>
 	    	</ul>
             <ul class="loginTop">
 					<!-- <li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
