@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import cn.bole.pojo.Company;
+import cn.bole.pojo.User;
 import cn.bole.service.CompanyService;
 
 @Controller
@@ -28,8 +29,10 @@ public class CompanyController {
      //跳转到公司招聘首页
      
      @RequestMapping("/companyResumes")
-     public String reserver(){
+     public String reserver(String companyInfoId,Model model){
     	 //return "/company/autoFilterResumes";
+    	 User companyuser = companyService.findUserBycomId(companyInfoId);
+    	 model.addAttribute("companyuser", companyuser);
     	 return "/company/companyResumes";
      }
      
@@ -42,4 +45,6 @@ public class CompanyController {
     	 session.setAttribute("company", company);
     	 return "myhome";
      }
+     
+     
 }

@@ -52,7 +52,7 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                <dd><a href="javascript:void(0)" onclick="location.href='/.action'">公司信息更改</a></dd>
+                <dd><a href="javascript:void(0)" onclick="location.href='/.action'">公司信息管理</a></dd>
                 <dd><a href="create.html">我要招人</a></dd>
                 <dd class="logout"><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></dd>
             </dl>

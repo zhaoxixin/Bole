@@ -5,7 +5,7 @@ public class CompanyInfo {
    private String companyName;
    private String nature;
    private Integer scale;
-   private String industry;
+   private Integer industryId;
    private String introduction;
    private String address;
    private String location;
@@ -13,11 +13,26 @@ public class CompanyInfo {
    private Integer isFamous;
    private Integer resum_num;
    private Job job;
+   private Integer userresum_state;
+   private String charge_person;
    //private Job job;
    
 public Integer getCompanyInfoId() {
 	return companyInfoId;
 }
+public Integer getUserresum_state() {
+	return userresum_state;
+}
+public void setUserresum_state(Integer userresum_state) {
+	this.userresum_state = userresum_state;
+}
+public String getCharge_person() {
+	return charge_person;
+}
+public void setCharge_person(String charge_person) {
+	this.charge_person = charge_person;
+}
+
 public Integer getResum_num() {
 	return resum_num;
 }
@@ -51,12 +66,7 @@ public Integer getScale() {
 public void setScale(Integer scale) {
 	this.scale = scale;
 }
-public String getIndustry() {
-	return industry;
-}
-public void setIndustry(String industry) {
-	this.industry = industry;
-}
+
 public String getIntroduction() {
 	return introduction;
 }
@@ -86,6 +96,12 @@ public Integer getIsFamous() {
 }
 public void setIsFamous(Integer isFamous) {
 	this.isFamous = isFamous;
+}
+public Integer getIndustryId() {
+	return industryId;
+}
+public void setIndustryId(Integer industryId) {
+	this.industryId = industryId;
 }
    
 }

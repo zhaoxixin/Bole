@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import cn.bole.mapper.CompanyMapper;
 import cn.bole.pojo.Company;
+import cn.bole.pojo.User;
 import cn.bole.service.CompanyService;
 @Service
 public class CompanyServiceImpl implements CompanyService {
@@ -30,6 +31,11 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyMapper.findCompanyEmailAndPassword(email,password);
 		
 		
+	}
+
+	@Override
+	public User findUserBycomId(String companyInfoId) {
+		return companyMapper.findUserBycomId(companyInfoId);
 	}
 
 	
