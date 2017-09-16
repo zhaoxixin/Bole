@@ -237,7 +237,7 @@ var youdao_conv_id = 271546;
             	  	<c:forEach items="${jobList }" var="job">
 	                  <li class="odd clearfix">
 			                  <div class="hot_pos_l">
-			                    <div class="mb10">
+			                     <div class="mb10">
 			                       <a href="${ctx }/jobDetails"  target="_blank">${job.jobName }</a> 
 			                            &nbsp;
 			                       <span class="c9">${job.jobInfo.city }</span>
@@ -265,8 +265,8 @@ var youdao_conv_id = 271546;
 			                        <br />
 			                        <span><em class="c7">职位诱惑：</em>${job.jobInfo.discription}</span>
 			                        <br />
-			                        <span><fmt:formatDate value="${job.announceTime}" pattern="yyyy-MM-dd"/></span>
-			                    </div> 
+			                        <%-- <span><fmt:formatDate value="${job.announceTime}" pattern="yyyy-MM-dd"/></span> --%>
+			                    </div>  
 			                    
 						       <div class="hot_pos_r">
 			                       <div class="apply">
@@ -296,7 +296,7 @@ var youdao_conv_id = 271546;
 			                    </div>
 			                 </li>
 			               </c:forEach>
-	                    </ul>
+	                    </ul> 
 	                  <div class="Pagination"></div>
             	    </div>	
 

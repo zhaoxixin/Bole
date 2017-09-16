@@ -359,8 +359,8 @@ $("#ctname").html($(this).html());
                             </ul>
             
             <ul class="reset hotabbing">
-            	            		<li class="current"><a href="${ctx }/findNewJob">热门职位</a></li>
-            	            	    <li><a href="${ctx }/findHotJob">最新职位</a></li>
+            	            		<li class="current"><a href="${ctx }/findHotJob">热门职位</a></li>
+            	            	    <li><a href="${ctx }/findNewJob">最新职位</a></li>
             </ul>
             
 	                        	            				            		
