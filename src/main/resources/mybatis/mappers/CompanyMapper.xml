@@ -31,7 +31,10 @@
      where company_info_id = #{companyInfoId}    
 </select>
 
-
+<!--通过Id获取User信息-->
+<select id="findUserBycomId" resultMap="companyuserRM">
+   select * from 
+</select>
 
 </mapper>
 
