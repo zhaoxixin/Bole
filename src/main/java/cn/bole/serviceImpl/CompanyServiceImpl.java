@@ -19,6 +19,19 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyMapper.findCompanyAll();
 	}
 
+	@Override
+	public Company findCompanyById(String companyInfoId) {
+
+		return companyMapper.findCompanyById(companyInfoId);
+	}
+
+	@Override
+	public Company findCompanyEmailAndPassword(String email, String password) {
+		return companyMapper.findCompanyEmailAndPassword(email,password);
+		
+		
+	}
+
 	
 	
 	

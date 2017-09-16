@@ -3,7 +3,7 @@ package cn.bole.pojo;
 public class CompanyInfo {
    private Integer companyInfoId;
    private String companyName;
-   private Integer nature;
+   private String nature;
    private Integer scale;
    private String industry;
    private String introduction;
@@ -11,6 +11,7 @@ public class CompanyInfo {
    private String location;
    private String telphone;
    private Integer isFamous;
+
    //private Job job;
 public Integer getCompanyInfoId() {
 	return companyInfoId;
@@ -24,10 +25,10 @@ public String getCompanyName() {
 public void setCompanyName(String companyName) {
 	this.companyName = companyName;
 }
-public Integer getNature() {
+public String getNature() {
 	return nature;
 }
-public void setNature(Integer nature) {
+public void setNature(String nature) {
 	this.nature = nature;
 }
 public Integer getScale() {

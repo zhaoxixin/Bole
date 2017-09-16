@@ -13,12 +13,16 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.bole.pojo.Company;
 import cn.bole.pojo.User;
+import cn.bole.service.CompanyService;
 import cn.bole.service.UserService;
 @Controller
 public class LoginController {
 	@Autowired
 	UserService userService;
+	@Autowired
+	CompanyService companyService;
 	//去登陆
 	@RequestMapping("/toLogin")
 	public String toLogin(){
@@ -50,13 +54,21 @@ public class LoginController {
 		        //将用户加入到session中
 		        session.setAttribute("user1",user1);
 		        result.put("msg", "success"); 
-		        //for test git  zhxn
+		        result.put("type", type);
 	 	        return result; 	
 	        }
 	        //判断是否为一个公司
 	        if(Integer.parseInt(type)==1){
-	        	//这需要你来写逻辑
+	        Company company = companyService.findCompanyEmailAndPassword(email,password);
+	        if(company==null){
+	        	result.put("msg", "用户名或者密码错误!");  
+	            return result;  
 	        }
-	        return result;   
-	}
+	        session.setAttribute("company",company);
+	        result.put("msg", "success"); 
+	        result.put("type", type);
+	        return result; 	
+	        }
+	        return result;
+}
 }

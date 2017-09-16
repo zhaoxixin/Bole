@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <!DOCTYPE HTML>
 <html>
@@ -139,9 +139,14 @@ $(function(){
 	            	if(result.msg=='success'){
 	            		alert("登录成功！")
 
-	            		window.location.href='/.action';	
+	            		if(result.type==0){
+	            			window.location.href='/.action';	
+	            		}
+	            		if(result.type==1){
+	            			window.location.href='/companyhome.action';
+	            		}
 	            	}else{
-	            		alert("账户或密码有错！")
+	            		alert("账户或密码有错")
 						$('#beError').text(result.msg).show();
 	            	}
 					$(form).find(":submit").attr("disabled", false);
