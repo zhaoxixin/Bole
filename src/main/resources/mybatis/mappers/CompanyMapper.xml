@@ -32,9 +32,9 @@
 </select>
 
 <!--通过Id获取User信息-->
-<select id="findUserBycomId" resultMap="companyuserRM">
+<!-- <select id="findUserBycomId" resultMap="companyuserRM">
    select * from 
-</select>
+</select> -->
 
 </mapper>
 
