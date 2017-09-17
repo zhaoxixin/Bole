@@ -81,8 +81,8 @@ public class CompanyController {
      
      //保存新的职位
      @RequestMapping("/savaJob")
-     public String saveJob(Integer jobId){
-    	 Job saveJob=jobService.saveJob(jobId);
+     public String saveJob(Job job){
+    	 jobService.saveJob(job);
     	 return "redirect:/company/positions";
      }
      

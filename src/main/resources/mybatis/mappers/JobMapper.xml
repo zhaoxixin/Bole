@@ -98,16 +98,15 @@
 	
 	<!-- lcj根据jobId添加job -->
 	 <insert id="saveJob">
-	     insert into job values(
+	     insert into job(job_id,job_name,job_nature,highist_Education,announce_time) values(
+			#{jobId},
 			#{jobName},
 			#{jobNature},
-			#{city},
-			#{jobInfo.workExperience},
 			#{highistEducation},
-			#{announceTime},
-			#{jobInfo.discription}		
+			#{announceTime}	
 		)
 	 </insert>
+	 
 	 
 	 
 	 

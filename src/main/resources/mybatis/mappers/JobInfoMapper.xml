@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.JobInfoMapper">
+
+	
+	
+	<!-- lcj根据jobId添加job -->
+	 <insert id="saveJobInfo">
+	     insert into job(city,work_experience,discription) values(
+			#{jobInfo.city},
+			#{jobInfo.workExperience},
+			#{jobInfo.discription}		
+		)
+	 </insert>
+	 
+	 
+	 
+	 
+	
+	
+	
+</mapper>

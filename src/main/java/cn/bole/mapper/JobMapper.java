@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import cn.bole.pojo.Job;
+import cn.bole.pojo.JobInfo;
 
 public interface JobMapper {
 
@@ -24,6 +25,8 @@ public interface JobMapper {
 
 	List<Job> findJobByCompanyId(Integer companyId);
 
-	Job saveJob(Integer jobId);
+	void saveJob(Job job);
+
+	void saveJob(JobInfo jobinfo);
 
 }

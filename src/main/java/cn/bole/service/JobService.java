@@ -21,7 +21,9 @@ public interface JobService {
 
 	List<Job> findJobByCompanyId(Integer companyId);
 
-	Job saveJob(Integer jobId);
+	void saveJob(Job job);
+
+	
 
 
 
