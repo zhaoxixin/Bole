@@ -33,6 +33,10 @@ public class JobServiceImpl implements JobService {
 	public Job findJobByJobId(String jobId) {
 		return jobMapper.findJobByJobId(jobId);
 	}
+	@Override
+	public void sendResume(String userId, String jobId, String companyId) {
+		jobMapper.sendResume(userId,jobId,companyId);
+	}
 	
 
 }

@@ -17,6 +17,8 @@ public interface JobService {
 
 	Job findJobByJobId(String jobId);
 
+	void sendResume(String userId, String jobId, String companyId);
+
 
 
 

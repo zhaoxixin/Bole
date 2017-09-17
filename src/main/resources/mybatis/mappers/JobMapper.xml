@@ -6,27 +6,29 @@
 
 	<select id="findJob" resultMap="jobRM">
 		select * from 
-		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
 		job_info,
 		(select company_id c_id,email,password,logo from com) c,
 		com_info
-		where j.j_id=job_info.job_info_id
+		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
 		and industry_id=#{industryId}
 		and profession_id=#{professionId}
 		and city=#{city}
 		and state=1
+		order by announce_time desc
+		limit 0,10
 	</select>
 	
 	<select id="findNewJob" resultMap="jobRM">
-		 select * from
+		select * from
 		(select * from 
-		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
 		job_info,
 		(select company_id c_id,email,password,logo from com) c,
 		com_info
-		where j.j_id=job_info.job_info_id
+		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
 		and state=1) uup 
@@ -35,43 +37,49 @@
 		select job_id from job where
 		job.announce_time=(select max(job.announce_time) from job)
 		) 
+		order by announce_time desc
+		limit 0,10 
 		
 	</select> 
 	 <select id="findHotJob" resultMap="jobRM">
 		select * from 
-		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
 		job_info,
 		(select company_id c_id,email,password,logo from com) c,
 		com_info
-		where j.j_id=job_info.job_info_id
+		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
 		and is_hot=1
 		and state=1
+		order by announce_time desc
+		limit 0,10
 	</select>
 	
 	<select id="findJobByName" resultMap="jobRM">
 		select * from 
-		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
 		job_info,
 		(select company_id c_id,email,password,logo from com) c,
 		com_info
-		where j.j_id=job_info.job_info_id
+		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
 		and job_name=#{jobname}
 		and state=1
+		order by announce_time desc
+		limit 0,10
 	</select>
 	<select id="findJobByJobId" resultMap="jobRM">
 		select * from 
-		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
 		job_info,
 		(select company_id c_id,email,password,logo from com) c,
 		com_info
-		where j.j_id=job_info.job_info_id
+		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
-		and j_id=#{jobId}
+		and job_id=#{jobId}
 	</select>
 	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
