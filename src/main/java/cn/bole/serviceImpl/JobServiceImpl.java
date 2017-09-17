@@ -1,5 +1,7 @@
 package cn.bole.serviceImpl;
 
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -58,6 +60,27 @@ public class JobServiceImpl implements JobService {
 		job.setAnnounceTime(new Date());
 		jobMapper.saveJob(job);	
 		jobInfoMapper.saveJobInfo(jobinfo);
+
+	}
+	/**
+	 * list.jsp中根据输入的条件在之前查询的基础上进行查询
+	 * @param model
+	 * @param job
+	 * @param jobListPre
+	 * @param announceTimePre
+	 * @param announceTimeAft
+	 * @return
+	 */
+	@Override
+	public List<Job> additionSearch(Job job, List<Job> jobListPre, Date announceTimePre, Date announceTimeAft) {
+		List<String> jobIdList = new ArrayList<String> ();
+		for (Job job2 : jobListPre) {
+			String job2Id = job2.getJobId();
+			jobIdList.add(job2Id);
+		}
+		
+		return jobMapper.additionSearch(job, jobIdList,announceTimePre,announceTimeAft);
+
 	}
 	
 	

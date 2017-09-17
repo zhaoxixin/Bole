@@ -1,6 +1,7 @@
 package cn.bole.controller;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mysql.fabric.Response;
 
@@ -22,7 +24,7 @@ import cn.bole.pojo.User;
 import cn.bole.service.IndustryService;
 import cn.bole.service.JobService;
 @Controller
-public class SearchController {
+public class SearchController extends BaseController {
 	@Autowired
 	private IndustryService industryService;
 	@Autowired
@@ -65,10 +67,28 @@ public class SearchController {
 	
 	@RequestMapping("/jobDetails")
 	public String searchJobDetails(Model model,String jobId){
-		System.out.println(jobId);
+		
 		Job job = jobService.findJobByJobId(jobId);
 		model.addAttribute("job",job);
 		return "job/jobDetails";
+	}
+	/**
+	 * list.jsp中根据输入的条件在之前查询的基础上进行查询
+	 * @param model
+	 * @param job
+	 * @param jobListPre
+	 * @param announceTimePre
+	 * @param announceTimeAft
+	 * @return
+	 */
+	@RequestMapping("/additionSearch")
+	public String additionSearch(Model model,Job job,
+			@RequestParam(value="jobList")List<Job> jobListPre,
+			Date announceTimePre,Date announceTimeAft){
+		List<Job> jobList = jobService.additionSearch(job,jobListPre,announceTimePre,announceTimeAft);
+		model.addAttribute("jobList",jobList);
+		return "job/list";
+		    
 	}
 	//企业反馈信息0：拒绝，1：通知面试，2：通知入职
 	@RequestMapping("/sendResume")

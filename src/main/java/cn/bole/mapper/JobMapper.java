@@ -1,5 +1,6 @@
 package cn.bole.mapper;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
@@ -27,6 +28,10 @@ public interface JobMapper {
 
 	void saveJob(Job job);
 
-	void saveJob(JobInfo jobinfo);
 
+
+
+
+
+	List<Job> additionSearch(@Param("job")Job job,@Param("jobIdList") List<String> jobIdList, @Param("announceTimePre")Date announceTimePre, @Param("announceTimeAft")Date announceTimeAft);
 }

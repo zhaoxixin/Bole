@@ -1,5 +1,6 @@
 package cn.bole.service;
 
+import java.util.Date;
 import java.util.List;
 
 import cn.bole.pojo.Industry;
@@ -23,7 +24,9 @@ public interface JobService {
 
 	void saveJob(Job job);
 
-	
+
+
+	List<Job> additionSearch(Job job, List<Job> jobListPre, Date announceTimePre, Date announceTimeAft);
 
 
 
