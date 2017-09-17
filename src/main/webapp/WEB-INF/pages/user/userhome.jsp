@@ -45,7 +45,7 @@ var youdao_conv_id = 271546;
     			<li><a href="index.html">首页</a></li>
     			<li><a href="companylist.html">公司</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
-    				    			<li><a rel="nofollow" href="jianli.html">我的简历</a></li>
+    				    			<li><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></li>
 	    						    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
@@ -225,7 +225,9 @@ var youdao_conv_id = 271546;
                 </div>
             </div>
        	</div>
-      <input type="hidden" id="userid" name="userid" value="314873">
+       	<td>
+      <input type="hidden" id="userId" name="userId" value="${userId}">
+      </td>
 <div class="dn" id="recordPopBox">
 	<dl>
 		<dt>

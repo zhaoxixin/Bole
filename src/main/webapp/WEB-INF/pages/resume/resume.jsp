@@ -99,13 +99,10 @@
 					<div class="fl" id="resume_name">
 						<div class="nameShow fl">
 							<h1 title="jason的简历">"${resumeName}"</h1>
-							<span class="rename">重命名</span> | <a target="_blank" href="h/resume/preview.html">预览</a>
+							<span class="rename">重命名</span>
 						</div>
 						<form class="fl dn" id="resumeNameForm" >
 							<input type="text" id="resumeName" value="${resumeName }" name="resumeName" class="nameEdit c9">
-							  
-							<input  type="button" value="保存" onclick="ajax_fun()" /> | <a target="_blank" href="h/resume/preview.html">预览</a> 
-							
 							<%-- <a href="${ctx }/renameResumeName.action" ><input type="button" value="保存"></a>| <a target="_blank" href="h/resume/preview.html">预览</a>  --%>
 						</form>
 					</div>
@@ -407,11 +404,11 @@
 										</tr>
 										<tr>
 											<td>
-												<input type="text" placeholder="期望职位，如：产品经理" value="${resume.expectJob.expectPosition }" name="expectJob.expectPosition" id="expectPosition">
+												<input type="text" placeholder="期望职位，如：产品经理" value="${resume.expectPosition }" name="expectJob.expectPosition" id="expectPosition">
 											</td>
 											<td>
-												<input type="hidden" id="expectSalary" value="${resume.expectJob.expectSalary }" name="expectJob.expectSalary">
-												<input type="button" value="${resume.expectJob.expectSalary }" id="select_expectSalary" class="profile_select_287 profile_select_normal">
+												<input type="hidden" id="expectSalary" value="${resume.expectSalary }" name="expectJob.expectSalary">
+												<input type="button" value="${resume.expectSalary }" id="select_expectSalary" class="profile_select_287 profile_select_normal">
 												<div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
 													<ul>
 														<li>2k以下</li>
@@ -444,11 +441,11 @@
 						</div>
 						<!--end .expectAdd-->
 
-						<input type="hidden" id="expectJobVal" value="${resume.expectJob.expectJob }">
-						<input type="hidden" id="expectCityVal" value="${resume.expectJob.expectCity }">
-						<input type="hidden" id="typeVal" value="${resume.expectJob.type }">
-						<input type="hidden" id="expectPositionVal" value="${resume.expectJob.expectPosition }">
-						<input type="hidden" id="expectSalaryVal" value="${resume.expectJob.expectSalary }">
+						<input type="hidden" id="expectJobVal" value="${resume.expectJob }">
+						<input type="hidden" id="expectCityVal" value="${resume.expectCity }">
+						<input type="hidden" id="typeVal" value="${resume.type }">
+						<input type="hidden" id="expectPositionVal" value="${resume.expectPosition }">
+						<input type="hidden" id="expectSalaryVal" value="${resume.expectSalary }">
 					</div>
 					<!--end #expectJob-->
 
@@ -480,7 +477,7 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="companyYearStart" value="" name="workExperience.companyYearStart">
-													<input type="button" value="${resume.workExperience.companyYearStart }" class="profile_select_139 profile_select_normal select_companyYearStart">
+													<input type="button" value="${resume.companyYearStart }" class="profile_select_139 profile_select_normal select_companyYearStart">
 													<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>2014</li>
@@ -533,7 +530,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthStart" value="" name="workExperience.companyMonthStart">
-													<input type="button" value="${resume.workExperience.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart">
+													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -559,7 +556,7 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="companyYearEnd" value="" name="workExperience.companyYearEnd">
-													<input type="button" value="${resume.workExperience.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyYearEnd">
+													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyYearEnd">
 													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>至今</li>
@@ -613,7 +610,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthEnd" value="" name="workExperience.companyMonthEnd">
-													<input type="button" value="${resume.workExperience.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
+													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -634,14 +631,14 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<tr>
+										<%-- <tr>
 											<td></td>
 											<td colspan="3">
 												<!-- <input type="submit" value="保 存" class="btn_profile_save"> -->
 												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> --%>
 									</tbody>
 								</table>
 								<input type="hidden" class="expId" value="">
@@ -831,14 +828,14 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<tr>
+										<%-- <tr>
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> --%>
 									</tbody>
 								</table>
 								<input type="hidden" class="expId" value="">
@@ -1055,14 +1052,14 @@
 										<div class="word_count">你还可以输入 <span>500</span> 字</div>
 									</td>
 	            				</tr> -->
-										<tr>
+										<%-- <tr>
 											<td valign="top"></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> --%>
 									</tbody>
 								</table>
 								<input type="hidden" value="" class="projectId">
@@ -1236,14 +1233,14 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<tr>
+										<%-- <tr>
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> --%>
 									</tbody>
 								</table>
 								<input type="hidden" class="eduId" value="">
@@ -1402,13 +1399,13 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<tr>
+										<!-- <tr>
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> -->
 									</tbody>
 								</table>
 								<input type="hidden" class="eduId" value="">
@@ -1441,12 +1438,12 @@
 												<div class="word_count">你还可以输入 <span>500</span> 字</div>
 											</td>
 										</tr>
-										<tr>
+										<!-- <tr>
 											<td colspan="2">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> -->
 									</tbody>
 								</table>
 							</form>
@@ -1484,13 +1481,21 @@
 												<div class="word_count">你还可以输入 <span>100</span> 字</div>
 											</td>
 										</tr>
-										<tr>
+										<!-- <tr>
 											<td>
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr>
+										</tr> -->
 									</tbody>
+										<tr>
+											<td></td>
+											<td colspan="3">
+												<input type="submit" value="保 存" class="btn_profile_save">
+												<a href="${ctx }/resumeSave.action" target="_self"><input type="submit" value="保 存" class=""></a>
+												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+											</td>
+										</tr>
 								</table>
 								<input type="hidden" class="showId" value="">
 							</form>
@@ -1816,9 +1821,9 @@
 				});
 				return params;
 			},
-			setUserSpan: function(user) {
-				var line1 = [user.name, user.gender, user.select_topDegree, user.select_workyear].join(' | ');
-				var line2 = [user.tel, user.email].join(' | ');
+			setUserSpan: function(userInfo) {
+				var line1 = [userInfo.name, userInfo.gender, userInfo.select_topDegree, userInfo.select_workyear].join(' | ');
+				var line2 = [userInfo.tel, userInfo.email].join(' | ');
 				$('.basicShow').html(line1 + '<br/>' + line2 + '<br/>');
 			},
 			onSaveBasicInfo: function() {
@@ -1833,22 +1838,6 @@
 		};
 		ResumeService.init();
 	</script>
-	<script>
-        function ajax_fun(){
-                     $.ajax({
-                              type:'post',
-                              data:$('#resumeName').val(),
-                              url:'/renameResumeName.action',
-                              success:function(response){
-                                          alert(response);
-
-                               }
-
-                    });
-
-       }
-	</script>
-
 	<div id="cboxOverlay" style="display: none;"></div>
 	<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
 		<div id="cboxWrapper">

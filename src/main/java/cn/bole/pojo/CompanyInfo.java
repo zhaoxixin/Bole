@@ -10,10 +10,10 @@ public class CompanyInfo {
    private String address;
    private String location;
    private String telphone;
-   private Integer isFamous;
+   private Integer isFamous	;
    private Integer resumNum;
    private Job job;
-   private Integer userresumState;
+   private Integer usersresumState;
    private String chargePerson;
    //private Job job;
    
@@ -35,14 +35,17 @@ public void setResumNum(Integer resumNum) {
 
 
 
-public Integer getUserresumState() {
-	return userresumState;
+
+
+
+public Integer getUsersresumState() {
+	return usersresumState;
 }
 
 
 
-public void setUserresumState(Integer userresumState) {
-	this.userresumState = userresumState;
+public void setUsersresumState(Integer usersresumState) {
+	this.usersresumState = usersresumState;
 }
 
 
