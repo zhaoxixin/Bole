@@ -6,7 +6,7 @@
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
-<!-- end 云适配 -->
+<!-- end 云适配1 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>全国-公司列表-拉勾网-最专业的互联网招聘平台</title>
 <meta property="qc:admins" content="23635710066417756375" />
