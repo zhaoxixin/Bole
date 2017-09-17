@@ -28,10 +28,7 @@ public interface JobMapper {
 
 	void saveJob(Job job);
 
+	List<Job> additionSearch(@Param("job")Job job, @Param("jobIds")String[] jobIds,  @Param("announceTimePre")Date announceTimePre, @Param("announceTimeAft")Date announceTimeAft);
 
-
-
-
-
-	List<Job> additionSearch(@Param("job")Job job,@Param("jobIdList") List<String> jobIdList, @Param("announceTimePre")Date announceTimePre, @Param("announceTimeAft")Date announceTimeAft);
+	
 }

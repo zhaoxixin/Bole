@@ -72,16 +72,11 @@ public class JobServiceImpl implements JobService {
 	 * @return
 	 */
 	@Override
-	public List<Job> additionSearch(Job job, List<Job> jobListPre, Date announceTimePre, Date announceTimeAft) {
-		List<String> jobIdList = new ArrayList<String> ();
-		for (Job job2 : jobListPre) {
-			String job2Id = job2.getJobId();
-			jobIdList.add(job2Id);
-		}
-		
-		return jobMapper.additionSearch(job, jobIdList,announceTimePre,announceTimeAft);
-
+	public List<Job> additionSearch(Job job, String[] jobIds, Date announceTimePre, Date announceTimeAft) {
+		return jobMapper.additionSearch(job, jobIds, announceTimePre, announceTimeAft);
 	}
+	
+	
 	
 	
 

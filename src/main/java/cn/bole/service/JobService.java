@@ -25,8 +25,11 @@ public interface JobService {
 	void saveJob(Job job);
 
 
+	List<Job> additionSearch(Job job, String[] jobIds, Date announceTimePre, Date announceTimeAft);
 
-	List<Job> additionSearch(Job job, List<Job> jobListPre, Date announceTimePre, Date announceTimeAft);
+
+
+	
 
 
 

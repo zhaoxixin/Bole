@@ -7,6 +7,12 @@
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
 <script id="allmobilize" charset="utf-8" src="${ctx}/style/js/allmobilize.min.js"></script>
+
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="${ctx}/style/js/jquery.1.4.4.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
@@ -20,9 +26,27 @@
 	#submit_button{
 	height:35px;width:121px; color:#FFF; font-size:18px;border:none;background:#019875;float:right; cursor:pointer;
 	}
+	.form-control{
+		border:2px solid #019875;
+		margin: 10px auto;
+		
+	}
+	.timeSearch{
+		
+			height:30px;
+			width:80px;
+			border: 2px solid #019875
+	
+	}
 } 
 </style>
- 
+
+<script type="text/javascript">
+window.onload=function(){
+ $('.j-chosen').selectpicker(); 
+};
+
+</script>
 <script type="text/javascript" src="${ctx}/style/js/chosen.jquery.js"></script>
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
@@ -161,18 +185,20 @@ var youdao_conv_id = 271546;
         </div>
    <div class="content">
         	<div id="search_box">
-		<form id="searchForm" name="searchForm" action="${ctx}/additionSearch" method="get">
+		<form role="form"  name="searchForm" action="${ctx}/additionSearch" method="post">
         <!-- <ul id="searchType">
         	        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
         	        </ul>
         <div class="searchtype_arrow"></div> -->
        <!--  <input type="text" id="search_input" name = "kd"  tabindex="1" value="前端开发"  placeholder="请输入职位名称，如：产品经理"  /> -->
+       			<div class="form-group" style="width:250px">
        			
-       			<div style="hight:40px;display:inline-block">
-       			
-       			<select data-placeholder="选择薪资" name="salaryRange" style="width:100px;height:40px">
-        			<option value="1" selected='selected'>2001-4000</option>
+       				
+   
+   				
+   					 <select class="form-control">
+     				<option value="1" selected='selected'>2001-4000</option>
         			<option value="2">4001-6000</option>
         			<option value="3">6001-8000</option>
         			<option value="4">8001-10000</option>
@@ -180,39 +206,45 @@ var youdao_conv_id = 271546;
         			<option value="6">15001-20000</option>
         			<option value="7">20001-30000</option>
         			<option value="8">面议</option>
-        		</select>
-        	</div>
-        		
-        		<div style="hight:40px;display:inline-block;margin-left: 0px">
-        		<select data-placeholder="选择学历" name="highistEducation" style="width:100px;height:40px">
-        			<option value="博士">博士</option>
+    			</select>
+   
+  			
+  			
+  		
+   					 <select class="form-control">
+     				<option value="博士">博士</option>
         			<option value="硕士">硕士</option>
         			<option value="本科">本科</option>
         			<option value="大专">大专</option>
         			<option value="不限" selected='selected'>不限</option>
-        		</select>
-        		</div>
-        		
-        		<div style="hight:40px;display:inline-block;margin-left: 0px">
-        		<select data-placeholder="选择工作性质" name="jobNature" style="width:100px;height:40px">
-        			<option value="全职" selected='selected'>全职</option>
+    			</select>
+   
+  		
+  			
+  			
+   				
+   					 <select class="form-control">
+     				<option value="全职" selected='selected'>全职</option>
         			<option value="兼职">兼职</option>
         			<option value="实习">实习</option>
-        		</select>
+    			</select> 
+   
+  	
+  
+        		<div>
+        		<input class="timeSearch"   type="text" value="请选择起始时间" style="width:75px;border: 2px solid #019875" name="announceTimePre"
+	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
+	   			&nbsp;&nbsp;-&nbsp;&nbsp;
+	   			<input class="timeSearch" type="text" value="请选择截至时间"  style="width:75px;border: 2px solid #019875" name="announceTimeAft"
+	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
         		</div>
-        		
-        		<div style="hight:40px;display:inline-block;margin-left: 0px">
-        		<input type="text" style="width:70px;" name="announceTimePre"
-	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
-	   			&nbsp;&nbsp;|&nbsp;&nbsp;
-	   			<input type="text" style="width:70px;" name="announceTimePre"
-	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
-        		
-               </div>
-               <input type="hidden" name="jobList" value="${jobList}">
-             		<input id="submit_button" type="submit" name="submit" value="搜索"/>
-                <!-- <input type="hidden" name="city" id="cityInput" value="全国"/>
-                <input type="submit" id="search_button" value="搜索" /> -->
+               <c:forEach items="${jobList}" var="job">
+               		<input  type="hidden"  name="jobId" value="${job.jobId}">
+               </c:forEach>
+               <input  type="hidden"  name="jobList" value="">
+             		<!-- <input id="submit_button" type="submit" name="submit" value="搜索"/> -->
+                <!-- <input type="hidden" name="city" id="cityInput" value="全国"/> -->
+                <input type="submit" id="search_button" value="搜索" />
     </form>
 </div>     
         
@@ -411,11 +443,11 @@ function editForm(inputId,inputValue){
 	var kw = keyword.replace(reg," ");
 
 	if(kw == ''){
-		$('#searchForm').attr('action','list.html所有职位').submit();	
+		$('#searchForm').attr('action','${ctx}/additionSearch').submit();	
 	}else{
 		kw = kw.replace(re,'井');
 		kw = kw.replace(r,'。');
-		$('#searchForm').attr('action','list.html'+kw).submit();
+		$('#searchForm').attr('action','${ctx}/additionSearch'+kw).submit();
 	}
 	//$("#searchForm").submit();
 }

@@ -83,9 +83,9 @@ public class SearchController extends BaseController {
 	 */
 	@RequestMapping("/additionSearch")
 	public String additionSearch(Model model,Job job,
-			@RequestParam(value="jobList")List<Job> jobListPre,
+			@RequestParam(value="jobId") String[] jobIds,
 			Date announceTimePre,Date announceTimeAft){
-		List<Job> jobList = jobService.additionSearch(job,jobListPre,announceTimePre,announceTimeAft);
+		List<Job> jobList = jobService.additionSearch(job,jobIds,announceTimePre,announceTimeAft);
 		model.addAttribute("jobList",jobList);
 		return "job/list";
 		    

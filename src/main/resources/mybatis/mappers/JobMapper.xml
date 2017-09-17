@@ -107,11 +107,11 @@
 		and salary_range=#{salaryRange}
 		and highist_education=#{highistEducation}
 		and job_nature=#{jobNature}
-		and job_id in
 		and announce_time>#{announceTimePre}
 		and announce_time &lt; #{announceTimeAft}
+		and job_id in
 		(
-			<foreach collection="list" item="jobId">
+			<foreach collection="array" item="jobId" separator=",">
 				#{jobId}
 			</foreach>
 		)
