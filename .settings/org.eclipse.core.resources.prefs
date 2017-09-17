@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/pages/login/register.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/sysadmin/job/echart.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/sysadmin/job/t.jsp=UTF-8

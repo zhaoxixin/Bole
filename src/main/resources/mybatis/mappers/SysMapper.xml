@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.SysMapper">
+	<select id="findAllJob" resultMap="jobRM">
+		select * from job, job_info ji
+				where job.job_id=ji.job_info_id 
+	
+	</select>
+	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
+		<id column="job_id" property="jobId"/>
+		<association property="jobInfo" javaType="cn.bole.pojo.JobInfo" resultMap="infoMP">
+			<id column="job_info_id" property="jobInfoId"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="cn.bole.pojo.JobInfo" id="infoMP" autoMapping="true">
+		<id column="job_info_id" property="jobInfoId"/>
+	</resultMap>
+    
+</mapper>

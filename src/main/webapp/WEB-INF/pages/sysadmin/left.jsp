@@ -26,7 +26,7 @@
 			<ul>
 				<li><a href="${ctx}/sysadmin/dept/list" onclick="linkHighlighted(this)" target="main" id="aa_1">公司管理</a></li>
 				<li><a href="${ctx}/sysadmin/user/list" onclick="linkHighlighted(this)" target="main" id="aa_1">用户管理</a></li>
-				<li><a href="${ctx}/sysadmin/role/list" onclick="linkHighlighted(this)" target="main" id="aa_1">职位管理</a></li>
+				<li><a href="${ctx}/sysadmin/job/list" onclick="linkHighlighted(this)" target="main" id="aa_1">职位管理</a></li>
 				<li><a href="${ctx}/sysadmin/module/list" onclick="linkHighlighted(this)" target="main" id="aa_1">数据分析</a></li>
 			</ul>
         </div>
