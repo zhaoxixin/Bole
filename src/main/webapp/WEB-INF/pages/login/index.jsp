@@ -241,16 +241,16 @@ $("#ctname").html($(this).html());
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=">实习</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='java'">Java</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='PHP'">PHP</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='Android'">Android</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='iOS'">iOS</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='前端'">前端</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='产品经理'">产品经理</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='UI'">UI</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='运营'">运营</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='BD'">BD</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='实习'">实习</a></dd>
 </dl>			
 			<div id="home_banner">
 	            <ul class="banner_bg">
