@@ -2,11 +2,20 @@ package cn.bole.pojo;
 
 public class JobInfo {
 	private String jobInfoId;
+	private Integer workExperience;
 	private String discription;
 	private Integer orderNo;
 	private Integer salaryRange;
 	private Integer welfare;
 	private String city;
+	
+	
+	public Integer getWorkExperience() {
+		return workExperience;
+	}
+	public void setWorkExperience(Integer workExperience) {
+		this.workExperience = workExperience;
+	}
 	public String getJobInfoId() {
 		return jobInfoId;
 	}

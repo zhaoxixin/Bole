@@ -24,10 +24,15 @@ public class LoginController {
 	@Autowired
 	CompanyService companyService;
 	//去登陆
+	@RequestMapping("/.action")
+	public String toIndex(){
+		return "/login/index";
+	}
 	@RequestMapping("/toLogin")
 	public String toLogin(){
 		return "login/login";
 	}
+	//退出账号，
 	@RequestMapping("/logout")
 	public String toLoout(HttpServletRequest s){
 		if(s.getSession(false) != null){
@@ -50,6 +55,13 @@ public class LoginController {
 		        if(user1==null){        	
 		 	       result.put("msg", "failed");  
 		            return result;  
+		        }
+		        //判断是否后台管理人员
+		        if(email.equals("admin@admin.com")){
+			        session.setAttribute("admin",user1);
+			        result.put("msg", "success"); 
+			        result.put("type", type);
+		 	        return result; 	
 		        }
 		        //将用户加入到session中
 		        session.setAttribute("user1",user1);

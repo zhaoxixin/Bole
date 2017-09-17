@@ -37,6 +37,7 @@
      select * from com c,com_info ci
      where ci.company_info_id =c.company_id and company_id= #{companyId}    
 </select>
+<<<<<<< HEAD
 
 <!--通过Id获取User信息-->
 <select id="findUserBycomId" resultMap="resum">
@@ -69,6 +70,8 @@
 
 
 
+=======
+>>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
 </mapper>
 
 

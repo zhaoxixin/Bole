@@ -7,6 +7,17 @@
 		select * from user_info where user_info_id=#{userId}
 	</select>
 	<insert id="save">
-		insert into user_info(user_info_id) values(#{userInfoId})
+		insert into user_info(user_info_id,email,realname) values(#{userInfoId},#{email},#{realname})
 	</insert>
+	<update id="updateUserInfo">
+		update user_info
+		<set>
+			realname=#{realname},
+			sex=#{sex},
+			education=#{education},		
+			work_pre=#{workPre},
+			telphone=#{telphone}
+		</set>			
+		where user_info_id=#{userInfoId}
+	</update>
 </mapper>

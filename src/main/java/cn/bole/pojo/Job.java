@@ -9,11 +9,31 @@ public class Job {
 	private String companyId;
 	private String jobName;
 	private String highistEducation;
-	private String jobNature;
+	private String jobNature; 
 	private Date announceTime;
 	private Date updateTime;
 	private Integer state;
 	private JobInfo jobInfo;
+	private Company company;
+	
+	public String getHighistEducation() {
+		return highistEducation;
+	}
+	public void setHighistEducation(String highistEducation) {
+		this.highistEducation = highistEducation;
+	}
+	public String getJobNature() {
+		return jobNature;
+	}
+	public void setJobNature(String jobNature) {
+		this.jobNature = jobNature;
+	}
+	public Company getCompany() {
+		return company;
+	}
+	public void setCompany(Company company) {
+		this.company = company;
+	}
 	public String getJobId() {
 		return jobId;
 	}

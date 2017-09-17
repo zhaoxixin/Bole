@@ -15,6 +15,10 @@ public interface JobService {
 
 	List<Job> findJobByName(String jobName);
 
+	Job findJobByJobId(String jobId);
+
+	void sendResume(String userId, String jobId, String companyId);
+
 
 
 

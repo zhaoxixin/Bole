@@ -71,7 +71,8 @@ $("#ctname").html($(this).html());
  <script type="text/javascript">
  	function findJob(industryId,professionId){
  		var city = $("#ctname").text();
- 		location.href="${ctx}/findJob/city/industryId/professionId";
+
+ 		location.href='${ctx}/'+city+'/'+industryId+'/'+professionId+'/findJob.action';
  		
  	}
  	
@@ -95,12 +96,12 @@ $("#ctname").html($(this).html());
     		</a>
     		<ul class="reset" id="navheader">
     			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/companyhome" >企业入口</a></li>
-    			<li ><a href="#" target="_blank">名企专区</a></li>
+    			<li ><a href="${ctx }/toLogin.action" >企业入口</a></li>
+    			<li ><a href="${ctx }/companyhome" target="_blank">名企专区</a></li>
 
     		    <li ><a href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
 	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
-	    		<li ><a href="/home.action" rel="nofollow">后台管理</a></li>
+	    		<!-- <li ><a href="/home.action" rel="nofollow">后台管理</a></li> -->
 	    	</ul>
             <ul class="loginTop">
 					<!-- <li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
@@ -108,16 +109,23 @@ $("#ctname").html($(this).html());
 					<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li> -->
 					
 					
-					<c:if test="${ sessionScope.user1 == null }">
+					<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null}">
 						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
-					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+					<c:if test="${sessionScope.user1 != null }">
+						 <font color="6633745">欢迎 ${user1.userInfo.realname }回来</font>
 						  &nbsp;|&nbsp;
-						<a href="${ ctx }/logout.action">退出</a>
-					 </c:if>
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+					</c:if>
+					<c:if test="${sessionScope.admin != null }">
+						  <font color="6633745">欢迎 ${admin.userInfo.realname }回来</font>
+						  &nbsp;|&nbsp;
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+						 &nbsp;|&nbsp;
+						<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
+					</c:if>
 				</ul>
 
              </div>
@@ -176,7 +184,7 @@ $("#ctname").html($(this).html());
         	<li data-searchtype="4">公司</li>
         </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="text" id="search_input" name = "jobName"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
         <input type="hidden" name="spc" id="spcInput" value=""/>
         <input type="hidden" name="pl" id="plInput" value=""/>
@@ -351,8 +359,8 @@ $("#ctname").html($(this).html());
                             </ul>
             
             <ul class="reset hotabbing">
-            	            		<li class="current"><a href="${ctx }/findNewJob">热门职位</a></li>
-            	            	    <li><a href="${ctx }/findHotJob">最新职位</a></li>
+            	            		<li class="current"><a href="${ctx }/findHotJob">热门职位</a></li>
+            	            	    <li><a href="${ctx }/findNewJob">最新职位</a></li>
             </ul>
             
 	                        	            				            		

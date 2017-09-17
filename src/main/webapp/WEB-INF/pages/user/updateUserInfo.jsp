@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>公司产品-招聘服务-拉勾网-最专业的互联网招聘平台1</title>
+<title>公司产品-招聘服务-拉勾网-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
 <meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
@@ -15,7 +16,7 @@
 
 <!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
 <script type="text/javascript">
-//var ctx = "http://www.lagou.com";
+var ctx = "http://www.lagou.com";
 console.log(1);
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
@@ -55,29 +56,44 @@ var youdao_conv_id = 271546;
                 </dt>
                 <dd>
                 	<div class="c_text">目标明确、积极上进的职工更令人期待哦</div>
-                    <form method="post" action="/saveUserInfo.action" id="userForm">
+                    <form method="post" action="/updateUserInfo.action" id="userForm">
                     	<input type="hidden" value="8f79f658e49846ae89d90a3f1590f12e" name="resubmitToken">
                     	<input type="hidden" id="companyId" name="companyId" value="25927">
                     	<div id="productDiv">
 		                    <div class="formWrapper">
-		                    	<input type="hidden" name="userInfoId" value="${userId}">
-		                        <h3>你的真实名称(⊙o⊙)哦</h3>
-		                        <input type="text" placeholder="${userInfo.realname}" name="realname" id="name0" readonly="readonly">		                        
-		                        <h3>你的性别(⊙o⊙)哦</h3>				         
-						        <input type="text" placeholder="${userInfo.sex}" name="sex" id="name1" readonly="readonly">
+		                    	<input type="hidden" name="userInfoId" value="${userInfo.userInfoId}">
+		                        <h3>你的真实姓名(⊙o⊙)哦</h3>
+		                        <input type="text" placeholder="${userInfo.realname}" name="realname" id="name0" >	                        
+		                        <h3>你的性别(⊙o⊙)哦</h3>				          
+						        <select name="sex" style="width:200px">
+									<option value="男">男</option>	
+									<option value="女">女</option>
+									<option value="其他">其他</option>													
+								</select>	                  
 		                        <h3>你的学历(⊙o⊙)哦</h3> 	                        
-								<input type="text" placeholder=" ${userInfo.education}" name="education" id="education" readonly="readonly">	                                    
+								<select name="education" style="width:200px">
+									<option value="大专">大专</option>	
+									<option value="本科">本科</option>
+									<option value="硕士">硕士</option>
+									<option value="博士">博士</option>
+									<option value="大专以下">大专以下</option>										
+								</select>	                                   
 		                        <h3>你的工作时间(⊙o⊙)哦</h3>
-								<input type="text" placeholder="${userInfo.workPre}" name="workPre" id="workPre" readonly="readonly">
+								<select name="workPre" style="width:200px">
+									<option value="1年及以下">1年及以下</option>	
+									<option value="2年">2年</option>
+									<option value="3年">3年</option>
+									<option value="4年及以上">4年及以上</option>
+									<option value="无">无</option>
+								</select>	
 		                        <h3>你的手机号(⊙o⊙)哦</h3>
-		                        <input type="text" placeholder="${userInfo.telphone}" name="telphone" id="telphone" readonly="readonly">	
+		                        <input type="text" name="telphone" id="telphone" placeholder="${userInfo.telphone}">             	
 		                        <h3>你的邮箱(⊙o⊙)哦</h3>
-		                        <input type="text" placeholder="${userInfo.email}" name="email" id="email"  readonly="readonly">
+		                        <input type="text" placeholder="${userInfo.email}" name="email" id="email"  readonly="readonly" value="${userInfo.email}">	
 		                    </div>
 	                    </div>                 
                    		<div class="clear"></div>
-                   		<input type="button" value="修改信息" id="sSubmit" class="btn_big fr" onClick="location='/toUpdateUserinfo.action'">
-                    	<input type="button" value="回到个人主页" id="step4Submit" class="btn_big fr" onClick="location='/userhome.action'">                   	                            	
+                    	<input type="submit" value="修改完毕" id="step4Submit" class="btn_big fr">
                     </form>
                 </dd>
             </dl>
@@ -107,6 +123,35 @@ var youdao_conv_id = 271546;
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div>
 
+
+
+<script type="text/javascript">   
+    $(document).ready(function(e) {   	
+    	//验证表单
+	    	 $("#userForm").validate({
+	    	        rules: {
+	    	        	realname:{
+	    	        		required: true,
+	    	        		rangelength: [1,11]
+	    	        	},
+	    	        	telphone:{
+	    	        		required: true,
+	    	        		rangelength: [11,11]
+	    	        	}
+			    	},
+			    	messages: {
+			    		realname:{
+	    	        		required: "请写出你的真实姓名",
+	    	        		rangelength: "请输入11位以下的姓名"
+	    	        	},
+	    	        	telphone: {
+			    	    	required: "请输入手机号",
+			    	    	rangelength: "请输入正确的手机号"
+			    	   	}
+			    	}
+	    	});
+    } );
+    </script>
 </body>
 
 

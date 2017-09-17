@@ -15,7 +15,7 @@
 
 <!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
 <script type="text/javascript">
-var ctx = "http://www.lagou.com";
+//var ctx = "http://www.lagou.com";
 console.log(1);
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
@@ -42,30 +42,30 @@ var youdao_conv_id = 271546;
     			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
     		</a>
     		<ul id="navheader" class="reset">
-    			<li><a href="index.html">首页</a></li>
+    			<li><a href="/.action">首页</a></li>
     			<li><a href="companylist.html">公司</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
     				    			<li><a rel="nofollow" href="jianli.html">我的简历</a></li>
 	    						    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span>jason&nbsp;</span> 
+           			<span> ${user1.userInfo.realname }&nbsp;</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                	<dd style="display: none;"><a rel="nofollow" href="jianli.html">我的简历</a></dd>
-                	                	<dd style="display: none;"><a href="collections.html">我收藏的职位</a></dd>
-                	                	                	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn">(0)</span></a></dd>
+                                		<dd style="display: none;"><a rel="nofollow" href="jianli.html">我的简历</a></dd>
+                	                	<!-- <dd style="display: none;"><a href="collections.html">我收藏的职位</a></dd>
                 	                	<dd class="btm" style="display: none;"><a href="subscribe.html">我的订阅</a></dd>
+                	                	<dd style="display: none;"><a href="create.html">我要招人</a></dd> -->
+                	                	<dd style="display: none;"><a href="${ctx }/toFindJob.action">搜索职位 <span id="searchPosition" class="red dn"></span></a></dd>
+                	                	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn"></span></a></dd>
                 	                	<dd class="btm" style="display: none;"><a href="/userinfo.action">我的基本信息</a></dd>
-                	<dd style="display: none;"><a href="create.html">我要招人</a></dd>
-                                                <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
-                                <dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
+                                		<dd class="logout" style="display: none;"><a rel="nofollow" href="${ctx}/logout.action">退出</a></dd>
             </dl>
                                     <div class="dn" id="noticeTip">
             	<span class="bot"></span>
-				<span class="top"></span>
-				<a target="_blank" href="delivery.html"><strong>0</strong>条新投递反馈</a>
+				<span class="top"></span> 
+				<a target="_blank" href="delivery.html"><strong>0</strong>简历投递反馈</a>
 				<a class="closeNT" href="javascript:;"></a>
             </div>
                     </div>

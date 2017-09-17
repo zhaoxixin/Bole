@@ -15,5 +15,10 @@ public class UserInfoServiceImpl implements UserInfoService{
 		
 		return  userInfoMapper.findUserInfoByUserId(userId);
 	}
+	@Override
+	public void updateUserInfo(UserInfo userInfo) {
+		userInfoMapper.updateUserInfo(userInfo);	
+		
+	}
 
 }
