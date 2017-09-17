@@ -95,6 +95,28 @@
 		and c.c_id=com_info.company_info_id
 		and j.company_id=#{companyId}	
 	</select>
+	<select id="additionSearch" resultMap="jobRM">
+		select * from 
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and salary_range=#{salaryRange}
+		and highist_education=#{highistEducation}
+		and job_nature=#{jobNature}
+		and job_id in
+		and announce_time>#{announceTimePre}
+		and announce_time &lt; #{announceTimeAft}
+		(
+			<foreach collection="list" item="jobId">
+				#{jobId}
+			</foreach>
+		)
+	
+	</select> 
 	
 	<!-- lcj根据jobId添加job -->
 	 <insert id="saveJob">
