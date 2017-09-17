@@ -1,4 +1,9 @@
-﻿<!DOCTYPE HTML>
+﻿<%@ page contentType="text/html; charset=utf-8"%>
+<%@ include file="../base.jsp" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
@@ -42,54 +47,75 @@ var youdao_conv_id = 271546;
     		</a>
     		<ul class="reset" id="navheader">
     			<li ><a href="index.html">首页</a></li>
-    			<li ><a href="companylist.html" >公司</a></li>
-    			<li ><a href="#" target="_blank">论坛</a></li>
-    				    			<li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
-	    							    			<li ><a href="create.html" rel="nofollow">发布职位</a></li>
+    			<li ><a href="#" target="_blank">名企专区</a></li>
+    			<li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
+	    							    			
 	    		    		</ul>
         	            <ul class="loginTop">
-            	<li><a href="login.html" rel="nofollow">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="register.html" rel="nofollow">注册</a></li>
+            	<c:if test="${ sessionScope.user1 == null }">
+						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
+					 </c:if>
+					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
+					 <c:if test="${ sessionScope.user1 != null }">
+						    欢迎 ${ user1.email } 回来
+						  &nbsp;|&nbsp;
+						<a href="${ ctx }/logout.action">退出</a>
+					 </c:if>
             </ul>
                                 </div>
     </div><!-- end #header -->
     <div id="container">
                 <div class="clearfix">
             <div class="content_l">
-            	                <dl class="job_detail">
+            	  <dl class="job_detail">
                     <dt>
                         <h1 title="内容运营">
                             <em></em>
-                                                        	<div>立方网运营部招聘</div>
-                           	                           	内容运营
+                         <div>${job.company.companyName }</div>
+                           	 ${job.jobName }
                         </h1>
-                        
-                                               	
-                       	                       	<a class="inline jd_collection" href="#loginPop" title="登录">
-                       		                       	</a>
-                       	                    </dt>
+                        <!-- <a class="inline jd_collection" href="#loginPop" title="登录"> -->
+                       	</a>
+                     </dt>
                     <dd class="job_request">
-                    	<span class="red">4k-6k</span>
-                       	<span>武汉</span> 
-                       	<span>经验3-5年 </span>
-                       	<span> 本科及以上</span> 
-                       	<span>全职</span><br />
-                      	  职位诱惑 : 大家都来了 你还在等什么！！
-                      	<div>发布时间：3天前发布</div>
+                    	<span class="red">
+                    		<c:if test="${job.jobInfo.salaryRange==1 }">2001-4000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==2 }">4001-6000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==3 }">6001-8000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==4 }">8001-10000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==5 }">10001-15000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==6 }">15001-20000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==7 }">20001-30000</c:if>
+			                <c:if test="${job.jobInfo.salaryRange==8 }">面议</c:if>
+                    	</span>
+                       	<span>${job.jobInfo.city}</span> 	
+                       	<span>
+                       		<c:if test="${job.jobInfo.workExperience==1 }">应届</c:if>
+			                <c:if test="${job.jobInfo.workExperience==2 }">1-2年</c:if>
+			                <c:if test="${job.jobInfo.workExperience==3 }">2-3年</c:if>
+			                <c:if test="${job.jobInfo.workExperience==4 }">3-4年</c:if>
+			                <c:if test="${job.jobInfo.workExperience==5 }">5年</c:if>
+			                <c:if test="${job.jobInfo.workExperience==6 }">5年以上</c:if>
+                       	</span>
+                       	<span> ${job.highistEducation}</span> 
+                       	<span>${job.jobNature }</span><br />
+                      	 
+                      	<div>发布时间：${job.announceTime}</div>
                     </dd>
                     <dd class="job_bt">
                         <h3 class="description">职位描述</h3>
-                        <p>岗位职责： <br />1、参与管理和维护立方网，保证网络社区健康、有序地运转，负责网站信息安全； <br />2、强化团队建设，提高团队工作效率，做好领导与员工直接沟通的桥梁； <br />3、制定和完善客服体系规章制度,培训新人。</p>
-<p>&nbsp;岗位要求： <br />1、2年以上互联网行业客服主管工作经验，本科及以上学历； <br />2、良好的沟通和协调能力、人际交往能力和语言表达能力； <br />3、较强的责任心和执行力，富有工作热情和团队协作能力。</p>
+                        <p>
+                        	${job.jobInfo.discription}
+   						 </p>
                     </dd>
                      
-                                        	<dd class="unresume">
-	                        <div>
-	                        	你在拉勾还没有简历呢，你可以<a href="login.html" target="_blank" title="完善在线简历">完善在线简历</a>，也可<a class="inline" href="#loginPop" title="登录">上传附件简历</a>直接投递
-	                       	</div>
-	                    </dd>
-                                                            <div class="saoma saoma_btm">
+					<dd class="unresume">
+	                      <div>
+	                        	你在伯乐还没有简历呢，你可以<a href="${ctx}/resumeCreate" target="_blank" title="创建在线简历">创建在线简历</a>
+	                      </div>
+	                </dd>
+                     <div class="saoma saoma_btm">
                       	<div class="dropdown_menu">
 							<div class="drop_l">
 								<img src="style/images/job_qr_btm.png" width="131" height="131" />
@@ -104,43 +130,44 @@ var youdao_conv_id = 271546;
 							</div>
 						</div>
                     </div>
-                                        <dd>
-                                        	                    			                        	<a href="#loginPop" title="登录" class="inline btn fr btn_apply">投个简历</a>
-	                        	                   		                	                </dd>
+                   <dd>
+                   		<a href="${ctx}/sendResume?jobId=${job.jobId}&companyId=${job.company.companyId}" title="登录" class="inline btn fr btn_apply">投递简历</a>
+	               </dd>
                 </dl>
-                                <div id="weibolist"></div>
+                <div id="weibolist"></div>
             </div>	
-            <div class="content_r">
-                <dl class="job_company">
-                    <dt>
+                <div class="content_r">
+                   <dl class="job_company">
+                      <dt>
                     	<a href="h/c/683.html" target="_blank">
                             <img class="b2" src="style/images/ff80808140ac5ed90140b953972e0215.png" width="80" height="80" alt="北京立方网信息技术有限公司" />
-                            <div>
-                                <h2 class="fl">
-                                	                                  		立方网
-                                  	                                  	
-                                  	                                    	<img src="style/images/valid.png" width="15" height="19" alt="拉勾认证企业" /> 
-                                    	<span class="dn">拉勾认证企业</span>
-                                                                        
-                                </h2>
-                            </div>
-                        </a>
-                    </dt>
-                    <dd>
+                <div>
+                   <h2 class="fl">
+                         	${job.company.companyName}
+                              <img src="style/images/valid.png" width="15" height="19" alt="拉勾认证企业" /> 
+                                  <span class="dn">伯乐认证企业</span>
+                   </h2>
+                   </div>
+                  </a>
+                </dt>
+                  <dd>
                     	<ul class="c_feature reset">
-                        	<li><span>领域</span> 移动互联网,游戏</li>
-                        	<li><span>规模</span> 50-150人</li>
+                        	
+                        	<li><span>规模</span>
+                        		<c:if test="${job.company.companyInfo.scale==1}">小于50人</c:if>
+			                    <c:if test="${job.company.companyInfo.scale==2 }">50-150人</c:if>
+			                    <c:if test="${job.company.companyInfo.scale==3 }">150-300人</c:if>
+			                    <c:if test="${job.company.companyInfo.scale==4 }">300-500人</c:if>
+			                    <c:if test="${job.company.companyInfo.scale==5 }">500-100人</c:if>
+			                    <c:if test="${job.company.companyInfo.scale==6 }">1000人以上</c:if>
+                        	</li>
                         	<li>
                         		<span>主页</span> 
-                        		           							<a href="http://L99.com" target="_blank" title="http://L99.com" rel="nofollow">http://L99.com</a>
-           						                        	</li>
+                        		  <a href="http://L99.com" target="_blank" title="http://L99.com" rel="nofollow">http://L99.com</a>
+           					</li>
                         </ul>
                         
-                        <h4>发展阶段</h4>
-                        <ul class="c_feature reset">
-                        	<li><span>目前阶段</span> A轮</li>
-                        	                        	<li><span>投资机构</span> IDG(A轮)，腾讯(A轮)</li>
-                        	                        </ul>
+                       
                         
                         <!--	                    	<h4>公司产品</h4>
 	                        <ul class="c_feature reset">
@@ -166,10 +193,10 @@ var youdao_conv_id = 271546;
                         </div> -->
                        	
                        	                       	<h4>工作地址</h4>
-                       	<div>武汉市武昌区螃蟹岬凤凰大厦A1-1301</div>
+                       	<div>${job.company.companyInfo.location}</div>
                        	<div id="smallmap"></div>
                        	<a href="javascript:;" id="mapPreview">查看完整地图</a>
-                       	                    </dd>
+                     </dd>
                 </dl>
                                 <a href="h/subject/s_zhouyou.html?utm_source=BD__lagou&utm_medium=&utm_campaign=zhouyou" target="_blank" class="eventAd">
                   <img src="style/images/zhouyou.jpg" width="280" height="135" />
