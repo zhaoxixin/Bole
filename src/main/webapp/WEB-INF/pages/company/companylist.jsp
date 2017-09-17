@@ -53,7 +53,7 @@ var youdao_conv_id = 271546;
 	    		    		</ul>
         	            <ul class="loginTop">
             	<!-- <li><a href="login.html" rel="nofollow">登录</a></li>  -->
-            	<li>欢迎${company.companyName}回来</li>
+            	<li>欢迎 [ ${company.companyName} ]回来</li>
             	<li><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></li>
             </ul>
                                 </div>

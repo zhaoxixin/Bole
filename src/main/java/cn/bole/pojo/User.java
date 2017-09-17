@@ -6,6 +6,7 @@ public class User extends BasicInfo{
     private String userId;
     private UserInfo userInfo;
     
+    
     public UserInfo getUserInfo() {
 		return userInfo;
 	}

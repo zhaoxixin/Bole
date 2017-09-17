@@ -7,7 +7,7 @@
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>平潭协创进出口贸易有限公司-拉勾网-最专业的互联网招聘平台</title>
+<title>${company.companyName}-伯乐网-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="平潭协创进出口贸易有限公司 福建平潭协创进出口贸易有限公司 上海 移动互联网 天使轮 150-500人 测试的发打发打发大范德萨发">
 <meta name="keywords" content="平潭协创进出口贸易有限公司 福建平潭协创进出口贸易有限公司 上海 移动互联网 天使轮 150-500人 测试的发打发打发大范德萨发">
@@ -39,29 +39,24 @@ var youdao_conv_id = 271546;
 	<div id="header">
     	<div class="wrapper">
     		<a class="logo" href="index.html">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
+    			<img width="229" height="43" alt="伯乐招聘-专注互联网招聘" src="style/images/logo.png">
     		</a>
     		<ul id="navheader" class="reset">
-    			<li><a href="index.html">首页</a></li>
-    			<li class="current"><a href="companylist.html">公司</a></li>
-    			<li><a target="_blank" href="">论坛</a></li>
-    				    			<li>
-	    				<a rel="nofollow" href="">简历管理</a>
+    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
+	    			<a href="javascript:void(0)" onclick="location.href='companyResumes.action'">简历管理</a>
 	    					    			</li>
-	    							    			<li><a rel="nofollow" href="create.html">发布职位</a></li>
+	    							    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">发布职位</a></li>
 	    		    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span>jason&nbsp;</span> 
+           			<li>欢迎[ ${company.companyName} ]</li>
+            	<li><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></li>
             		<span class="red dn" id="noticeDot-1"></span>
             		<i></i>
             	</dt>
-                                	<dd><a href="positions.html">我发布的职位</a></dd>
-                	<dd><a href="">我收到的简历</a></dd>
-                	<dd class="btm"><a href="myhome.html">我的公司主页</a></dd>
-                	<dd><a href="jianli.html">我要找工作</a></dd>
-                                                <dd><a href="accountBind.html">帐号设置</a></dd>
-                                <dd class="logout"><a rel="nofollow" href="login.html">退出</a></dd>
+                    <dd><a href="javascript:void(0)" onclick="location.href='/.action'">发布的职位</a></dd>
+                	<dd><a href="javascript:void(0)" onclick="location.href='companyResumes.action'">简历管理</a></dd>
+                                <dd class="logout"><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></dd>
             </dl>
                                 </div>
     </div><!-- end #header -->
@@ -73,9 +68,8 @@ var youdao_conv_id = 271546;
 	                <div class="c_detail">
 	                	<div style="background-color:#fff;" class="c_logo">
 		                	<a title="上传公司LOGO" id="logoShow" class="inline cboxElement" href="#logoUploader">
-		                				                			<img width="190" height="190" alt="公司logo" src="style/images/logo_default.png">
-	                        		                        	
-	                        	<span>更换公司图片<br>190px*190px 小于5M</span>
+		                				                			<img width="190" height="190" alt="公司logo" src="${company.logo} ">
+	             
 	                        </a>
 		                </div>
 		                
@@ -91,10 +85,10 @@ var youdao_conv_id = 271546;
 						     -->
 		                
 	                    <div class="c_box companyName">
-	                    		                   			<h2 title="平潭协创进出口贸易有限公司">平潭协创进出口贸易有限公司</h2>
+	                    		                   			<h2 title="平潭协创进出口贸易有限公司">${company.companyName}</h2>
 	                   			                        
 	                        	                        	<em class="unvalid"></em>
-                        		<span class="va dn">拉勾未认证企业</span>
+                        		<span class="va dn">伯乐未认证企业</span>
 	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth.html">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
@@ -621,8 +615,8 @@ avatar.uploadComplate = function( data ){
 		<div class="wrapper">
 			<a rel="nofollow" target="_blank" href="about.html">联系我们</a>
 		    <a target="_blank" href="http://www.lagou.com/af/zhaopin.html">互联网公司导航</a>
-		    <a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">拉勾微博</a>
-		    <a rel="nofollow" href="javascript:void(0)" class="footer_qr">拉勾微信<i></i></a>
+		    <a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">伯乐微博</a>
+		    <a rel="nofollow" href="javascript:void(0)" class="footer_qr">伯乐微信<i></i></a>
 			<div class="copyright">&copy;2013-2014 Lagou <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
 		</div>
 	</div>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import cn.bole.pojo.Company;
+import cn.bole.pojo.Resum;
 import cn.bole.pojo.User;
 
 public interface CompanyMapper {
@@ -15,6 +16,8 @@ public interface CompanyMapper {
 
 	Company findCompanyEmailAndPassword(@Param("email")String email, @Param("password")String password);
 
-	User findUserBycomId(String companyInfoId);
+	List<Resum> findUserBycomId(Integer companyId);
+
+
 
 }

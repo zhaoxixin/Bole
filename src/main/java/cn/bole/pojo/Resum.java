@@ -11,6 +11,14 @@ public class Resum extends BasicInfo{
 	 private String workExp; //工作履历
 	 private String workAddr;//工作地址
 	 private String eduExp;//教育经验
+	 private UserInfo userInfo;
+
+	public UserInfo getUserInfo() {
+		return userInfo;
+	}
+	public void setUserInfo(UserInfo userInfo) {
+		this.userInfo = userInfo;
+	}
 	public String getResumId() {
 		return resumId;
 	}

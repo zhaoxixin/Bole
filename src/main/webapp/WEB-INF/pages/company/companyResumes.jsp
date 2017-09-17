@@ -163,29 +163,29 @@ var youdao_conv_id = 271546;
           <input type="hidden" value="0" name="filterStatus" id="filterStatus">
      <input type="hidden" value="" name="positionId" id="positionId">
  </div>
- end .filter_options                        	                        		                        <ul class="reset resumeLists">
+                       	                        		                        <ul class="reset resumeLists">
 		                            			                            <li data-id="1686182" class="onlineResume">
+			                                <!--开始更改简历显示-->
+			                                <c:forEach items="${companyuserlist}" var="r" >
 			                                <label class="checkbox">
 			                                    <input type="checkbox">
 			                                    <i></i>
 			                                </label>
-			                                <!--开始更改简历显示-->
-			                                <c:forEach>
 			                                <div class="resumeShow">
-			                                		<a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
+			                                		<!-- <a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
 			                                    	<img src="style/images/default_headpic.png">
-			                                    </a>
+			                                    </a> -->
 			                                    <div class="resumeIntro">
 			                                        <h3 class="unread">
 			                                        <a target="_blank" title="预览jason的简历" href="resumeView.html?deliverId=1686182">
-			                                        		jason的简历
+			                                        		 ${r.resumName} 
 		                                        	</a>
 				                           	 		<em></em>
 			                                        </h3>
 			                                        <span class="fr">投递时间：2014-07-01 17:08</span>
 			                                        <div> 
-			                                        	jason  			                                        	 / 男 			                                        	/ 大专 			                                        	/ 3年  			                                        	/ 广州 			                                            			                                        		<br>
-			                                            	高级产品经理 · 上海辉硕科技有限公司 | 本科 · 北京大学
+			                                        	${r.userInfo.realname} / ${r.userInfo.sex} / ${r.userInfo.education}			                                        	/ 3年  			                                        	/ 广州 			                                            			                                        		<br>
+			                                            	 |北京大学
 			                                            			                                        </div>
 			                                        <div class="jdpublisher">
 				                                        <span>
