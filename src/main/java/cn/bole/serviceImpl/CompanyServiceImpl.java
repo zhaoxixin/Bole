@@ -22,9 +22,9 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public Company findCompanyById(String companyInfoId) {
+	public Company findCompanyById(Integer companyId) {
 
-		return companyMapper.findCompanyById(companyInfoId);
+		return companyMapper.findCompanyById(companyId);
 	}
 
 	@Override

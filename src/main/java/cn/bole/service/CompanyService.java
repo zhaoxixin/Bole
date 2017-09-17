@@ -10,7 +10,7 @@ public interface CompanyService {
 
 	List<Company> findCompanyAll();
 
-	Company findCompanyById(String companyInfoId);
+	Company findCompanyById(Integer companyId);
 
 	Company findCompanyEmailAndPassword(String email, String password);
 

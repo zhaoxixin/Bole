@@ -7,18 +7,18 @@
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>发布新职位-招聘服务-拉勾网-最专业的互联网招聘平台</title>
+<title>发布新职位-招聘服务-伯乐网-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
-<meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
-<meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
+<meta name="description" content="伯乐网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在伯乐网">
+<meta name="keywords" content="伯乐,伯乐网,伯乐招聘,拉钩, 拉钩网 ,互联网招聘,伯乐互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 伯乐官网, 伯乐百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
-<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
+<!-- <div class="web_root"  style="display:none">http://www.bole.com</div> -->
 <script type="text/javascript">
-var ctx = "http://www.lagou.com";
+var ctx = "http://www.bole.com";
 console.log(1);
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="http://www.bole.com/images/favicon.ico" rel="Shortcut Icon">
 <link href="style/css/style.css" type="text/css" rel="stylesheet">
 <link href="style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="style/css/popup.css" type="text/css" rel="stylesheet">
@@ -39,38 +39,38 @@ var youdao_conv_id = 271546;
 	<div id="header">
     	<div class="wrapper">
     		<a class="logo" href="index.html">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
+    			<img width="229" height="43" alt="伯乐招聘-专注互联网招聘" src="style/images/logo.png">
     		</a>
     		<ul id="navheader" class="reset">
-    			<li><a href="index.html">首页</a></li>
-    			<li><a href="companylist.html">公司</a></li>
-    			<li><a target="_blank" href="">论坛</a></li>
-    				    			<li>
-	    				<a rel="nofollow" href="">简历管理</a>
-	    					    			</li>
-	    							    			<li class="current"><a rel="nofollow" href="create.html">发布职位</a></li>
-	    		    		</ul>
+    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='companyResumes.action'">公司简历管理</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司发布职位</a></li>
+	    			</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red dn" id="noticeDot-1"></span>
+           			<span>${company.companyName}&nbsp;</span> 
+            		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                	<dd style="display: none;"><a href="positions.html">我发布的职位</a></dd>
-                	<dd style="display: none;"><a href="positions.html">我收到的简历</a></dd>
-                	<dd class="btm" style="display: none;"><a href="myhome.html">我的公司主页</a></dd>
-                	<dd style="display: none;"><a href="jianli.html">我要找工作</a></dd>
-                                                <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
-                                <dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
+                <dd><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></dd>
+                <dd><a href="javascript:void(0)" onclick="location.href='createcom.action'">我要招人</a></dd>
+                <dd class="logout"><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></dd>
             </dl>
-                                </div>
+                                    <div class="dn" id="noticeTip">
+            	<span class="bot"></span>
+				<span class="top"></span>
+				<a target="_blank" href="delivery.html"><strong></strong>条简历数量</a>
+				<a class="closeNT" href="javascript:;"></a>
+            </div>
+                    </div>
     </div><!-- end #header -->
     <div id="container">
         
         	<div class="sidebar">
-            	<a class="btn_create" href="create.html">发布新职位</a>
+            	<a class="btn_create" href="javascript:void(0)" onclick="location.href='createcom.action'">发布新职位</a>
                 <dl class="company_center_aside">
-		<dt>我收到的简历</dt>
+		<!-- <dt>我收到的简历</dt>
 		<dd>
 		<a href="">待处理简历</a> 
 			</dd>
@@ -85,7 +85,7 @@ var youdao_conv_id = 271546;
 	</dd>
 	<dd class="btm">
 		<a href="autoFilterResumes.html">自动过滤简历</a> 
-			</dd>
+			</dd> -->
 </dl>
 <dl class="company_center_aside">
 		<dt>我发布的职位</dt>
@@ -97,65 +97,64 @@ var youdao_conv_id = 271546;
 	</dd>
 	</dl>
                 <div class="subscribe_side mt20">
-   <div class="f14">想收到更多更好的简历？</div>
-   <div class="f18 mb10">就用拉勾招聘加速助手 </div>
-   <div>咨询：<a class="f16" href="mailto:jessica@lagou.com">jessica@lagou.com</a></div>
-   <div class="f18 ti2em">010-57286512</div>
+   <div class="f14"></div>
+   <div class="f18 mb10"> </div>
+   <div>咨询：<a class="f16" href=""></a></div>
+   <div class="f18 ti2em"></div>
 </div>
 <div class="subscribe_side mt20">
-   <div class="f14">加入互联网HR交流群</div>
-   <div class="f18 mb10">跟同行聊聊</div>
-   <div class="f24">338167634</div>
+   <div class="f14"></div>
+   <div class="f18 mb10"></div>
+   <div class="f24"></div>
 </div>            </div><!-- end .sidebar -->
             <div class="content">
             	<dl class="company_center_content">
                     <dt>
                         <h1>
                             <em></em>
-                                                       		发布新职位
+                                    发布新职位
                            	                        </h1>
                     </dt>
                     <dd>
-                    	<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
-                    	<form action="http://www.lagou.com/corpPosition/preview.html" method="post" id="jobForm">
-                            <input type="hidden" value="" name="id">
-                            <input type="hidden" value="create" name="preview">
-                            <input type="hidden" value="25927" name="companyId">
-                            <input type="hidden" value="c29d4a7c35314180bf3be5eb3f00048f" name="resubmitToken">
+                    	<!-- <div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div> -->
+                    	<form action="createcom.action" method="post" id="jobForm">
+                            <input type="hidden" value="${company.companyId}" name="companyId">
+                          <input type="hidden" value="1" name="jobId">
+                            <input type="hidden" value="1" name="industryId"> 
                             <table class="btm">
                             	<tbody><tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">职位类别</td>
                                 	<td>
-                                    	<input type="hidden" id="positionType" value="" name="positionType">
+                                    	<input type="hidden" id="positionType" value="" name="jobName">
                                         <input type="button" value="请选择职位类别" id="select_category" class="selectr selectr_380">                                      
                                         <div class="dn" id="box_job" style="display: none;">
                                                                                             <dl>
                                                     <dt>技术</dt>
                                                     <dd>
                                                         <ul class="reset job_main">
-                                                                                                                            <li>
+                                                                     <li>
                                                                     <span>后端开发</span>
-                                                                                                                                        <ul class="reset job_sub dn">
-                                                                                                                                                    <li>Java</li>
-                                                                                                                                                    <li>C++</li>
-                                                                                                                                                    <li>PHP</li>
-                                                                                                                                                    <li>数据挖掘</li>
-                                                                                                                                                    <li>C</li>
-                                                                                                                                                    <li>C#</li>
-                                                                                                                                                    <li>.NET</li>
-                                                                                                                                                    <li>Hadoop</li>
-                                                                                                                                                    <li>Python</li>
-                                                                                                                                                    <li>Delphi</li>
-                                                                                                                                                    <li>VB</li>
-                                                                                                                                                    <li>Perl</li>
-                                                                                                                                                    <li>Ruby</li>
-                                                                                                                                                    <li>Node.js</li>
+                                                                         <ul class="reset job_sub dn">
+                                                                          <li>Java</li>
+                                                                        <li>C++</li>
+                                                                          <li>PHP</li>
+                                                                          <li>数据挖掘</li>
+                                                                           <li>C</li>
+                                                                            <li>C#</li>
+                                                                           <li>.NET</li>
+                                                                         <li>Hadoop</li>
+                                                                         <li>Python</li>
+                                                                          <li>Delphi</li>
+                                                                          <li>VB</li>
+                                                                            <li>Perl</li>
+                                                                           <li>Ruby</li>
+                                                                             <li>Node.js</li>
                                                                                                                                             </ul>
                                                                                                                                     </li>
                                                                                                                             <li>
                                                                     <span>移动开发</span>
-                                                                                                                                        <ul class="reset job_sub dn" style="margin-left: -160px;">
+                                                                         <ul class="reset job_sub dn" style="margin-left: -160px;">
                                                                                                                                                     <li>HTML5</li>
                                                                                                                                                     <li>Android</li>
                                                                                                                                                     <li>iOS</li>
@@ -460,16 +459,16 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>职位名称</td>
                                 	<td>
-                                    	<input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="positionName" id="positionName">
+                                    	<input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="jobName" id="positionName">
                                     	                                    </td>
                                 </tr>
-                            	<tr>
+                            	<!-- <tr>
                                 	<td></td>
                                 	<td>所属部门</td>
                                 	<td>
                                     	<input type="text" placeholder="请输入所属部门" value="" name="department" id="department">	
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody></table>
                             
                             <table class="btm">
@@ -493,10 +492,10 @@ var youdao_conv_id = 271546;
                                                                                                                                        </ul>
                                     </td>
                                 </tr>
-                            	<tr>
+                            	<!-- <tr>
                                 	<td><span class="redstar">*</span></td>
                                 	<td>月薪范围</td>
-                                    <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+                                    <h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3>
                                 	<td>
                                     	<div class="salary_range">
                                             <div>
@@ -510,12 +509,12 @@ var youdao_conv_id = 271546;
                                             <span>只能输入整数，如：9</span>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> -->
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
                                 	<td>工作城市</td>
                                 	<td>
-                                    	<input type="text" placeholder="请输入工作城市，如：北京" value="上海" name="workAddress" id="workAddress">
+                                    	<input type="text" placeholder="请输入工作城市，如：北京" value="上海" name="city" id="workAddress">
                                     </td>
                                 </tr>
                             </tbody></table>
@@ -525,7 +524,7 @@ var youdao_conv_id = 271546;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">工作经验</td>
                                 	<td>
-                                    	<input type="hidden" id="experience" value="" name="workYear">
+                                    	<input type="hidden" id="experience" value="" name="workExperience">
                                         <input type="button" value="请选择工作经验" id="select_experience" class="selectr selectr_380">                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_experience" style="display: none;">
                                             <ul>
@@ -536,20 +535,20 @@ var youdao_conv_id = 271546;
                                                         应届毕业生
                                                     </li>
                                         	 	                                                    <li>
-                                                        1年以下
+                                                        1
                                                     </li>
                                         	 	                                                    <li>
-                                                        1-3年
+                                                       3
                                                     </li>
                                         	 	                                                    <li>
-                                                        3-5年
+                                                       5
                                                     </li>
                                         	 	                                                    <li>
-                                                        5-10年
+                                                       10
                                                     </li>
-                                        	 	                                                    <li>
-                                                        10年以上
-                                                    </li>
+                                	 	                                                    <li>
+                                                       20
+                                                    </li> 
                                         	 	                                            </ul>
                                     	</div>
                                     </td>
@@ -559,7 +558,7 @@ var youdao_conv_id = 271546;
                                 	<td>学历要求</td>
                                     <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
                                 	<td>
-                                    	<input type="hidden" id="education" value="" name="education">
+                                    	<input type="hidden" id="education" value="" name="highistEducation">
                                         <input type="button" value="请选择学历要求" id="select_education" class="selectr selectr_380">                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_education" style="display: none;">
                                             <ul>
@@ -585,20 +584,20 @@ var youdao_conv_id = 271546;
                             </tbody></table>
                            
                             <table class="btm">
-                            	<tbody><tr>
+                            	<tbody><!-- <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">职位诱惑</td>
                                 	<td>
                                     	<input type="text" placeholder="20字描述该职位的吸引力，如：福利待遇、发展前景等" value="" name="positionAdvantage" class="input_520" id="positionAdvantage">
                                     </td>
-                                </tr>
+                                </tr> -->
                             	<tr>
                                 	<td><span class="redstar">*</span></td>
                                 	<td>职位描述</td>
                                 	<td>
                                     	<span class="c9 f14">(建议分条描述工作职责等。请勿输入公司邮箱、联系电话及其他外链，否则将自动删除)</span>
                                     	
-                                        <textarea name="positionDetail" id="positionDetail" class="tinymce" style="display: none;" aria-hidden="true"></textarea><span role="application" aria-labelledby="positionDetail_voice" id="positionDetail_parent" class="mceEditor defaultSkin"><span class="mceVoiceLabel" style="display:none;" id="positionDetail_voice">富文本域</span><table cellspacing="0" cellpadding="0" role="presentation" id="positionDetail_tbl" class="mceLayout" style="width: 544px; height: 276px;"><tbody><tr role="presentation" class="mceFirst"><td class="mceToolbar mceLeft mceFirst mceLast" role="toolbar"><div aria-labelledby="positionDetail_toolbargroup_voice" role="group" id="positionDetail_toolbargroup" tabindex="-1"><span role="application"><span style="display:none;" class="mceVoiceLabel" id="positionDetail_toolbargroup_voice">工具栏</span><table align="" cellspacing="0" cellpadding="0" tabindex="-1" role="presentation" class="mceToolbar mceToolbarRow1 Enabled" id="positionDetail_toolbar1" aria-disabled="false" aria-pressed="false"><tbody><tr><td class="mceToolbarStart mceToolbarStartButton mceFirst"><span><!-- IE --></span></td><td style="position: relative"><a title="粗体(Ctrl B)" aria-labelledby="positionDetail_bold_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_bold" href="javascript:;" id="positionDetail_bold" role="button" tabindex="-1"><span class="mceIcon mce_bold"></span><span id="positionDetail_bold_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">粗体(Ctrl B)</span></a></td><td style="position: relative"><a title="斜体(Ctrl I)" aria-labelledby="positionDetail_italic_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_italic" href="javascript:;" id="positionDetail_italic" role="button" tabindex="-1"><span class="mceIcon mce_italic"></span><span id="positionDetail_italic_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">斜体(Ctrl I)</span></a></td><td style="position: relative"><a title="下划线(Ctrl U)" aria-labelledby="positionDetail_underline_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_underline" href="javascript:;" id="positionDetail_underline" role="button" tabindex="-1"><span class="mceIcon mce_underline"></span><span id="positionDetail_underline_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">下划线(Ctrl U)</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="左对齐" aria-labelledby="positionDetail_justifyleft_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifyleft" href="javascript:;" id="positionDetail_justifyleft" role="button" tabindex="-1"><span class="mceIcon mce_justifyleft"></span><span id="positionDetail_justifyleft_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">左对齐</span></a></td><td style="position: relative"><a title="居中" aria-labelledby="positionDetail_justifycenter_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifycenter" href="javascript:;" id="positionDetail_justifycenter" role="button" tabindex="-1"><span class="mceIcon mce_justifycenter"></span><span id="positionDetail_justifycenter_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">居中</span></a></td><td style="position: relative"><a title="右对齐" aria-labelledby="positionDetail_justifyright_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifyright" href="javascript:;" id="positionDetail_justifyright" role="button" tabindex="-1"><span class="mceIcon mce_justifyright"></span><span id="positionDetail_justifyright_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">右对齐</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="项目列表" aria-labelledby="positionDetail_bullist_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_bullist" href="javascript:;" id="positionDetail_bullist" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_bullist"></span><span id="positionDetail_bullist_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">项目列表</span></a></td><td style="position: relative"><a title="编号列表" aria-labelledby="positionDetail_numlist_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_numlist" href="javascript:;" id="positionDetail_numlist" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_numlist"></span><span id="positionDetail_numlist_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">编号列表</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="减少缩进" aria-labelledby="positionDetail_outdent_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_outdent mceButtonDisabled" href="javascript:;" id="positionDetail_outdent" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_outdent"></span><span id="positionDetail_outdent_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">减少缩进</span></a></td><td style="position: relative"><a title="增加缩进" aria-labelledby="positionDetail_indent_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_indent" href="javascript:;" id="positionDetail_indent" role="button" tabindex="-1"><span class="mceIcon mce_indent"></span><span id="positionDetail_indent_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">增加缩进</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="撤销 (Ctrl Z)" aria-labelledby="positionDetail_undo_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_undo mceButtonDisabled" href="javascript:;" id="positionDetail_undo" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_undo"></span><span id="positionDetail_undo_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">撤销 (Ctrl Z)</span></a></td><td style="position: relative"><a title="恢复 (Ctrl Y)" aria-labelledby="positionDetail_redo_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_redo mceButtonDisabled" href="javascript:;" id="positionDetail_redo" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_redo"></span><span id="positionDetail_redo_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">恢复 (Ctrl Y)</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="插入/编辑 超链接" aria-labelledby="positionDetail_link_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_link mceButtonDisabled" href="javascript:;" id="positionDetail_link" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_link"></span><span id="positionDetail_link_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入/编辑 超链接</span></a></td><td style="position: relative"><a title="取消超链接" aria-labelledby="positionDetail_unlink_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_unlink mceButtonDisabled" href="javascript:;" id="positionDetail_unlink" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_unlink"></span><span id="positionDetail_unlink_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">取消超链接</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="插入水平线" aria-labelledby="positionDetail_hr_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_hr" href="javascript:;" id="positionDetail_hr" role="button" tabindex="-1"><span class="mceIcon mce_hr"></span><span id="positionDetail_hr_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入水平线</span></a></td><td style="position: relative"><a title="切换全屏模式" aria-labelledby="positionDetail_fullscreen_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_fullscreen" href="javascript:;" id="positionDetail_fullscreen" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_fullscreen"></span><span id="positionDetail_fullscreen_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">切换全屏模式</span></a></td><td style="position: relative"><a title="插入/编辑 图片" aria-labelledby="positionDetail_image_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_image" href="javascript:;" id="positionDetail_image" role="button" tabindex="-1"><span class="mceIcon mce_image"></span><span id="positionDetail_image_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入/编辑 图片</span></a></td><td class="mceToolbarEnd mceToolbarEndButton mceLast"><span><!-- IE --></span></td></tr></tbody></table></span></div><a onfocus="tinyMCE.getInstanceById('positionDetail').focus();" title="转到工具按钮 - Alt-Q，转到编辑器 - Alt-Z，转到元素路径 - Alt-X。" accesskey="z" ><!-- IE --></a></td></tr><tr class="mceLast"><td class="mceIframeContainer mceFirst mceLast"><iframe frameborder="0" id="positionDetail_ifr" src="javascript:&quot;&quot;" allowtransparency="true" title="富文本域按 ALT-F10 定位到工具栏.按 ALT-0 获取帮助。" style="width: 100%; height: 253px; display: block;"></iframe></td></tr></tbody></table></span>
+                                        <textarea name="discription" id="positionDetail" class="tinymce" style="display: none;" aria-hidden="true"></textarea><span role="application" aria-labelledby="positionDetail_voice" id="positionDetail_parent" class="mceEditor defaultSkin"><span class="mceVoiceLabel" style="display:none;" id="positionDetail_voice">富文本域</span><table cellspacing="0" cellpadding="0" role="presentation" id="positionDetail_tbl" class="mceLayout" style="width: 544px; height: 276px;"><tbody><tr role="presentation" class="mceFirst"><td class="mceToolbar mceLeft mceFirst mceLast" role="toolbar"><div aria-labelledby="positionDetail_toolbargroup_voice" role="group" id="positionDetail_toolbargroup" tabindex="-1"><span role="application"><span style="display:none;" class="mceVoiceLabel" id="positionDetail_toolbargroup_voice">工具栏</span><table align="" cellspacing="0" cellpadding="0" tabindex="-1" role="presentation" class="mceToolbar mceToolbarRow1 Enabled" id="positionDetail_toolbar1" aria-disabled="false" aria-pressed="false"><tbody><tr><td class="mceToolbarStart mceToolbarStartButton mceFirst"><span><!-- IE --></span></td><td style="position: relative"><a title="粗体(Ctrl B)" aria-labelledby="positionDetail_bold_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_bold" href="javascript:;" id="positionDetail_bold" role="button" tabindex="-1"><span class="mceIcon mce_bold"></span><span id="positionDetail_bold_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">粗体(Ctrl B)</span></a></td><td style="position: relative"><a title="斜体(Ctrl I)" aria-labelledby="positionDetail_italic_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_italic" href="javascript:;" id="positionDetail_italic" role="button" tabindex="-1"><span class="mceIcon mce_italic"></span><span id="positionDetail_italic_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">斜体(Ctrl I)</span></a></td><td style="position: relative"><a title="下划线(Ctrl U)" aria-labelledby="positionDetail_underline_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_underline" href="javascript:;" id="positionDetail_underline" role="button" tabindex="-1"><span class="mceIcon mce_underline"></span><span id="positionDetail_underline_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">下划线(Ctrl U)</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="左对齐" aria-labelledby="positionDetail_justifyleft_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifyleft" href="javascript:;" id="positionDetail_justifyleft" role="button" tabindex="-1"><span class="mceIcon mce_justifyleft"></span><span id="positionDetail_justifyleft_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">左对齐</span></a></td><td style="position: relative"><a title="居中" aria-labelledby="positionDetail_justifycenter_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifycenter" href="javascript:;" id="positionDetail_justifycenter" role="button" tabindex="-1"><span class="mceIcon mce_justifycenter"></span><span id="positionDetail_justifycenter_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">居中</span></a></td><td style="position: relative"><a title="右对齐" aria-labelledby="positionDetail_justifyright_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_justifyright" href="javascript:;" id="positionDetail_justifyright" role="button" tabindex="-1"><span class="mceIcon mce_justifyright"></span><span id="positionDetail_justifyright_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">右对齐</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="项目列表" aria-labelledby="positionDetail_bullist_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_bullist" href="javascript:;" id="positionDetail_bullist" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_bullist"></span><span id="positionDetail_bullist_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">项目列表</span></a></td><td style="position: relative"><a title="编号列表" aria-labelledby="positionDetail_numlist_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_numlist" href="javascript:;" id="positionDetail_numlist" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_numlist"></span><span id="positionDetail_numlist_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">编号列表</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="减少缩进" aria-labelledby="positionDetail_outdent_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_outdent mceButtonDisabled" href="javascript:;" id="positionDetail_outdent" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_outdent"></span><span id="positionDetail_outdent_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">减少缩进</span></a></td><td style="position: relative"><a title="增加缩进" aria-labelledby="positionDetail_indent_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_indent" href="javascript:;" id="positionDetail_indent" role="button" tabindex="-1"><span class="mceIcon mce_indent"></span><span id="positionDetail_indent_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">增加缩进</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="撤销 (Ctrl Z)" aria-labelledby="positionDetail_undo_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_undo mceButtonDisabled" href="javascript:;" id="positionDetail_undo" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_undo"></span><span id="positionDetail_undo_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">撤销 (Ctrl Z)</span></a></td><td style="position: relative"><a title="恢复 (Ctrl Y)" aria-labelledby="positionDetail_redo_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_redo mceButtonDisabled" href="javascript:;" id="positionDetail_redo" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_redo"></span><span id="positionDetail_redo_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">恢复 (Ctrl Y)</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="插入/编辑 超链接" aria-labelledby="positionDetail_link_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_link mceButtonDisabled" href="javascript:;" id="positionDetail_link" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_link"></span><span id="positionDetail_link_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入/编辑 超链接</span></a></td><td style="position: relative"><a title="取消超链接" aria-labelledby="positionDetail_unlink_voice" onclick="return false;" onmousedown="return false;" class="mceButton mce_unlink mceButtonDisabled" href="javascript:;" id="positionDetail_unlink" role="button" tabindex="-1" aria-disabled="true"><span class="mceIcon mce_unlink"></span><span id="positionDetail_unlink_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">取消超链接</span></a></td><td style="position: relative"><span tabindex="-1" aria-orientation="vertical" role="separator" class="mceSeparator"></span></td><td style="position: relative"><a title="插入水平线" aria-labelledby="positionDetail_hr_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_hr" href="javascript:;" id="positionDetail_hr" role="button" tabindex="-1"><span class="mceIcon mce_hr"></span><span id="positionDetail_hr_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入水平线</span></a></td><td style="position: relative"><a title="切换全屏模式" aria-labelledby="positionDetail_fullscreen_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_fullscreen" href="javascript:;" id="positionDetail_fullscreen" role="button" tabindex="-1" aria-pressed="false"><span class="mceIcon mce_fullscreen"></span><span id="positionDetail_fullscreen_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">切换全屏模式</span></a></td><td style="position: relative"><a title="插入/编辑 图片" aria-labelledby="positionDetail_image_voice" onclick="return false;" onmousedown="return false;" class="mceButton mceButtonEnabled mce_image" href="javascript:;" id="positionDetail_image" role="button" tabindex="-1"><span class="mceIcon mce_image"></span><span id="positionDetail_image_voice" style="display: none;" class="mceVoiceLabel mceIconOnly">插入/编辑 图片</span></a></td><td class="mceToolbarEnd mceToolbarEndButton mceLast"><span><!-- IE --></span></td></tr></tbody></table></span></div><a onfocus="tinyMCE.getInstanceById('positionDetail').focus();" title="转到工具按钮 - Alt-Q，转到编辑器 - Alt-Z，转到元素路径 - Alt-X。" accesskey="z" ><!-- IE --></a></td></tr><tr class="mceLast"><td class="mceIframeContainer mceFirst mceLast"><iframe frameborder="0" id="positionDetail_ifr" src="javascript:&quot;&quot;" allowtransparency="true" title="富文本域按 ALT-F10 定位到工具栏.按 ALT-0 获取帮助。" style="width: 100%; height: 253px; display: block;"></iframe></td></tr></tbody></table></span>
                                        	
                                     </td>
                                 </tr>
@@ -606,7 +605,7 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>工作地址</td>
                                 	<td>
-                                    	<input type="text" placeholder="请输入详细的工作地址" value="" name="positionAddress" class="input_520" id="positionAddress">	
+                                    	<input type="text" placeholder="请输入详细的工作地址" value="" name="city" class="input_520" id="positionAddress">	
                                         <input type="hidden" value="" name="positionLng" id="lng">
                             			<input type="hidden" value="" name="positionLat" id="lat">
                                         <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户  <a id="mapPreview" href="javascript:;">预览地图</a></div>
@@ -615,7 +614,7 @@ var youdao_conv_id = 271546;
                             </tbody></table>
                             
                             <table>
-                            	<tbody><tr>
+                            	<tbody><!-- <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td colspan="2">
                                     	接收简历邮箱： <span id="receiveEmailVal">admin@admin.com</span>
@@ -627,14 +626,14 @@ var youdao_conv_id = 271546;
                                 	<td colspan="2">
                                     	同时简历自动发送至邮箱（仅一个）
                                         <input type="text" value="" id="forwardEmail" name="forwardEmail">
-                                        <!-- <span class="error" id="beError" style="display:none"></span> -->
+                                        <span class="error" id="beError" style="display:none"></span>
                                     </td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                 	<td width="25"></td>
                                 	<td colspan="2">
-                                    	<input type="submit" value="预览" id="jobPreview" class="btn_32">
-                                    	<input type="button" value="发布" id="formSubmit" class="btn_32">
+                                    	<!-- <input type="submit" value="预览" id="jobPreview" class="btn_32"> -->
+                                    	<input type="button" value="发布" id="formSubmit" class="btn_32" onclick="location.href='savaJob.action'">
                                     </td>
                                 </tr>
                          	</tbody></table>
@@ -764,7 +763,7 @@ $(function(){
 		onchange_callback: function(editor){
 	        tinyMCE.triggerSave();
 	        var editorContent = tinyMCE.get(editor.id).getContent();
-		    if(editorContent.length &gt; 20){
+		    if(editorContent.length &gt20){
 				$("#" + editor.id).valid();
 		    }
 	    } 
@@ -880,10 +879,10 @@ $(function(){
 	<div id="footer">
 		<div class="wrapper">
 			<a rel="nofollow" target="_blank" href="about.html">联系我们</a>
-		    <a target="_blank" href="http://www.lagou.com/af/zhaopin.html">互联网公司导航</a>
-		    <a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">拉勾微博</a>
-		    <a rel="nofollow" href="javascript:void(0)" class="footer_qr">拉勾微信<i></i></a>
-			<div class="copyright">&copy;2013-2014 Lagou <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
+		    <a target="_blank" href="http://www.bole.com/af/zhaopin.html">互联网公司导航</a>
+		    <a rel="nofollow" target="_blank" href="http://e.weibo.com/bole720">伯乐微博</a>
+		    <a rel="nofollow" href="javascript:void(0)" class="footer_qr">伯乐微信<i></i></a>
+			<div class="copyright">&copy;2017 bole <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
 		</div>
 	</div>
 

@@ -36,12 +36,12 @@ public class CompanyController {
     	 Company company = (Company) session.getAttribute("company");
     	 companyId=company.getCompanyId();
     	 List<Resum> companyuserlist = companyService.findUserBycomId(companyId);
-    	 for (Resum resum : companyuserlist) {
-			System.out.println(resum.getResumId());
-			System.out.println(resum.getUserInfo().getRealname());
-			System.out.println(resum.getResumId());
-		}
-    	 System.out.println(companyId);
+//    	 for (Resum resum : companyuserlist) {
+//			System.out.println(resum.getResumId());
+//			System.out.println(resum.getUserInfo().getRealname());
+//			System.out.println(resum.getResumId());
+//		}
+//    	 System.out.println(companyId);
     	 model.addAttribute("companyuserlist", companyuserlist);
     	 return "/company/companyResumes";
      }
@@ -49,12 +49,26 @@ public class CompanyController {
      
      //跳转到公司详细页面
      @RequestMapping("/myhome")
-     public String findCompanyInfobyId(String companyInfoId,Model model,HttpSession session){
-    	 Company company = companyService.findCompanyById(companyInfoId);
-    	 model.addAttribute("company", company);
-    	 session.setAttribute("company", company);
+     public String findCompanyInfobyId(Integer companyId,Model model,HttpSession session){
+    	 Company company = (Company) session.getAttribute("company");
+    	 companyId=company.getCompanyId();
+         Company companyone = companyService.findCompanyById(companyId);
+    	 model.addAttribute("companyone", companyone);	 
     	 return "/company/myhome";
      }
      
+     //发布新职位
+     @RequestMapping("/createcom")
+     public String reposit(){
+    	
+    	 return "/company/create";
+     }
+     
+     //保存新的职位
+     @RequestMapping("/savaJob")
+     public String savaJob(){
+    	 
+    	 return "/company/positions";
+     }
      
 }

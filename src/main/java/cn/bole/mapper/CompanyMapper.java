@@ -12,7 +12,7 @@ public interface CompanyMapper {
 
 	List<Company> findCompanyAll();
 
-	Company findCompanyById(String companyInfoId);
+	Company findCompanyById(Integer companyId);
 
 	Company findCompanyEmailAndPassword(@Param("email")String email, @Param("password")String password);
 
