@@ -198,8 +198,8 @@ var youdao_conv_id = 271546;
                        	<a href="javascript:;" id="mapPreview">查看完整地图</a>
                      </dd>
                 </dl>
-                                <a href="h/subject/s_zhouyou.html?utm_source=BD__lagou&utm_medium=&utm_campaign=zhouyou" target="_blank" class="eventAd">
-                  <img src="style/images/zhouyou.jpg" width="280" height="135" />
+                  <a href="h/subject/s_zhouyou.html?utm_source=BD__lagou&utm_medium=&utm_campaign=zhouyou" target="_blank" class="eventAd">
+                  <img src="${ctx}/style/images/zhouyou.jpg" width="280" height="135" />
                 </a>
             </div>
        	</div>                    
@@ -213,7 +213,7 @@ var youdao_conv_id = 271546;
 		<div id="loginToolBar">
 		<div>
 			<em></em>
-			<img src="style/images/footbar_logo.png" width="138" height="45" />
+			<img src="${ctx}/style/images/footbar_logo.png" width="138" height="45" />
 			<span class="companycount"></span>
 			<span class="positioncount"></span>
 			<a href="#loginPop" class="bar_login inline" title="登录"><i></i></a>
@@ -672,12 +672,12 @@ $(function(){
 			// 创建地址解析器实例
 			var sMyGeo = new BMap.Geocoder();
 			// 将地址解析结果显示在地图上,并调整地图视野
-			sMyGeo.getPoint("武汉市武昌区螃蟹岬凤凰大厦A1-1301", function(sPoint){
+			sMyGeo.getPoint("${job.company.companyInfo.address}", function(sPoint){
 			  if (sPoint) {
 				  sMap.centerAndZoom(sPoint, 16);
 				  sMap.addOverlay(new BMap.Marker(sPoint));
 			  }
-			}, "武汉");
+			}, "${job.company.companyInfo.location}");
 		}
 
 		/*弹窗大地图*/
@@ -691,8 +691,8 @@ $(function(){
 		$(function(){
 			$('#mapPreview').bind('click',function(){
 				$.colorbox({inline:true, href:"#baiduMap",title:"公司地址"});
-				var address = "武汉市武昌区螃蟹岬凤凰大厦A1-1301";
-				var city = "武汉";
+				var address = ${job.company.companyInfo.address};
+				var city = ${job.company.companyInfo.location};
 				var lat = $('#positionLat').val();
 				var lng = $('#positionLng').val();
 			    map.setCurrentCity(city);
