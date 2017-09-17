@@ -19,6 +19,10 @@ public interface JobService {
 
 	void sendResume(String userId, String jobId, String companyId);
 
+	List<Job> findJobByCompanyId(Integer companyId);
+
+	Job saveJob(Integer jobId);
+
 
 
 

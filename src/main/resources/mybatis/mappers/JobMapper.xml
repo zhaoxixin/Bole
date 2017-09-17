@@ -82,6 +82,36 @@
 		and job_id=#{jobId}
 	</select>
 	 
+	 
+	 <!--lcj添加根据companyId查询job-->
+	 <select id="findJobByCompanyId" resultMap="jobRM">
+		select * from 
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and j.company_id=#{companyId}	
+	</select>
+	
+	lcj根据jobId添加job
+	 <insert id="saveJob">
+	     insert into job values(
+			#{jobName},
+			#{jobNature},
+			#{city},
+			#{jobInfo.workExperience},
+			#{highistEducation},
+			#{announceTime},
+			#{jobInfo.discription}		
+		)
+	 </insert>
+	 
+	 
+	 
+	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
 		<id column="job_id" property="jobId"/>
 		<association property="jobInfo" resultMap="jobInfoRM">

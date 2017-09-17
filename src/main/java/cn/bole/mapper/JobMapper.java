@@ -22,4 +22,8 @@ public interface JobMapper {
 	@Insert("insert into com_user (job_id,company_id,resum_id) values(#{userId},#{jobId},#{companyId})")
 	void sendResume(@Param("userId")String userId, @Param("jobId")String jobId, @Param("companyId")String companyId);
 
+	List<Job> findJobByCompanyId(Integer companyId);
+
+	Job saveJob(Integer jobId);
+
 }

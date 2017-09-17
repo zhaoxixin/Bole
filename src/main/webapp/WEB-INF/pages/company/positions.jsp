@@ -45,11 +45,11 @@ var youdao_conv_id = 271546;
     			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='companyResumes.action'">公司简历管理</a></li>
-    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司发布职位</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司职位管理</a></li>
 	    				</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span>${company.companyName}&nbsp;</span> 
+           			<span>欢迎 ${company.companyName}&nbsp;</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
@@ -67,7 +67,7 @@ var youdao_conv_id = 271546;
     </div><!-- end #header -->
     <div id="container">
                 	<div class="sidebar">
-            	<a class="btn_create" href="create.html">发布新职位</a>
+            	<a class="btn_create" href="javascript:void(0)" onclick="location.href='fbzw.action'">发布新职位</a>
                 <dl class="company_center_aside">
 		<dt>我收到的简历</dt>
 		<dd>
@@ -96,6 +96,8 @@ var youdao_conv_id = 271546;
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
+            
+            
             <div class="content">
             	<dl class="company_center_content">
                     <dt>
@@ -104,29 +106,33 @@ var youdao_conv_id = 271546;
                            有效职位 <span><i style="color:#fff;font-style:normal" id="positionNumber"></i></span>                        </h1>
                     </dt>
                     <dd>
-                    		                    	<form id="searchForm">
+            <c:forEach items="${jobcompanyList}" var="jc" >
+                    		 <form id="searchForm">
 	                    		<input type="hidden" value="Publish" name="type">
 			                	<ul class="reset my_jobs">
-				                			                            	<li data-id="149594">
+				                <li data-id="149594">
 		                                    <h3>
-		                                        <a target="_blank" title="随便写" href="http://www.bole.com/jobs/149594.html">随便写</a> 
-		                                        <span>[上海]</span>
+		                                        <a target="_blank" title="职位名称" href=""> ${jc.jobName} </a> 
+		                                        <span></span>
 		                                        						                        		                                    </h3>
-		                                    		                                  		<span class="receivedResumeNo"><a href="unHandleResumes.html?positionId=149594">应聘简历（1）</a></span>
-		                                  			                                    <div>兼职 / 1k-2k / 1-3年 / 硕士及以上</div>
-		                                    		                                    				                                    <div class="c9">发布时间： 2014-07-01 17:07:01</div>
+		                                  <span class="receivedResumeNo"><a href="#">职位信息</a></span>
+		                                   <div>${jc.jobNature} / ${jc.highistEducation} / ${jc.jobInfo.workExperience}年 / ${jc.jobInfo.discription}</div>
+		                                    		                                    				                                    <div class="c9">发布日期:<fmt:formatDate value="${jc.announceTime}" pattern="yyyy-MM-dd "/></div>
 			                                    		                                    		                                    		                                    <div class="links">
 		                                    			                                       	<a class="job_refresh" href="javascript:void(0)">刷新<span>每个职位7天内只能刷新一次</span></a>
-		                                       			                                       	<a target="_blank" class="job_edit" href="create.html?positionId=149594">编辑</a>
+		                                       			                                       	<a target="_blank" class="job_edit" href="#">编辑</a>
 		                                       	<a class="job_offline" href="javascript:void(0)">下线</a>                      
 		                                        <a class="job_del" href="javascript:void(0)">删除</a>
 		                                    </div>
 		                                    		                                </li>
 	                                	                           	</ul>
 			                    			                </form>
+                                                    </c:forEach>
 		                                    </dd>
                 </dl>
-            </div><!-- end .content -->
+            </div>
+            
+            <!-- end .content -->
 <script src="style/js/job_list.min.js" type="text/javascript"></script> 
 			<div class="clear"></div>
 			<input type="hidden" value="74fb1ce14ebf4e2495270b0fbad64704" id="resubmitToken">

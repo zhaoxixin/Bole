@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -46,7 +45,7 @@ var youdao_conv_id = 271546;
     			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='companyResumes.action'">公司简历管理</a></li>
-    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司发布职位</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司职位管理</a></li>
 	    				</ul>
         	        	<dl class="collapsible_menu">
             	<dt>

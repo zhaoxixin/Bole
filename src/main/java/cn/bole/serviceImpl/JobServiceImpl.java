@@ -37,6 +37,16 @@ public class JobServiceImpl implements JobService {
 	public void sendResume(String userId, String jobId, String companyId) {
 		jobMapper.sendResume(userId,jobId,companyId);
 	}
+	@Override
+	public List<Job> findJobByCompanyId(Integer companyId) {
+		
+		return jobMapper.findJobByCompanyId(companyId);
+	}
+	@Override
+	public Job saveJob(Integer jobId) {
+		
+		return jobMapper.saveJob(jobId);
+	}
 	
 
 }

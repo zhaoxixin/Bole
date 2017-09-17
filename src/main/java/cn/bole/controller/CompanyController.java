@@ -12,15 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import cn.bole.pojo.Company;
+import cn.bole.pojo.Job;
 import cn.bole.pojo.Resum;
 import cn.bole.pojo.User;
 import cn.bole.service.CompanyService;
+import cn.bole.service.JobService;
 
 @Controller
 @RequestMapping("/")
 public class CompanyController {
      @Autowired
 	private CompanyService companyService;
+     @Autowired
+     private JobService jobService;
      @RequestMapping("/companyhome")
      public  String findCompanyAll(Model model){
     	 List<Company> companyList= companyService.findCompanyAll();
@@ -59,22 +63,26 @@ public class CompanyController {
      
      //跳转公司职位管理
      @RequestMapping("/createcom")
-     public String reposit(){
-    	
+     public String reposit(Integer companyId,Model model,HttpSession session){
+    	 Company company = (Company) session.getAttribute("company");
+    	 companyId=company.getCompanyId();
+    	 List<Job> jobcompanyList = jobService.findJobByCompanyId(companyId);
+    	 model.addAttribute("jobcompanyList", jobcompanyList);
+    	 session.setAttribute("jobcompanyList", jobcompanyList);
     	 return "/company/positions";
      }
      
      //发布新职位
      @RequestMapping("/fbzw")
      public String fbposit(){
-    	
+    	 
     	 return "/company/create";
      }
      
      //保存新的职位
      @RequestMapping("/savaJob")
-     public String savaJob(){
-    	 
+     public String saveJob(Integer jobId){
+    	 Job saveJob=jobService.saveJob(jobId);
     	 return "redirect:/company/positions";
      }
      

@@ -45,11 +45,11 @@ var youdao_conv_id = 271546;
     			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='companyResumes.action'">公司简历管理</a></li>
-    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司发布职位</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司职位管理</a></li>
 	    			</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span>${company.companyName}&nbsp;</span> 
+           			<span>欢迎 ${company.companyName}&nbsp;</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
