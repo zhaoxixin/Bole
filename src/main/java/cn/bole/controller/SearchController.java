@@ -50,6 +50,22 @@ public class SearchController {
 			@PathVariable String industryId,
 			@PathVariable String professionId){
 		List<Job> jobList = jobService.findJob(city,industryId,professionId);
+		model.addAttribute("jobList",jobList);
+		return "job/list";
+	}
+	
+	@RequestMapping("/jobDetails")
+	public String searchJobDetails(Model model,String jobId){
+		Job job = jobService.findJobByJobId(jobId);
+		model.addAttribute("job",job);
+		return "job/jobDetails";
+	}
+	
+	@RequestMapping("/sendResume")
+	public String sendResume(Model model,@PathVariable String city,
+			@PathVariable String industryId,
+			@PathVariable String professionId){
+		List<Job> jobList = jobService.findJob(city,industryId,professionId);
 		System.out.println(jobList.get(0).getAnnounceTime());
 		model.addAttribute("jobList",jobList);
 		return "job/list";

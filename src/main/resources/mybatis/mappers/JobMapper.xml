@@ -62,6 +62,17 @@
 		and job_name=#{jobname}
 		and state=1
 	</select>
+	<select id="findJobByJobId" resultMap="jobRM">
+		select * from 
+		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.j_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and j_id=#{jobId}
+	</select>
 	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
 		<id column="job_id" property="jobId"/>

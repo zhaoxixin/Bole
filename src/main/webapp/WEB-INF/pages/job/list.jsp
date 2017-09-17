@@ -238,7 +238,7 @@ var youdao_conv_id = 271546;
 	                  <li class="odd clearfix">
 			                  <div class="hot_pos_l">
 			                     <div class="mb10">
-			                       <a href="${ctx }/jobDetails"  target="_blank">${job.jobName }</a> 
+			                       <a href="${ctx }/jobDetails?jobId="+${job.jobId}  target="_blank">${job.jobName }</a> 
 			                            &nbsp;
 			                       <span class="c9">${job.jobInfo.city }</span>
 			                     </div>	
@@ -271,9 +271,9 @@ var youdao_conv_id = 271546;
 			                    
 						       <div class="hot_pos_r">
 			                       <div class="apply">
-			                        <a href="toudi.html" target="_blank">投个简历</a>
+			                        <a href="${ctx}/sendResume" target="_blank">投个简历</a>
 			                      </div>
-			                      <div class="mb10"><a href="h/c/1712.html" target="_blank">${job.company.companyName }</a></div>
+			                      <div class="mb10"><a href="${ctx}/..." target="_blank">${job.company.companyName }</a></div>
 			                      <span><em class="c7"></em>${job.company.companyInfo.introduction }</span>
 			                        <br />
 			                        <span><em class="c7">规模： </em>
