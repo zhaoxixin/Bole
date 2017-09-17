@@ -161,7 +161,7 @@ var youdao_conv_id = 271546;
         </div>
    <div class="content">
         	<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
+		<form id="searchForm" name="searchForm" action="${ctx}/additionSearch" method="get">
         <!-- <ul id="searchType">
         	        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
@@ -169,9 +169,9 @@ var youdao_conv_id = 271546;
         <div class="searchtype_arrow"></div> -->
        <!--  <input type="text" id="search_input" name = "kd"  tabindex="1" value="前端开发"  placeholder="请输入职位名称，如：产品经理"  /> -->
        			
-       			<div style="hight:50px;display:inline-block">
+       			<div style="hight:40px;display:inline-block">
        			
-       			<select data-placeholder="选择薪资" name="salaryRange" style="width:121px;height:37px">
+       			<select data-placeholder="选择薪资" name="salaryRange" style="width:100px;height:40px">
         			<option value="1" selected='selected'>2001-4000</option>
         			<option value="2">4001-6000</option>
         			<option value="3">6001-8000</option>
@@ -183,8 +183,8 @@ var youdao_conv_id = 271546;
         		</select>
         	</div>
         		
-        		<div style="hight:50px;display:inline-block">
-        		<select data-placeholder="选择学历" name="highistEducation" style="width:121px;height:40px">
+        		<div style="hight:40px;display:inline-block;margin-left: 0px">
+        		<select data-placeholder="选择学历" name="highistEducation" style="width:100px;height:40px">
         			<option value="博士">博士</option>
         			<option value="硕士">硕士</option>
         			<option value="本科">本科</option>
@@ -193,22 +193,23 @@ var youdao_conv_id = 271546;
         		</select>
         		</div>
         		
-        		<div style="hight:50px;display:inline-block">
-        		<select data-placeholder="选择工作性质" name="jobNature" style="width:121px;height:40px">
+        		<div style="hight:40px;display:inline-block;margin-left: 0px">
+        		<select data-placeholder="选择工作性质" name="jobNature" style="width:100px;height:40px">
         			<option value="全职" selected='selected'>全职</option>
         			<option value="兼职">兼职</option>
         			<option value="实习">实习</option>
         		</select>
         		</div>
         		
-        		<div style="hight:50px;display:inline-block">
-        		<select data-placeholder="选择发布时间 " name="announceTime" style="width:121px;height:40px">
-        			<option value="今天">今天</option>
-        			<option value="3天内">3天内</option>
-        			<option value="一周内">一周内</option>
-        			<option value="一月内" selected='selected'>一月内</option>
-        		</select>
+        		<div style="hight:40px;display:inline-block;margin-left: 0px">
+        		<input type="text" style="width:70px;" name="announceTimePre"
+	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
+	   			&nbsp;&nbsp;|&nbsp;&nbsp;
+	   			<input type="text" style="width:70px;" name="announceTimePre"
+	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
+        		
                </div>
+               <input type="hidden" name="jobList" value="${jobList}">
              		<input id="submit_button" type="submit" name="submit" value="搜索"/>
                 <!-- <input type="hidden" name="city" id="cityInput" value="全国"/>
                 <input type="submit" id="search_button" value="搜索" /> -->
