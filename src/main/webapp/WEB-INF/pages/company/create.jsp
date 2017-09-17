@@ -68,7 +68,7 @@ var youdao_conv_id = 271546;
     <div id="container">
         
         	<div class="sidebar">
-            	<a class="btn_create" href="javascript:void(0)" onclick="location.href='createcom.action'">发布新职位</a>
+            	<a class="btn_create" href="javascript:void(0)" onclick="location.href='fbzw.action'">发布新职位</a>
                 <dl class="company_center_aside">
 		<!-- <dt>我收到的简历</dt>
 		<dd>
@@ -608,7 +608,7 @@ var youdao_conv_id = 271546;
                                     	<input type="text" placeholder="请输入详细的工作地址" value="" name="city" class="input_520" id="positionAddress">	
                                         <input type="hidden" value="" name="positionLng" id="lng">
                             			<input type="hidden" value="" name="positionLat" id="lat">
-                                        <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户  <a id="mapPreview" href="javascript:;">预览地图</a></div>
+                                        <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户  <a id="mapPreview" href="javascript:;"></a></div>
                                     </td>
                                 </tr>
                             </tbody></table>

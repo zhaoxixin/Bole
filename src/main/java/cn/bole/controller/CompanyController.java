@@ -57,9 +57,16 @@ public class CompanyController {
     	 return "/company/myhome";
      }
      
-     //发布新职位
+     //跳转公司职位管理
      @RequestMapping("/createcom")
      public String reposit(){
+    	
+    	 return "/company/positions";
+     }
+     
+     //发布新职位
+     @RequestMapping("/fbzw")
+     public String fbposit(){
     	
     	 return "/company/create";
      }
@@ -68,7 +75,7 @@ public class CompanyController {
      @RequestMapping("/savaJob")
      public String savaJob(){
     	 
-    	 return "/company/positions";
+    	 return "redirect:/company/positions";
      }
      
 }
