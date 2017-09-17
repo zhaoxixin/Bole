@@ -96,7 +96,7 @@
 		and j.company_id=#{companyId}	
 	</select>
 	
-	lcj根据jobId添加job
+	<!-- lcj根据jobId添加job -->
 	 <insert id="saveJob">
 	     insert into job values(
 			#{jobName},
