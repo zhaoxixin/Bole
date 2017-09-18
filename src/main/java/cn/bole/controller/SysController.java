@@ -99,10 +99,7 @@ public class SysController {
 //		int[] jobNum=new int[]{20, 20, 36, 40, 40,40};
 		String[] citys=new String[]{ "北京", "上海", "广州", "深圳", "苏州", "杭州" };
 		
-		int[] jobNum=sysService.findJobNumByCity(citys);
-			
-	
-		
+		int[] jobNum=sysService.findJobNumByCity(citys);		
 		
 		map.put("jobNum", jobNum);
 		//图标2
