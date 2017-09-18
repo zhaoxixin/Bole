@@ -24,6 +24,8 @@ public class UserServiceImpl implements UserService{
 		UserInfo userInfo =new UserInfo();
 		user.setUserInfo(userInfo);
 		user.getUserInfo().setUserInfoId(user.getUserId());
+		user.getUserInfo().setEmail(user.getEmail());
+		user.getUserInfo().setRealname(user.getEmail());
 		userMapper.save(user);
 		userInfoMapper.save(user.getUserInfo());
 	}

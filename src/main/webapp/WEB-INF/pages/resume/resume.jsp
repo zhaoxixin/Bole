@@ -98,12 +98,12 @@
 				<div class="content_l">
 					<div class="fl" id="resume_name">
 						<div class="nameShow fl">
-							<h1 title="jason的简历">"${resumeName}"</h1>
+							<h1 title="jason的简历">${resume.resumeName}</h1>
 							<span class="rename">重命名</span>
 						</div>
-						<form class="fl dn" id="resumeNameForm" >
+						<form  action="/resumeNameSave" class="fl dn">
 							<input type="text" id="resumeName" value="${resumeName }" name="resumeName" class="nameEdit c9">
-							<%-- <a href="${ctx }/renameResumeName.action" ><input type="button" value="保存"></a>| <a target="_blank" href="h/resume/preview.html">预览</a>  --%>
+							<input type="submit" value="保 存">| <a target="_blank" href="h/resume/preview.html">预览</a>
 						</form>
 					</div>
 					<!--end #resume_name-->
@@ -127,8 +127,8 @@
 						<span class="c_edit"></span>
 						<div class="basicShow">
 							<span>
-								jason |  男 |    大专 |  3年工作经验<br>
-            			    	18644444444 | jason@qq.com<br>
+								${userInfo.realname} |  ${userInfo.sex} |   ${userInfo.education} |  ${userInfo.workPre}<br>
+            			    	${userInfo.telphone} | ${userInfo.workPre}<br>
             				</span>
 							<div class="m_portrait">
 								<div></div>
@@ -138,29 +138,29 @@
 						<!--end .basicShow-->
 
 						<div class="basicEdit dn">
-							<form id="profileForm">
-								<table>
+							<form  action="/updateResumeUserinfo">
+								<table id="profileForm">
 									<tbody>
 										<tr>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="姓名" value="${resume.userInfo.realName}" name="userInfo.realName" id="name">
+												<input type="text" placeholder="姓名" value="${userInfo.realname}" name="userInfo.realname" id="name">
 											</td>
 											<td valign="top"></td>
 											<td>
 												<ul id="profileGenderRadio" class="profile_radio clearfix reset">
-													<input type="hidden" id="gender" value="${resume.userInfo.sex}">
+													<input type="hidden" id="gender" value="${userInfo.sex}">
 													<li class="current">
 														男<em></em>
 														<!-- <input type="radio" checked="checked" name="userInfo.sex" value="男"> -->
-														<input type="radio" name="userInfo.gender" value="男" <c:if test="${resume.userInfo.gender =='男'}">checked="checked"</c:if>/>
+														<input type="radio" name="userInfo.sex" value="男" <c:if test="${userInfo.sex =='男'}">checked="checked"</c:if>/>
 													</li>
 													<li>
 														女<em></em>
 														<!-- <input type="radio" name="userInfo.sex" value="女"> -->
-														<input type="radio" name="userInfo.gender" value="女" <c:if test="${resume.userInfo.gender =='女'}">checked="checked"</c:if>/>
+														<input type="radio" name="userInfo.sex" value="女" <c:if test="${userInfo.sex =='女'}">checked="checked"</c:if>/>
 													</li>
 												</ul>
 											</td>
@@ -170,8 +170,8 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" id="topDegree" value="${resume.userInfo.education}" name="userInfo.education">
-												<input type="button" value="${resume.userInfo.education}" id="select_topDegree" class="profile_select_190 profile_select_normal">
+												<input type="hidden" id="topDegree" value="${userInfo.education}" name="userInfo.education">
+												<input type="button" value="${userInfo.education}" id="select_topDegree" class="profile_select_190 profile_select_normal">
 												<div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
 													<ul>
 														<li>大专</li>
@@ -186,8 +186,8 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" id="workyear" value="${resume.userInfo.workPre}" name="workPre">
-												<input type="button" value="${resume.userInfo.workPre}" id="select_workyear" class="profile_select_190 profile_select_normal">
+												<input type="hidden" id="workyear" value="${userInfo.workPre}" name="userInfo.workPre">
+												<input type="button" value="${userInfo.workPre}" id="select_workyear" class="profile_select_190 profile_select_normal">
 												<div class="boxUpDown boxUpDown_190 dn" id="box_workyear" style="display: none;">
 													<ul>
 														<li>应届毕业生</li>
@@ -211,7 +211,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td colspan="3">
-												<input type="text" placeholder="手机号码" value="${resume.userInfo.telphone}" name="telphone" id="tel">
+												<input type="text" placeholder="手机号码" value="${userInfo.telphone}" name="userInfo.telphone" id="tel">
 											</td>
 										</tr>
 										<tr>
@@ -219,7 +219,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td colspan="3">
-												<input type="text" placeholder="接收面试通知的邮箱" value="${resume.userInfo.email}" name="email" id="email">
+												<input type="text" placeholder="接收面试通知的邮箱" value="${userInfo.email}" name="userInfo.email" id="email">
 											</td>
 										</tr>
 										<tr>
@@ -228,7 +228,7 @@
 												<input type="hidden" id="currentState" value="" name="currentState">
 												<input type="button" value="${resume.currentState }" id="select_currentState" class="profile_select_410 profile_select_normal">
 												<div class="boxUpDown boxUpDown_410 dn" id="box_currentState" style="display: none;">
-													<ul>
+													 <ul>
 														<li>我目前已离职，可快速到岗</li>
 														<li>我目前正在职，正考虑换个新环境</li>
 														<li>我暂时不想找工作</li>
@@ -239,8 +239,8 @@
 										</tr>
 										<tr>
 											<td></td>
-											<td colspan="3">
-												<a href="${ctx }/saveUserinfo.action" target="_self"><input type="submit" value="保 存" class=""></a>
+											<td colspan="2">
+												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -268,13 +268,13 @@
 							<!--end .new_portrait-->
 						</div>
 						<!--end .basicEdit-->
-						<input type="hidden" id="nameVal" value="${resume.userInfo.realname}">
-						<input type="hidden" id="genderVal" value="${resume.userInfo.sex}">
-						<input type="hidden" id="topDegreeVal" value="${resume.userInfo.education}">
-						<input type="hidden" id="workyearVal" value="${resume.userInfo.currentState}">
-						<input type="hidden" id="currentStateVal" value="${resume.userInfo.realname}">
-						<input type="hidden" id="emailVal" value="${resume.userInfo.email}">
-						<input type="hidden" id="telVal" value="${resume.userInfo.telphone}">
+						<input type="hidden" id="nameVal" value="${userInfo.realname}">
+						<input type="hidden" id="genderVal" value="${userInfo.sex}">
+						<input type="hidden" id="topDegreeVal" value="${userInfo.education}">
+						<input type="hidden" id="workyearVal" value="">
+						<input type="hidden" id="currentStateVal" value="">
+						<input type="hidden" id="emailVal" value="${userInfo.email}">
+						<input type="hidden" id="telVal" value="${userInfo.telphone}">
 						<input type="hidden" id="pageType" value="1">
 					</div>
 					<!--end #basicInfo-->
@@ -287,13 +287,13 @@
 						</div>
 						<!--end .expectShow-->
 						<div class="expectEdit dn">
-							<form id="expectForm">
-								<table>
+							<form  action="/resumeExpectJobSave">
+								<table id="expectForm">
 									<tbody>
 										<tr>
 											<td>
 												<input type="hidden" id="expectCity" value="" name="expectCity">
-												<input type="button" value="期望城市，如：北京" id="select_expectCity" class="profile_select_287 profile_select_normal">
+												<input type="button" value="${resume.expectCity }" id="select_expectCity" class="profile_select_287 profile_select_normal" name="expectCity">
 												<div class="boxUpDown boxUpDown_596 dn" id="box_expectCity" style="display: none;">
 													<dl>
 														<dt>热门城市</dt>
@@ -389,25 +389,25 @@
 												<ul class="profile_radio clearfix reset">
 													<li class="current">
 														全职<em></em>
-														<input type="radio" checked="checked" name="type" value="全职">
+														<input type="radio" name="type" value="全职"<c:if test="${resume.type =='1'}">checked="checked"</c:if>/>
 													</li>
 													<li>
 														兼职<em></em>
-														<input type="radio" name="type" value="兼职">
+														<input type="radio" name="type" value="兼职" <c:if test="${resume.type =='2'}">checked="checked"</c:if>/>
 													</li>
 													<li>
 														实习<em></em>
-														<input type="radio" name="type" value="实习">
+														<input type="radio" name="type" value="实习" <c:if test="${resume.type =='3'}">checked="checked"</c:if>/>
 													</li>
 												</ul>
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<input type="text" placeholder="期望职位，如：产品经理" value="${resume.expectPosition }" name="expectJob.expectPosition" id="expectPosition">
+												<input type="text" placeholder="期望职位，如：产品经理" value="${resume.expectPosition }" name="expectPosition" id="expectPosition">
 											</td>
 											<td>
-												<input type="hidden" id="expectSalary" value="${resume.expectSalary }" name="expectJob.expectSalary">
+												<input type="hidden" id="expectSalary" value="${resume.expectSalary }" name="expectSalary">
 												<input type="button" value="${resume.expectSalary }" id="select_expectSalary" class="profile_select_287 profile_select_normal">
 												<div class="boxUpDown boxUpDown_287 dn" id="box_expectSalary" style="display: none;">
 													<ul>
@@ -424,8 +424,7 @@
 										</tr>
 										<tr>
 											<td colspan="2">
-												<!-- <input type="submit" value="保 存" class="btn_profile_save"> -->
-												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
+												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
@@ -441,7 +440,7 @@
 						</div>
 						<!--end .expectAdd-->
 
-						<input type="hidden" id="expectJobVal" value="${resume.expectJob }">
+						<input type="hidden" id="expectJobVal" value="">
 						<input type="hidden" id="expectCityVal" value="${resume.expectCity }">
 						<input type="hidden" id="typeVal" value="${resume.type }">
 						<input type="hidden" id="expectPositionVal" value="${resume.expectPosition }">
@@ -453,21 +452,21 @@
 						<h2>工作经历 <span> （投递简历时必填）</span></h2>
 						<span class="c_add dn"></span>
 						<div class="experienceShow dn">
-							<form class="experienceForm borderBtm dn">
-								<table>
+							<form action="/resumeSave">
+								<table >
 									<tbody>
 										<tr>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="公司名称" name="workExperience.companyName" class="companyName">
+												<input type="text" placeholder="公司名称" name="companyName" class="companyName" value="${resume.companyName }">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="职位名称，如：产品经理" name="workExperience.positionName" class="positionName">
+												<input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="positionName" value="${resume.positionName }">
 											</td>
 										</tr>
 										<tr>
@@ -476,7 +475,7 @@
 											</td>
 											<td>
 												<div class="fl">
-													<input type="hidden" class="companyYearStart" value="" name="workExperience.companyYearStart">
+													<input type="hidden" class="companyYearStart" value="" name="companyYearStart">
 													<input type="button" value="${resume.companyYearStart }" class="profile_select_139 profile_select_normal select_companyYearStart">
 													<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
@@ -529,7 +528,7 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="companyMonthStart" value="" name="workExperience.companyMonthStart">
+													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
 													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
@@ -555,205 +554,8 @@
 											</td>
 											<td>
 												<div class="fl">
-													<input type="hidden" class="companyYearEnd" value="" name="workExperience.companyYearEnd">
-													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyYearEnd">
-													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
-														<ul>
-															<li>至今</li>
-															<li>2014</li>
-															<li>2013</li>
-															<li>2012</li>
-															<li>2011</li>
-															<li>2010</li>
-															<li>2009</li>
-															<li>2008</li>
-															<li>2007</li>
-															<li>2006</li>
-															<li>2005</li>
-															<li>2004</li>
-															<li>2003</li>
-															<li>2002</li>
-															<li>2001</li>
-															<li>2000</li>
-															<li>1999</li>
-															<li>1998</li>
-															<li>1997</li>
-															<li>1996</li>
-															<li>1995</li>
-															<li>1994</li>
-															<li>1993</li>
-															<li>1992</li>
-															<li>1991</li>
-															<li>1990</li>
-															<li>1989</li>
-															<li>1988</li>
-															<li>1987</li>
-															<li>1986</li>
-															<li>1985</li>
-															<li>1984</li>
-															<li>1983</li>
-															<li>1982</li>
-															<li>1981</li>
-															<li>1980</li>
-															<li>1979</li>
-															<li>1978</li>
-															<li>1977</li>
-															<li>1976</li>
-															<li>1975</li>
-															<li>1974</li>
-															<li>1973</li>
-															<li>1972</li>
-															<li>1971</li>
-															<li>1970</li>
-														</ul>
-													</div>
-												</div>
-												<div class="fl">
-													<input type="hidden" class="companyMonthEnd" value="" name="workExperience.companyMonthEnd">
-													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
-													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
-														<ul>
-															<li>01</li>
-															<li>02</li>
-															<li>03</li>
-															<li>04</li>
-															<li>05</li>
-															<li>06</li>
-															<li>07</li>
-															<li>08</li>
-															<li>09</li>
-															<li>10</li>
-															<li>11</li>
-															<li>12</li>
-														</ul>
-													</div>
-												</div>
-												<div class="clear"></div>
-											</td>
-										</tr>
-										<%-- <tr>
-											<td></td>
-											<td colspan="3">
-												<!-- <input type="submit" value="保 存" class="btn_profile_save"> -->
-												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
-												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
-											</td>
-										</tr> --%>
-									</tbody>
-								</table>
-								<input type="hidden" class="expId" value="">
-							</form>
-							<!--end .experienceForm-->
-
-							<ul class="wlist clearfix">
-							</ul>
-						</div>
-						<!--end .experienceShow-->
-						<div class="experienceEdit dn">
-							<form class="experienceForm">
-								<table>
-									<tbody>
-										<tr>
-											<td valign="top">
-												<span class="redstar">*</span>
-											</td>
-											<td>
-												<input type="text" placeholder="公司名称" name="companyName" class="companyName">
-											</td>
-											<td valign="top">
-												<span class="redstar">*</span>
-											</td>
-											<td>
-												<input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="positionName">
-											</td>
-										</tr>
-										<tr>
-											<td valign="top">
-												<span class="redstar">*</span>
-											</td>
-											<td>
-												<div class="fl">
-													<input type="hidden" class="companyYearStart" value="" name="companyYearStart">
-													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart">
-													<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
-														<ul>
-															<li>2014</li>
-															<li>2013</li>
-															<li>2012</li>
-															<li>2011</li>
-															<li>2010</li>
-															<li>2009</li>
-															<li>2008</li>
-															<li>2007</li>
-															<li>2006</li>
-															<li>2005</li>
-															<li>2004</li>
-															<li>2003</li>
-															<li>2002</li>
-															<li>2001</li>
-															<li>2000</li>
-															<li>1999</li>
-															<li>1998</li>
-															<li>1997</li>
-															<li>1996</li>
-															<li>1995</li>
-															<li>1994</li>
-															<li>1993</li>
-															<li>1992</li>
-															<li>1991</li>
-															<li>1990</li>
-															<li>1989</li>
-															<li>1988</li>
-															<li>1987</li>
-															<li>1986</li>
-															<li>1985</li>
-															<li>1984</li>
-															<li>1983</li>
-															<li>1982</li>
-															<li>1981</li>
-															<li>1980</li>
-															<li>1979</li>
-															<li>1978</li>
-															<li>1977</li>
-															<li>1976</li>
-															<li>1975</li>
-															<li>1974</li>
-															<li>1973</li>
-															<li>1972</li>
-															<li>1971</li>
-															<li>1970</li>
-														</ul>
-													</div>
-												</div>
-												<div class="fl">
-													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart">
-													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
-														<ul>
-															<li>01</li>
-															<li>02</li>
-															<li>03</li>
-															<li>04</li>
-															<li>05</li>
-															<li>06</li>
-															<li>07</li>
-															<li>08</li>
-															<li>09</li>
-															<li>10</li>
-															<li>11</li>
-															<li>12</li>
-														</ul>
-													</div>
-												</div>
-												<div class="clear"></div>
-											</td>
-											<td valign="top">
-												<span class="redstar">*</span>
-											</td>
-											<td>
-												<div class="fl">
 													<input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd">
+													<input type="button" value="${resume.companyYearEnd }" class="profile_select_139 profile_select_normal select_companyYearEnd">
 													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>至今</li>
@@ -807,7 +609,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd">
+													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -828,14 +630,209 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<%-- <tr>
+										<tr>
+											<td></td>
+											<td colspan="3">
+												 <input type="submit" value="保 存" class="btn_profile_save">
+												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<input type="hidden" class="expId" value="">
+							</form>
+							<!--end .experienceForm-->
+
+							<ul class="wlist clearfix">
+							</ul>
+						</div>
+						<!--end .experienceShow-->
+						<div class="experienceEdit dn">
+							<form  action="/resumeSave">
+								<table class="experienceForm">
+									<tbody>
+										<tr>
+											<td valign="top">
+												<span class="redstar">*</span>
+											</td>
+											<td>
+												<input type="text" placeholder="公司名称" name="companyName" class="companyName" value="${resume.companyName}">
+											</td>
+											<td valign="top">
+												<span class="redstar">*</span>
+											</td>
+											<td>
+												<input type="text" placeholder="职位名称，如：产品经理" name="positionName" class="positionName" value="${resume.positionName}">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<span class="redstar">*</span>
+											</td>
+											<td>
+												<div class="fl">
+													<input type="hidden" class="companyYearStart" value="${resume.companyYearStart}" name="companyYearStart">
+													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart" value="${resume.companyYearStart}">
+													<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
+														<ul>
+															<li>2014</li>
+															<li>2013</li>
+															<li>2012</li>
+															<li>2011</li>
+															<li>2010</li>
+															<li>2009</li>
+															<li>2008</li>
+															<li>2007</li>
+															<li>2006</li>
+															<li>2005</li>
+															<li>2004</li>
+															<li>2003</li>
+															<li>2002</li>
+															<li>2001</li>
+															<li>2000</li>
+															<li>1999</li>
+															<li>1998</li>
+															<li>1997</li>
+															<li>1996</li>
+															<li>1995</li>
+															<li>1994</li>
+															<li>1993</li>
+															<li>1992</li>
+															<li>1991</li>
+															<li>1990</li>
+															<li>1989</li>
+															<li>1988</li>
+															<li>1987</li>
+															<li>1986</li>
+															<li>1985</li>
+															<li>1984</li>
+															<li>1983</li>
+															<li>1982</li>
+															<li>1981</li>
+															<li>1980</li>
+															<li>1979</li>
+															<li>1978</li>
+															<li>1977</li>
+															<li>1976</li>
+															<li>1975</li>
+															<li>1974</li>
+															<li>1973</li>
+															<li>1972</li>
+															<li>1971</li>
+															<li>1970</li>
+														</ul>
+													</div>
+												</div>
+												<div class="fl">
+													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
+													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart" value="${resume.companyMonthStart}">
+													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
+														<ul>
+															<li>01</li>
+															<li>02</li>
+															<li>03</li>
+															<li>04</li>
+															<li>05</li>
+															<li>06</li>
+															<li>07</li>
+															<li>08</li>
+															<li>09</li>
+															<li>10</li>
+															<li>11</li>
+															<li>12</li>
+														</ul>
+													</div>
+												</div>
+												<div class="clear"></div>
+											</td>
+											<td valign="top">
+												<span class="redstar">*</span>
+											</td>
+											<td>
+												<div class="fl">
+													<input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
+													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd" value="${resume.companyYearEnd}">
+													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
+														<ul>
+															<li>至今</li>
+															<li>2014</li>
+															<li>2013</li>
+															<li>2012</li>
+															<li>2011</li>
+															<li>2010</li>
+															<li>2009</li>
+															<li>2008</li>
+															<li>2007</li>
+															<li>2006</li>
+															<li>2005</li>
+															<li>2004</li>
+															<li>2003</li>
+															<li>2002</li>
+															<li>2001</li>
+															<li>2000</li>
+															<li>1999</li>
+															<li>1998</li>
+															<li>1997</li>
+															<li>1996</li>
+															<li>1995</li>
+															<li>1994</li>
+															<li>1993</li>
+															<li>1992</li>
+															<li>1991</li>
+															<li>1990</li>
+															<li>1989</li>
+															<li>1988</li>
+															<li>1987</li>
+															<li>1986</li>
+															<li>1985</li>
+															<li>1984</li>
+															<li>1983</li>
+															<li>1982</li>
+															<li>1981</li>
+															<li>1980</li>
+															<li>1979</li>
+															<li>1978</li>
+															<li>1977</li>
+															<li>1976</li>
+															<li>1975</li>
+															<li>1974</li>
+															<li>1973</li>
+															<li>1972</li>
+															<li>1971</li>
+															<li>1970</li>
+														</ul>
+													</div>
+												</div>
+												<div class="fl">
+													<input type="hidden" class="companyMonthEnd" value="${resume.companyMonthEnd}" name="companyMonthEnd">
+													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="${resume.companyMonthEnd}">
+													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
+														<ul>
+															<li>01</li>
+															<li>02</li>
+															<li>03</li>
+															<li>04</li>
+															<li>05</li>
+															<li>06</li>
+															<li>07</li>
+															<li>08</li>
+															<li>09</li>
+															<li>10</li>
+															<li>11</li>
+															<li>12</li>
+														</ul>
+													</div>
+												</div>
+												<div class="clear"></div>
+											</td>
+										</tr>
+										<tr>
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
-												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr> --%>
+										</tr>
 									</tbody>
 								</table>
 								<input type="hidden" class="expId" value="">
@@ -861,8 +858,8 @@
 						</div>
 						<!--end .projectShow-->
 						<div class="projectEdit dn">
-							<form class="projectForm">
-								<table>
+							<form  action="/resumeSave">
+								<table class="projectForm">
 									<tbody>
 										<tr>
 											<td valign="top">
@@ -1046,20 +1043,19 @@
 												<div class="word_count">你还可以输入 <span>500</span> 字</div>
 											</td>
 										</tr>
-										<!-- <tr>
+									 <tr>
 									<td colspan="2">
 										<textarea placeholder="职责描述" name="ResponsDescription" class="ResponsDescription s_textarea"></textarea>
 										<div class="word_count">你还可以输入 <span>500</span> 字</div>
 									</td>
-	            				</tr> -->
-										<%-- <tr>
+	            				</tr> 
+										<tr>
 											<td valign="top"></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
-												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr> --%>
+										</tr> 
 									</tbody>
 								</table>
 								<input type="hidden" value="" class="projectId">
@@ -1079,8 +1075,8 @@
 						<h2>教育背景<span>（投递简历时必填）</span></h2>
 						<span class="c_add dn"></span>
 						<div class="educationalShow dn">
-							<form class="educationalForm borderBtm dn">
-								<table>
+							<form action="/resumeSave" class="educationalForm borderBtm dn">
+								<table class="educationalForm borderBtm dn">
 									<tbody>
 										<tr>
 											<td valign="top">
@@ -1233,14 +1229,13 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<%-- <tr>
+										<tr>
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
-												<a href="${ctx }/saveExpectJob.action" target="_self"><input type="submit" value="保 存" class=""></a>
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr> --%>
+										</tr>
 									</tbody>
 								</table>
 								<input type="hidden" class="eduId" value="">
@@ -1252,8 +1247,8 @@
 						</div>
 						<!--end .educationalShow-->
 						<div class="educationalEdit dn">
-							<form class="educationalForm">
-								<table>
+							<form  action="/resumeSave">
+								<table class="educationalForm">
 									<tbody>
 										<tr>
 											<td valign="top">
@@ -1399,13 +1394,13 @@
 												<div class="clear"></div>
 											</td>
 										</tr>
-										<!-- <tr>
+										<tr>
 											<td></td>
 											<td colspan="3">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr> -->
+										</tr> 
 									</tbody>
 								</table>
 								<input type="hidden" class="eduId" value="">
@@ -1429,8 +1424,8 @@
 						</div>
 						<!--end .descriptionShow-->
 						<div class="descriptionEdit dn">
-							<form class="descriptionForm">
-								<table>
+							<form  action="/resumeSave">
+								<table class="descriptionForm">
 									<tbody>
 										<tr>
 											<td colspan="2">
@@ -1438,12 +1433,12 @@
 												<div class="word_count">你还可以输入 <span>500</span> 字</div>
 											</td>
 										</tr>
-										<!-- <tr>
+										<tr>
 											<td colspan="2">
 												<input type="submit" value="保 存" class="btn_profile_save">
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
-										</tr> -->
+										</tr>
 									</tbody>
 								</table>
 							</form>
@@ -1467,7 +1462,7 @@
 						</div>
 						<!--end .workShow-->
 						<div class="workEdit dn">
-							<form class="workForm">
+							 <form action="${ctx }/resumeSave.action"  >
 								<table>
 									<tbody>
 										<tr>
@@ -1481,21 +1476,13 @@
 												<div class="word_count">你还可以输入 <span>100</span> 字</div>
 											</td>
 										</tr>
-										<!-- <tr>
-											<td>
-												<input type="submit" value="保 存" class="btn_profile_save">
-												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
-											</td>
-										</tr> -->
-									</tbody>
-										<tr>
-											<td></td>
+										 <tr>
 											<td colspan="3">
-												<input type="submit" value="保 存" class="btn_profile_save">
-												<a href="${ctx }/resumeSave.action" target="_self"><input type="submit" value="保 存" class=""></a>
+												 <input type="submit" value="保 存" class="btn_profile_save"> 
 												<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 											</td>
 										</tr>
+									</tbody>
 								</table>
 								<input type="hidden" class="showId" value="">
 							</form>
@@ -1509,7 +1496,7 @@
 						<!--end .workAdd-->
 					</div>
 					<!--end #worksShow-->
-					<input type="hidden" id="resumeId" value="268472">
+					<input type="hidden" id="resumId" value="${resume.resumId }">
 				</div>
 				<!--end .content_l-->
 				<div class="content_r">
@@ -1564,7 +1551,7 @@
 				<!--end .content_r-->
 			</div>
 
-			<input type="hidden" id="userId" name="userId" value="${user.userId }">
+			<input type="hidden" id="userId" name="userId" value="${sessionScope.user1.userId }">
 
 			<!-------------------------------------弹窗lightbox ----------------------------------------->
 			<div style="display:none;">
@@ -1705,7 +1692,7 @@
 					<a class="close" href="javascript:;"></a>
 				</div>
 			</div>
-			<script>
+			 <script>
 				$(function () {
 					$.ajax({
 						url: ctx + "/mycenter/showQRCode",

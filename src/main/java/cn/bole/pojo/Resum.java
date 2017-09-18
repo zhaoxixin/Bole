@@ -13,7 +13,7 @@ public class Resum extends BasicInfo{
 	 private UserInfo userInfo;
 	 private String resumeName;  //简历名称
 	 private Date updateTime; //更新时间
-	 private Integer currentState;//<li>1.我目前已离职，可快速到岗</li><li>2.我目前正在职，正考虑换个新环境</li><li>3.我暂时不想找工作</li><li>4我是应届毕业生</li>
+	 private String currentState;//<li>1.我目前已离职，可快速到岗</li><li>2.我目前正在职，正考虑换个新环境</li><li>3.我暂时不想找工作</li><li>4我是应届毕业生</li>
 	 private String companyName;
 	 private String positionName;
 	 private String companyYearStart;
@@ -22,9 +22,17 @@ public class Resum extends BasicInfo{
 	 private String companyMonthEnd;
 	 private Integer userresumState;
 	 private String expectCity;
-	 private Integer type;   //1、全职   2、兼职    3、实习
+	 private String type;   //1、全职   2、兼职    3、实习
 	 private String expectPosition;  //期望职位
 	 private String expectSalary;
+	 private String workLink;
+	 
+	public String getWorkLink() {
+		return workLink;
+	}
+	public void setWorkLink(String workLink) {
+		this.workLink = workLink;
+	}
 	public String getResumId() {
 		return resumId;
 	}
@@ -55,10 +63,10 @@ public class Resum extends BasicInfo{
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
-	public Integer getCurrentState() {
+	public String getCurrentState() {
 		return currentState;
 	}
-	public void setCurrentState(Integer currentState) {
+	public void setCurrentState(String currentState) {
 		this.currentState = currentState;
 	}
 	public String getCompanyName() {
@@ -109,10 +117,10 @@ public class Resum extends BasicInfo{
 	public void setExpectCity(String expectCity) {
 		this.expectCity = expectCity;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public String getExpectPosition() {

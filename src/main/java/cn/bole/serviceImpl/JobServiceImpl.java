@@ -29,6 +29,10 @@ public class JobServiceImpl implements JobService {
 	public List<Job> findJobByName(String jobName) {
 		return jobMapper.findJobByName(jobName);
 	}
+	@Override
+	public Job findJobByJobId(String jobId) {
+		return jobMapper.findJobByJobId(jobId);
+	}
 	
 
 }

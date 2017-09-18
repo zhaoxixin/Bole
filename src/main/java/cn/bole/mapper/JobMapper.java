@@ -17,4 +17,6 @@ public interface JobMapper {
 
 	List<Job> findJobByName(String jobName);
 
+	Job findJobByJobId(String jobId);
+
 }

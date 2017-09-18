@@ -15,6 +15,8 @@ public interface JobService {
 
 	List<Job> findJobByName(String jobName);
 
+	Job findJobByJobId(String jobId);
+
 
 
 

@@ -13,8 +13,8 @@
 		where j.j_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
-		and industry_id=#{industryid}
-		and profession_id=#{professionid}
+		and industry_id=#{industryId}
+		and profession_id=#{professionId}
 		and city=#{city}
 		and state=1
 	</select>
@@ -62,6 +62,17 @@
 		and job_name=#{jobname}
 		and state=1
 	</select>
+	<select id="findJobByJobId" resultMap="jobRM">
+		select * from 
+		(select job_id j_id,profession_id,company_id,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.j_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and j_id=#{jobId}
+	</select>
 	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
 		<id column="job_id" property="jobId"/>
@@ -71,7 +82,6 @@
 		<association property="company" resultMap="companyRM" >
 			<id column="company_id" property="companyId"/>			
 		</association>
-		
 	</resultMap>
 	<resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
 		<id column="job_info_id" property="jobInfoId"/>
@@ -85,7 +95,7 @@
 	</resultMap>
 	<resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true">
 		<id column="company_info_id" property="companyInfoId"/>
-	</resultMap>
+	</resultMap> 
 	
 	
 </mapper>
