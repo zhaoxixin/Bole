@@ -98,9 +98,11 @@
 				<div class="content_l">
 					<div class="fl" id="resume_name">
 						<div class="nameShow fl">
-							<h1 title="jason的简历">${resume.resumeName}</h1>
-							<span class="rename">重命名</span>
+							<h1 title="${resume.resumeName}的简历">${resume.resumeName}</h1>
+							
+							<span class="rename">重命名</span> | <a target="_blank" href="${ ctx }/preview.action">预览</a>
 						</div>
+						
 						<form  action="/resumeNameSave" class="fl dn">
 							<input type="text" id="resumeName" value="${resumeName }" name="resumeName" class="nameEdit c9">
 							<input type="submit" value="保 存">| <a target="_blank" href="${ ctx }/preview.action">预览</a>

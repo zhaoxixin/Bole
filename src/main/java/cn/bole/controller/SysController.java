@@ -33,7 +33,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.bole.pojo.Job;
-import cn.bole.pojo.JobInfo;
 import cn.bole.service.SysService;
 
 @Controller

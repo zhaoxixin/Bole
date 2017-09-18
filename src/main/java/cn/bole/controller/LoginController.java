@@ -53,6 +53,7 @@ public class LoginController {
 	        //是否为普通用户
 	        if(Integer.parseInt(type)==0){
 	        	User user1 =userService.findUser(email,password);
+	        	
 		        if(user1==null){        	
 		 	       result.put("msg", "failed");  
 		            return result;  
@@ -61,7 +62,7 @@ public class LoginController {
 		        if(email.equals("admin@admin.com")){
 			        session.setAttribute("admin",user1);
 			        result.put("msg", "success"); 
-			        result.put("type", type);
+			        result.put("type", "2");
 		 	        return result; 	
 		        }
 		        //将用户加入到session中

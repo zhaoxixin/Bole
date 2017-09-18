@@ -51,7 +51,12 @@ var youdao_conv_id = 271546;
 	    						    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span> ${user1.userInfo.realname }&nbsp;</span> 
+           			<span> ${user1.userInfo.realname }&nbsp;
+           			<c:if test="${sessionScope.admin != null }">
+						 
+					<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
+					</c:if>
+           			</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
