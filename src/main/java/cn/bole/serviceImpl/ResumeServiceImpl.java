@@ -42,6 +42,12 @@ public class ResumeServiceImpl implements ResumeService {
 	public void resumeExpectJobSave(String userId, Resum resume) {
 		
 	}
+	@Override
+	public String getResumeId(String userId) {	
+		String resumId = resumeMapper.getResumeId(userId);
+		System.out.println(resumId);
+		return resumId;
+	}
 	
 	
 }
