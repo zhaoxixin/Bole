@@ -17,7 +17,6 @@
 
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
-//var ctx = "h";
 var ctx = ${ctx};
 console.log(1);
 </script>
@@ -137,10 +136,10 @@ var youdao_conv_id = 271546;
 			    		};	
 			    	},
 			    	submitHandler:function(form){
-			    		var user={}
+			    		//var user={}
 			    		var type =$('input[type="radio"]:checked',form).val();
-			    		user.email =$('#email').val();
-			    		user.password =$('#password').val();
+			    		var email =$('#email').val();
+			    		var password =$('#password').val();
 			    		var resubmitToken = $('#resubmitToken').val();
 			    		
 			    		var callback = $('#callback').val();
@@ -152,14 +151,14 @@ var youdao_conv_id = 271546;
 
 			            $.ajax({
 			            	type:'POST',
-			            	data: user,
+			            	data: {email:email,password:password,type:type},
 			            	url:'/register.action',
 			            	dataType:'json'
 			            }).done(function(result) {
 		            		$('#resubmitToken').val(result.resubmitToken);
-			            	if(result.msg=='success'){
+			            	if(result.msg=='success' ){
 			            		alert("注册成功，点击继续")
-			            		window.location.href='/toLogin.action';	
+			            		window.location.href='/toLogin.action';	//应聘者主页
 			            	}else{
 			            		alert("参数不合法！")
 								$('#beError').text(result.msg).show();

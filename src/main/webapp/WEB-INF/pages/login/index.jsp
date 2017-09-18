@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -68,24 +68,15 @@ $("#ctname").html($(this).html());
 });
 });
   </script>
- <!-- <script type="text/javascript">
-  	$(function ajaxTrade(){
-  		$.ajax({
-			"url" : "${ctx}/login/index/searchTrade",
-			"async" : true,
-			"success" : function(result){
+ <script type="text/javascript">
+ 	function findJob(industryId,professionId){
+ 		var city = $("#ctname").text();
 
-				$("#tradeResult").val(result);
-
-
-			}
-		});
-  		
-  	});
-  	
-  	
-  
-  </script> -->
+ 		location.href='${ctx}/'+city+'/'+industryId+'/'+professionId+'/findJob.action';
+ 		
+ 	}
+ 	
+ </script>
   
 </head>
 <body>
@@ -101,15 +92,18 @@ $("#ctname").html($(this).html());
     	  <div id="header">
     	     <div class="wrapper">
     		<a href="${ctx }" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
+    			<img src="${ctx }/style/images/logo.png" width="229" height="43" alt="伯乐招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/companyhome" >企业入口</a></li>
-    			<li ><a href="#" target="_blank">名企专区</a></li>
+    			<li class="current"><a style="color: #12CD57" href="${ctx }">首页</a></li>
+    			<c:if test="${sessionScope.user1 == null&& sessionScope.admin == null}">
+    			   <li ><a style="color: #12CD57" href="${ctx }/toLogin.action" >企业入口</a></li>
+    			</c:if>
+    			<li ><a style="color: #12CD57" href="${ctx }/companyhome" target="_blank">名企专区</a></li>
 
-    		    <li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
-	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
+    		    <li ><a style="color: #12CD57" href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
+	    		<li ><a style="color: #12CD57" href="create.html" rel="nofollow">发布职位</a></li>
+	    		<!-- <li ><a href="/home.action" rel="nofollow">后台管理</a></li> -->
 	    	</ul>
             <ul class="loginTop">
 					<!-- <li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
@@ -117,21 +111,28 @@ $("#ctname").html($(this).html());
 					<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li> -->
 					
 					
-					<c:if test="${ sessionScope.user1 == null }">
+					<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null}">
 						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
-					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+					<c:if test="${sessionScope.user1 != null }">
+						<a href="${ctx}/userhome.action"> <font color="6633745">欢迎 ${ user1.email } 回来</font></a>
 						  &nbsp;|&nbsp;
-						<a href="${ ctx }/logout.action">退出</a>
-					 </c:if>
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+					</c:if>
+					<c:if test="${sessionScope.admin != null }">
+						  <a href="${ctx}/home.action"><font color="6633745">欢迎 ${admin.userInfo.realname }回来</font></a>
+						  &nbsp;|&nbsp;
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+						 &nbsp;|&nbsp;
+						<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
+					</c:if>
 				</ul>
 
              </div>
              <div class="ct f_l">
-						<div class="ct_now" id="ctname">全国</div>
+						<div class="ct_now" id="ctname"><font color="7706625">全国</font></div>
 							<div class="ct_swich"><span class="ct_nav">[切换城市]</span></div>
 							<div class="ct_link">
 							<div class="ct_show"><span id="closect" class="f_r" title="关闭窗口">X</span><span class="f_l">城市列表</span></div>
@@ -152,53 +153,84 @@ $("#ctname").html($(this).html());
         				
 		<div id="sidebar">
 			<div class="mainNavs">
-					<div class="menu_box">
-					
-					<c:forEach items="${industryList }" var="in">
-						<div class="menu_main">
-							<h2>${in.industryName }<span></span></h2>
-							<input hidden="hidden" name="industryName" value="${in.industryId }"/>
-						</div>
-						
-					  <c:forEach items="${professionList }" var="p" varStatus="status">
-					   	<div class="menu_sub dn">
-					   		<dl class="reset">
-					          <dt>
-					        	<a href="h/jobs/list_后端开发?labelWords=label">${p.professionName }</a>
-					        </dt>
-						        	
-					       </dl>
-					   </div>
-					  </c:forEach>
-					 </c:forEach>
-					</div>
-				</div>	
-						    	
-										
-			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
+				<c:forEach items="${industryList }" var="in">
+			   <div class="menu_box">
+				
+				     <div class="menu_main">
+					   <h2>${in.industryName } <span></span></h2>            		
+		            </div>
+			    	<div class="menu_sub dn">
+			   		  <dl class="reset">
+			        	<dt>
+			        		
+			            </dt>
+				       <dd>
+				         <c:forEach items="${in.professionList }" var="p" varStatus="status">
+					     	<a href="javascript:0" onclick="findJob('${in.industryId}','${p.professionId }')">${p.professionName }</a>
+					      </c:forEach>
+					   </dd>
+			         </dl>
+				   </div>
+		     </div>
+		    </c:forEach>
 		</div>
-        <div class="content">	
-	        			<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
+				 					
+			<!-- <a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a> -->
+		</div>
+		
+      <div class="content">	
+	   <div id="search_box">
+		<form id="searchForm" name="searchForm" action="${ctx }/findJobByName" method="post">
         <ul id="searchType">
-        	        	<li data-searchtype="1" class="type_selected">职位</li>
+        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
-        	        </ul>
+        </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="text" id="search_input" name = "jobName"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
-        <input type="text" name="spc" id="spcInput" value=""/>
-        <input type="text" name="pl" id="plInput" value=""/>
-        <input type="text" name="gj" id="gjInput" value=""/>
-        <input type="text" name="xl" id="xlInput" value=""/>
-        <input type="text" name="yx" id="yxInput" value=""/>
-        <input type="text" name="gx" id="gxInput" value="" />
-        <input type="text" name="st" id="stInput" value="" />
-        <input type="text" name="labelWords" id="labelWords" value="" />
-        <input type="text" name="lc" id="lc" value="" />
-        <input type="text" name="workAddress" id="workAddress" value=""/>
+        <input type="hidden" name="spc" id="spcInput" value=""/>
+        <input type="hidden" name="pl" id="plInput" value=""/>
+        <input type="hidden" name="gj" id="gjInput" value=""/>
+        <input type="hidden" name="xl" id="xlInput" value=""/>
+        <input type="hidden" name="yx" id="yxInput" value=""/>
+        <input type="hidden" name="gx" id="gxInput" value="" />
+        <input type="hidden" name="st" id="stInput" value="" />
+        <input type="hidden" name="labelWords" id="labelWords" value="" />
+        <input type="hidden" name="lc" id="lc" value="" />
+        <input type="hidden" name="workAddress" id="workAddress" value=""/>
                 <input type="hidden" name="city" id="cityInput" value=""/>
                 <input type="submit" id="search_button" value="搜索" />
+         <!-- <div>
+        	更多：
+        		<select name="salaryRange">
+        			<option value="1">2001-4000</option>
+        			<option value="2">4001-6000</option>
+        			<option value="3">6001-8000</option>
+        			<option value="4">8001-10000</option>
+        			<option value="5">10001-15000</option>
+        			<option value="6">15001-20000</option>
+        			<option value="7">20001-30000</option>
+        			<option value="8">面议</option>
+        		</select>
+        		
+        		<select name="scale">
+        			<option value="1">小于50人</option>
+        			<option value="2">50-150人</option>
+        			<option value="3">150-300人</option>
+        			<option value="4">300-500人</option>
+        			<option value="5">500-1000人</option>
+        			<option value="6">1000人以上</option>			
+        		</select>
+        		
+        		<select name="nature">
+        			<option value="1">民营企业</option>
+        			<option value="2">国有企业</option>
+        			<option value="3">外资企业</option>
+        			<option value="4">上市企业</option>
+        			<option value="5">其他</option>
+        		</select>
+  
+        </div> -->
 				
     </form>
 </div>
@@ -211,16 +243,16 @@ $("#ctname").html($(this).html());
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=">实习</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='java'">Java</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='PHP'">PHP</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='Android'">Android</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='iOS'">iOS</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='前端'">前端</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='产品经理'">产品经理</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='UI'">UI</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='运营'">运营</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='BD'">BD</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='实习'">实习</a></dd>
 </dl>			
 			<div id="home_banner">
 	            <ul class="banner_bg">
@@ -329,78 +361,12 @@ $("#ctname").html($(this).html());
                             </ul>
             
             <ul class="reset hotabbing">
-            	            		<li class="current">热门职位</li>
-            	            	    <li>最新职位</li>
+            	            		<li class="current"><a href="${ctx }/findHotJob">热门职位</a></li>
+            	            	    <li><a href="${ctx }/findNewJob">最新职位</a></li>
             </ul>
-            <div id="hotList">
-	            <ul class="hot_pos reset">
-	            		           <li class="clearfix">
-		            				<div class="hot_pos_l">
-			                    	<div class="mb10">
-			                        	<a href="h/jobs/147822.html" target="_blank">运营总监</a> 
-			                            &nbsp;
-			                            <span class="c9">[北京]</span>
-			                            			                        </div>
-			                        <span><em class="c7">月薪： </em>15k-20k</span>
-			                        <span><em class="c7">经验：</em> 3-5年</span>
-			                        <span><em class="c7">最低学历： </em>本科</span>
-			                        <br />
-			                        <span><em class="c7">职位诱惑：</em>发展前景</span>
-			                        <br />
-				                    <span>1天前发布</span>
-			                        <!-- <a  class="wb">分享到微博</a> -->
-			                    </div>
-			                	<div class="hot_pos_r">
-			                    	<div class="mb10 recompany"><a href="h/c/399.html" target="_blank">节操精选</a></div>
-			                        <span><em class="c7">领域：</em> 移动互联网</span>
-			                        			                        <span><em class="c7">创始人：</em>陈桦</span>
-			                        			                        <br />
-			                        <span><em class="c7">阶段：</em> 初创型(天使轮)</span>
-			                        <span><em class="c7">规模：</em>少于15人</span>
-			                        <ul class="companyTags reset">
-			                     		<li>移动互联网</li>
-			                        		<li>五险一金</li>
-			                        		<li>扁平管理</li>
-			                        </ul>
-			                    </div>
-			                   </li>
-			     <a href="list.html" class="btn fr" target="_blank">查看更多</a>
-	                	            
-	             <ul class="hot_pos hot_posHotPosition reset" style="display:none;"></ul>
-	                     <li class="clearfix">
-		            		<div class="hot_pos_l">
-			                    	<div class="mb10">
-			                        	<a href="h/jobs/149389.html" target="_blank">高级PHP研发工程师</a> 
-			                            &nbsp;
-			                            <span class="c9">[南京]</span>
-			                            			                        </div>
-			                        <span><em class="c7">月薪： </em>12k-24k</span>
-			                        <span><em class="c7">经验：</em>3-5年</span>
-			                        <span><em class="c7">最低学历：</em> 本科</span>
-			                        <br />
-			                        <span><em class="c7">职位诱惑：</em>IPO了的互联网创业公司，潜力无限！</span>
-			                        <br />
-				                    <span>15:11发布</span>
-			                        <!-- <a  class="wb">分享到微博</a> -->
-			                    </div>
-			                	<div class="hot_pos_r">
-			                    	<div class="mb10"><a href="h/c/8250.html" target="_blank">途牛旅游网</a></div>
-			                        <span><em class="c7">领域：</em> 电子商务,在线旅游</span>
-			                        			                        <span><em class="c7">创始人：</em>于敦德</span>
-			                        			                        <br />
-			                        <span> <em class="c7">阶段： </em>上市公司</span>
-			                        <span> <em class="c7">规模：</em>500-2000人</span>
-			                        <ul class="companyTags reset">
-			                        	<li>绩效奖金</li>
-			                        	<li>股票期权</li>
-			                        	<li>五险一金</li>
-			                        </ul>
-			                    </div>
-			                </li>
+            
 	                        	            				            		
-	             <a href="list.html?city=%E5%85%A8%E5%9B%BD" class="btn fr" target="_blank">查看更多</a>
-	            </ul>
-            </div>
+	            
             
             <div class="clear"></div>
 			<div id="linkbox">
@@ -451,7 +417,7 @@ $("#ctname").html($(this).html());
 			    </dl>
 			</div>
         </div>	
- 	    <input type="hidden" value="" name="userid" id="userid" />
+ 	    <input type="hidden" value="${user1.userId }" name="userId" id="userId" />
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 

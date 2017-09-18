@@ -3,17 +3,70 @@ package cn.bole.pojo;
 public class CompanyInfo {
    private Integer companyInfoId;
    private String companyName;
-   private Integer nature;
+   private String nature;
    private Integer scale;
-   private String industry;
+   private Integer industryId;
    private String introduction;
    private String address;
    private String location;
    private String telphone;
-   private Integer isFamous;
+   private Integer isFamous	;
+   private Integer resumNum;
+   private Job job;
+   private Integer usersresumState;
+   private String chargePerson;
    //private Job job;
+   
 public Integer getCompanyInfoId() {
 	return companyInfoId;
+}
+
+
+
+public Integer getResumNum() {
+	return resumNum;
+}
+
+
+
+public void setResumNum(Integer resumNum) {
+	this.resumNum = resumNum;
+}
+
+
+
+
+
+
+public Integer getUsersresumState() {
+	return usersresumState;
+}
+
+
+
+public void setUsersresumState(Integer usersresumState) {
+	this.usersresumState = usersresumState;
+}
+
+
+
+public String getChargePerson() {
+	return chargePerson;
+}
+
+
+
+public void setChargePerson(String chargePerson) {
+	this.chargePerson = chargePerson;
+}
+
+
+
+public Job getJob() {
+	return job;
+}
+public void setJob(Job job) {
+	this.job = job;
 }
 public void setCompanyInfoId(Integer companyInfoId) {
 	this.companyInfoId = companyInfoId;
@@ -24,10 +77,10 @@ public String getCompanyName() {
 public void setCompanyName(String companyName) {
 	this.companyName = companyName;
 }
-public Integer getNature() {
+public String getNature() {
 	return nature;
 }
-public void setNature(Integer nature) {
+public void setNature(String nature) {
 	this.nature = nature;
 }
 public Integer getScale() {
@@ -36,12 +89,7 @@ public Integer getScale() {
 public void setScale(Integer scale) {
 	this.scale = scale;
 }
-public String getIndustry() {
-	return industry;
-}
-public void setIndustry(String industry) {
-	this.industry = industry;
-}
+
 public String getIntroduction() {
 	return introduction;
 }
@@ -71,6 +119,12 @@ public Integer getIsFamous() {
 }
 public void setIsFamous(Integer isFamous) {
 	this.isFamous = isFamous;
+}
+public Integer getIndustryId() {
+	return industryId;
+}
+public void setIndustryId(Integer industryId) {
+	this.industryId = industryId;
 }
    
 }

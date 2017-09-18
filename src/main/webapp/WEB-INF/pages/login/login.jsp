@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <!DOCTYPE HTML>
 <html>
@@ -43,10 +43,19 @@ var youdao_conv_id = 271546;
             <div id="cloud_s"><img src="style/images/cloud_s.png" width="81" height="52" alt="cloud" /></div>
             <div id="cloud_m"><img src="style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>
         </div>
-        
-    	<input type="hidden" id="resubmitToken" value="" />		
+        <input type="hidden" id="resubmitToken" value="9b207beb1e014a93bc852b7ba450db27" />		
 		 <div class="login_box">
-        	<form id="loginForm" action="index.html">
+        	<form id="loginForm" >
+        		<ul class="register_radio clearfix">
+		            <li>
+		            	找工作
+		              	<input type="radio" value="0" name="type" /> 
+		            </li>
+		            <li>
+		           	           招人
+		              	<input type="radio" value="1" name="type" /> 
+		            </li>
+		        </ul> 
 				<input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" />
 			  	<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
 				<span class="error" style="display:none;" id="beError"></span>
@@ -75,11 +84,17 @@ var youdao_conv_id = 271546;
 
 <script type="text/javascript">
 $(function(){
+	$('.register_radio li input').click(function(e){
+		$(this).parent('li').addClass('current').append('<em></em>').siblings().removeClass('current').find('em').remove();
+	});
 	//验证表单
 	 	$("#loginForm").validate({
 	 		/* onkeyup: false,
 	    	focusCleanup:true, */
 	        rules: {
+	        	type:{
+	        		required: true
+	        	},
 	    	   	email: {
 	    	    	required: true,
 	    	    	email: true
@@ -89,6 +104,9 @@ $(function(){
 	    	   	}
 	    	},
 	    	messages: {
+	    		type:{
+	        		required:"请选择使用拉勾的目的"
+	        	},
 	    	   	email: {
 	    	    	required: "请输入登录邮箱地址",
 	    	    	email: "请输入有效的邮箱地址，如：vivi@lagou.com"
@@ -103,11 +121,11 @@ $(function(){
 	      		}else{
 	      			$('#remember').val(null);
 	      		}
-	    		var user={}
-	    		user.email= $('#email').val();
-	    		user.password= $('#password').val();
-	    		var remember = $('#remember').val();
+	    		var type =$('input[type="radio"]:checked',form).val();
+	    		var email =$('#email').val();
+	    		var password =$('#password').val();
 	    		
+	    		var remember = $('#remember').val();
 	    		var callback = $('#callback').val();
 	    		var authType = $('#authType').val();
 	    		var signature = $('#signature').val();
@@ -116,17 +134,21 @@ $(function(){
 	    		$(form).find(":submit").attr("disabled", true);
 	            $.ajax({
 	            	type:'POST',
-	            	data: user,
+	            	data:{email:email,password:password,type:type},
 	            	url:'/login.action',
 	            	dataType:'json'
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
-
 	            		alert("登录成功！")
 
-	            		window.location.href='/.action';	
+	            		if(result.type==0){
+	            			window.location.href='/userhome.action';	
+	            		}
+	            		if(result.type==1){
+	            			window.location.href='/companyResumes.action';
+	            		}
 	            	}else{
-	            		alert("账户或密码有错！")
+	            		alert("账户或密码有错")
 						$('#beError').text(result.msg).show();
 	            	}
 					$(form).find(":submit").attr("disabled", false);

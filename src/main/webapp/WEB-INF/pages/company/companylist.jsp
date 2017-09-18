@@ -6,7 +6,7 @@
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
-<!-- end 云适配 -->
+<!-- end 云适配1 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>全国-公司列表-拉勾网-最专业的互联网招聘平台</title>
 <meta property="qc:admins" content="23635710066417756375" />
@@ -45,16 +45,12 @@ var youdao_conv_id = 271546;
     			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li ><a href="index.html">首页</a></li>
-    			<li class="current"><a href="companylist.html" >公司</a></li>
-    			<li ><a href="#" target="_blank">论坛</a></li>
-    				    			<li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
-	    							    			<li ><a href="create.html" rel="nofollow">发布职位</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
-            	<li><a href="login.html" rel="nofollow">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="register.html" rel="nofollow">注册</a></li>
+            	<!-- <li><a href="login.html" rel="nofollow">登录</a></li>  -->
+            	<li>欢迎 [ ${company.companyName} ]回来</li>
+            	<li><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></li>
             </ul>
                                 </div>
     </div><!-- end #header -->
@@ -72,7 +68,7 @@ var youdao_conv_id = 271546;
 	                       <!--  <h2 class="fl">热门公司</h2> -->
 	                        <ul class="workplace reset fr" id="workplaceSelect">
 	                        	                                <li >
-                                	<a href="javascript:void(0)"  class="current" >全国</a> 
+                                	<a href="javascript:void(0)"  class="current" >热门城市</a> 
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
@@ -108,6 +104,8 @@ var youdao_conv_id = 271546;
                                 	                                	|
                                 	                                </li>
 	                                                            <li  class="more" >
+
+							    	  	
                                 	<a href="javascript:void(0)" >其他</a> 
                                 	                                	<div class="triangle citymore_arrow"></div>
                                 	                                </li>
@@ -129,7 +127,7 @@ var youdao_conv_id = 271546;
 							     										     				<span>福州</span>
 							     										    			</dd>
 							    	  	</dl>
-							    	  								    				<dl>
+							    	  								    							    										    		<dl>
 							    			<dt>GHIJ</dt>
 							    			<dd>
 							     										     				<span>贵阳</span>
@@ -144,7 +142,7 @@ var youdao_conv_id = 271546;
 							     										     				<span>嘉兴</span>
 							     										    			</dd>
 							    	  	</dl>
-							    	  								    				<dl>
+							    	  								    							    										    		<dl>
 							    			<dt>KLMN</dt>
 							    			<dd>
 							     										     				<span>昆明</span>
@@ -156,14 +154,14 @@ var youdao_conv_id = 271546;
 							     										     				<span>南通</span>
 							     										    			</dd>
 							    	  	</dl>
-							    	  								    				<dl>
+							    	  								    							    										    		<dl>
 							    			<dt>OPQR</dt>
 							    			<dd>
 							     										     				<span>青岛</span>
 							     										     				<span>泉州</span>
 							     										    			</dd>
 							    	  	</dl>
-							    	  								    				<dl>
+							    	  								    							    										    		<dl>
 							    			<dt>STUV</dt>
 							    			<dd>
 							     										     				<span>上海</span>
@@ -177,7 +175,7 @@ var youdao_conv_id = 271546;
 							     										     				<span>台州</span>
 							     										    			</dd>
 							    	  	</dl>
-							    	  								    				<dl>
+							    	  								    							    										    		<dl>
 							    			<dt>WXYZ</dt>
 							    			<dd>
 							     										     				<span>武汉</span>
@@ -191,7 +189,7 @@ var youdao_conv_id = 271546;
 							     										     				<span>郑州</span>
 							     										    			</dd>
 							    	  	</dl>
-							     </li>
+							    	  								    								    </li>
 	                        </ul>
 	                    </dt>
 	                    <dd>
@@ -238,44 +236,54 @@ var youdao_conv_id = 271546;
 <div id="middleMenubar">
 <div id="innerMenubar">
   <div id="navMenubar">
-<ul>
-	<li id="view" style="color="green"><a href="#" onclick="formSubmit('toview','_self');this.blur();">查看公司信息</a></li>
-	<li id="new" style="color="green"><a href="#" onclick="formSubmit('tocreate','_self');this.blur();">投递信息</a></li>
-</ul>
+<!-- <ul>
+	<li id="view" style="color:green"><a href="#" onclick="formSubmit('toview','_self');this.blur();">查看公司信息</a></li>
+	<li id="new" style="color:green"><a href="#" onclick="formSubmit('tocreate','_self');this.blur();">投递信息</a></li>
+</ul> -->
   </div>
 </div>
 </div>
 </div>
 <h1 style="margin: auto">企业列表</h1> 
-<table id="ec_table" class="tableRegion" width="98%" border="1">
-	<tr>
-	    <td class="tableHeader"><input type="checkbox" name="selid" onclick="checkAll('companyId',this)"></td
-		<td class="tableHeader">序号</td>
-		<td class="tableHeader">公司名称</td>
-		<td class="tableHeader">公司性质</td>
-		<td class="tableHeader">公司规模</td>
-		<td class="tableHeader">公司简介</td>
-		<td class="tableHeader">公司地址</td>
-		<td class="tableHeader">公司所在地</td>
-		<td class="tableHeader">公司电话</td>
-		<!-- <td class="tableHeader">职位ID</td>
-		<td class="tableHeader">职位名称</td> -->
-	</tr>
-	<tbody class="tableBody" >
-	<table width="98%" border="1">
-	 <c:forEach items="${companyList}" var="y">
-	 <tr>
-	    <td style="120px">${y.companyId}</td>
-	    <td >${y.companyInfo.nature}</td>
-	    <td >${y.companyInfo.scale}</td>
-	    <td >${y.companyInfo.nature}</td>
-	    <td >${y.companyInfo.industry}</td>
-	    <td >${y.companyInfo.introduction}</td>
-	    <td >${y.companyInfo.address}</td>
-	    <td >${y.companyInfo.telphone}</td>
-	 </tr>
-	 </c:forEach>
-	 </table>
-	</tbody> 
+<form>
+<table id="ec_table" class="tableRegion" width="120%" border="1">
+   <c:forEach items="${companyList}" var="c">
+     <ul class="hc_list reset">
+		                   <li  style="clear:both;" >
+			                <a href="javascript:void(0)" onclick="location.href='myhome.action'"> 
+			                <h3 title="公司名称"> 公司名称:${c.companyName}</h3>
+			                <div class="comLogo" >
+				             <img src="${c.logo}" width="160" height="100" alt="华为" />
+			                 </div>
+			                        </a>
+			                  <a href="" target="_blank">公司性质: ${c.companyInfo.nature}</a>
+			                  <a href="" target="_blank">公司地址:${c.companyInfo.address}</a>
+			                   <a href="" target="_blank">公司简介:${c.companyInfo.introduction}</a>
+			                   <ul class="reset ctags">
+			                    <li>公司电话:${c.companyInfo.telphone}</li>																	                        				                        	<li>交通补助</li>
+								</ul>
+			                    </li> 
+  <%--  <tr> 
+   <td>      
+         公司名称:${c.companyName}
+   </td>
+   </tr>
+   <tr>
+   <td>公司log: <img src="${c.logo}"  /></td>
+   </tr>
+   <tr>
+   <td>公司性质:${c.companyInfo.nature}</td>
+   </tr>
+   <tr>
+     <td> 公司地址:${c.companyInfo.address}</td>
+   </tr>
+   <tr>
+   <td>公司简介:${c.companyInfo.introduction}</td>
+   </tr> --%>
+   </c:forEach>
+   </table>
+</form>
+
+
 </body>
 </html>

@@ -1,11 +1,28 @@
 package cn.bole.pojo;
 
+import java.util.List;
+
 public class Company {
 	 private CompanyInfo companyInfo;
      private Integer companyId;
      private String companyName;
-     private String username;
+     private String email;
      private String password;
+     private String logo;
+     private Resum resum;
+      
+	public Resum getResum() {
+		return resum;
+	}
+	public void setResum(Resum resum) {
+		this.resum = resum;
+	}
+	public String getLogo() {
+		return logo;
+	}
+	public void setLogo(String logo) {
+		this.logo = logo;
+	}
 	public CompanyInfo getCompanyInfo() {
 		return companyInfo;
 	}
@@ -24,11 +41,12 @@ public class Company {
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-	public String getUsername() {
-		return username;
+	
+	public String getEmail() {
+		return email;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;

@@ -4,23 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bole.mapper.IndustryMapper">
 
-	<select id="IndustryMapper" resultMap="industryRM">
-		SELECT * FROM industry i
-	   LEFT JOIN
-	    (SELECT industry_id t_iid,profession_id t_pid FROM industry_pro ) t
-	   ON i.INDUSTRY_ID=t.t_iid
-	    LEFT JOIN profession p
-	    ON t.t_pid=p.PROFESSION_ID
+	<select id="findAllIndustry" resultMap="industryRM">
+		select * from industry i
+		left join 
+		(select profession_id,profession_name,industry_id p_id from profession) p
+		on i.industry_id=p.p_id
 	</select>
-	<resultMap type="Industry" id="industryRM" autoMapping="true">
+	
+	<resultMap type="cn.bole.pojo.Industry" id="industryRM" autoMapping="true">
 		<id column="industry_id" property="industryId"/>
-		<collection property="professionList" ofType="Profession">
+		<collection property="professionList" ofType="cn.bole.pojo.Profession">
 			<id column="profession_id" property="professionId"/>
 			<result column="profession_name" property="professionName"/>
 		</collection>
 		
 	</resultMap>
-
-
 
 </mapper>

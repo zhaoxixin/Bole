@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.ResumeMapper">
+	
+	<select id="fingResumeByUserId" resultMap="resumeRM">
+		<!-- select * from resume where user_id=#{userId} -->
+		select * from 
+		resume r
+		       left join
+		(select * from user_info) u
+		       on r.user_id=u.user_info_id where r.user_id=#{userId}
+	</select>
+	
+	<resultMap type="cn.bole.pojo.Resum" id="resumeRM" autoMapping="true">
+		<id column="resume_id" property="resumeId"/>
+		<association property="userInfo" javaType="cn.bole.pojo.UserInfo" autoMapping="true">
+			<id column="user_info_id" property="userInfoId"/>
+		</association>
+	
+	</resultMap>
+	<update id="updateResumeName">
+		update resume set 
+		resume_name= #{resumeName},
+		update_time = #{updateTime}
+		where user_id = #{userId}
+	</update>
+	<update id="updateResumeUserinfo">
+		update resume set resume_name= null
+		where user_id = #{userId}
+	</update>
+	<insert id="createResume">
+		insert into resume(user_id,resum_id) values(
+		#{userId},
+		#{resumId,jdbcType=VARCHAR}
+		)
+		
+	</insert>
+	<select id="fingResume" resultType="string">
+		select resum_id from resume where user_id=#{userId}
+	</select>
+	<update id="resumeExpectJobSave">
+		update resume set 
+		expectCity= #{resume.expectCity},
+		expectPosition=#{resume.expectPosition},
+		type=#{resume.type},
+		expectSalary=#{resume.expectSalary},
+		update_time = #{resume.updateTime}
+		where user_id = #{userId}
+	</update>
+	<update id="resumeWorkExperience">
+		update resume set 
+		company_name= #{resume.companyName},
+		position_name=#{resume.positionName},
+		company_monthStart=#{resume.companyMonthStart},
+		company_yearEnd=#{resume.companyYearEnd},
+		company_monthEnd=#{resume.companyMonthEnd},
+		company_monthStart=#{resume.companyMonthStart},
+		company_monthStart=#{resume.companyMonthStart},
+		update_time = #{resume.updateTime}
+		where user_id = #{userId}
+	</update>
+	<update id="updateResumeCurrentState">
+		update resume set 
+		current_state= #{resume.currentState} 
+		where user_id = #{userId}
+	</update>
+
+</mapper>

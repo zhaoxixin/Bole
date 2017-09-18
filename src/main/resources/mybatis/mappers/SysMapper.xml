@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.SysMapper">
+	<select id="findAllJob" resultMap="jobRM">
+		select * from job, job_info ji
+				where job.job_id=ji.job_info_id 
+	
+	</select>
+	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
+		<id column="job_id" property="jobId"/>
+		<association property="jobInfo" javaType="cn.bole.pojo.JobInfo" resultMap="infoMP">
+			<id column="job_info_id" property="jobInfoId"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="cn.bole.pojo.JobInfo" id="infoMP" autoMapping="true">
+		<id column="job_info_id" property="jobInfoId"/>
+	</resultMap>
+	
+	<select id="findJobNumBj"  resultType="int">
+		select count(*) from job_info where city="北京"
+	</select>
+	<select id="findJobNumSh"  resultType="int">
+		select count(*) from job_info where city="上海"
+	</select>
+	<select id="findJobNumGz"  resultType="int">
+		select count(*) from job_info where city="广州"
+	</select>
+	<select id="findJobNumSz"  resultType="int">
+		select count(*) from job_info where city="深圳"
+	</select>
+	<select id="findJobNumSzou"  resultType="int">
+		select count(*) from job_info where city="苏州"
+	</select>
+	<select id="findJobNumHz"  resultType="int">
+		select count(*) from job_info where city="杭州"
+	</select>
+	
+	
+	<select id="AvgSalaryBj" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="北京"
+	</select>
+	<select id="AvgSalarySh" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="上海"
+	</select>
+	<select id="AvgSalaryGz" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="广州"
+	</select>
+	<select id="AvgSalarySz" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="深圳"
+	</select>
+	<select id="AvgSalarySzou" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="苏州"
+	</select>
+	<select id="AvgSalaryHz" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="杭州"
+	</select>
+    
+</mapper>
