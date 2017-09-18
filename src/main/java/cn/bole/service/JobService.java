@@ -18,7 +18,7 @@ public interface JobService {
 
 	Job findJobByJobId(String jobId);
 
-	void sendResume(String userId, String jobId, String companyId);
+	
 
 	List<Job> findJobByCompanyId(Integer companyId);
 
@@ -26,6 +26,10 @@ public interface JobService {
 
 	List<Job> additionSearch(Integer salaryRange, String highistEducation, String jobNature, String[] jobIds,
 			Date announceTimePre, Date announceTimeAft);
+
+
+
+	void sendResume(String jobId, String companyId, String resumId);
 
 	
 
