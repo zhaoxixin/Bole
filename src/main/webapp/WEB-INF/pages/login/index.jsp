@@ -96,7 +96,7 @@ $("#ctname").html($(this).html());
     		</a>
     		<ul class="reset" id="navheader">
     			<li class="current"><a style="color: #12CD57" href="${ctx }">首页</a></li>
-    			<c:if test="${sessionScope.admin == null }">
+    			<c:if test="${sessionScope.user1 == null&& sessionScope.admin == null}">
     			   <li ><a style="color: #12CD57" href="${ctx }/toLogin.action" >企业入口</a></li>
     			</c:if>
     			<li ><a style="color: #12CD57" href="${ctx }/companyhome" target="_blank">名企专区</a></li>
