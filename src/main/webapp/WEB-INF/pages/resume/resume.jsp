@@ -13,10 +13,10 @@
 	<link media="handheld" rel="alternate">
 	<!-- end 云适配 -->
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>我的简历-伯乐网-最专业的互联网招聘平台</title>
+	<title>我的简历-拉勾网-最专业的互联网招聘平台</title>
 	<meta content="23635710066417756375" property="qc:admins">
-	<meta name="description" content="伯乐网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在伯乐网">
-	<meta name="keywords" content="伯乐,伯乐网,伯乐招聘,伯乐, 伯乐网 ,互联网招聘,伯乐互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 伯乐官网, 伯乐百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
+	<meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
+	<meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
 	<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
 	<!-- <div class="web_root"  style="display:none">h</div> -->
@@ -50,19 +50,13 @@
 		<div id="header">
 			<div class="wrapper">
 				<a class="logo" href="h/">
-    			<img width="229" height="43" alt="伯乐招聘-专注互联网招聘" src="style/images/logo.png">
+    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
     		</a>
 				<ul id="navheader" class="reset">
-<<<<<<< HEAD
-					<li><a href="${ctx}/">首页</a></li>
-					<li><a href="#">公司</a></li>
-					<li><a target="_blank" href="#">论坛</a></li>
-					<li class="current"><a rel="nofollow" href="${ctx }/resumeCreate.action">我的简历</a></li>
 					<li><a href="${ctx }/">首页</a></li>
 					<li><a href="companylist.html">公司</a></li>
 					<li><a target="_blank" href="h/toForum.html">论坛</a></li>
 					<li class="current"><a rel="nofollow" href="jianli.html">我的简历</a></li>
-
 				</ul>
 				<dl class="collapsible_menu">
 					<dt>
@@ -87,7 +81,7 @@
 					<dd><a href="create.html">我要招人</a></dd>
 					<dd><a href="${ ctx }/userhome.action">我的个人主页</a></dd>
 					<dd><a href="accountBind.html">帐号设置</a></dd>
-					<dd class="logout"><a rel="nofollow" href="${ctx }/logout.action">退出</a></dd>
+					<dd class="logout"><a rel="nofollow" href="login.html">退出</a></dd>
 				</dl>
 				<div class="dn" id="noticeTip">
 					<span class="bot"></span>
@@ -104,11 +98,9 @@
 				<div class="content_l">
 					<div class="fl" id="resume_name">
 						<div class="nameShow fl">
-							<h1 title="${resume.resumeName}的简历">${resume.resumeName}</h1>
-							
+							<h1 title="jason的简历">${resume.resumeName}</h1>
 							<span class="rename">重命名</span> | <a target="_blank" href="${ ctx }/preview.action">预览</a>
 						</div>
-						
 						<form  action="/resumeNameSave" class="fl dn">
 							<input type="text" id="resumeName" value="${resumeName }" name="resumeName" class="nameEdit c9">
 							<input type="submit" value="保 存">| <a target="_blank" href="${ ctx }/preview.action">预览</a>
@@ -460,7 +452,7 @@
 						<h2>工作经历 <span> （投递简历时必填）</span></h2>
 						<span class="c_add dn"></span>
 						<div class="experienceShow dn">
-							<form action="/resumeWorkExperience">
+							<form action="/resumeSave">
 								<table >
 									<tbody>
 										<tr>
@@ -537,7 +529,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart" name="companyMonthStart">
+													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -563,7 +555,7 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-													<input type="button" value="${resume.companyYearEnd }" class="profile_select_139 profile_select_normal select_companyYearEnd" ame="companyYearEnd">
+													<input type="button" value="${resume.companyYearEnd }" class="profile_select_139 profile_select_normal select_companyYearEnd">
 													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>至今</li>
@@ -617,7 +609,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd" name="companyMonthEnd">
+													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -656,7 +648,7 @@
 						</div>
 						<!--end .experienceShow-->
 						<div class="experienceEdit dn">
-							<form  action="/resumeWorkExperience">
+							<form  action="/resumeSave">
 								<table class="experienceForm">
 									<tbody>
 										<tr>
@@ -732,7 +724,7 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="companyMonthStart" value="${resume.companyMonthStart}" name="companyMonthStart">
+													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
 													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart" value="${resume.companyMonthStart}">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
@@ -813,7 +805,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthEnd" value="${resume.companyMonthEnd}" name="companyMonthEnd">
-													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="${resume.companyMonthEnd}" name="companyMonthEnd">
+													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="${resume.companyMonthEnd}">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -1552,7 +1544,7 @@
 
 
 					<div class="greybg qrcode mt20">
-						<img width="242" height="242" alt="伯乐微信公众号二维码" src="style/images/qr_resume.png">
+						<img width="242" height="242" alt="拉勾微信公众号二维码" src="style/images/qr_resume.png">
 						<span class="c7">微信扫一扫，轻松找工作</span>
 					</div>
 				</div>
@@ -1615,7 +1607,7 @@
 						<tbody>
 							<tr>
 								<td align="center">
-									<p class="font_16">你在伯乐还没有简历，请先上传一份</p>
+									<p class="font_16">你在拉勾还没有简历，请先上传一份</p>
 								</td>
 							</tr>
 							<tr>
@@ -1737,8 +1729,8 @@
 		<div class="wrapper">
 			<a rel="nofollow" target="_blank" href="h/about.html">联系我们</a>
 			<a target="_blank" href="h/af/zhaopin.html">互联网公司导航</a>
-			<a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">伯乐微博</a>
-			<a rel="nofollow" href="javascript:void(0)" class="footer_qr">伯乐微信<i></i></a>
+			<a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">拉勾微博</a>
+			<a rel="nofollow" href="javascript:void(0)" class="footer_qr">拉勾微信<i></i></a>
 			<div class="copyright">&copy;2013-2014 Lagou <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
 		</div>
 	</div>

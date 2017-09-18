@@ -74,7 +74,7 @@ var youdao_conv_id = 271546;
                 <input type="hidden" id="timestamp" name="timestamp" value="" />
             </form>
             <div class="login_right">
-            	<div>已有拉勾帐号</div>
+            	<div>已有伯乐帐号</div>
             	<a  href="login.html"  class="registor_now">直接登录</a>
                 <div class="login_others">使用以下帐号直接登录:</div>
                 <a  href="h/ologin/auth/sina.html"  target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a>
@@ -112,7 +112,7 @@ var youdao_conv_id = 271546;
 			    	},
 			    	messages: {
 			    		type:{
-	    	        		required:"请选择使用拉勾的目的"
+	    	        		required:"请选择使用伯乐的目的"
 	    	        	},
 			    	 	email: {
 			    	    	required: "请输入常用邮箱地址",

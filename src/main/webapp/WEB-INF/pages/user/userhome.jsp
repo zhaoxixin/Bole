@@ -50,20 +50,15 @@ var youdao_conv_id = 271546;
         	        	<dl class="collapsible_menu">
             	<dt>
            			<span>
-           				<c:if test="${sessionScope.admin == null }">	
-           					${user1.userInfo.realname }&nbsp;				 
-						</c:if>
-           				<c:if test="${sessionScope.admin != null }">					 
-							${admin.userInfo.realname }&nbsp;<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
-						</c:if>
+           				${user1.userInfo.realname }&nbsp;	
+           				<c:if test="">	
+           								 
+						</c:if>          				
            			</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                		<dd style="display: none;"><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></dd>
-                	                	<!-- <dd style="display: none;"><a href="collections.html">我收藏的职位</a></dd>
-                	                	<dd class="btm" style="display: none;"><a href="subscribe.html">我的订阅</a></dd>
-                	                	<dd style="display: none;"><a href="create.html">我要招人</a></dd> -->
+                                		<dd style="display: none;"><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></dd>              	                	
                 	                	<dd style="display: none;"><a href="${ctx }/toFindJob.action">搜索职位 <span id="searchPosition" class="red dn"></span></a></dd>
                 	                	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn"></span></a></dd>
                 	                	<dd class="btm" style="display: none;"><a href="/userinfo.action">我的基本信息</a></dd>
@@ -156,7 +151,7 @@ var youdao_conv_id = 271546;
                                				    <li class="top">
                                					<div class="list_time"><em></em>2014-07-01 17:15</div>
                                					<div class="list_body">
-                               						                               							简历被lixiang标记为不合适<div>您的简历已收到，但目前您的工作经历与该职位不是很匹配，因此很抱歉地通知您无法进入面试。</div>                               						                               					</div>
+                               						                               							简历被该公司HR标记为不合适<div>您的简历已收到，但目前您的工作经历与该职位不是很匹配，因此很抱歉地通知您无法进入面试。</div>                               						                               					</div>
                                				</li>
                                				<li class="bottom">
                                					<div class="list_time"><em></em>2014-07-01 17:08</div>

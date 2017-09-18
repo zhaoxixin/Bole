@@ -105,7 +105,7 @@ $(function(){
 	    	},
 	    	messages: {
 	    		type:{
-	        		required:"请选择使用拉勾的目的"
+	        		required:"请选择使用伯乐的目的"
 	        	},
 	    	   	email: {
 	    	    	required: "请输入登录邮箱地址",
@@ -146,7 +146,9 @@ $(function(){
 	            		if(result.type==1){
 	            			window.location.href='/companyResumes.action';
 	            		}
-	            		
+	            		if(result.type==2){
+	            			window.location.href='/home.action';
+	            		}
 	            	}else{
 	            		alert("账户或密码有错")
 						$('#beError').text(result.msg).show();
