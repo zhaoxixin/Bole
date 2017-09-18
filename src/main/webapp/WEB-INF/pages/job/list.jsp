@@ -20,7 +20,7 @@
 <title>伯乐网-只要您是千里马</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="前端开发招聘  全国地区招聘 紫色医疗招聘前端开发,月薪:10k-20k,要求:本科及以上学历,3-5年工作经验。职位诱惑：借移动医疗大势享受坐直升飞机的职场发展 公司规模:15-50人移动互联网 ,健康医疗类公司招聘信息汇总  最新最热门互联网行业招聘信息，尽在拉勾网" name="description">
-<meta content="前端开发招聘,全国地区前端开发招聘,紫色医疗招聘前端开发,移动互联网 类公司招聘信息汇总,健康医疗类公司招聘信息汇总,拉勾招聘,拉勾网,互联网招聘" name="keywords">
+<meta content="前端开发招聘,全国地区前端开发招聘,紫色医疗招聘前端开发,移动互联网 类公司招聘信息汇总,健康医疗类公司招聘信息汇总,伯乐招聘,伯乐网,互联网招聘" name="keywords">
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 <style type="text/css">
 	#submit_button{
@@ -34,8 +34,10 @@
 	.timeSearch{
 		
 			height:30px;
-			width:80px;
-			border: 2px solid #019875
+			width:75px;
+			border: 2px solid #019875;
+			font-size: 10px;
+			
 	
 	}
 } 
@@ -80,8 +82,8 @@ var youdao_conv_id = 271546;
     			<img src="${ctx}/style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li ><a href="${ctx}">首页</a></li>
-    			<li ><a href="${ctx}/companyhome" target="_blank">名企专区</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}">首页</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}/companyhome" target="_blank">名企专区</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
             	<c:if test="${ sessionScope.user1 == null }">
@@ -90,7 +92,7 @@ var youdao_conv_id = 271546;
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
 					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+						   <a href="${ctx}/userhome.action">欢迎 ${ user1.email } 回来</a> 
 						  &nbsp;|&nbsp;
 						<a href="${ ctx }/logout.action">退出</a>
 					 </c:if>
@@ -184,7 +186,7 @@ var youdao_conv_id = 271546;
 	         -->
         </div>
    <div class="content">
-        	<div id="search_box">
+        	<div >
 		<form role="form"  name="searchForm" action="${ctx}/additionSearch" method="post">
         <!-- <ul id="searchType">
         	        	<li data-searchtype="1" class="type_selected">职位</li>
@@ -232,10 +234,10 @@ var youdao_conv_id = 271546;
   	
   
         		<div>
-        		<input class="timeSearch"   type="text" value="请选择起始时间" style="width:75px;border: 2px solid #019875" name="announceTimePre"
+        		<input class="timeSearch"   type="text" value="请选择起始时间"  name="announceTimePre"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
 	   			&nbsp;&nbsp;-&nbsp;&nbsp;
-	   			<input class="timeSearch" type="text" value="请选择截至时间"  style="width:75px;border: 2px solid #019875" name="announceTimeAft"
+	   			<input class="timeSearch" type="text" value="请选择截至时间"   name="announceTimeAft"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
         		</div>
                <c:forEach items="${jobList}" var="job">

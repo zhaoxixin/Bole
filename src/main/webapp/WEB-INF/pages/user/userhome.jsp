@@ -45,7 +45,11 @@ var youdao_conv_id = 271546;
     			<li><a href="${ctx}/">首页</a></li>
     			<li><a href="companylist.html">公司</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
+<<<<<<< HEAD
     				    			<li><a rel="nofollow" href="/toJianLi.action">我的简历</a></li>
+=======
+    				    			<li><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></li>
+>>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
 	    						    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>

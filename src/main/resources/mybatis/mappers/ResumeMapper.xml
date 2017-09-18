@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.ResumeMapper">
+	
+	<select id="fingResumeByUserId" resultMap="resumeRM">
+		<!-- select * from resume where user_id=#{userId} -->
+		select * from 
+		resume r
+		       left join
+		(select * from user_info) u
+		       on r.user_id=u.user_info_id where u.user_info_id=#{userId}
+	</select>
+	
+	<resultMap type="cn.bole.pojo.Resum" id="resumeRM" autoMapping="true">
+		<id column="resume_id" property="resumeId"/>
+		<association property="userInfo" javaType="cn.bole.pojo.UserInfo" autoMapping="true">
+			<id column="user_info_id" property="userInfoId"/>
+		</association>
+	
+	</resultMap>
+	<update id="updateResumeName">
+		update resume set 
+		resume_name= #{resumeName},
+		update_time = #{updateTime}
+		where user_id = #{userId}
+	</update>
+	<update id="updateResumeUserinfo">
+		updete resume set resume_name= null
+		where user_id = #{userId}
+	</update>
+	<insert id="createResume">
+		insert into resume(user_id,resum_id) values(
+		#{userId},#{resumId}
+		)
+		
+	</insert>
+
+</mapper>

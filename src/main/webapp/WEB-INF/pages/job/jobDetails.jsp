@@ -46,9 +46,9 @@ var youdao_conv_id = 271546;
     			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li ><a href="index.html">首页</a></li>
-    			<li ><a href="#" target="_blank">名企专区</a></li>
-    			<li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
+    			<li ><a style="color: #12CD57" href="index.html">首页</a></li>
+    			<li ><a style="color: #12CD57" href="#" target="_blank">名企专区</a></li>
+    			<li ><a style="color: #12CD57" href="jianli.html" rel="nofollow">我的简历</a></li>
 	    							    			
 	    		    		</ul>
         	            <ul class="loginTop">
@@ -58,7 +58,7 @@ var youdao_conv_id = 271546;
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
 					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+						    <a href="${ctx}/userhome.action">欢迎 ${ user1.email } 回来</a>
 						  &nbsp;|&nbsp;
 						<a href="${ ctx }/logout.action">退出</a>
 					 </c:if>
@@ -140,11 +140,11 @@ var youdao_conv_id = 271546;
                    <dl class="job_company">
                       <dt>
                     	<a href="h/c/683.html" target="_blank">
-                            <img class="b2" src="style/images/ff80808140ac5ed90140b953972e0215.png" width="80" height="80" alt="北京立方网信息技术有限公司" />
+                            <img class="b2" src="${ctx}/${job.company.logo}" width="80" height="80" alt="${job.company.companyName}" />
                 <div>
                    <h2 class="fl">
                          	${job.company.companyName}
-                              <img src="style/images/valid.png" width="15" height="19" alt="拉勾认证企业" /> 
+                              <img src="${ctx}/style/images/valid.png" width="15" height="19" alt="伯乐认证企业" /> 
                                   <span class="dn">伯乐认证企业</span>
                    </h2>
                    </div>

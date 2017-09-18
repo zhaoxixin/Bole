@@ -18,9 +18,8 @@ public class UserController {
 	UserInfoService userInfoService;
 	//到用户个人主页
 	@RequestMapping("/userhome.action")
-	public String toUserHome(HttpSession session,Model model){
-		User user1=(User)session.getAttribute("User1");
-		model.addAttribute("user1", user1);
+	public String toUserHome(){
+		
 		return "/user/userhome";
 	}
 	//到userinfo页面查看用户个人信息
