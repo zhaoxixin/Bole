@@ -48,8 +48,11 @@ public class UserController {
 	public String toFindJob(){
 		return "user/userlookJob";
 	}
-	
-	
+	//去简历页面
+	@RequestMapping("/toJianLi.action")
+	public String toJianLi(){
+		return "resume/resume";
+	}
 	
 	
 	

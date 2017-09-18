@@ -17,8 +17,7 @@ public class UserInfoServiceImpl implements UserInfoService{
 	}
 	@Override
 	public void updateUserInfo(UserInfo userInfo) {
-		userInfoMapper.updateUserInfo(userInfo);	
-		
+		userInfoMapper.updateUserInfo(userInfo);		
 	}
 
 }
