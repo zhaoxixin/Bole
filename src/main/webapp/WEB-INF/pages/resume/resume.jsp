@@ -53,10 +53,16 @@
     			<img width="229" height="43" alt="伯乐招聘-专注互联网招聘" src="style/images/logo.png">
     		</a>
 				<ul id="navheader" class="reset">
+<<<<<<< HEAD
 					<li><a href="${ctx}/">首页</a></li>
 					<li><a href="#">公司</a></li>
 					<li><a target="_blank" href="#">论坛</a></li>
 					<li class="current"><a rel="nofollow" href="${ctx }/resumeCreate.action">我的简历</a></li>
+					<li><a href="${ctx }/">首页</a></li>
+					<li><a href="companylist.html">公司</a></li>
+					<li><a target="_blank" href="h/toForum.html">论坛</a></li>
+					<li class="current"><a rel="nofollow" href="jianli.html">我的简历</a></li>
+
 				</ul>
 				<dl class="collapsible_menu">
 					<dt>
@@ -67,7 +73,7 @@
 					 		</c:if>
 							<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
 					 		<c:if test="${ sessionScope.user1 != null }">
-						    	欢迎 ${ user1.email } 回来
+						    	欢迎 ${ user1.userInfo.realname } 回来
 						  		&nbsp;|&nbsp;
 								<a href="${ ctx }/logout.action">退出</a>
 					 		</c:if>
@@ -98,12 +104,14 @@
 				<div class="content_l">
 					<div class="fl" id="resume_name">
 						<div class="nameShow fl">
-							<h1 title="jason的简历">${resume.resumeName}</h1>
-							<span class="rename">重命名</span>
+							<h1 title="${resume.resumeName}的简历">${resume.resumeName}</h1>
+							
+							<span class="rename">重命名</span> | <a target="_blank" href="${ ctx }/preview.action">预览</a>
 						</div>
+						
 						<form  action="/resumeNameSave" class="fl dn">
 							<input type="text" id="resumeName" value="${resumeName }" name="resumeName" class="nameEdit c9">
-							<input type="submit" value="保 存">| <a target="_blank" href="h/resume/preview.html">预览</a>
+							<input type="submit" value="保 存">| <a target="_blank" href="${ ctx }/preview.action">预览</a>
 						</form>
 					</div>
 					<!--end #resume_name-->
@@ -127,7 +135,7 @@
 						<span class="c_edit"></span>
 						<div class="basicShow">
 							<span>
-								${userInfo.realname} |  ${userInfo.sex} |   ${userInfo.education} |  ${userInfo.workPre}<br>
+								${userInfo.realname} |  ${userInfo.sex} |   ${userInfo.education} <br>
             			    	${userInfo.telphone} | ${userInfo.workPre}<br>
             				</span>
 							<div class="m_portrait">

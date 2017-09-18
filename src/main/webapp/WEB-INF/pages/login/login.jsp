@@ -143,10 +143,11 @@ $(function(){
 
 	            		if(result.type==0){
 	            			window.location.href='/userhome.action';	
-	            		}
+	            		}	            		
 	            		if(result.type==1){
 	            			window.location.href='/companyResumes.action';
 	            		}
+	            		
 	            	}else{
 	            		alert("账户或密码有错")
 						$('#beError').text(result.msg).show();
