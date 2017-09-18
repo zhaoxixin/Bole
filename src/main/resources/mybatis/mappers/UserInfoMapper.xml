@@ -20,4 +20,20 @@
 		</set>			
 		where user_info_id=#{userInfoId}
 	</update>
+	  <select id="findResumeByUserId" resultMap="ResumRm" >
+    	select * from resume where user_id=#{userId}
+    </select>
+	 <resultMap type="cn.bole.pojo.Resum" id="ResumRm">
+    	<id  column="resum_id" property="resumId"></id>
+    	<result  column="resume_name" property="resumeName"></result>
+    	<result  column="company_name" property="companyName"></result>
+    	<result  column="position_name" property="positionName"></result>
+    	<result  column="company_yearstart" property="companyYearStart"></result>
+    	<result  column="company_yearend" property="companyYearEnd"></result>
+    	<result  column="company_monthstart" property="companyMonthStart"></result>
+    	<result  column="company_monthend" property="companyMonthEnd"></result>
+    	<result  column="expectposition" property="expectPosition"></result>
+    	<result  column="expectcity" property="expectCity"></result>
+    	<result  column="expectsalary" property="expectSalary"></result>
+    </resultMap>
 </mapper>

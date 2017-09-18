@@ -46,8 +46,6 @@ var youdao_conv_id = 271546;
     			<li><a href="companylist.html">公司</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
 <<<<<<< HEAD
-    				    			<li><a rel="nofollow" href="/toJianLi.action">我的简历</a></li>
-=======
     				    			<li><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></li>
 >>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
 	    						    		</ul>
@@ -57,7 +55,7 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                		<dd style="display: none;"><a rel="nofollow" href="jianli.html">我的简历</a></dd>
+                                		<dd style="display: none;"><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></dd>
                 	                	<!-- <dd style="display: none;"><a href="collections.html">我收藏的职位</a></dd>
                 	                	<dd class="btm" style="display: none;"><a href="subscribe.html">我的订阅</a></dd>
                 	                	<dd style="display: none;"><a href="create.html">我要招人</a></dd> -->
