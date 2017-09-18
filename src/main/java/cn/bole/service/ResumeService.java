@@ -13,9 +13,18 @@ public interface ResumeService {
 
 	public void updateResumeUserinfo(String userId, UserInfo userInfo);
 
-	public void createResume(String userId, UserInfo userInfo, String resumeId);
+	public void createResume(String userId, UserInfo userInfo, String resumId);
 
 	public void resumeExpectJobSave(String userId, Resum resume);
 
+
+	public String fingResume(String userId);
+
+	public void resumeWorkExperience(String userId, Resum resume);
+
+	public void updateResumeCurrentState(String userId, Resum resume);
+
+
 	public String getResumeId(String userId);
+
 }

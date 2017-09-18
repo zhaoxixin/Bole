@@ -27,12 +27,14 @@ public class ResumeController {
 		User user = (User) session.getAttribute("user1");
 		String userId =user.getUserId();
 		UserInfo userInfo=resumeService.fingUserinfo(userId);
+		if (resumeService.fingResume(userId)==null) {
+			
+			String resumId=UUID.randomUUID().toString();
+			resumeService.createResume(userId,userInfo,resumId);
+		}
 		Resum resume=resumeService.fingResumeByUserId(user.getUserId());
-		
-		if (resume.getResumeName()==null) {
+		if (resume.getResumeName()== null) {
 			resume.setResumeName(userInfo.getRealname()+"的简历");
-			String resumeId=UUID.randomUUID().toString();
-			resumeService.createResume(userId,userInfo,resumeId);
 		}
 		model.addAttribute("resume", resume);
 		model.addAttribute("userInfo", userInfo);
@@ -51,6 +53,7 @@ public class ResumeController {
 		String userId = user.getUserId();
 		resume.setUpdateTime(new Date());
 		UserInfo userInfo=resume.getUserInfo();
+		resumeService.updateResumeCurrentState(userId,resume);
 		resumeService.updateResumeUserinfo(userId,userInfo);
 		return "redirect:/resumeCreate";
 	}
@@ -63,17 +66,14 @@ public class ResumeController {
 		return "redirect:/resumeCreate";
 	}
 	 	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
+    @RequestMapping("/resumeWorkExperience")
+	public String resumeWorkExperience(HttpSession session,Resum resume){
 		User user = (User) session.getAttribute("user1");
 		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
+		resumeService.resumeWorkExperience(userId,resume);
 		return "redirect:/resumeCreate";
 	}
-	 */	
+	 
 	/*	@RequestMapping("/resumeSave")
 	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
 		User user = (User) session.getAttribute("user1");

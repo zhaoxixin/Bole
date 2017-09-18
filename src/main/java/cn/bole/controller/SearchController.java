@@ -122,7 +122,7 @@ public class SearchController extends BaseController {
 			try {
 				jobService.sendResume(jobId,companyId,"1");
 				
-				/////////////
+				
 				JOptionPane.showMessageDialog(null, "投递成功");
 				return "redirect:/jobDetails?jobId="+jobId;
 				/*response.getWriter().write("投递成功，2秒钟之后会跳转到职位详情页面");
