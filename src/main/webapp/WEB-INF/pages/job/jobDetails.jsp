@@ -140,11 +140,11 @@ var youdao_conv_id = 271546;
                    <dl class="job_company">
                       <dt>
                     	<a href="h/c/683.html" target="_blank">
-                            <img class="b2" src="style/images/ff80808140ac5ed90140b953972e0215.png" width="80" height="80" alt="北京立方网信息技术有限公司" />
+                            <img class="b2" src="${ctx}/${job.company.logo}" width="80" height="80" alt="${job.company.companyName}" />
                 <div>
                    <h2 class="fl">
                          	${job.company.companyName}
-                              <img src="style/images/valid.png" width="15" height="19" alt="拉勾认证企业" /> 
+                              <img src="${ctx}/style/images/valid.png" width="15" height="19" alt="伯乐认证企业" /> 
                                   <span class="dn">伯乐认证企业</span>
                    </h2>
                    </div>

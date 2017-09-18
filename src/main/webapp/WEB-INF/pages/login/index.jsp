@@ -173,7 +173,7 @@ $("#ctname").html($(this).html());
 		    </c:forEach>
 		</div>
 				 					
-			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
+			<!-- <a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a> -->
 		</div>
 		
       <div class="content">	
