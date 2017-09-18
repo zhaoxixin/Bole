@@ -92,7 +92,7 @@ var youdao_conv_id = 271546;
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
 					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+						   <a href="${ctx}/userhome.action">欢迎 ${ user1.email } 回来</a> 
 						  &nbsp;|&nbsp;
 						<a href="${ ctx }/logout.action">退出</a>
 					 </c:if>
