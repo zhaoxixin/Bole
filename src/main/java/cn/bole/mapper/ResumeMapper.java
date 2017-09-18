@@ -15,5 +15,15 @@ public interface ResumeMapper {
 
 	public void updateResumeName(@Param("userId")String userId, @Param("resumeName")String resumeName,@Param("updateTime")Date updateTime);
 
+	public String fingResume(String userId);
+
+	public void resumeExpectJobSave(@Param("userId")String userId, @Param("resume")Resum resume);
+
+	public void resumeWorkExperience(@Param("userId")String userId,@Param("resume") Resum resume);
+
+	public void updateResumeCurrentState(@Param("userId")String userId,@Param("resume") Resum resum);
+
+	
+
 	
 }

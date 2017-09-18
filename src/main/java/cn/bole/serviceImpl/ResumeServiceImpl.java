@@ -26,8 +26,8 @@ public class ResumeServiceImpl implements ResumeService {
 	}
 	
 
-	public void createResume(String userId, UserInfo userInfo, String resumeId) {
-		resumeMapper.createResume(userId,resumeId);
+	public void createResume(String userId, UserInfo userInfo, String resumId) {
+		resumeMapper.createResume(userId,resumId);
 		userInfoMapper.updateUserInfo(userInfo);
 	}
 	public void updateResumeName(String userId, String resumeName) {
@@ -40,7 +40,22 @@ public class ResumeServiceImpl implements ResumeService {
 		userInfoMapper.updateUserInfo(userInfo);
 	}
 	public void resumeExpectJobSave(String userId, Resum resume) {
+		resume.setUpdateTime(new Date());
+		resumeMapper.resumeExpectJobSave(userId,resume);
+	}
+	@Override
+	public String fingResume(String userId) {
 		
+		return resumeMapper.fingResume(userId);
+	}
+	
+	public void resumeWorkExperience(String userId, Resum resume) {
+		resume.setUpdateTime(new Date());
+		resumeMapper.resumeWorkExperience(userId,resume);
+	}
+	@Override
+	public void updateResumeCurrentState(String userId, Resum resume) {
+		resumeMapper.updateResumeCurrentState(userId,resume);
 	}
 	
 	
