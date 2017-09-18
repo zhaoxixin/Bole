@@ -233,11 +233,20 @@ var youdao_conv_id = 271546;
    
   	
   
-        		<div>
-        		<input class="timeSearch"   type="text" value="请选择起始时间"  name="announceTimePre"
+        		<div style="margin-top: -15px">
+        		<input class="timeSearch"   type="text" value="请选择起始时间" style="height:30px;
+				width:110px;
+				border: 2px solid #019875; 
+				line-height:30px;
+				font-size: 10px"  name="announceTimePre"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
-	   			&nbsp;&nbsp;-&nbsp;&nbsp;
-	   			<input class="timeSearch" type="text" value="请选择截至时间"   name="announceTimeAft"
+	   			&nbsp;-&nbsp;
+	   			<input class="timeSearch" type="text" value="请选择截至时间"
+	   			style="height:30px;
+				width:110px;
+				border: 2px solid #019875;
+				line-height:30px;
+				font-size: 10px"   name="announceTimeAft"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
         		</div>
                <c:forEach items="${jobList}" var="job">
@@ -246,7 +255,7 @@ var youdao_conv_id = 271546;
                <input  type="hidden"  name="jobList" value="">
              		<!-- <input id="submit_button" type="submit" name="submit" value="搜索"/> -->
                 <!-- <input type="hidden" name="city" id="cityInput" value="全国"/> -->
-                <input type="submit" id="search_button" value="搜索" />
+                <input style="margin-top: 10px" type="submit" id="search_button" value="搜索" />
     </form>
 </div>     
         
