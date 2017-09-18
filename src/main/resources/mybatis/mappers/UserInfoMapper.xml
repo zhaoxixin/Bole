@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<
 <mapper namespace="cn.bole.mapper.UserInfoMapper">
 	<select id="findUserInfoByUserId" resultType="cn.bole.pojo.UserInfo">
 		select * from user_info where user_info_id=#{userId}
@@ -20,6 +21,7 @@
 		</set>			
 		where user_info_id=#{userInfoId}
 	</update>
+<<<<<<< HEAD
 	  <select id="findResumeByUserId" resultMap="ResumRm" >
     	select * from resume where user_id=#{userId}
     </select>
@@ -46,6 +48,4 @@
     <resultMap type="cn.bole.pojo.CompanyInfo" id="CompanyInfoRM" autoMapping="true">
     	<id column="company_info_id" property="companyInfoId"/>
     </resultMap>
-    
-    
 </mapper>

@@ -6,6 +6,7 @@ import cn.bole.pojo.Resum;
 import cn.bole.pojo.UserInfo;
 
 public interface UserInfoMapper {
+
 	//根据id查询userinfo
 	public UserInfo findUserInfoByUserId(String userId);
 	//保存user对应的userinfo
@@ -16,5 +17,6 @@ public interface UserInfoMapper {
 	public Resum findResumeByUserId(String userId);
 	//根据用户id查询出自己所有的简历
 	public List<Resum> findfindAllResum(String userId);
+
 
 }
