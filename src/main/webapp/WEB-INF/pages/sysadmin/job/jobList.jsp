@@ -21,6 +21,7 @@
 	<li id="new"><a href="#" onclick="formSubmit('pass','_self');this.blur();">通过</a></li>
 	<li id="new"><a href="#" onclick="formSubmit('stop','_self');this.blur();">停用</a></li>
 	<li id="new"><a href="#" onclick="formSubmit('area','_self');this.blur();">分布</a></li>
+	<li id="new"><a href="#" onclick="formSubmit('download','_self');this.blur();">下载</a></li>
 </ul>
   </div>
 </div>

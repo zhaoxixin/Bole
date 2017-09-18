@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bole.mapper.UserInfoMapper">
+	<select id="findUserInfoByUserId" resultType="cn.bole.pojo.UserInfo">
+		select * from user_info where user_info_id=#{userId}
+	</select>
+	<insert id="save">
+		insert into user_info(user_info_id,email,realname) values(#{userInfoId},#{email},#{realname})
+	</insert>
+	<update id="updateUserInfo">
+		update user_info
+		<set>
+			realname=#{realname},
+			sex=#{sex},
+			education=#{education},		
+			work_pre=#{workPre},
+			telphone=#{telphone}
+		</set>			
+		where user_info_id=#{userInfoId}
+	</update>
+</mapper>

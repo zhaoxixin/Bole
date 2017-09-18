@@ -1,12 +1,13 @@
 package cn.bole.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 /**
  * 自己的详细信息
  * @author Administrator
  *
  */
-public class UserInfo extends BasicInfo{
+public class UserInfo extends BasicInfo implements Serializable{
 		
 	   private String userInfoId;//'用户信息id',
 	   private String userName; //用户名

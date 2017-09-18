@@ -18,5 +18,56 @@
 	<resultMap type="cn.bole.pojo.JobInfo" id="infoMP" autoMapping="true">
 		<id column="job_info_id" property="jobInfoId"/>
 	</resultMap>
+	
+	<select id="findJobNumBj"  resultType="int">
+		select count(*) from job_info where city="北京"
+	</select>
+	<select id="findJobNumSh"  resultType="int">
+		select count(*) from job_info where city="上海"
+	</select>
+	<select id="findJobNumGz"  resultType="int">
+		select count(*) from job_info where city="广州"
+	</select>
+	<select id="findJobNumSz"  resultType="int">
+		select count(*) from job_info where city="深圳"
+	</select>
+	<select id="findJobNumSzou"  resultType="int">
+		select count(*) from job_info where city="苏州"
+	</select>
+	<select id="findJobNumHz"  resultType="int">
+		select count(*) from job_info where city="杭州"
+	</select>
+	
+	
+	<select id="AvgSalaryBj" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="北京"
+	</select>
+	<select id="AvgSalarySh" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="上海"
+	</select>
+	<select id="AvgSalaryGz" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="广州"
+	</select>
+	<select id="AvgSalarySz" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="深圳"
+	</select>
+	<select id="AvgSalarySzou" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="苏州"
+	</select>
+	<select id="AvgSalaryHz" resultType="double">
+		select avg(salary_range) from
+			job_info
+			where city="杭州"
+	</select>
     
 </mapper>

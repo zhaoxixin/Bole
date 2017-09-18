@@ -6,55 +6,155 @@
 
 	<select id="findJob" resultMap="jobRM">
 		select * from 
-		job,job_info
-		where job.job_id=job_info.job_info_id
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
 		and industry_id=#{industryId}
 		and profession_id=#{professionId}
 		and city=#{city}
 		and state=1
+		order by announce_time desc
+		limit 0,10
 	</select>
 	
 	<select id="findNewJob" resultMap="jobRM">
-		 select * from
-		(select * from
-		job
-		left join
-		job_info
-		on job.job_id=job_info.job_info_id
+		select * from
+		(select * from 
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
 		and state=1) uup 
 		where uup.job_id in
 		(
 		select job_id from job where
 		job.announce_time=(select max(job.announce_time) from job)
 		) 
+		order by announce_time desc
+		limit 0,10 
 		
 	</select> 
 	 <select id="findHotJob" resultMap="jobRM">
 		select * from 
-		job,job_info
-		where job.job_id=job_info.job_info_id
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
 		and is_hot=1
 		and state=1
+		order by announce_time desc
+		limit 0,10
 	</select>
 	
 	<select id="findJobByName" resultMap="jobRM">
 		select * from 
-		job,job_info
-		where job.job_id=job_info.job_info_id
-		and job_name=#{jobName}
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and job_name=#{jobname}
 		and state=1
+		order by announce_time desc
+		limit 0,10
 	</select>
+	<select id="findJobByJobId" resultMap="jobRM">
+		select * from 
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and job_id=#{jobId}
+	</select>
+	 
+	 
+	 <!--lcj添加根据companyId查询job-->
+	 <select id="findJobByCompanyId" resultMap="jobRM">
+		select * from 
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and j.company_id=#{companyId}	
+	</select>
+	<select id="additionSearch" resultMap="jobRM">
+		select * from 
+		(select job_id,profession_id,company_id,job_name,highist_education,job_nature,is_hot,announce_time,state from job) j,
+		job_info,
+		(select company_id c_id,email,password,logo from com) c,
+		com_info
+		where j.job_id=job_info.job_info_id
+		and j.company_id=c.c_id
+		and c.c_id=com_info.company_info_id
+		and salary_range=#{salaryRange}
+		and highist_education=#{highistEducation}
+		and job_nature=#{jobNature}
+		and announce_time>#{announceTimePre}
+		and announce_time &lt; #{announceTimeAft}
+		and job_id in
+		(
+			<foreach collection="array" item="jobId" separator=",">
+				#{jobId}
+			</foreach>
+		)
+	
+	</select> 
+	
+	<!-- lcj根据jobId添加job -->
+	 <insert id="saveJob">
+	     insert into job(job_id,job_name,job_nature,highist_Education,announce_time) values(
+			#{jobId},
+			#{jobName},
+			#{jobNature},
+			#{highistEducation},
+			#{announceTime}	
+		)
+	 </insert>
+	 
+	 
+	 
+	 
 	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
 		<id column="job_id" property="jobId"/>
 		<association property="jobInfo" resultMap="jobInfoRM">
-			
+			<id column="job_info_id" property="jobInfoId"/>
 		</association>
-		
+		<association property="company" resultMap="companyRM" >
+			<id column="company_id" property="companyId"/>			
+		</association>
 	</resultMap>
 	<resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRM" autoMapping="true">
 		<id column="job_info_id" property="jobInfoId"/>
 	</resultMap>
+	<resultMap type="cn.bole.pojo.Company" id="companyRM" autoMapping="true">
+		<id column="company_id" property="companyId"/>
+		<association property="companyInfo" resultMap="companyInfoRM">
+			<id column="company_info_id" property="companyId"/>
+		</association>
+	
+	</resultMap>
+	<resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true">
+		<id column="company_info_id" property="companyInfoId"/>
+	</resultMap> 
 	
 	
 </mapper>

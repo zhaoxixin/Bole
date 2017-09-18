@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import cn.bole.mapper.CompanyMapper;
 import cn.bole.pojo.Company;
+import cn.bole.pojo.Resum;
+import cn.bole.pojo.User;
 import cn.bole.service.CompanyService;
 @Service
 public class CompanyServiceImpl implements CompanyService {
@@ -20,9 +22,9 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public Company findCompanyById(String companyInfoId) {
+	public Company findCompanyById(Integer companyId) {
 
-		return companyMapper.findCompanyById(companyInfoId);
+		return companyMapper.findCompanyById(companyId);
 	}
 
 	@Override
@@ -32,6 +34,13 @@ public class CompanyServiceImpl implements CompanyService {
 		
 	}
 
+	@Override
+	public List<Resum> findUserBycomId(Integer companyId) {
+	
+		return companyMapper.findUserBycomId(companyId);
+	}
+
+	
 	
 	
 	

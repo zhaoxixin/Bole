@@ -1,5 +1,6 @@
 package cn.bole.service;
 
+import java.util.Date;
 import java.util.List;
 
 import cn.bole.pojo.Industry;
@@ -14,6 +15,21 @@ public interface JobService {
 	List<Job> findHotJob();
 
 	List<Job> findJobByName(String jobName);
+
+	Job findJobByJobId(String jobId);
+
+	void sendResume(String userId, String jobId, String companyId);
+
+	List<Job> findJobByCompanyId(Integer companyId);
+
+	void saveJob(Job job);
+
+
+	List<Job> additionSearch(Job job, String[] jobIds, Date announceTimePre, Date announceTimeAft);
+
+
+
+	
 
 
 

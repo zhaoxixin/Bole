@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -71,7 +71,8 @@ $("#ctname").html($(this).html());
  <script type="text/javascript">
  	function findJob(industryId,professionId){
  		var city = $("#ctname").text();
- 		location.href="${ctx}/findJob/city/industryId/professionId";
+
+ 		location.href='${ctx}/'+city+'/'+industryId+'/'+professionId+'/findJob.action';
  		
  	}
  	
@@ -94,13 +95,15 @@ $("#ctname").html($(this).html());
     			<img src="${ctx }/style/images/logo.png" width="229" height="43" alt="伯乐招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/companyhome" >企业入口</a></li>
-    			<li ><a href="#" target="_blank">名企专区</a></li>
+    			<li class="current"><a style="color: #12CD57" href="${ctx }">首页</a></li>
+    			<c:if test="${sessionScope.user1 == null&& sessionScope.admin == null}">
+    			   <li ><a style="color: #12CD57" href="${ctx }/toLogin.action" >企业入口</a></li>
+    			</c:if>
+    			<li ><a style="color: #12CD57" href="${ctx }/companyhome" target="_blank">名企专区</a></li>
 
-    		    <li ><a href="jianli.html" rel="nofollow">我的简历</a></li>
-	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
-	    		<li ><a href="/home.action" rel="nofollow">后台管理</a></li>
+    		    <li ><a style="color: #12CD57" href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
+	    		<li ><a style="color: #12CD57" href="create.html" rel="nofollow">发布职位</a></li>
+	    		<!-- <li ><a href="/home.action" rel="nofollow">后台管理</a></li> -->
 	    	</ul>
             <ul class="loginTop">
 					<!-- <li><a href="${ctx}/toLogin.action" rel="nofollow">登录</a></li>
@@ -108,16 +111,23 @@ $("#ctname").html($(this).html());
 					<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li> -->
 					
 					
-					<c:if test="${ sessionScope.user1 == null }">
+					<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null}">
 						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
-					 <c:if test="${ sessionScope.user1 != null }">
-						    欢迎 ${ user1.email } 回来
+					<c:if test="${sessionScope.user1 != null }">
+						<a href="${ctx}/userhome.action"> <font color="6633745">欢迎 ${ user1.email } 回来</font></a>
 						  &nbsp;|&nbsp;
-						<a href="${ ctx }/logout.action">退出</a>
-					 </c:if>
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+					</c:if>
+					<c:if test="${sessionScope.admin != null }">
+						  <a href="${ctx}/home.action"><font color="6633745">欢迎 ${admin.userInfo.realname }回来</font></a>
+						  &nbsp;|&nbsp;
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+						 &nbsp;|&nbsp;
+						<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
+					</c:if>
 				</ul>
 
              </div>
@@ -165,7 +175,7 @@ $("#ctname").html($(this).html());
 		    </c:forEach>
 		</div>
 				 					
-			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
+			<!-- <a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a> -->
 		</div>
 		
       <div class="content">	
@@ -176,7 +186,7 @@ $("#ctname").html($(this).html());
         	<li data-searchtype="4">公司</li>
         </ul>
         <div class="searchtype_arrow"></div>
-        <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
+        <input type="text" id="search_input" name = "jobName"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
         
         <input type="hidden" name="spc" id="spcInput" value=""/>
         <input type="hidden" name="pl" id="plInput" value=""/>
@@ -233,16 +243,16 @@ $("#ctname").html($(this).html());
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=">实习</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='java'">Java</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='PHP'">PHP</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='Android'">Android</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='iOS'">iOS</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='前端'">前端</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='产品经理'">产品经理</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='UI'">UI</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='运营'">运营</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='BD'">BD</a></dd>
+	<dd><a href="${ctx}/findJobByName?jobName='实习'">实习</a></dd>
 </dl>			
 			<div id="home_banner">
 	            <ul class="banner_bg">
@@ -351,8 +361,8 @@ $("#ctname").html($(this).html());
                             </ul>
             
             <ul class="reset hotabbing">
-            	            		<li class="current"><a href="${ctx }/findNewJob">热门职位</a></li>
-            	            	    <li><a href="${ctx }/findHotJob">最新职位</a></li>
+            	            		<li class="current"><a href="${ctx }/findHotJob">热门职位</a></li>
+            	            	    <li><a href="${ctx }/findNewJob">最新职位</a></li>
             </ul>
             
 	                        	            				            		
@@ -407,7 +417,7 @@ $("#ctname").html($(this).html());
 			    </dl>
 			</div>
         </div>	
- 	    <input type="hidden" value="" name="userid" id="userid" />
+ 	    <input type="hidden" value="${user1.userId }" name="userId" id="userId" />
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 
