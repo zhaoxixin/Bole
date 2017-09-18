@@ -30,6 +30,7 @@ public class SearchController extends BaseController {
 	private IndustryService industryService;
 	@Autowired
 	private JobService jobService;
+	@Autowired
 	private ResumeService resumeService;
 	@RequestMapping("/")
 	public String home(Model model){
@@ -108,7 +109,7 @@ public class SearchController extends BaseController {
 	 */
 	//企业反馈信息0：拒绝，1：通知面试，2：通知入职
 	@RequestMapping("/sendResume")
-	public String sendResume(String jobId,String companyId,HttpSession session,
+	public String sendResume(String jobId,Integer companyId,HttpSession session,
 			HttpServletRequest request,HttpServletResponse response,Model model) throws IOException{
 		if(session.getAttribute("user1")==null){
 			return "login/login";
@@ -119,27 +120,26 @@ public class SearchController extends BaseController {
 			String userId = user.getUserId();
 			String resumId = resumeService.getResumeId(userId);
 			System.out.println(resumId);
-			jobService.sendResume(jobId,companyId,resumId);
-			return "redirect:/jobDetails?jobId="+jobId;
-			/*try {
-				jobService.sendResume(jobId,companyId,"1");
+			
+			try {
+				jobService.sendResume(jobId,companyId,resumId);
 				
 				
 				JOptionPane.showMessageDialog(null, "投递成功");
 				return "redirect:/jobDetails?jobId="+jobId;
-				response.getWriter().write("投递成功，2秒钟之后会跳转到职位详情页面");
-				response.setHeader("refresh", "2;url="+request.getContextPath()+"/jobDetails?jobId="+jobId);
+				/*response.getWriter().write("投递成功，2秒钟之后会跳转到职位详情页面");
+				response.setHeader("refresh", "2;url="+request.getContextPath()+"/jobDetails?jobId="+jobId);*/
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("msg","0");
 				JOptionPane.showMessageDialog(null, "提交失败，请重新提交 ", "错误信息 ", JOptionPane.ERROR_MESSAGE);
 				return "redirect:/jobDetails?jobId="+jobId;
-				response.sendRedirect(request.getContextPath()+"/jobDetails?jobId="+jobId);
+				/*response.sendRedirect(request.getContextPath()+"/jobDetails?jobId="+jobId);*/
 				
-			}*/
+			}
 			
-		}
+			
 		
 	}
-
+	}
 }

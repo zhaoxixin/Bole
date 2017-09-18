@@ -234,6 +234,7 @@ $("#ctname").html($(this).html());
 				
     </form>
 </div>
+
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
 .ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
@@ -418,6 +419,7 @@ $("#ctname").html($(this).html());
 			</div>
         </div>	
  	    <input type="hidden" value="${user1.userId }" name="userId" id="userId" />
+ 	    
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 
@@ -449,7 +451,7 @@ $("#ctname").html($(this).html());
 		    <input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" />
 		</form>
 		<div class="login_right">
-			<div>还没有拉勾帐号？</div>
+			<div>还没有伯乐帐号？</div>
 			<a href="register.html" class="registor_now">立即注册</a>
 		    <div class="login_others">使用以下帐号直接登录:</div>
 		    <a href="h/ologin/auth/sina.html" target="_blank" id="icon_wb" class="icon_wb" title="使用新浪微博帐号登录"></a>
@@ -470,8 +472,8 @@ $("#ctname").html($(this).html());
 		<div class="wrapper">
 			<a href="h/about.html" target="_blank" rel="nofollow">联系我们</a>
 		    <a href="h/af/zhaopin.html" target="_blank">互联网公司导航</a>
-		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
-		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<i></i></a>
+		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">伯乐微博</a>
+		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">伯乐微信<i></i></a>
 			<div class="copyright">&copy;2013-2014 Lagou <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备14023790号-2</a></div>
 		</div>
 	</div>

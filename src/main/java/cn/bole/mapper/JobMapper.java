@@ -21,8 +21,8 @@ public interface JobMapper {
 	List<Job> findJobByName(String jobName);
 
 	Job findJobByJobId(String jobId);
-	@Insert("insert into com_user (company_id,resum_id,resum_id) values(#{jobId},#{companyId},#{resumId})")
-	void sendResume(@Param("jobId")String jobId, @Param("companyId")String companyId,@Param("resumId")String resumId);
+	@Insert("insert into com_user (job_id,company_id,resum_id) values(#{jobId},#{companyId},#{resumId})")
+	void sendResume(@Param("jobId")String jobId, @Param("companyId")Integer companyId,@Param("resumId")String resumId);
 
 	List<Job> findJobByCompanyId(Integer companyId);
 
@@ -33,6 +33,8 @@ public interface JobMapper {
 	Job additionSearch(@Param("salaryRange")Integer salaryRange, @Param("highistEducation")String highistEducation,
 			@Param("jobNature")String jobNature, @Param("jobId")String jobId,
 			@Param("announceTimePre2")String announceTimePre2, @Param("announceTimeAft2") String announceTimeAft2);
+
+	
 
 
 

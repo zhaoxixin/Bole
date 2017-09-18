@@ -21,7 +21,6 @@
 		</set>			
 		where user_info_id=#{userInfoId}
 	</update>
-	
 	  <select id="findResumeByUserId" resultMap="ResumRm" >
     	select * from resume where user_id=#{userId}
     </select>
