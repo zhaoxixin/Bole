@@ -26,13 +26,11 @@ public class Resum extends BasicInfo{
 	 private String expectPosition;  //期望职位
 	 private String expectSalary;
 	 private String workLink;
-	 
-	public String getWorkLink() {
-		return workLink;
-	}
-	public void setWorkLink(String workLink) {
-		this.workLink = workLink;
-	}
+	 private String resumName;//简历名称
+	 private String workExp; //工作履历
+	 private String workAddr;//工作地址
+	 private String eduExp;//教育经验
+
 	public String getResumId() {
 		return resumId;
 	}

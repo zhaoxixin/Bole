@@ -8,33 +8,74 @@
     
   </select> -->
   <select id="findCompanyAll" resultMap="companyRM" >
-  select * from com c ,com_info ci
-     where ci.company_info_id =c.company_id 
+ <!--  select * from com c ,com_info ci
+     where ci.company_info_id =c.company_id  -->
+     select c.company_id,c.company_name,c.email,c.password,c.logo,ci.company_info_id,ci.nature,ci.scale,ci.introduction,ci.address from com c,com_info ci
   </select>
-<resultMap type="cn.bole.pojo.Company" id="companyRM" autoMapping="true">
+   <resultMap type="cn.bole.pojo.Company" id="companyRM" autoMapping="true">
    <id column="company_id" property="companyId"/>
-   <association property="companyInfo" javaType="cn.bole.pojo.CompanyInfo" resultMap="companyInfoRM">
+   <association property="companyInfo" javaType="cn.bole.pojo.CompanyInfo">
+   <id column="conpany_info_id" property="companyInfoId"/> 
+   <result column="nature" property="nature"/>
+   <result column="scale" property="scale"/>
+   <result column="introduction" property="introduction"/>
+   <result column="address" property="address"/>
+   <result column="location" property="location"/>
    </association>
   </resultMap>
-  <resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true">  
-  </resultMap> 
+  <!-- <resultMap type="cn.bole.pojo.CompanyInfo" id="companyInfoRM" autoMapping="true"> 
+  </resultMap>  -->
   
   <!--通过验证email和password来验证-->
-  <select id="findCompanyEmailAndPassword" resultType="cn.bole.pojo.Company">
-  select * from com where email=#{email} and password=#{password}
+  <select id="findCompanyEmailAndPassword" resultMap="companyRM">
+  select * from com,com_info where email=#{email} and password=#{password}
   </select>
   
   
 <!--通过Id获取company-->
 <select id="findCompanyById" resultMap="companyRM">
-     select * from com c ,com_info ci
-     where company_info_id = #{companyInfoId}    
+     select * from com c,com_info ci
+     where ci.company_info_id =c.company_id and company_id= #{companyId}    
 </select>
+
 
 <!--通过Id获取User信息-->
 <!-- <select id="findUserBycomId" resultMap="companyuserRM">
    select * from 
 </select> -->
+
+
+
+<!--通过Id获取User信息-->
+<select id="findUserBycomId" resultMap="resum">
+  select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resum_name,cu.company_id from 
+       (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resum_name from
+		(select user_info_id,user_id,realname,education,sex,birthday from user  
+		left join user_info 
+		on 
+		user_id = user_info_id) u
+		left join resume r
+		on 
+		u.user_id=r.user_id) r
+		,com_user cu
+		where
+		r.resum_id=cu.resum_id and cu.company_id =#{companyid}
+</select>
+
+<resultMap type="cn.bole.pojo.Resum" id="resum" autoMapping="true">
+   <id column="resum_id" property="resumId"></id>
+   <result column="resum_name" property="resumName"/>
+  <association property="userInfo" javaType="cn.bole.pojo.UserInfo" >  
+   	<id property="userInfoId" column="user_info_id"/>
+   	<result column="realname" property="realname"/>
+   	<result column="education" property="education"/>
+   	<result column="sex" property="sex"/>
+  </association>
+</resultMap>
+
+
+
+
 
 </mapper>
 

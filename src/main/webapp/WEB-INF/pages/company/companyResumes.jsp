@@ -13,12 +13,12 @@
 <meta name="keywords" content="伯乐,伯乐网,伯乐招聘,拉钩, 拉钩网 ,互联网招聘,伯乐互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 伯乐官网, 伯乐百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
-<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
+<!-- <div class="web_root"  style="display:none">http://www.bole.com</div> -->
 <script type="text/javascript">
-var ctx = "http://www.lagou.com";
+var ctx = "http://www.bole.com";
 console.log(1);
 </script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+<link href="http://www.bole.com/images/favicon.ico" rel="Shortcut Icon">
 <link href="style/css/style.css" type="text/css" rel="stylesheet">
 <link href="style/css/external.min.css" type="text/css" rel="stylesheet">
 <link href="style/css/popup.css" type="text/css" rel="stylesheet">
@@ -42,32 +42,33 @@ var youdao_conv_id = 271546;
     			<img width="229" height="43" alt="伯乐招聘-专注互联网招聘" src="style/images/logo.png">
     		</a>
     		<ul id="navheader" class="reset">
-    			<li><a href="index.jsp">首页</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">首页</a></li>
     			<li><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></li>
-    			<li><a href="javascript:void(0)" onclick="location.href='/.action'">公司简历管理</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='companyResumes.action'">公司简历管理</a></li>
+    			<li><a href="javascript:void(0)" onclick="location.href='createcom.action'">公司职位管理</a></li>
 	    				</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span>${company.companyName}&nbsp;</span> 
+           			<span>欢迎 ${company.companyName}&nbsp;</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                <dd><a href="javascript:void(0)" onclick="location.href='/.action'">公司信息管理</a></dd>
-                <dd><a href="create.html">我要招人</a></dd>
+                <dd><a href="javascript:void(0)" onclick="location.href='myhome.action'">公司信息管理</a></dd>
+                <dd><a href="javascript:void(0)" onclick="location.href='createcom.action'">我要招人</a></dd>
                 <dd class="logout"><a href="javascript:void(0)" onclick="location.href='logout.action'">退出</a></dd>
             </dl>
                                     <div class="dn" id="noticeTip">
             	<span class="bot"></span>
 				<span class="top"></span>
-				<a target="_blank" href="delivery.html"><strong></strong>条简历数量</a>
+				<a target="_blank" href="#"><strong></strong>条简历数量</a>
 				<a class="closeNT" href="javascript:;"></a>
             </div>
                     </div>
     </div><!-- end #header -->
     <div id="container">
-                	<div class="sidebar">
-        		            	<a href="create.jsp" >发布新职位</a>
-            	                <dl class="company_center_aside">
+    <div class="sidebar">
+     <a href="javascript:void(0)" onclick="location.href='fbzw.action'">发布新职位</a>
+     <dl class="company_center_aside">
 		<dt>我收到的简历</dt>
 		<dd>
 		<a href="javascript:void(0)">待处理简历</a>
@@ -80,7 +81,7 @@ var youdao_conv_id = 271546;
 	</dd>
 	<dd>
 		<a href="javascript:void(0)" onclick="location.href='bhs.action'">不合适简历</a>
-		<span>1</span>
+		<span></span>
 	</dd>
 	
 </dl>
@@ -88,11 +89,11 @@ var youdao_conv_id = 271546;
 		<dt>发布的职位</dt>
 			<dd>
 		<a href="javascript:void(0)" onclick="location.href='yxzw.action'">有效职位</a>
-		<span>1</span>
+		<span></span>
 	</dd>
 	<dd>
 		<a href="#">已下线职位</a>
-		<span>1</span>
+		<span></span>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
@@ -163,33 +164,33 @@ var youdao_conv_id = 271546;
           <input type="hidden" value="0" name="filterStatus" id="filterStatus">
      <input type="hidden" value="" name="positionId" id="positionId">
  </div>
- end .filter_options                        	                        		                        <ul class="reset resumeLists">
+                       	                        		                        <ul class="reset resumeLists">
 		                            			                            <li data-id="1686182" class="onlineResume">
+			                                <!--开始更改简历显示-->
+			                                <c:forEach items="${companyuserlist}" var="r" >
 			                                <label class="checkbox">
 			                                    <input type="checkbox">
 			                                    <i></i>
 			                                </label>
-			                                <!--开始更改简历显示-->
-			                               <%--  <c:forEach> --%>
 			                                <div class="resumeShow">
-			                                		<a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
+			                                		<!-- <a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
 			                                    	<img src="style/images/default_headpic.png">
-			                                    </a>
+			                                    </a> -->
 			                                    <div class="resumeIntro">
 			                                        <h3 class="unread">
 			                                        <a target="_blank" title="预览jason的简历" href="resumeView.html?deliverId=1686182">
-			                                        		jason的简历
+			                                        		 ${r.resumName} 
 		                                        	</a>
 				                           	 		<em></em>
 			                                        </h3>
 			                                        <span class="fr">投递时间：2014-07-01 17:08</span>
 			                                        <div> 
-			                                        	jason  			                                        	 / 男 			                                        	/ 大专 			                                        	/ 3年  			                                        	/ 广州 			                                            			                                        		<br>
-			                                            	高级产品经理 · 上海辉硕科技有限公司 | 本科 · 北京大学
+			                                        	${r.userInfo.realname} / ${r.userInfo.sex} / ${r.userInfo.education}			                                        	/ 3年  			                                        	/ 广州 			                                            			                                        		<br>
+			                                            	 |北京大学
 			                                            			                                        </div>
 			                                        <div class="jdpublisher">
 				                                        <span>
-				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.lagou.com/jobs/149594.html">随便写</a>
+				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.bole.com/jobs/149594.html">随便写</a>
 				                                       						                                        </span>
 			                                        </div>
 			                                    </div>
@@ -203,7 +204,7 @@ var youdao_conv_id = 271546;
                                               </a>
 			                                    </div>
 			                                </div>
-			                                <%-- </c:forEach> --%>
+			                                </c:forEach>
 			                            </li>
 		                            		                    	</ul><!-- end .resumeLists -->
 		                    		                    				            </form>
@@ -278,7 +279,7 @@ var youdao_conv_id = 271546;
     <!--预览通知面试弹窗-->	
     <div class="popup" id="noticeInterviewPreview">
     	<div class="f18">伯乐网：产品经理面试通知 </div>
-        <div class="c9">发给：<span>vivi@lagou.com</span></div>
+        <div class="c9">发给：<span>vivi@bole.com</span></div>
 		<div id="emailText"></div>      
         <input type="button" value="提交" class="btn fl">
         <a title="通知面试" class="inline fl cboxElement" href="#noticeInterview">返回修改</a>
@@ -414,10 +415,10 @@ var youdao_conv_id = 271546;
 	<div id="footer">
 		<div class="wrapper">
 			<a rel="nofollow" target="_blank" href="about.html">联系我们</a>
-		    <a target="_blank" href="http://www.lagou.com/af/zhaopin.html">互联网公司导航</a>
-		    <a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">伯乐微博</a>
+		    <a target="_blank" href="http://www.bole.com/af/zhaopin.html">互联网公司导航</a>
+		    <a rel="nofollow" target="_blank" href="http://e.weibo.com/bole720">伯乐微博</a>
 		    <a rel="nofollow" href="javascript:void(0)" class="footer_qr">伯乐微信<i></i></a>
-			<div class="copyright">&copy;2013-2014 Lagou <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
+			<div class="copyright">&copy;2017 bole <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
 		</div>
 	</div>
 
@@ -470,4 +471,3 @@ var CallCenter = {
 CallCenter.init(url);
 </script>
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"></div></body></html>
