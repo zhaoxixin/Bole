@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -199,7 +199,7 @@ var youdao_conv_id = 271546;
        				
    
    				
-   					 <select class="form-control">
+   					 <select class="form-control" name="salaryRange">
      				<option value="1" selected='selected'>2001-4000</option>
         			<option value="2">4001-6000</option>
         			<option value="3">6001-8000</option>
@@ -213,7 +213,7 @@ var youdao_conv_id = 271546;
   			
   			
   		
-   					 <select class="form-control">
+   					 <select class="form-control" name="highistEducation">
      				<option value="博士">博士</option>
         			<option value="硕士">硕士</option>
         			<option value="本科">本科</option>
@@ -225,7 +225,7 @@ var youdao_conv_id = 271546;
   			
   			
    				
-   					 <select class="form-control">
+   					 <select class="form-control" name="jobNature">
      				<option value="全职" selected='selected'>全职</option>
         			<option value="兼职">兼职</option>
         			<option value="实习">实习</option>
@@ -233,11 +233,20 @@ var youdao_conv_id = 271546;
    
   	
   
-        		<div>
-        		<input class="timeSearch"   type="text" value="请选择起始时间"  name="announceTimePre"
+        		<div style="margin-top: -15px">
+        		<input class="timeSearch"   type="text" value="请选择起始时间" style="height:30px;
+				width:110px;
+				border: 2px solid #019875; 
+				line-height:30px;
+				font-size: 10px"  name="announceTimePre"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
-	   			&nbsp;&nbsp;-&nbsp;&nbsp;
-	   			<input class="timeSearch" type="text" value="请选择截至时间"   name="announceTimeAft"
+	   			&nbsp;-&nbsp;
+	   			<input class="timeSearch" type="text" value="请选择截至时间"
+	   			style="height:30px;
+				width:110px;
+				border: 2px solid #019875;
+				line-height:30px;
+				font-size: 10px"   name="announceTimeAft"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
         		</div>
                <c:forEach items="${jobList}" var="job">
@@ -246,7 +255,7 @@ var youdao_conv_id = 271546;
                <input  type="hidden"  name="jobList" value="">
              		<!-- <input id="submit_button" type="submit" name="submit" value="搜索"/> -->
                 <!-- <input type="hidden" name="city" id="cityInput" value="全国"/> -->
-                <input type="submit" id="search_button" value="搜索" />
+                <input style="margin-top: 10px" type="submit" id="search_button" value="搜索" />
     </form>
 </div>     
         
