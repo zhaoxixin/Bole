@@ -43,10 +43,7 @@ public class JobServiceImpl implements JobService {
 	public Job findJobByJobId(String jobId) {
 		return jobMapper.findJobByJobId(jobId);
 	}
-	@Override
-	public void sendResume(String userId, String jobId, String companyId) {
-		jobMapper.sendResume(userId,jobId,companyId);
-	}
+	
 	@Override
 	public List<Job> findJobByCompanyId(Integer companyId) {
 		
@@ -85,6 +82,10 @@ public class JobServiceImpl implements JobService {
 		}
 		return jobList;
 	
+	}
+	@Override
+	public void sendResume(String jobId, String companyId, String resumId) {
+		jobMapper.sendResume(jobId,companyId,resumId);
 	}
 	
 	

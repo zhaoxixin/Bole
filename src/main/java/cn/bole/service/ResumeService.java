@@ -17,10 +17,14 @@ public interface ResumeService {
 
 	public void resumeExpectJobSave(String userId, Resum resume);
 
+
 	public String fingResume(String userId);
 
 	public void resumeWorkExperience(String userId, Resum resume);
 
 	public void updateResumeCurrentState(String userId, Resum resume);
+
+
+	public String getResumeId(String userId);
 
 }

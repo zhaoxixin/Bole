@@ -23,12 +23,14 @@ import cn.bole.pojo.Job;
 import cn.bole.pojo.User;
 import cn.bole.service.IndustryService;
 import cn.bole.service.JobService;
+import cn.bole.service.ResumeService;
 @Controller
 public class SearchController extends BaseController {
 	@Autowired
 	private IndustryService industryService;
 	@Autowired
 	private JobService jobService;
+	private ResumeService resumeService;
 	@RequestMapping("/")
 	public String home(Model model){
 		List<Industry> industryList = industryService.findAllIndustry();
@@ -115,10 +117,12 @@ public class SearchController extends BaseController {
 		}else{
 			User user = (User) session.getAttribute("user1");
 			String userId = user.getUserId();
+			String resumId = resumeService.getResumeId(userId);
+			System.out.println(resumId);
 			try {
-				jobService.sendResume(userId,jobId,companyId);
-				model.addAttribute("msg","1");
-				/////////////
+				jobService.sendResume(jobId,companyId,"1");
+				
+				
 				JOptionPane.showMessageDialog(null, "投递成功");
 				return "redirect:/jobDetails?jobId="+jobId;
 				/*response.getWriter().write("投递成功，2秒钟之后会跳转到职位详情页面");

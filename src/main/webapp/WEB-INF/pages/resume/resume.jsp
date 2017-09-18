@@ -529,7 +529,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
-													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart">
+													<input type="button" value="${resume.companyMonthStart }" class="profile_select_139 profile_select_normal select_companyMonthStart" name="companyMonthStart">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -555,7 +555,7 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="companyYearEnd" value="" name="companyYearEnd">
-													<input type="button" value="${resume.companyYearEnd }" class="profile_select_139 profile_select_normal select_companyYearEnd">
+													<input type="button" value="${resume.companyYearEnd }" class="profile_select_139 profile_select_normal select_companyYearEnd" ame="companyYearEnd">
 													<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>至今</li>
@@ -609,7 +609,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthEnd" value="" name="companyMonthEnd">
-													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd">
+													<input type="button" value="${resume.companyMonthEnd }" class="profile_select_139 profile_select_normal select_companyMonthEnd" name="companyMonthEnd">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -724,7 +724,7 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="companyMonthStart" value="" name="companyMonthStart">
+													<input type="hidden" class="companyMonthStart" value="${resume.companyMonthStart}" name="companyMonthStart">
 													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_companyMonthStart" value="${resume.companyMonthStart}">
 													<div style="display: none;" class="box_companyMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
@@ -805,7 +805,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="companyMonthEnd" value="${resume.companyMonthEnd}" name="companyMonthEnd">
-													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="${resume.companyMonthEnd}">
+													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_companyMonthEnd" value="${resume.companyMonthEnd}" name="companyMonthEnd">
 													<div style="display: none;" class="box_companyMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>

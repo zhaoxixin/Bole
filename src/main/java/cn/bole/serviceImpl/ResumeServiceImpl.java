@@ -57,6 +57,12 @@ public class ResumeServiceImpl implements ResumeService {
 	public void updateResumeCurrentState(String userId, Resum resume) {
 		resumeMapper.updateResumeCurrentState(userId,resume);
 	}
+	@Override
+	public String getResumeId(String userId) {	
+		String resumId = resumeMapper.getResumeId(userId);
+		System.out.println(resumId);
+		return resumId;
+	}
 	
 	
 }
