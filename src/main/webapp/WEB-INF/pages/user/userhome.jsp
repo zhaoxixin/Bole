@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script type="text/javascript" async="" src="style/js/conversion.js"></script>
+<script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
+<style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
@@ -10,7 +13,9 @@
 <title>我的投递记录-招聘服务-伯乐网-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="伯乐网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
-<meta name="keywords" content="伯乐,伯乐网,伯乐招聘,伯乐, 伯乐网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
+<meta name="keywords" content="伯乐,伯乐网,伯乐招聘,伯乐, 伯乐网 ,互联网招聘,拉勾互联网招聘, 
+移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 
+职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
 <!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
@@ -58,11 +63,10 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                		<dd style="display: none;"><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></dd>              	                	
-                	                	<dd style="display: none;"><a href="${ctx }/toFindJob.action">搜索职位 <span id="searchPosition" class="red dn"></span></a></dd>
-                	                	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn"></span></a></dd>
-                	                	<dd class="btm" style="display: none;"><a href="/userinfo.action">我的基本信息</a></dd>
-                                		<dd class="logout" style="display: none;"><a rel="nofollow" href="${ctx}/logout.action">退出</a></dd>
+            	<dd style="display: none;"><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></dd>              	                	         
+             	<dd style="display: none;"><a href="toudi.html">我投递的职位 <span id="noticeNo" class="red dn"></span></a></dd>
+             	<dd class="btm" style="display: none;"><a href="/userinfo.action">我的基本信息</a></dd>
+            	<dd class="logout" style="display: none;"><a rel="nofollow" href="${ctx}/logout.action">退出</a></dd>
             </dl>
                                     <div class="dn" id="noticeTip">
             	<span class="bot"></span>
@@ -104,68 +108,116 @@ var youdao_conv_id = 271546;
                     			</li>
                     		</ul>
                     	</div>
-                    	                        <form id="deliveryForm">
-                            <ul class="reset my_delivery">
-                               	                             	<li>
-                             		<div class="d_item">
-                             			 	                                    <h2 title="随便写">
-	                                        <a target="_blank" href="http://www.lagou.com/jobs/149594.html">
-	                                        	<em>随便写</em> 
-	                                        	<span>（1k-2k）</span>
-	                                        	<!--  -->
-	                                    	</a>
-	                                    </h2>
-	                                    		                                <div class="clear"></div>
-	                                   	<a title="公司名称" class="d_jobname" target="_blank" href="http://www.lagou.com/c/25927.html">
-	                                   		公司名称 <span>[上海]</span> 
-	                                    </a>
-	                                    <span class="d_time">2014-07-01 17:15</span>
-	                                    <div class="clear"></div>
-	                                    <div class="d_resume">
-	                                    	使用简历：
-	                                    	<span>
-	                                    	                                        		在线简历
-                                        		                                    	</span>
-	                                    </div>
-	                                    	                                    	<a class="btn_showprogress" href="javascript:;">
-	                                    			                                    			不合适
-	                                    			                                    	<i></i></a>
-                               			                               		</div>
-                               		                               		<div class="progress_status	dn">
-	                               		                               			<ul class="status_steps">
-                               				<li class="status_done status_1">1</li>
-                               				<li class="status_line status_line_done"><span></span></li>
-                               				<li class="status_done"><span>2</span></li>
-                               				<li class="status_line status_line_done"><span></span></li>
-                               				<li class="status_done"><span>3</span></li>
-                               				<li class="status_line status_line_done"><span></span></li>
-                               				<li class="status_done"><span>4</span></li>
-                               			</ul>
-                               			<ul class="status_text">
-                           					<li>投递成功</li>
-                           					<li class="status_text_2">简历被查看中</li>
-                           					<li class="status_text_3">通过初步筛选</li>
-                           						                                    		<li style="margin-left: 75px;*margin-left: 60px;" class="status_text_4">不合适</li>
-	                                    	                               			</ul>
-                               			<ul class="status_list">
-                               				    <li class="top">
-                               					<div class="list_time"><em></em>2014-07-01 17:15</div>
-                               					<div class="list_body">
-                               						                               							简历被该公司HR标记为不合适<div>您的简历已收到，但目前您的工作经历与该职位不是很匹配，因此很抱歉地通知您无法进入面试。</div>                               						                               					</div>
-                               				</li>
-                               				<li class="bottom">
-                               					<div class="list_time"><em></em>2014-07-01 17:08</div>
-                               					<div class="list_body">
-                               						                               							lixiang已成功接收你的简历                               						                               					</div>
-                               				</li>
-                               				                               			</ul>
-                               			<a class="btn_closeprogress" href="javascript:;"></a>
-                               		</div>
-                               		                            	</li>
-                            	                            </ul>
-                                                    	<input type="hidden" value="-1" name="tag">
-                        	<input type="hidden" value="" name="r">
-                        </form>
+
+ <form id="deliveryForm">
+
+      <ul class="reset my_delivery">
+          <li>
+          	 <c:forEach items="${resumList}" var="r" varStatus="status">
+             <div class="d_item">
+                      <h2 title="随便写">
+	                  <a target="_blank" href="http://www.lagou.com/jobs/149594.html">
+		                  <em>薪资标准:</em> 	                  	
+							<c:if test="${r.job.jobInfo.salaryRange==1 }">
+								
+									<font color="red">2001-4000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==2 }">
+								
+									<font color="red">4001-6000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==3 }">
+								
+									<font color="red">6001-8000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==4 }">
+								
+									<font color="red">8001-10000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==5 }">
+								
+									<font color="red">10001-15000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==6 }">
+								
+									<font color="red">15000-20000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==7 }">
+								
+									<font color="red">20001-30000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==8 }">
+								
+									<font color="red">面议</font>
+								
+							 </c:if>	                 
+	                  </a>
+	                  </h2>
+	                  <div class="clear"></div>
+	                  <a title="公司名称" class="d_jobname" target="_blank" 
+	                  			href="http://www.lagou.com/c/25927.html">
+	                      ${r.companyName } <span>${r.location }</span> 
+	                  </a>
+                 <span class="d_time">2014-07-01 17:15</span>
+                 <div class="clear"></div>
+                 <div class="d_resume">
+                 	使用简历：
+                 	<span>在线简历</span>
+                 </div>
+                 <a class="btn_showprogress" href="javascript:;">回复结果<i></i></a>
+           	</div>
+  		    <div class="progress_status	dn">
+	    		<ul class="status_steps">
+	   				<li class="status_done status_1">1</li>
+	   				<li class="status_line status_line_done"><span></span></li>
+	   				<li class="status_done"><span>2</span></li>
+	   				<li class="status_line status_line_done"><span></span></li>
+	   				<li class="status_done"><span>3</span></li>
+	   				<li class="status_line status_line_done"><span></span></li>
+	   				<li class="status_done"><span>4</span></li>
+	   			</ul>
+	   			<ul class="status_text">
+					<li>投递成功</li>
+					<li class="status_text_2">简历被查看中</li>
+					<li class="status_text_3">通过初步筛选</li>
+					<li style="margin-left: 75px;*margin-left: 60px;" class="status_text_4">
+									
+					</li>
+	         	</ul>
+  				
+  				<!-- <ul class="status_list">
+	   				<li class="top">
+	   					<div class="list_time"><em></em>2014-07-01 17:15</div>
+	   					<div class="list_body">简历被该公司HR标记为不合适
+	   						<div>您的简历已收到，但目前您的工作经历与该职位不是很匹配，因此很抱歉地通知您无法进入面试。</div> 
+	   					</div>
+	   				</li>
+	   				<li class="bottom">
+	   					<div class="list_time"><em></em>2014-07-01 17:08</div>
+	   					<div class="list_body">
+	   						该公司HR已成功接收你的简历  
+	   					</div>
+	   				</li>
+  				</ul> -->
+  				<a class="btn_closeprogress" href="javascript:;"></a>
+  			</div>
+  			</c:forEach> 
+        </li>
+       </ul>
+        <input type="hidden" value="-1" name="tag">
+    	<input type="hidden" value="" name="r">
+
+ 
+</form>
+
+	                 	                  	                      
                                             </dd>
                 </dl>
             </div>	
@@ -391,4 +443,34 @@ var CallCenter = {
 CallCenter.init(url);
 </script>
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+	<div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;">
+		</div>
+		<div id="cboxTopCenter" style="float: left;">
+		</div>
+		<div id="cboxTopRight" style="float: left;"></div>
+		</div>
+		<div style="clear: left;">
+			<div id="cboxMiddleLeft" style="float: left;"></div>
+			<div id="cboxContent" style="float: left;">
+				<div id="cboxTitle" style="float: left;"></div>
+			<div id="cboxCurrent" style="float: left;"></div>
+				<button type="button" id="cboxPrevious"></button>
+				<button type="button" id="cboxNext"></button>
+				<button id="cboxSlideshow"></button>
+				<div id="cboxLoadingOverlay" style="float: left;"></div>
+				<div id="cboxLoadingGraphic" style="float: left;"></div>
+			</div><div id="cboxMiddleRight" style="float: left;"></div>
+		</div>
+		
+		<div style="clear: left;">
+			<div id="cboxBottomLeft" style="float: left;"></div>
+			<div id="cboxBottomCenter" style="float: left;"></div>
+			<div id="cboxBottomRight" style="float: left;"></div>
+		</div>
+	</div>
+	<div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+</body>
+</html>

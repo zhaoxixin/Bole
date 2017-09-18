@@ -4,6 +4,11 @@
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="${ctx}/style/js/jquery.1.4.4.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配1 -->
@@ -17,7 +22,6 @@
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
 var ctx = "h";
-console.log(1);
 </script>
 <link rel="Shortcut Icon" href="h/images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="style/css/style.css"/>
@@ -58,14 +62,14 @@ var youdao_conv_id = 271546;
         
         <div class="clearfix">
             <div class="content_l">
-            	<form id="companyListForm" name="companyListForm" method="get" action="h/c/companylist.html">
+            	<form id="companyListForm" style="width: 750px" name="companyListForm" method="get" action="h/c/companylist.html">
 	                <input type="hidden" id="city" name="city" value="全国" />
 	                <input type="hidden" id="fs" name="fs" value="" />
 	                <input type="hidden" id="ifs" name="ifs" value="" />
 	                <input type="hidden" id="ol" name="ol" value="" />
-	                <dl class="hc_tag">
+	                <!-- <dl class="hc_tag">
 	                    <dt>
-	                       <!--  <h2 class="fl">热门公司</h2> -->
+	                        <h2 class="fl">热门公司</h2>
 	                        <ul class="workplace reset fr" id="workplaceSelect">
 	                        	                                <li >
                                 	<a href="javascript:void(0)"  class="current" >热门城市</a> 
@@ -230,8 +234,53 @@ var youdao_conv_id = 271546;
  </dd>
 	                        </dl>
 		                                                       			                                
- 
-</script> 
+  -->
+  
+  <div id="myCarousel" class="carousel slide" style="height: 300px;width:750px ">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <c:forEach items="${companyList}" var="c">
+        	<li data-target="#myCarousel" data-slide-to="0"></li>
+        </c:forEach>
+       
+    </ol>   
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner" style="margin:0 auto">
+    
+        <div class="item active">
+            <img style="width:750px;height: 300px" src="${ctx }/style/images/renrenche.jpg" alt="First slide">
+        </div>
+        <c:forEach items="${companyList}" var="c">
+        <div class="item">
+          <a href="${ctx}/myhome?companyId=${c.companyId}"><img style="width:750px;height: 300px" src="${ctx }/${c.logo}" alt="Second slide"></a>
+        </div>
+        </c:forEach>
+        
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" 
+        data-slide="prev">&lsaquo;
+    </a>
+    <a class="carousel-control right" href="#myCarousel" 
+        data-slide="next">&rsaquo;
+    </a>
+</div>
+
+<div class="image" style="margin-top:30px">
+	<img alt="阿里巴巴" style="width:365px;height: 250px" src="${ctx }/style/images/ali.jpg">
+	<img alt="大数据" style="width:365px;padding-left:20px;height:250px" src="${ctx }/style/images/dashuju.jpg">
+</div>
+<div class="image" style="margin-top:30px">
+	<img alt="京东" style="width:365px;height: 250px" src="${ctx }/style/images/jingdong.jpg">
+	<img alt="去哪" style="width:365px;padding-left:20px;height:250px" src="${ctx }/style/images/quna.jpg">
+</div>
+<div class="image" style="margin-top:30px">
+	<img alt="网易" style="width:365px;height: 250px" src="${ctx }/style/images/wangyi.jpg">
+	<img alt="新浪" style="width:365px;padding-left:20px;height:250px"  src="${ctx }/style/images/xinlang.jpg">
+	
+</div>
+
 <div id="menubar">
 <div id="middleMenubar">
 <div id="innerMenubar">
@@ -244,8 +293,8 @@ var youdao_conv_id = 271546;
 </div>
 </div>
 </div>
-<h1 style="margin: auto">企业列表</h1> 
-<form>
+<!-- <h1 style="margin: auto">企业列表</h1>  -->
+<%-- <form>
 <table id="ec_table" class="tableRegion" width="120%" border="1">
    <c:forEach items="${companyList}" var="c">
      <ul class="hc_list reset">
@@ -263,7 +312,7 @@ var youdao_conv_id = 271546;
 			                    <li>公司电话:${c.companyInfo.telphone}</li>																	                        				                        	<li>交通补助</li>
 								</ul>
 			                    </li> 
-  <%--  <tr> 
+   <tr> 
    <td>      
          公司名称:${c.companyName}
    </td>
@@ -279,11 +328,11 @@ var youdao_conv_id = 271546;
    </tr>
    <tr>
    <td>公司简介:${c.companyInfo.introduction}</td>
-   </tr> --%>
+   </tr>
    </c:forEach>
    </table>
 </form>
-
+ --%>
 
 </body>
 </html>

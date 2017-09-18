@@ -100,9 +100,6 @@ public class SysController {
 		String[] citys=new String[]{ "北京", "上海", "广州", "深圳", "苏州", "杭州" };
 		
 		int[] jobNum=sysService.findJobNumByCity(citys);
-			
-	
-		
 		
 		map.put("jobNum", jobNum);
 		//图标2
@@ -115,7 +112,6 @@ public class SysController {
 		
 		double[][] salary= new double[6][3];
 			salary=sysService.findAvgSalaryByCity();
-				
 			
 		map.put("salary", salary);
 		
@@ -225,16 +221,6 @@ public class SysController {
 				String state = (job.getState()==1?"审核通过":"等待审核");
 				cell.setCellValue(state);
 				
-				
-				/*cell = row.createCell(4);
-				
-				cell.setCellStyle(cellStyle);
-				cell.setCellValue(user.getAddress());
-				
-				cell=row.createCell(5);
-				cellStyle =( i % 2 ==0?style: style3);
-				cell.setCellStyle(cellStyle);
-				cell.setCellValue(user.getBirthDate());*/
 				
 			}
 			

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import cn.bole.pojo.Resum;
 import cn.bole.pojo.User;
 import cn.bole.pojo.UserInfo;
@@ -28,7 +27,5 @@ public class ToPreview {
 		
 		model.addAttribute("userInfo", userInfo);
 		return "resume/perview";	
-	}
-	
-	
+	}	
 }

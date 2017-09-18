@@ -117,7 +117,7 @@ $("#ctname").html($(this).html());
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
 					<c:if test="${sessionScope.user1 != null }">
-						<a href="${ctx}/userhome.action"> <font color="6633745">欢迎 ${ user1.email } 回来</font></a>
+						<a href="${ctx}/userhome.action"> <font color="6633745">欢迎 ${ user1.userInfo.realname } 回来</font></a>
 						  &nbsp;|&nbsp;
 						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 					</c:if>
@@ -234,6 +234,7 @@ $("#ctname").html($(this).html());
 				
     </form>
 </div>
+
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
 .ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
@@ -257,13 +258,13 @@ $("#ctname").html($(this).html());
 			<div id="home_banner">
 	            <ul class="banner_bg">
 	            		                <li  class="banner_bg_1 current" >
-	                    <a href="h/subject/s_buyfundation.html?utm_source=DH__lagou&utm_medium=banner&utm_campaign=haomai" target="_blank"><img src="style/images/d05a2cc6e6c94bdd80e074eb05e37ebd.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
+	                    <a href="http://www.500d.me/?f=16497" target="_blank"><img src="${ctx}/style/images/jianli.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
 	                </li>
 	                	                <li  class="banner_bg_2" >
-	                    <a href="h/subject/s_worldcup.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=wc" target="_blank"><img src="style/images/c9d8a0756d1442caa328adcf28a38857.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
+	                    <a href="https://www.zhihu.com/topic/19591490/top-answers" target="_blank"><img src="${ctx}/style/images/mainshi.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
 	                </li>
 	                	                <li  class="banner_bg_3" >
-	                    <a href="h/subject/s_xiamen.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=xiamen" target="_blank"><img src="style/images/d03110162390422bb97cebc7fd2ab586.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
+	                    <a href="http://bbs.yingjiesheng.com/thread-7753-1-1.html" target="_blank"><img src="${ctx}/style/images/qiuzhi.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
 	                </li>
 	                	            </ul>
 	            <div class="banner_control">
@@ -271,15 +272,15 @@ $("#ctname").html($(this).html());
 	                <ul class="thumbs">
 	                		                    <li  class="thumbs_1 current" >
 	                        <i></i>
-	                        <img src="style/images/4469b1b83b1f46c7adec255c4b1e4802.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/jianli.jpg" width="113" height="42" />
 	                    </li>
 	                    	                    <li  class="thumbs_2" >
 	                        <i></i>
-	                        <img src="style/images/381b343557774270a508206b3a725f39.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/mainshi.jpg" width="113" height="42" />
 	                    </li>
 	                    	                    <li  class="thumbs_3" >
 	                        <i></i>
-	                        <img src="style/images/354d445c5fd84f1990b91eb559677eb5.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/qiuzhi.jpg" width="113" height="42" />
 	                    </li>
 	                    	                </ul>
 	            </div>
@@ -418,6 +419,7 @@ $("#ctname").html($(this).html());
 			</div>
         </div>	
  	    <input type="hidden" value="${user1.userId }" name="userId" id="userId" />
+ 	    
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 
@@ -449,7 +451,7 @@ $("#ctname").html($(this).html());
 		    <input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" />
 		</form>
 		<div class="login_right">
-			<div>还没有拉勾帐号？</div>
+			<div>还没有伯乐帐号？</div>
 			<a href="register.html" class="registor_now">立即注册</a>
 		    <div class="login_others">使用以下帐号直接登录:</div>
 		    <a href="h/ologin/auth/sina.html" target="_blank" id="icon_wb" class="icon_wb" title="使用新浪微博帐号登录"></a>
@@ -470,8 +472,8 @@ $("#ctname").html($(this).html());
 		<div class="wrapper">
 			<a href="h/about.html" target="_blank" rel="nofollow">联系我们</a>
 		    <a href="h/af/zhaopin.html" target="_blank">互联网公司导航</a>
-		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
-		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<i></i></a>
+		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">伯乐微博</a>
+		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">伯乐微信<i></i></a>
 			<div class="copyright">&copy;2013-2014 Lagou <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备14023790号-2</a></div>
 		</div>
 	</div>

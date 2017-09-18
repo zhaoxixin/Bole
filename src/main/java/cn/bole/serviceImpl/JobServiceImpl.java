@@ -84,7 +84,7 @@ public class JobServiceImpl implements JobService {
 	
 	}
 	@Override
-	public void sendResume(String jobId, String companyId, String resumId) {
+	public void sendResume(String jobId, Integer companyId, String resumId) {
 		jobMapper.sendResume(jobId,companyId,resumId);
 	}
 	
