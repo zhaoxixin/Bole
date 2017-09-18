@@ -143,7 +143,7 @@ var youdao_conv_id = 271546;
                                			</ul>
                                			<ul class="status_text">
                            					<li>投递成功</li>
-                           					<li class="status_text_2">简历被查看</li>
+                           					<li class="status_text_2">简历被查看中</li>
                            					<li class="status_text_3">通过初步筛选</li>
                            						                                    		<li style="margin-left: 75px;*margin-left: 60px;" class="status_text_4">不合适</li>
 	                                    	                               			</ul>
