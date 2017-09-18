@@ -108,15 +108,56 @@ var youdao_conv_id = 271546;
                     			</li>
                     		</ul>
                     	</div>
-<c:forEach items="${resumList}" var="r" varStatus="status">
+
  <form id="deliveryForm">
+
       <ul class="reset my_delivery">
           <li>
+          	 <c:forEach items="${resumList}" var="r" varStatus="status">
              <div class="d_item">
                       <h2 title="随便写">
 	                  <a target="_blank" href="http://www.lagou.com/jobs/149594.html">
-		                  <em>薪资标准</em> 
-		                  <span>（1k-2k）</span>
+		                  <em>薪资标准:</em> 	                  	
+							<c:if test="${r.job.jobInfo.salaryRange==1 }">
+								
+									<font color="red">2001-4000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==2 }">
+								
+									<font color="red">4001-6000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==3 }">
+								
+									<font color="red">6001-8000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==4 }">
+								
+									<font color="red">8001-10000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==5 }">
+								
+									<font color="red">10001-15000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==6 }">
+								
+									<font color="red">15000-20000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==7 }">
+								
+									<font color="red">20001-30000</font>
+								
+							 </c:if>
+							 <c:if test="${r.job.jobInfo.salaryRange==8 }">
+								
+									<font color="red">面议</font>
+								
+							 </c:if>	                 
 	                  </a>
 	                  </h2>
 	                  <div class="clear"></div>
@@ -147,16 +188,7 @@ var youdao_conv_id = 271546;
 					<li class="status_text_2">简历被查看中</li>
 					<li class="status_text_3">通过初步筛选</li>
 					<li style="margin-left: 75px;*margin-left: 60px;" class="status_text_4">
-						<c:if test="${d.state==1}">
-							<a href="stop?deptId=${d.deptId}">
-								<font color="green">启用</font>
-								</a>
-						</c:if>
-						<c:if test="${d.state==0}">
-							<a href="start?deptId=${d.deptId}">
-								<font color="red">停用</font>
-							</a>
-						</c:if>				
+									
 					</li>
 	         	</ul>
   				
@@ -176,14 +208,16 @@ var youdao_conv_id = 271546;
   				</ul> -->
   				<a class="btn_closeprogress" href="javascript:;"></a>
   			</div>
+  			</c:forEach> 
         </li>
        </ul>
         <input type="hidden" value="-1" name="tag">
     	<input type="hidden" value="" name="r">
+
+ 
 </form>
 
-	
-</c:forEach>                   	                  	                      
+	                 	                  	                      
                                             </dd>
                 </dl>
             </div>	

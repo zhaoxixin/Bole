@@ -41,14 +41,23 @@
     
     
     <select id="findfindAllResum" resultMap="CompanyInfoRM"  >
-    select * from com_info where company_info_id=
-	(select company_id from com_user where resum_id=
-	(select resum_id from resume where user_id=#{userId}))
+    select * from com_info c,
+	(select * from job_info jinfo,
+	(select * from com_user where resum_id=
+	(select resum_id from resume 
+	where user_id=#{userId})) rm
+	where jinfo.job_info_id=rm.job_id) m 
+	where c.company_info_id=m.company_id
     </select>
     <resultMap type="cn.bole.pojo.CompanyInfo" id="CompanyInfoRM" autoMapping="true">
     	<id column="company_info_id" property="companyInfoId"/>
+    	<association property="job" resultMap="jobRm"></association>
     </resultMap>
-    
-    
+    <resultMap type="cn.bole.pojo.Job" id="jobRm">
+    	<association property="jobInfo" resultMap="jobInfoRm"></association>
+    </resultMap>
+    <resultMap type="cn.bole.pojo.JobInfo" id="jobInfoRm" autoMapping="true">
+    	<id property="jobInfoId" column="job_info_id"></id>
+    </resultMap>
     
 </mapper>
