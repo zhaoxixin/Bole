@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,7 +42,7 @@ $(function(){
   	<div id="previewWrapper">
         <div class="preview_header">
             <h1 title="jason的简历">${userInfo.realname }的简历</h1>
-                        	<a title="下载简历" class="inline cboxElement" href="#downloadOnlineResume">下载该简历</a>
+                        	<a title="下载简历" class="inline cboxElement" href="#downloadOnlineresum">下载该简历</a>
                     </div><!--end .preview_header-->
 
         <div class="preview_content">
@@ -85,7 +86,21 @@ $(function(){
 	            </div><!--end #workExperience-->
 			
 				            <div class="profile_box" id="projectExperience">
-	                
+	                <h2>项目经验</h2>
+	                <div class="projectShow">
+	                  <ul class="plist clearfix">
+	                  			            				            					            				<li class="noborder">
+	            					            					<div class="projectList">
+		            					<div class="f16 mb10">${resum.companyName }，${resum.positionName } 
+		            						<span class="c9">
+		            									            								（${resum.companyYearStart }.${resum.companyMonthStart }-${resum.companyYearEnd }）
+		            									            						</span>
+		            					</div>
+		            							            					<div class="dl1"></div>
+		            							            				</div>
+	            				</li>
+	            				            				                      </ul>
+	                </div><!--end .projectShow-->
 	            </div><!--end #projectExperience-->
 						
 				            <div class="profile_box" id="educationalBackground">
@@ -93,9 +108,10 @@ $(function(){
 	                <div class="educationalShow">
 	                  <ul class="elist clearfix">
 	                  	                  	            				            				<li class="clear">
-            				            					<span class="c9"></span>
+            				            					<span class="c9">${resum.schoolYearStart }-${resum.schoolYearEnd }</span>
             					<div>
-            						<h3>${userInfo.education }</h3>
+            						<h3>${resum.schoolName }</h3>
+            						<h4>${resum.professionalName }，${userInfo.education }</h4>
             					</div>
             				</li>
             				           					                  </ul>
@@ -105,11 +121,22 @@ $(function(){
 				            <div class="profile_box" id="selfDescription">
 	                <h2>自我描述</h2>
 	                <div class="descriptionShow">
-	            	黑客
+	            	${resum.selfDescription }
 	                </div><!--end .descriptionShow-->
 	            </div><!--end #selfDescription-->
 						
-				            <div class="profile_box" id="worksShow">               
+				            <div class="profile_box" id="worksShow">
+	                <h2>作品展示</h2>
+	                <div class="workShow">
+	                  <ul class="slist clearfix">
+	                  		                  	            				            				<li class="noborder">
+            				            					<div class="workList c7">
+	            						            							            							<div class="f16">网址：<a target="_blank" href="${resum.workLink }">${resum.workLink }</a></div>
+	            							            						            					<p>${resum.workDescription } </p>
+	            				</div>
+            				</li>
+            				           					                  </ul>
+	                </div><!--end .workShow-->
 	            </div><!--end #worksShow-->
 			        </div><!--end .preview_content-->
   	</div><!--end #previewWrapper-->
@@ -117,26 +144,25 @@ $(function(){
 <!-------------------------------------弹窗lightbox ----------------------------------------->
 <div style="display:none;">
 	<!-- 下载简历 -->
-	<div class="popup" id="downloadOnlineResume">
+	<div class="popup" id="downloadOnlineresum">
          <table width="100%">
              <tbody><tr>
                  <td class="c5 f18">请选择下载简历格式：</td>
              </tr>
          	<tr>
              	<td>
-             		<a class="btn_s" href="h/resume/downloadResume?key=1ccca806e13637f7b1a4560f80f08057&amp;type=1">word格式</a>
-             		<a class="btn_s" href="h/resume/downloadResume?key=1ccca806e13637f7b1a4560f80f08057&amp;type=2">html格式</a>
-             		<a class="btn_s" href="h/resume/downloadResume?key=1ccca806e13637f7b1a4560f80f08057&amp;type=3">pdf格式</a>
+             		<a class="btn_s" href="h/resum/downloadresum?key=1ccca806e13637f7b1a4560f80f08057&amp;type=1">word格式</a>
+             		<a class="btn_s" href="h/resum/downloadresum?key=1ccca806e13637f7b1a4560f80f08057&amp;type=2">html格式</a>
+             		<a class="btn_s" href="h/resum/downloadresum?key=1ccca806e13637f7b1a4560f80f08057&amp;type=3">pdf格式</a>
              	</td>
              </tr>
          </tbody></table>
-    </div><!--/#downloadOnlineResume-->   
+    </div><!--/#downloadOnlineresum-->   
 </div>
 <!------------------------------------- end ----------------------------------------->  
 
 
-<div class="educationalShow">
-	<h1><input type="submit" value=""><a target="_blank" href="${ ctx }/resumeCreate.action">返回</a></h1>
+	<h1 align="center"><input type="submit" value=""><a target="_blank" href="${ ctx }/resumCreate.action">返回</a></h1>
 </div>
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: abso

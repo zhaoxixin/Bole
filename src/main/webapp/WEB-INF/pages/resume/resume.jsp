@@ -452,7 +452,7 @@
 						<h2>工作经历 <span> （投递简历时必填）</span></h2>
 						<span class="c_add dn"></span>
 						<div class="experienceShow dn">
-							<form action="/resumeSave">
+							<form action="/resumeWorkExperience">
 								<table >
 									<tbody>
 										<tr>
@@ -648,7 +648,7 @@
 						</div>
 						<!--end .experienceShow-->
 						<div class="experienceEdit dn">
-							<form  action="/resumeSave">
+							<form  action="/resumeWorkExperience">
 								<table class="experienceForm">
 									<tbody>
 										<tr>
@@ -858,7 +858,7 @@
 						</div>
 						<!--end .projectShow-->
 						<div class="projectEdit dn">
-							<form  action="/resumeSave">
+							<form  action="/projectExperienceSave">
 								<table class="projectForm">
 									<tbody>
 										<tr>
@@ -866,13 +866,13 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="项目名称" name="projectName" class="projectName">
+												<input type="text" placeholder="项目名称" name="projectName" class="projectName" value="${resume.projectName }">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="担任职务，如：产品负责人" name="thePost" class="thePost">
+												<input type="text" placeholder="担任职务，如：产品负责人" name="thePost" class="thePost" value="${resume.thePost }">
 											</td>
 										</tr>
 										<tr>
@@ -882,7 +882,7 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="projectYearStart" value="" name="projectYearStart">
-													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_projectYearStart">
+													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_projectYearStart" value="${resume.projectYearStart }">
 													<div class="box_projectYearStart  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>2014</li>
@@ -935,7 +935,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="projectMonthStart" value="" name="projectMonthStart">
-													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_projectMonthStart">
+													<input type="button" value="开始月份" class="profile_select_139 profile_select_normal select_projectMonthStart" value="${resume.projectMonthStart }">
 													<div style="display: none;" class="box_projectMonthStart boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -961,7 +961,7 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="projectYearEnd" value="" name="projectYearEnd">
-													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_projectYearEnd">
+													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_projectYearEnd" value="${resume.projectYearEnd }"> 
 													<div class="box_projectYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>至今</li>
@@ -1015,7 +1015,7 @@
 												</div>
 												<div class="fl">
 													<input type="hidden" class="projectMonthEnd" value="" name="projectMonthEnd">
-													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_projectMonthEnd">
+													<input type="button" value="结束月份" class="profile_select_139 profile_select_normal select_projectMonthEnd" value="${resume.projectMonthEnd }">
 													<div style="display: none;" class="box_projectMonthEnd boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>01</li>
@@ -1039,13 +1039,13 @@
 										<tr>
 											<td valign="top"></td>
 											<td colspan="3">
-												<textarea class="projectDescription s_textarea" name="projectDescription" placeholder="项目描述"></textarea>
+												<textarea class="projectDescription s_textarea" name="projectDescription" placeholder="项目描述" value="${resume.projectDescription }"></textarea>
 												<div class="word_count">你还可以输入 <span>500</span> 字</div>
 											</td>
 										</tr>
 									 <tr>
 									<td colspan="2">
-										<textarea placeholder="职责描述" name="ResponsDescription" class="ResponsDescription s_textarea"></textarea>
+										<textarea placeholder="职责描述" name="responsDescription" class="ResponsDescription s_textarea" value="${resume.responsDescription }"></textarea>
 										<div class="word_count">你还可以输入 <span>500</span> 字</div>
 									</td>
 	            				</tr> 
@@ -1075,7 +1075,7 @@
 						<h2>教育背景<span>（投递简历时必填）</span></h2>
 						<span class="c_add dn"></span>
 						<div class="educationalShow dn">
-							<form action="/resumeSave" class="educationalForm borderBtm dn">
+							<form action="/educationalBackgroundSave" >
 								<table class="educationalForm borderBtm dn">
 									<tbody>
 										<tr>
@@ -1083,14 +1083,14 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="学校名称" name="schoolName" class="schoolName">
+												<input type="text" placeholder="学校名称" name="schoolName" class="schoolName" value="${resume.schoolName }">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" class="degree" value="" name="degree">
-												<input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree">
+												<input type="hidden" class="degree" value="${userInfo.education}">
+												<input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree" value="${userInfo.education}" >
 												<div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
 													<ul>
 														<li>大专</li>
@@ -1107,7 +1107,7 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="专业名称" name="professionalName" class="professionalName">
+												<input type="text" placeholder="专业名称" name="professionalName" class="professionalName" value="${resume.professionalName}">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
@@ -1115,9 +1115,12 @@
 											<td>
 												<div class="fl">
 													<input type="hidden" class="schoolYearStart" value="" name="schoolYearStart">
-													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart">
+													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart" value="${resume.schoolYearStart}">
 													<div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
+															<li>2017</li>
+															<li>2016</li>
+															<li>2015</li>
 															<li>2014</li>
 															<li>2013</li>
 															<li>2012</li>
@@ -1167,8 +1170,8 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="schoolYearEnd" value="" name="schoolYearEnd">
-													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd">
+													<input type="hidden" class="schoolYearEnd" value="${resume.schoolYearEnd}" name="schoolYearEnd">
+													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd" value="${resume.schoolYearEnd}">
 													<div style="display: none;" class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn">
 														<ul>
 															<li>2021</li>
@@ -1247,7 +1250,7 @@
 						</div>
 						<!--end .educationalShow-->
 						<div class="educationalEdit dn">
-							<form  action="/resumeSave">
+							<form  action="/educationalBackgroundSave">
 								<table class="educationalForm">
 									<tbody>
 										<tr>
@@ -1255,14 +1258,14 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="学校名称" name="schoolName" class="schoolName">
+												<input type="text" placeholder="学校名称" name="schoolName" class="schoolName" value="${resume.schoolName }">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="hidden" class="degree" value="" name="degree">
-												<input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree">
+												<input type="hidden" class="degree" value="${userInfo.education}" name="degree">
+												<input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree" value="${userInfo.education}">
 												<div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
 													<ul>
 														<li>大专</li>
@@ -1279,15 +1282,15 @@
 												<span class="redstar">*</span>
 											</td>
 											<td>
-												<input type="text" placeholder="专业名称" name="professionalName" class="professionalName">
+												<input type="text" placeholder="专业名称" name="professionalName" class="professionalName" value="${resume.professionalName}">
 											</td>
 											<td valign="top">
 												<span class="redstar">*</span>
 											</td>
 											<td>
 												<div class="fl">
-													<input type="hidden" class="schoolYearStart" value="" name="schoolYearStart">
-													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart">
+													<input type="hidden" class="schoolYearStart" value="${resume.schoolYearStart}" name="schoolYearStart" >
+													<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart" value="${resume.schoolYearStart}">
 													<div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>2014</li>
@@ -1339,8 +1342,8 @@
 													</div>
 												</div>
 												<div class="fl">
-													<input type="hidden" class="schoolYearEnd" value="" name="schoolYearEnd">
-													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd">
+													<input type="hidden" class="schoolYearEnd" value=""${resume.schoolYearEnd}"" name="schoolYearEnd">
+													<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd" value="${resume.schoolYearEnd}">
 													<div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 														<ul>
 															<li>2014</li>
@@ -1424,12 +1427,12 @@
 						</div>
 						<!--end .descriptionShow-->
 						<div class="descriptionEdit dn">
-							<form  action="/resumeSave">
+							<form  action="/resumeDescriptionSave">
 								<table class="descriptionForm">
 									<tbody>
 										<tr>
 											<td colspan="2">
-												<textarea class="selfDescription s_textarea" name="selfDescription" placeholder=""></textarea>
+												<textarea class="selfDescription s_textarea" name="selfDescription" placeholder="" values="${resume.selfDescription }"></textarea>
 												<div class="word_count">你还可以输入 <span>500</span> 字</div>
 											</td>
 										</tr>
@@ -1462,17 +1465,17 @@
 						</div>
 						<!--end .workShow-->
 						<div class="workEdit dn">
-							 <form action="${ctx }/resumeSave.action"  >
-								<table>
+							 <form action="/worksShowSave"  >
+								<table class="workForm">
 									<tbody>
 										<tr>
 											<td>
-												<input type="text" placeholder="请输入作品链接" name="workLink" class="workLink">
+												<input type="text" placeholder="请输入作品链接" name="workLink" class="workLink" value="${resume.workLink}">
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<textarea maxlength="100" class="workDescription s_textarea" name="workDescription" placeholder="请输入说明文字"></textarea>
+												<textarea maxlength="100" class="workDescription s_textarea" name="workDescription" placeholder="请输入说明文字" ></textarea>
 												<div class="word_count">你还可以输入 <span>100</span> 字</div>
 											</td>
 										</tr>

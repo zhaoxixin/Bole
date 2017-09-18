@@ -27,4 +27,12 @@ public interface ResumeService {
 
 	public String getResumeId(String userId);
 
+	public void projectExperienceSave(String userId, Resum resume);
+
+	public void educationalBackgroundSave(String userId, Resum resume);
+
+	public void resumeDescriptionSave(String userId, Resum resume);
+
+	public void worksShowSave(String userId, Resum resume);
+
 }

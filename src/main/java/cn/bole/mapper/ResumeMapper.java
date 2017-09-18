@@ -24,7 +24,15 @@ public interface ResumeMapper {
 
 	public void resumeWorkExperience(@Param("userId")String userId,@Param("resume") Resum resume);
 
-	public void updateResumeCurrentState(@Param("userId")String userId,@Param("resume") Resum resum);
+	public void updateResumeCurrentState(@Param("userId")String userId,@Param("resume") Resum resume);
+
+	public void projectExperienceSave(@Param("userId")String userId,@Param("resume") Resum resume);
+
+	public void educationalBackgroundSave(@Param("userId")String userId,@Param("resume") Resum resume);
+
+	public void resumeDescriptionSave(@Param("userId")String userId,@Param("resume") Resum resume);
+
+	public void worksShowSave(@Param("userId")String userId,@Param("resume") Resum resume);
 
 	
 

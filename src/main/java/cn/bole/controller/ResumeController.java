@@ -74,114 +74,36 @@ public class ResumeController {
 		return "redirect:/resumeCreate";
 	}
 	 
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
+	@RequestMapping("/projectExperienceSave")
+	public String projectExperienceSave(HttpSession session,Resum resume){
 		User user = (User) session.getAttribute("user1");
 		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
+		resumeService.projectExperienceSave(userId,resume);
 		return "redirect:/resumeCreate";
 	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
+	 	
+	@RequestMapping("/educationalBackgroundSave")
+	public String educationalBackgroundSave(HttpSession session,Resum resume){
 		User user = (User) session.getAttribute("user1");
 		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
+     	resumeService.educationalBackgroundSave(userId,resume);
 		return "redirect:/resumeCreate";
 	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
+	
+	@RequestMapping("/resumeDescriptionSave")
+	public String resumeDescriptionSave(HttpSession session,Resum resume){
 		User user = (User) session.getAttribute("user1");
 		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
+		resumeService.resumeDescriptionSave(userId,resume);
+		return "redirect:/resumeCreate";
 	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
+	
+	@RequestMapping("/worksShowSave")
+	public String worksShowSave(HttpSession session,Resum resume){
 		User user = (User) session.getAttribute("user1");
 		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
+		resumeService.worksShowSave(userId,resume);
+		return "redirect:/resumeCreate";
 	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
-		User user = (User) session.getAttribute("user1");
-		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
-	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
-		User user = (User) session.getAttribute("user1");
-		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
-	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
-		User user = (User) session.getAttribute("user1");
-		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
-	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
-		User user = (User) session.getAttribute("user1");
-		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
-	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
-		User user = (User) session.getAttribute("user1");
-		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
-	}
-	 */	
-	/*	@RequestMapping("/resumeSave")
-	public String resumeSave(HttpSession session,Resum resume,UserInfo userInfo,String workLink){
-		User user = (User) session.getAttribute("user1");
-		String userId = user.getUserId();
-		resume.setUserId(userId);
-		resume.setUserId(workLink);
-		System.out.println(resume);
-		System.out.println(userInfo);
-		return "resume/resume";
-	}
-	 */	
+	
 }

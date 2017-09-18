@@ -3,6 +3,7 @@ package cn.bole.serviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.bole.mapper.ResumeMapper;
 import cn.bole.mapper.UserInfoMapper;
 import cn.bole.pojo.Resum;
 import cn.bole.pojo.UserInfo;
@@ -11,6 +12,8 @@ import cn.bole.service.UserInfoService;
 public class UserInfoServiceImpl implements UserInfoService{
 	@Autowired
 	UserInfoMapper userInfoMapper;
+	@Autowired
+	private ResumeMapper resumeMapper;
 	
 	@Override
 	public UserInfo findUserInfoByUserId(String userId) {
@@ -23,7 +26,7 @@ public class UserInfoServiceImpl implements UserInfoService{
 	}
 	@Override
 	public Resum findResumeByUserId(String userId) {
-		return userInfoMapper.findResumeByUserId(userId);
+		return resumeMapper.fingResumeByUserId(userId);
 	}
 
 }

@@ -29,7 +29,144 @@ public class Resum extends BasicInfo{
 	 private String workExp; //工作履历
 	 private String workAddr;//工作地址
 	 private String eduExp;//教育经验
+	 private String projectName;
+	 private String thePost;
+	 private String projectYearStart;
+	 private String projectMonthStart;
+	 private String projectYearEnd;
+	 private String projectMonthEnd;
+	 private String projectDescription;
+	 private String responsDescription;
+	 private String schoolName;
+	 private String professionalName;
+	 private String schoolYearStart;
+	 private String schoolYearEnd;
+	 private String selfDescription;
+	 private String workLink;
+	 private String workDescription;
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 
+	public String getWorkLink() {
+		return workLink;
+	}
+	public void setWorkLink(String workLink) {
+		this.workLink = workLink;
+	}
+	public String getWorkDescription() {
+		return workDescription;
+	}
+	public void setWorkDescription(String workDescription) {
+		this.workDescription = workDescription;
+	}
+	public String getSelfDescription() {
+		return selfDescription;
+	}
+	public void setSelfDescription(String selfDescription) {
+		this.selfDescription = selfDescription;
+	}
+	public String getSchoolName() {
+		return schoolName;
+	}
+	public void setSchoolName(String schoolName) {
+		this.schoolName = schoolName;
+	}
+	public String getProfessionalName() {
+		return professionalName;
+	}
+	public void setProfessionalName(String professionalName) {
+		this.professionalName = professionalName;
+	}
+	public String getSchoolYearStart() {
+		return schoolYearStart;
+	}
+	public void setSchoolYearStart(String schoolYearStart) {
+		this.schoolYearStart = schoolYearStart;
+	}
+	public String getSchoolYearEnd() {
+		return schoolYearEnd;
+	}
+	public void setSchoolYearEnd(String schoolYearEnd) {
+		this.schoolYearEnd = schoolYearEnd;
+	}
+	public String getResponsDescription() {
+		return responsDescription;
+	}
+	public void setResponsDescription(String responsDescription) {
+		this.responsDescription = responsDescription;
+	}
+	public String getResumName() {
+		return resumName;
+	}
+	public void setResumName(String resumName) {
+		this.resumName = resumName;
+	}
+	public String getWorkExp() {
+		return workExp;
+	}
+	public void setWorkExp(String workExp) {
+		this.workExp = workExp;
+	}
+	public String getWorkAddr() {
+		return workAddr;
+	}
+	public void setWorkAddr(String workAddr) {
+		this.workAddr = workAddr;
+	}
+	public String getEduExp() {
+		return eduExp;
+	}
+	public void setEduExp(String eduExp) {
+		this.eduExp = eduExp;
+	}
+	public String getProjectName() {
+		return projectName;
+	}
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+	public String getThePost() {
+		return thePost;
+	}
+	public void setThePost(String thePost) {
+		this.thePost = thePost;
+	}
+	public String getProjectYearStart() {
+		return projectYearStart;
+	}
+	public void setProjectYearStart(String projectYearStart) {
+		this.projectYearStart = projectYearStart;
+	}
+	public String getProjectMonthStart() {
+		return projectMonthStart;
+	}
+	public void setProjectMonthStart(String projectMonthStart) {
+		this.projectMonthStart = projectMonthStart;
+	}
+	public String getProjectYearEnd() {
+		return projectYearEnd;
+	}
+	public void setProjectYearEnd(String projectYearEnd) {
+		this.projectYearEnd = projectYearEnd;
+	}
+	public String getProjectMonthEnd() {
+		return projectMonthEnd;
+	}
+	public void setProjectMonthEnd(String projectMonthEnd) {
+		this.projectMonthEnd = projectMonthEnd;
+	}
+	public String getProjectDescription() {
+		return projectDescription;
+	}
+	public void setProjectDescription(String projectDescription) {
+		this.projectDescription = projectDescription;
+	}
+	
 	public String getResumId() {
 		return resumId;
 	}

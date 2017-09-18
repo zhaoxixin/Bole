@@ -63,6 +63,24 @@ public class ResumeServiceImpl implements ResumeService {
 		System.out.println(resumId);
 		return resumId;
 	}
+	public void projectExperienceSave(String userId, Resum resume) {
+		resume.setUpdateTime(new Date());
+		resumeMapper.projectExperienceSave(userId,resume);
+	}
+	@Override
+	public void educationalBackgroundSave(String userId, Resum resume) {
+		resume.setUpdateTime(new Date());
+		resumeMapper.educationalBackgroundSave(userId,resume);
+	}
+	@Override
+	public void resumeDescriptionSave(String userId, Resum resume) {
+		resume.setUpdateTime(new Date());
+		resumeMapper.resumeDescriptionSave(userId,resume);
+	}
+	public void worksShowSave(String userId, Resum resume) {
+		resume.setUpdateTime(new Date());
+		resumeMapper.worksShowSave(userId,resume);
+	}
 	
 	
 }

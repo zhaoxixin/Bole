@@ -53,12 +53,54 @@
 		update resume set 
 		company_name= #{resume.companyName},
 		position_name=#{resume.positionName},
-		company_monthStart=#{resume.companyMonthStart},
+		company_yearStart=#{resume.companyYearStart},
 		company_yearEnd=#{resume.companyYearEnd},
 		company_monthEnd=#{resume.companyMonthEnd},
 		company_monthStart=#{resume.companyMonthStart},
-		company_monthStart=#{resume.companyMonthStart},
 		update_time = #{resume.updateTime}
+		where user_id = #{userId}
+	</update>
+	<update id="projectExperienceSave">
+		update resume 
+		<set> 
+			projectName= #{resume.projectName},
+			thePost=#{resume.thePost},
+			projectYearStart=#{resume.projectYearStart},
+			projectMonthStart=#{resume.projectMonthStart},
+			projectYearEnd=#{resume.projectYearEnd},
+			projectMonthEnd=#{resume.projectMonthEnd},
+			<if test="resume.projectDescription !=null">projectDescription=#{resume.projectDescription},</if>
+			<if test="resume.responsDescription !=null">responsDescription=#{resume.responsDescription},</if>
+			update_time = #{resume.updateTime}
+		</set>
+		where user_id = #{userId}
+	</update>
+	<update id="educationalBackgroundSave">
+		update resume 
+		<set> 
+			schoolName= #{resume.schoolName},
+			professionalName=#{resume.professionalName},
+			schoolYearStart=#{resume.schoolYearStart},
+			schoolYearEnd=#{resume.schoolYearEnd},
+			update_time = #{resume.updateTime}
+		</set>
+		where user_id = #{userId}
+	</update>
+	<update id="resumeDescriptionSave">
+		update resume 
+		<set> 
+			<if test="resume.selfDescription !=null">selfDescription=#{resume.selfDescription},</if>
+			update_time = #{resume.updateTime}
+		</set>
+		where user_id = #{userId}
+	</update>
+	<update id="worksShowSave">
+		update resume 
+		<set> 
+			<if test="resume.workLink !=null">workLink=#{resume.workLink},</if>
+			<if test="resume.workDescription !=null">workDescription=#{resume.workDescription},</if>
+			update_time = #{resume.updateTime}
+		</set>
 		where user_id = #{userId}
 	</update>
 	<update id="updateResumeCurrentState">
