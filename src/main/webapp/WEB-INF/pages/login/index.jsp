@@ -257,13 +257,13 @@ $("#ctname").html($(this).html());
 			<div id="home_banner">
 	            <ul class="banner_bg">
 	            		                <li  class="banner_bg_1 current" >
-	                    <a href="h/subject/s_buyfundation.html?utm_source=DH__lagou&utm_medium=banner&utm_campaign=haomai" target="_blank"><img src="style/images/d05a2cc6e6c94bdd80e074eb05e37ebd.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
+	                    <a href="http://www.500d.me/?f=16497" target="_blank"><img src="${ctx}/style/images/jianli.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
 	                </li>
 	                	                <li  class="banner_bg_2" >
-	                    <a href="h/subject/s_worldcup.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=wc" target="_blank"><img src="style/images/c9d8a0756d1442caa328adcf28a38857.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
+	                    <a href="https://www.zhihu.com/topic/19591490/top-answers" target="_blank"><img src="${ctx}/style/images/mainshi.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
 	                </li>
 	                	                <li  class="banner_bg_3" >
-	                    <a href="h/subject/s_xiamen.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=xiamen" target="_blank"><img src="style/images/d03110162390422bb97cebc7fd2ab586.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
+	                    <a href="http://bbs.yingjiesheng.com/thread-7753-1-1.html" target="_blank"><img src="${ctx}/style/images/qiuzhi.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
 	                </li>
 	                	            </ul>
 	            <div class="banner_control">
@@ -271,15 +271,15 @@ $("#ctname").html($(this).html());
 	                <ul class="thumbs">
 	                		                    <li  class="thumbs_1 current" >
 	                        <i></i>
-	                        <img src="style/images/4469b1b83b1f46c7adec255c4b1e4802.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/jianli.jpg" width="113" height="42" />
 	                    </li>
 	                    	                    <li  class="thumbs_2" >
 	                        <i></i>
-	                        <img src="style/images/381b343557774270a508206b3a725f39.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/mainshi.jpg" width="113" height="42" />
 	                    </li>
 	                    	                    <li  class="thumbs_3" >
 	                        <i></i>
-	                        <img src="style/images/354d445c5fd84f1990b91eb559677eb5.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/qiuzhi.jpg" width="113" height="42" />
 	                    </li>
 	                    	                </ul>
 	            </div>

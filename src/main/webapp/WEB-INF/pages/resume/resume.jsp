@@ -452,7 +452,7 @@
 						<h2>工作经历 <span> （投递简历时必填）</span></h2>
 						<span class="c_add dn"></span>
 						<div class="experienceShow dn">
-							<form action="/resumeSave">
+							<form action="/resumeWorkExperience">
 								<table >
 									<tbody>
 										<tr>
@@ -648,7 +648,7 @@
 						</div>
 						<!--end .experienceShow-->
 						<div class="experienceEdit dn">
-							<form  action="/resumeSave">
+							<form  action="/resumeWorkExperience">
 								<table class="experienceForm">
 									<tbody>
 										<tr>

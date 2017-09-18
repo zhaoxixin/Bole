@@ -25,7 +25,6 @@ public class Resum extends BasicInfo{
 	 private String type;   //1、全职   2、兼职    3、实习
 	 private String expectPosition;  //期望职位
 	 private String expectSalary;
-	 private String workLink;
 	 private String resumName;//简历名称
 	 private String workExp; //工作履历
 	 private String workAddr;//工作地址
