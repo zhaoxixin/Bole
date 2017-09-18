@@ -1,4 +1,4 @@
-﻿﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿﻿﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <!DOCTYPE HTML>
 <html>
@@ -140,7 +140,6 @@ $(function(){
 	            }).done(function(result) {
 	            	if(result.msg=='success'){
 	            		alert("登录成功！")
-
 	            		if(result.type==0){
 	            			window.location.href='/userhome.action';	
 	            		}	            		

@@ -62,7 +62,7 @@ public class LoginController {
 		        if(email.equals("admin@admin.com")){
 			        session.setAttribute("admin",user1);
 			        result.put("msg", "success"); 
-			        result.put("type", "2");
+			        result.put("type", type);
 		 	        return result; 	
 		        }
 		        //将用户加入到session中

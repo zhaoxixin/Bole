@@ -45,17 +45,17 @@ var youdao_conv_id = 271546;
     			<li><a href="${ctx}/">首页</a></li>
     			<li><a href="companylist.html">公司</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
-<<<<<<< HEAD
     				    			<li><a rel="nofollow" href="${ctx}/resumeCreate.action">我的简历</a></li>
->>>>>>> branch 'test' of https://github.com/zhaoxixin/Bole.git
 	    						    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
-           			<span> ${user1.userInfo.realname }&nbsp;
-           			<c:if test="${sessionScope.admin != null }">
-						 
-					<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
-					</c:if>
+           			<span>
+           				<c:if test="${sessionScope.admin == null }">	
+           					${user1.userInfo.realname }&nbsp;				 
+						</c:if>
+           				<c:if test="${sessionScope.admin != null }">					 
+							${admin.userInfo.realname }&nbsp;<a href="/home.action" rel="nofollow"><font color="6633745">后台管理</font></a>
+						</c:if>
            			</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
