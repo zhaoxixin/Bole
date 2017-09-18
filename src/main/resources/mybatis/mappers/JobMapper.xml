@@ -107,15 +107,10 @@
 		and salary_range=#{salaryRange}
 		and highist_education=#{highistEducation}
 		and job_nature=#{jobNature}
-		and announce_time>#{announceTimePre}
-		and announce_time &lt; #{announceTimeAft}
-		and job_id in
-		(
-			<foreach collection="array" item="jobId" separator=",">
-				#{jobId}
-			</foreach>
-		)
-	
+		and announce_time between  #{announceTimePre2}
+		and #{announceTimeAft2}
+		and job_id=#{jobId}
+		
 	</select> 
 	
 	<!-- lcj根据jobId添加job -->

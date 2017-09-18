@@ -1,6 +1,7 @@
 package cn.bole.serviceImpl;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -72,10 +73,19 @@ public class JobServiceImpl implements JobService {
 	 * @return
 	 */
 	@Override
-	public List<Job> additionSearch(Job job, String[] jobIds, Date announceTimePre, Date announceTimeAft) {
-		return jobMapper.additionSearch(job, jobIds, announceTimePre, announceTimeAft);
-	}
+	public List<Job> additionSearch(Integer salaryRange, String highistEducation, String jobNature, String[] jobIds,
+			Date announceTimePre, Date announceTimeAft) {
+		List<Job> jobList = new ArrayList<Job> ();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String announceTimePre2 = sdf.format(announceTimePre);
+		String announceTimeAft2 = sdf.format(announceTimeAft);
+		for (String jobId : jobIds) {
+			Job job = jobMapper.additionSearch(salaryRange, highistEducation, jobNature, jobId,announceTimePre2,announceTimeAft2);
+			jobList.add(job);
+		}
+		return jobList;
 	
+	}
 	
 	
 	

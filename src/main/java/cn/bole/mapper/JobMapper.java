@@ -30,5 +30,10 @@ public interface JobMapper {
 
 	List<Job> additionSearch(@Param("job")Job job, @Param("jobIds")String[] jobIds,  @Param("announceTimePre")Date announceTimePre, @Param("announceTimeAft")Date announceTimeAft);
 
-	
+	Job additionSearch(@Param("salaryRange")Integer salaryRange, @Param("highistEducation")String highistEducation,
+			@Param("jobNature")String jobNature, @Param("jobId")String jobId,
+			@Param("announceTimePre2")String announceTimePre2, @Param("announceTimeAft2") String announceTimeAft2);
+
+
+
 }

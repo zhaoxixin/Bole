@@ -24,9 +24,10 @@ public interface JobService {
 
 	void saveJob(Job job);
 
+	List<Job> additionSearch(Integer salaryRange, String highistEducation, String jobNature, String[] jobIds,
+			Date announceTimePre, Date announceTimeAft);
 
-	List<Job> additionSearch(Job job, String[] jobIds, Date announceTimePre, Date announceTimeAft);
-
+	
 
 
 	

@@ -199,7 +199,7 @@ var youdao_conv_id = 271546;
        				
    
    				
-   					 <select class="form-control">
+   					 <select class="form-control" name="salaryRange">
      				<option value="1" selected='selected'>2001-4000</option>
         			<option value="2">4001-6000</option>
         			<option value="3">6001-8000</option>
@@ -213,7 +213,7 @@ var youdao_conv_id = 271546;
   			
   			
   		
-   					 <select class="form-control">
+   					 <select class="form-control" name="highistEducation">
      				<option value="博士">博士</option>
         			<option value="硕士">硕士</option>
         			<option value="本科">本科</option>
@@ -225,7 +225,7 @@ var youdao_conv_id = 271546;
   			
   			
    				
-   					 <select class="form-control">
+   					 <select class="form-control" name="jobNature">
      				<option value="全职" selected='selected'>全职</option>
         			<option value="兼职">兼职</option>
         			<option value="实习">实习</option>

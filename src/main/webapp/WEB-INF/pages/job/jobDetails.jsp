@@ -46,9 +46,9 @@ var youdao_conv_id = 271546;
     			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li ><a style="color: #12CD57" href="index.html">首页</a></li>
-    			<li ><a style="color: #12CD57" href="#" target="_blank">名企专区</a></li>
-    			<li ><a style="color: #12CD57" href="jianli.html" rel="nofollow">我的简历</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}/">首页</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}/companyhome" target="_blank">名企专区</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}/resumeCreate" rel="nofollow">我的简历</a></li>
 	    							    			
 	    		    		</ul>
         	            <ul class="loginTop">

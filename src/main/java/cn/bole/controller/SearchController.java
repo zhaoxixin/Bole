@@ -82,14 +82,28 @@ public class SearchController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping("/additionSearch")
-	public String additionSearch(Model model,Job job,
+	public String additionSearch(Model model,
+			Integer salaryRange,
+			String highistEducation,
+			String jobNature,
 			@RequestParam(value="jobId") String[] jobIds,
 			Date announceTimePre,Date announceTimeAft){
-		List<Job> jobList = jobService.additionSearch(job,jobIds,announceTimePre,announceTimeAft);
+		List<Job> jobList = jobService.additionSearch(salaryRange,highistEducation,jobNature,jobIds,announceTimePre,announceTimeAft);
 		model.addAttribute("jobList",jobList);
 		return "job/list";
 		    
 	}
+	/**
+	 * 投递简历 
+	 * @param jobId
+	 * @param companyId
+	 * @param session
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 * @throws IOException
+	 */
 	//企业反馈信息0：拒绝，1：通知面试，2：通知入职
 	@RequestMapping("/sendResume")
 	public String sendResume(String jobId,String companyId,HttpSession session,
