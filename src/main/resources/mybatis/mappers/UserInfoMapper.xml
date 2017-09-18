@@ -36,4 +36,16 @@
     	<result  column="expectcity" property="expectCity"></result>
     	<result  column="expectsalary" property="expectSalary"></result>
     </resultMap>
+    
+    
+    <select id="findfindAllResum" resultMap="CompanyInfoRM"  >
+    select * from com_info where company_info_id=
+	(select company_id from com_user where resum_id=
+	(select resum_id from resume where user_id=#{userId}))
+    </select>
+    <resultMap type="cn.bole.pojo.CompanyInfo" id="CompanyInfoRM" autoMapping="true">
+    	<id column="company_info_id" property="companyInfoId"/>
+    </resultMap>
+    
+    
 </mapper>

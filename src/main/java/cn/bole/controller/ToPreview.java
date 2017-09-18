@@ -28,7 +28,5 @@ public class ToPreview {
 		
 		model.addAttribute("userInfo", userInfo);
 		return "resume/perview";	
-	}
-	
-	
+	}	
 }

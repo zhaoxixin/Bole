@@ -1,5 +1,7 @@
 package cn.bole.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,10 @@ public class UserInfoServiceImpl implements UserInfoService{
 	@Override
 	public Resum findResumeByUserId(String userId) {
 		return userInfoMapper.findResumeByUserId(userId);
+	}
+	@Override
+	public List<Resum> findAllResum(String userId) {
+		return userInfoMapper.findfindAllResum(userId);
 	}
 
 }

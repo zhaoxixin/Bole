@@ -1,5 +1,7 @@
 package cn.bole.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.bole.pojo.Resum;
 import cn.bole.pojo.User;
 import cn.bole.pojo.UserInfo;
 import cn.bole.service.UserInfoService;
@@ -18,8 +21,10 @@ public class UserController {
 	UserInfoService userInfoService;
 	//到用户个人主页
 	@RequestMapping("/userhome.action")
-	public String toUserHome(){
-		
+	public String toUserHome(HttpSession session,Model model){
+		User user=(User)session.getAttribute("user1");
+		List<Resum>resumList=userInfoService.findAllResum(user.getUserId());
+		model.addAttribute("resumList", resumList);
 		return "/user/userhome";
 	}
 	//到userinfo页面查看用户个人信息
@@ -53,19 +58,5 @@ public class UserController {
 	public String toJianLi(){
 		return "resume/resume";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
