@@ -34,8 +34,10 @@
 	.timeSearch{
 		
 			height:30px;
-			width:80px;
-			border: 2px solid #019875
+			width:75px;
+			border: 2px solid #019875;
+			font-size: 10px;
+			
 	
 	}
 } 
@@ -80,8 +82,8 @@ var youdao_conv_id = 271546;
     			<img src="${ctx}/style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li ><a href="${ctx}">首页</a></li>
-    			<li ><a href="${ctx}/companyhome" target="_blank">名企专区</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}">首页</a></li>
+    			<li ><a style="color: #12CD57" href="${ctx}/companyhome" target="_blank">名企专区</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
             	<c:if test="${ sessionScope.user1 == null }">
@@ -184,7 +186,7 @@ var youdao_conv_id = 271546;
 	         -->
         </div>
    <div class="content">
-        	<div id="search_box">
+        	<div >
 		<form role="form"  name="searchForm" action="${ctx}/additionSearch" method="post">
         <!-- <ul id="searchType">
         	        	<li data-searchtype="1" class="type_selected">职位</li>
@@ -232,10 +234,10 @@ var youdao_conv_id = 271546;
   	
   
         		<div>
-        		<input class="timeSearch"   type="text" value="请选择起始时间" style="width:75px;border: 2px solid #019875" name="announceTimePre"
+        		<input class="timeSearch"   type="text" value="请选择起始时间"  name="announceTimePre"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
 	   			&nbsp;&nbsp;-&nbsp;&nbsp;
-	   			<input class="timeSearch" type="text" value="请选择截至时间"  style="width:75px;border: 2px solid #019875" name="announceTimeAft"
+	   			<input class="timeSearch" type="text" value="请选择截至时间"   name="announceTimeAft"
 	   			onclick="WdatePicker({el:this,isShowOthers:true,dateFmt:'yyyy-MM-dd'});"/>
         		</div>
                <c:forEach items="${jobList}" var="job">

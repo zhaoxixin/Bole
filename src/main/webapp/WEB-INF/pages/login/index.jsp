@@ -95,12 +95,14 @@ $("#ctname").html($(this).html());
     			<img src="${ctx }/style/images/logo.png" width="229" height="43" alt="伯乐招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/toLogin.action" >企业入口</a></li>
-    			<li ><a href="${ctx }/companyhome" target="_blank">名企专区</a></li>
+    			<li class="current"><a style="color: #12CD57" href="${ctx }">首页</a></li>
+    			<c:if test="${sessionScope.admin != null }">
+    			<li ><a style="color: #12CD57" href="${ctx }/toLogin.action" >企业入口</a></li>
+    			</c:if>
+    			<li ><a style="color: #12CD57" href="${ctx }/companyhome" target="_blank">名企专区</a></li>
 
-    		    <li ><a href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
-	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
+    		    <li ><a style="color: #12CD57" href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
+	    		<li ><a style="color: #12CD57" href="create.html" rel="nofollow">发布职位</a></li>
 	    		<!-- <li ><a href="/home.action" rel="nofollow">后台管理</a></li> -->
 	    	</ul>
             <ul class="loginTop">
