@@ -29,7 +29,9 @@ public interface JobService {
 
 
 
-	void sendResume(String jobId, String companyId, String resumId);
+	
+
+	void sendResume(String jobId, Integer companyId, String resumId);
 
 	
 
