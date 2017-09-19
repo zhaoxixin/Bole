@@ -1,4 +1,4 @@
-﻿﻿<%@ page contentType="text/html; charset=utf-8"%>
+﻿<%@ page contentType="text/html; charset=utf-8"%>
 <%@ include file="../base.jsp" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -111,18 +111,23 @@ $("#ctname").html($(this).html());
 					<li><a href="${ctx}/toRegister.action" rel="nofollow">注册</a></li> -->
 					
 					
-					<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null}">
+					<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null && sessionScope.company==null}">
 						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
 					<c:if test="${sessionScope.user1 != null }">
-						<a href="${ctx}/userhome.action"> <font color="6633745">欢迎 ${ user1.userInfo.realname } 回来</font></a>
+						 <font color="6633745">欢迎 ${user1.userInfo.realname }回来</font>
+						  &nbsp;|&nbsp;
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+					</c:if>
+					<c:if test="${sessionScope.company.companyId != null }">
+						 <font color="6633745">欢迎  ${company.companyName } 回来</font>
 						  &nbsp;|&nbsp;
 						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 					</c:if>
 					<c:if test="${sessionScope.admin != null }">
-						  <a href="${ctx}/home.action"><font color="6633745">欢迎 ${admin.userInfo.realname }回来</font></a>
+						 <a href="${ctx}/home.action"><font color="6633745">欢迎 ${admin.userInfo.realname }回来</font></a>
 						  &nbsp;|&nbsp;
 						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 						 &nbsp;|&nbsp;
@@ -175,7 +180,7 @@ $("#ctname").html($(this).html());
 		    </c:forEach>
 		</div>
 				 					
-			<!-- <a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a> -->
+			<a class="subscribe" href="subscribe.html" target="_blank">订阅职位</a>
 		</div>
 		
       <div class="content">	
@@ -234,7 +239,6 @@ $("#ctname").html($(this).html());
 				
     </form>
 </div>
-
 <style>
 .ui-autocomplete{width:488px;background:#fafafa !important;position: relative;z-index:10;border: 2px solid #91cebe;}
 .ui-autocomplete-category{font-size:16px;color:#999;width:50px;position: absolute;z-index:11; right: 0px;/*top: 6px; */text-align:center;border-top: 1px dashed #e5e5e5;padding:5px 0;}
@@ -418,8 +422,7 @@ $("#ctname").html($(this).html());
 			    </dl>
 			</div>
         </div>	
- 	    <input type="hidden" value="${user1.userId }" name="userId" id="userId" />
- 	    
+ 	    <input type="hidden" value="${user1.userId }" name="userid" id="userid" />
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 
@@ -472,8 +475,8 @@ $("#ctname").html($(this).html());
 		<div class="wrapper">
 			<a href="h/about.html" target="_blank" rel="nofollow">联系我们</a>
 		    <a href="h/af/zhaopin.html" target="_blank">互联网公司导航</a>
-		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">伯乐微博</a>
-		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">伯乐微信<i></i></a>
+		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<i></i></a>
 			<div class="copyright">&copy;2013-2014 Lagou <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action">京ICP备14023790号-2</a></div>
 		</div>
 	</div>

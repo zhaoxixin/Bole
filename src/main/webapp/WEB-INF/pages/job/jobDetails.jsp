@@ -22,6 +22,7 @@
 var ctx = "h";
 console.log(1);
 </script>
+
 <link rel="Shortcut Icon" href="h/images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="style/css/style.css"/>
 <link rel="stylesheet" type="text/css" href="style/css/external.min.css"/>
@@ -131,7 +132,7 @@ var youdao_conv_id = 271546;
 						</div>
                     </div>
                    <dd>
-                   		<a href="${ctx}/sendResume?jobId=${job.jobId}&companyId=${job.company.companyId}" title="登录" class="inline btn fr btn_apply">投递简历</a>
+                   		<a href="${ctx}/sendResume?jobId=${job.jobId}&companyId=${job.company.companyId}"  title="登录" class="inline btn fr btn_apply">投递简历</a>
 	               </dd>
                 </dl>
                 <div id="weibolist"></div>

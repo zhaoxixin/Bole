@@ -121,18 +121,18 @@ public class SearchController extends BaseController {
 			String resumId = resumeService.getResumeId(userId);
 			System.out.println(resumId);
 			
+			
 			try {
 				jobService.sendResume(jobId,companyId,resumId);
+				model.addAttribute("msg","1");
 				
-				
-				JOptionPane.showMessageDialog(null, "投递成功");
 				return "redirect:/jobDetails?jobId="+jobId;
 				/*response.getWriter().write("投递成功，2秒钟之后会跳转到职位详情页面");
 				response.setHeader("refresh", "2;url="+request.getContextPath()+"/jobDetails?jobId="+jobId);*/
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("msg","0");
-				JOptionPane.showMessageDialog(null, "提交失败，请重新提交 ", "错误信息 ", JOptionPane.ERROR_MESSAGE);
+				
 				return "redirect:/jobDetails?jobId="+jobId;
 				/*response.sendRedirect(request.getContextPath()+"/jobDetails?jobId="+jobId);*/
 				

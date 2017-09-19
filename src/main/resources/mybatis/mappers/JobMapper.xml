@@ -18,7 +18,7 @@
 		and city=#{city}
 		and state=1
 		order by announce_time desc
-		limit 0,10
+		
 	</select>
 	
 	<select id="findNewJob" resultMap="jobRM">
@@ -38,7 +38,7 @@
 		job.announce_time=(select max(job.announce_time) from job)
 		) 
 		order by announce_time desc
-		limit 0,10 
+		
 		
 	</select> 
 	 <select id="findHotJob" resultMap="jobRM">
@@ -53,7 +53,7 @@
 		and is_hot=1
 		and state=1
 		order by announce_time desc
-		limit 0,10
+		
 	</select>
 	
 	<select id="findJobByName" resultMap="jobRM">
@@ -65,10 +65,10 @@
 		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
-		and job_name=#{jobname}
+		and job_name like #{jobname}
 		and state=1
 		order by announce_time desc
-		limit 0,10
+		
 	</select>
 	<select id="findJobByJobId" resultMap="jobRM">
 		select * from 
