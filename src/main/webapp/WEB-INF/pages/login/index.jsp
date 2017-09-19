@@ -95,12 +95,14 @@ $("#ctname").html($(this).html());
     			<img src="${ctx }/style/images/logo.png" width="229" height="43" alt="伯乐招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li class="current"><a href="${ctx }">首页</a></li>
-    			<li ><a href="${ctx }/toLogin.action" >企业入口</a></li>
-    			<li ><a href="${ctx }/companyhome" target="_blank">名企专区</a></li>
+    			<li class="current"><a style="color: #12CD57" href="${ctx }">首页</a></li>
+    			<c:if test="${sessionScope.user1 == null&& sessionScope.admin == null}">
+    			   <li ><a style="color: #12CD57" href="${ctx }/toLogin.action" >企业入口</a></li>
+    			</c:if>
+    			<li ><a style="color: #12CD57" href="${ctx }/companyhome" target="_blank">名企专区</a></li>
 
-    		    <li ><a href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
-	    		<li ><a href="create.html" rel="nofollow">发布职位</a></li>
+    		    <li ><a style="color: #12CD57" href="${ctx }/resumeCreate.action" rel="nofollow">我的简历</a></li>
+	    		<li ><a style="color: #12CD57" href="create.html" rel="nofollow">发布职位</a></li>
 	    		<!-- <li ><a href="/home.action" rel="nofollow">后台管理</a></li> -->
 	    	</ul>
             <ul class="loginTop">
@@ -125,7 +127,7 @@ $("#ctname").html($(this).html());
 						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 					</c:if>
 					<c:if test="${sessionScope.admin != null }">
-						  <font color="6633745">欢迎 ${admin.userInfo.realname }回来</font>
+						 <a href="${ctx}/home.action"><font color="6633745">欢迎 ${admin.userInfo.realname }回来</font></a>
 						  &nbsp;|&nbsp;
 						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
 						 &nbsp;|&nbsp;
@@ -260,13 +262,13 @@ $("#ctname").html($(this).html());
 			<div id="home_banner">
 	            <ul class="banner_bg">
 	            		                <li  class="banner_bg_1 current" >
-	                    <a href="h/subject/s_buyfundation.html?utm_source=DH__lagou&utm_medium=banner&utm_campaign=haomai" target="_blank"><img src="style/images/d05a2cc6e6c94bdd80e074eb05e37ebd.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
+	                    <a href="http://www.500d.me/?f=16497" target="_blank"><img src="${ctx}/style/images/jianli.jpg" width="612" height="160" alt="好买基金——来了就给100万" /></a>
 	                </li>
 	                	                <li  class="banner_bg_2" >
-	                    <a href="h/subject/s_worldcup.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=wc" target="_blank"><img src="style/images/c9d8a0756d1442caa328adcf28a38857.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
+	                    <a href="https://www.zhihu.com/topic/19591490/top-answers" target="_blank"><img src="${ctx}/style/images/mainshi.jpg" width="612" height="160" alt="世界杯放假看球，老板我也要！" /></a>
 	                </li>
 	                	                <li  class="banner_bg_3" >
-	                    <a href="h/subject/s_xiamen.html?utm_source=DH__lagou&utm_medium=home&utm_campaign=xiamen" target="_blank"><img src="style/images/d03110162390422bb97cebc7fd2ab586.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
+	                    <a href="http://bbs.yingjiesheng.com/thread-7753-1-1.html" target="_blank"><img src="${ctx}/style/images/qiuzhi.jpg" width="612" height="160" alt="出北京记——第一站厦门" /></a>
 	                </li>
 	                	            </ul>
 	            <div class="banner_control">
@@ -274,15 +276,15 @@ $("#ctname").html($(this).html());
 	                <ul class="thumbs">
 	                		                    <li  class="thumbs_1 current" >
 	                        <i></i>
-	                        <img src="style/images/4469b1b83b1f46c7adec255c4b1e4802.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/jianli.jpg" width="113" height="42" />
 	                    </li>
 	                    	                    <li  class="thumbs_2" >
 	                        <i></i>
-	                        <img src="style/images/381b343557774270a508206b3a725f39.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/mainshi.jpg" width="113" height="42" />
 	                    </li>
 	                    	                    <li  class="thumbs_3" >
 	                        <i></i>
-	                        <img src="style/images/354d445c5fd84f1990b91eb559677eb5.jpg" width="113" height="42" />
+	                        <img src="${ctx}/style/images/qiuzhi.jpg" width="113" height="42" />
 	                    </li>
 	                    	                </ul>
 	            </div>
@@ -420,7 +422,7 @@ $("#ctname").html($(this).html());
 			    </dl>
 			</div>
         </div>	
- 	    <input type="hidden" value="" name="userid" id="userid" />
+ 	    <input type="hidden" value="${user1.userId }" name="userid" id="userid" />
  		<!-- <div id="qrSide"><a></a></div> -->
 <!--  -->
 
@@ -452,7 +454,7 @@ $("#ctname").html($(this).html());
 		    <input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" />
 		</form>
 		<div class="login_right">
-			<div>还没有拉勾帐号？</div>
+			<div>还没有伯乐帐号？</div>
 			<a href="register.html" class="registor_now">立即注册</a>
 		    <div class="login_others">使用以下帐号直接登录:</div>
 		    <a href="h/ologin/auth/sina.html" target="_blank" id="icon_wb" class="icon_wb" title="使用新浪微博帐号登录"></a>
