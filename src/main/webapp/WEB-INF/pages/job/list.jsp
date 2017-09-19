@@ -342,7 +342,7 @@ function test(jobId,companyId){
 			                        	投递简历	
 			                        </a>
 			                      </div>
-			                      <div class="mb10"><a href="${ctx}/..." target="_blank">${job.company.companyName }</a></div>
+			                      <div class="mb10"><a href="${ctx}/myhome" target="_blank">${job.company.companyName }</a></div>
 			                      <span><em class="c7"></em>${job.company.companyInfo.introduction }</span>
 			                        <br />
 			                        <span><em class="c7">规模： </em>

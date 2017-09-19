@@ -21,7 +21,7 @@
         <div class="panel">
         <div class="panel_icon"><img src="${ctx}/staticfile/skin/default/images/icon/user1_lock.png"/></div>
         <div class="panel-header">
-        <div class="panel-title">伯乐管理</div>
+        <div class="panel-title">伯乐管理</a></div>
         <div class="panel-content">
 			<ul>
 				<li><a href="${ctx}/sysadmin/dept/list" onclick="linkHighlighted(this)" target="main" id="aa_1">公司管理</a></li>
