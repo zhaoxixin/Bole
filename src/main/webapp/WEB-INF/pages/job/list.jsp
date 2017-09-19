@@ -72,6 +72,26 @@ var youdao_conv_id = 271546;
 
 
 </script> 
+<script type="text/javascript">
+function test(jobId,companyId){
+	
+	$.ajax({
+		type:'POST',
+		data:{"jobId":jobId,"companyId":companyId},
+		url:'/sendResume.action',
+		dataType:'json',
+		"success" : function(result){
+			if(result='success'){
+			alert("投递成功！");
+			$('#send').text("已投递");
+			$('#send').css("read-only","true");
+			}
+		}
+	})
+
+};
+
+</script> 
 <script type="text/javascript" src="${ctx}/style/js/conv.js"></script>
 </head>
 <body>
@@ -316,7 +336,8 @@ var youdao_conv_id = 271546;
 			                    
 						       <div class="hot_pos_r">
 			                       <div class="apply">
-			                        <a href="${ctx}/sendResume?jobId=${job.jobId}&companyId=${job.company.companyId}" target="_blank">
+			                        <a href="${ctx}/sendResume?jobId=${job.jobId}&companyId=${job.company.companyId}"
+			                        onclick="test('${job.jobId}','${job.company.companyId}')" id="send" target="_blank">
 			                        	
 			                        	投递简历	
 			                        </a>

@@ -2,7 +2,9 @@
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,8 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mysql.fabric.Response;
 
@@ -109,31 +113,36 @@ public class SearchController extends BaseController {
 	 */
 	//企业反馈信息0：拒绝，1：通知面试，2：通知入职
 	@RequestMapping("/sendResume")
-	public String sendResume(String jobId,Integer companyId,HttpSession session,
+	@ResponseBody
+	public Map<String, Object> sendResume(String jobId,Integer companyId,HttpSession session,
 			HttpServletRequest request,HttpServletResponse response,Model model) throws IOException{
+		Map<String, Object> result = new HashMap<String, Object>(); 
 		if(session.getAttribute("user1")==null){
-			return "login/login";
+			
+			result.put("msg", "null");  
+            return result;
 			/*response.getWriter().write("您还未登录");
 			response.sendRedirect(request.getContextPath()+"/toLogin");*/
 		}else{
 			User user = (User) session.getAttribute("user1");
 			String userId = user.getUserId();
 			String resumId = resumeService.getResumeId(userId);
-			System.out.println(resumId);
+			
 			
 			
 			try {
 				jobService.sendResume(jobId,companyId,resumId);
-				model.addAttribute("msg","1");
+				result.put("msg", "success");  
+	            return result;
 				
-				return "redirect:/jobDetails?jobId="+jobId;
+				
 				/*response.getWriter().write("投递成功，2秒钟之后会跳转到职位详情页面");
 				response.setHeader("refresh", "2;url="+request.getContextPath()+"/jobDetails?jobId="+jobId);*/
 			} catch (Exception e) {
-				e.printStackTrace();
-				model.addAttribute("msg","0");
+				result.put("msg", "failed");  
+	            return result;
 				
-				return "redirect:/jobDetails?jobId="+jobId;
+				/*return "redirect:/jobDetails?jobId="+jobId;*/
 				/*response.sendRedirect(request.getContextPath()+"/jobDetails?jobId="+jobId);*/
 				
 			}
