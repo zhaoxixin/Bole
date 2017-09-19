@@ -186,8 +186,8 @@ var youdao_conv_id = 271546;
 	         -->
         </div>
    <div class="content">
-        	<div >
-		<form role="form"  name="searchForm" action="${ctx}/additionSearch" method="post">
+        	<div>
+		<form id="formSearch"  name="searchForm" action="${ctx}/additionSearch" method="post">
         <!-- <ul id="searchType">
         	        	<li data-searchtype="1" class="type_selected">职位</li>
         	<li data-searchtype="4">公司</li>
@@ -278,6 +278,7 @@ var youdao_conv_id = 271546;
             </div>
      
             	  <ul class="hot_pos reset">
+            	  <c:if test="${jobList!=null}">
             	  	<c:forEach items="${jobList }" var="job">
 	                  <li class="odd clearfix">
 			                  <div class="hot_pos_l">
@@ -344,6 +345,7 @@ var youdao_conv_id = 271546;
 			                    </div>
 			                 </li>
 			               </c:forEach>
+			          </c:if>
 	                    </ul> 
 	                  <div class="Pagination"></div>
             	    </div>	
