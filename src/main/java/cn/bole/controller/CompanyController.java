@@ -154,6 +154,5 @@ public class CompanyController {
     	 model.addAttribute("bhsresumList", bhsresumList);
     	 return "/company/bhsResume";
      }
-     //哈哈哈哈哈哈哈哈哈哈哈哈哈
      
 }

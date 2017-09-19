@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -52,6 +53,7 @@ public class LoginController {
 	        //是否为普通用户
 	        if(Integer.parseInt(type)==0){
 	        	User user1 =userService.findUser(email,password);
+	        	
 		        if(user1==null){        	
 		 	       result.put("msg", "failed");  
 		            return result;  
@@ -60,7 +62,7 @@ public class LoginController {
 		        if(email.equals("admin@admin.com")){
 			        session.setAttribute("admin",user1);
 			        result.put("msg", "success"); 
-			        result.put("type", type);
+			        result.put("type", "2");
 		 	        return result; 	
 		        }
 		        //将用户加入到session中

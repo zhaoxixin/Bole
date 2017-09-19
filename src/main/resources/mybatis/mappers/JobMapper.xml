@@ -114,7 +114,6 @@
 	</select> 
 	
 	<!-- lcj根据jobId添加job -->
-	
 	 <insert id="saveJob">
 	     insert into job(company_id,job_id,job_name,job_nature,highist_Education,announce_time) values(
 			<if test="companyId !=null">#{companyId},</if>

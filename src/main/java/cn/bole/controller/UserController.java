@@ -1,5 +1,8 @@
 package cn.bole.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cn.bole.pojo.Resum;
 import cn.bole.pojo.User;
 import cn.bole.pojo.UserInfo;
 import cn.bole.service.UserInfoService;
@@ -18,8 +22,9 @@ public class UserController {
 	//到用户个人主页
 	@RequestMapping("/userhome.action")
 	public String toUserHome(HttpSession session,Model model){
-		User user1=(User)session.getAttribute("User1");
-		model.addAttribute("user1", user1);
+		User user=(User)session.getAttribute("user1");
+		List<Resum>resumList=userInfoService.findAllResum(user.getUserId());
+		model.addAttribute("resumList", resumList);
 		return "/user/userhome";
 	}
 	//到userinfo页面查看用户个人信息
@@ -48,21 +53,10 @@ public class UserController {
 	public String toFindJob(){
 		return "user/userlookJob";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	//去简历页面
+	@RequestMapping("/toJianLi.action")
+	public String toJianLi(){
+		return "resume/resume";
+	}
+
 }

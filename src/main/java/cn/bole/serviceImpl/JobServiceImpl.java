@@ -56,7 +56,6 @@ public class JobServiceImpl implements JobService {
 		String jobId = UUID.randomUUID().toString();
 		job.setJobId(jobId);
 		job.setAnnounceTime(new Date());
-		jobinfo.setJobInfoId(jobId);
 		jobMapper.saveJob(job);	
 		jobInfoMapper.saveJobInfo(jobinfo);
 

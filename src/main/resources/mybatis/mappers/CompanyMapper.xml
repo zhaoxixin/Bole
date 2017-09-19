@@ -40,6 +40,13 @@
 
 
 <!--通过Id获取User信息-->
+<!-- <select id="findUserBycomId" resultMap="companyuserRM">
+   select * from 
+</select> -->
+
+
+
+<!--通过Id获取User信息-->
 <select id="findUserBycomId" resultMap="resum">
   select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resume_name,cu.company_id,cu.feedback from 
        (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resume_name,r.feedback from
@@ -116,6 +123,7 @@ select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resume
    	<result column="sex" property="sex"/>
   </association>
 </resultMap>
+
 
 
 

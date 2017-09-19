@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>国际物流汇通商贸</title>
+<title>伯乐后台管理系统</title>
 </head>
 <frameset rows="125,*" name="topFrameset" border="0">
 	<frame name="top_frame" scrolling="no"  target="middleFrameSet" src="title.action">	

@@ -18,15 +18,25 @@ public interface JobService {
 
 	Job findJobByJobId(String jobId);
 
-	void sendResume(String userId, String jobId, String companyId);
+	
 
 	List<Job> findJobByCompanyId(Integer companyId);
 
 	void saveJob(Job job);
 
+	List<Job> additionSearch(Integer salaryRange, String highistEducation, String jobNature, String[] jobIds,
+			Date announceTimePre, Date announceTimeAft);
 
 
-	List<Job> additionSearch(Job job, List<Job> jobListPre, Date announceTimePre, Date announceTimeAft);
+
+	
+
+	void sendResume(String jobId, Integer companyId, String resumId);
+
+	
+
+
+	
 
 
 
