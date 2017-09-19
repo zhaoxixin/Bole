@@ -102,7 +102,7 @@ var youdao_conv_id = 271546;
                        	<span> ${job.highistEducation}</span> 
                        	<span>${job.jobNature }</span><br />
                       	 
-                      	<div>发布时间：${job.announceTime}</div>
+                      	<%-- <div>发布时间：<fmt:formatDate value="${job.announceTime}" pattern="yyyy-MM-dd"/></div> --%>
                     </dd>
                     <dd class="job_bt">
                         <h3 class="description">职位描述</h3>
@@ -140,9 +140,10 @@ var youdao_conv_id = 271546;
                 <div class="content_r">
                    <dl class="job_company">
                       <dt>
-                    	<a href="h/c/683.html" target="_blank">
+                    	<a href="${ctx }/companyhome" target="_blank">
                             <img class="b2" src="${ctx}/${job.company.logo}" width="80" height="80" alt="${job.company.companyName}" />
                 <div>
+               
                    <h2 class="fl">
                          	${job.company.companyName}
                               <img src="${ctx}/style/images/valid.png" width="15" height="19" alt="伯乐认证企业" /> 
