@@ -18,6 +18,14 @@ public interface CompanyMapper {
 
 	List<Resum> findUserBycomId(Integer companyId);
 
+	List<Resum> findResumByFeedback(Integer companyId);
+
+	void updateResumByFeedback(@Param("resumId")String resumId,@Param("feedback")Integer feedback);
+
+	List<Resum> findResumByFeedback2(Integer companyId);
+
+	List<Resum> findResumByFeedback3(Integer companyId);
+
 
 
 }

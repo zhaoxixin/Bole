@@ -16,6 +16,7 @@ public class Job {
 	private JobInfo jobInfo;
 	private Company company;
 	
+	
 	public String getHighistEducation() {
 		return highistEducation;
 	}

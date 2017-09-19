@@ -258,7 +258,7 @@ var youdao_conv_id = 271546;
 		                    <dd>
 		                    	<div class="addnew">
 		                        	发布需要的人才信息，让伯乐和千里马尽快相遇……<br>
-		                            <a href="create.html">+添加招聘职位</a>
+		                            <a href="javascript:void(0)" onclick="location.href='fbzw.action'">+添加招聘职位</a>
 		                        </div>
 		                    </dd>
 		                </dl>

@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/WEB-INF/pages/company/create.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/company/msResume.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/job/jobDetails.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/login/register.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/pages/user/userhome.jsp=UTF-8

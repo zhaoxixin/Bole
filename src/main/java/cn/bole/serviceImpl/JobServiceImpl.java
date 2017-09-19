@@ -1,6 +1,7 @@
 package cn.bole.serviceImpl;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -42,10 +43,7 @@ public class JobServiceImpl implements JobService {
 	public Job findJobByJobId(String jobId) {
 		return jobMapper.findJobByJobId(jobId);
 	}
-	@Override
-	public void sendResume(String userId, String jobId, String companyId) {
-		jobMapper.sendResume(userId,jobId,companyId);
-	}
+	
 	@Override
 	public List<Job> findJobByCompanyId(Integer companyId) {
 		
@@ -58,6 +56,7 @@ public class JobServiceImpl implements JobService {
 		String jobId = UUID.randomUUID().toString();
 		job.setJobId(jobId);
 		job.setAnnounceTime(new Date());
+		jobinfo.setJobInfoId(jobId);
 		jobMapper.saveJob(job);	
 		jobInfoMapper.saveJobInfo(jobinfo);
 
@@ -72,16 +71,24 @@ public class JobServiceImpl implements JobService {
 	 * @return
 	 */
 	@Override
-	public List<Job> additionSearch(Job job, List<Job> jobListPre, Date announceTimePre, Date announceTimeAft) {
-		List<String> jobIdList = new ArrayList<String> ();
-		for (Job job2 : jobListPre) {
-			String job2Id = job2.getJobId();
-			jobIdList.add(job2Id);
+	public List<Job> additionSearch(Integer salaryRange, String highistEducation, String jobNature, String[] jobIds,
+			Date announceTimePre, Date announceTimeAft) {
+		List<Job> jobList = new ArrayList<Job> ();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String announceTimePre2 = sdf.format(announceTimePre);
+		String announceTimeAft2 = sdf.format(announceTimeAft);
+		for (String jobId : jobIds) {
+			Job job = jobMapper.additionSearch(salaryRange, highistEducation, jobNature, jobId,announceTimePre2,announceTimeAft2);
+			jobList.add(job);
 		}
-		
-		return jobMapper.additionSearch(job, jobIdList,announceTimePre,announceTimeAft);
-
+		return jobList;
+	
 	}
+	@Override
+	public void sendResume(String jobId, Integer companyId, String resumId) {
+		jobMapper.sendResume(jobId,companyId,resumId);
+	}
+	
 	
 	
 

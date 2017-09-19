@@ -16,6 +16,14 @@ public interface CompanyService {
 
 	List<Resum> findUserBycomId(Integer companyId);
 
+	List<Resum> findResumByFeedback(Integer companyId);
+
+	void updateResumByFeedback(String resumId,Integer feedback);
+
+	List<Resum> findResumByFeedback2(Integer companyId);
+
+	List<Resum> findResumByFeedback3(Integer companyId);
+
 
 
 

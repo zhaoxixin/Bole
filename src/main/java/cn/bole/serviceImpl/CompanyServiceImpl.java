@@ -40,6 +40,32 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyMapper.findUserBycomId(companyId);
 	}
 
+
+	@Override
+	public List<Resum> findResumByFeedback(Integer companyId) {
+
+		return companyMapper.findResumByFeedback(companyId);
+	}
+
+	@Override
+	public void updateResumByFeedback(String resumId,Integer feedback) {
+		
+		companyMapper.updateResumByFeedback(resumId,feedback);
+		
+	}
+
+	@Override
+	public List<Resum> findResumByFeedback2(Integer companyId) {
+		
+		return companyMapper.findResumByFeedback2(companyId);
+	}
+
+	@Override
+	public List<Resum> findResumByFeedback3(Integer companyId) {
+	
+		return companyMapper.findResumByFeedback3(companyId);
+	}
+
 	
 	
 	

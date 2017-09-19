@@ -41,8 +41,8 @@
 
 <!--通过Id获取User信息-->
 <select id="findUserBycomId" resultMap="resum">
-  select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resum_name,cu.company_id from 
-       (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resum_name from
+  select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resume_name,cu.company_id,cu.feedback from 
+       (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resume_name,r.feedback from
 		(select user_info_id,user_id,realname,education,sex,birthday from user  
 		left join user_info 
 		on 
@@ -52,12 +52,63 @@
 		u.user_id=r.user_id) r
 		,com_user cu
 		where
-		r.resum_id=cu.resum_id and cu.company_id =#{companyid}
+		r.resum_id=cu.resum_id and r.feedback=0 and cu.company_id =#{companyId}
+</select>
+
+<!--修改feedback的值-->
+<update id="updateResumByFeedback">
+   update resume set feedback=#{feedback} where resum_id=#{resumId}
+</update>
+
+
+<!--通过feedback获取待定简历简历信息-->
+<select id="findResumByFeedback" resultMap="resum">
+select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resume_name,cu.company_id,r.feedback from 
+       (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resume_name,r.feedback feedback from
+		(select user_info_id,user_id,realname,education,sex,birthday from user  
+		left join user_info 
+		on 
+		user_id = user_info_id) u
+		, resume r
+		where	u.user_id=r.user_id) r
+		,com_user cu
+		where
+		r.resum_id=cu.resum_id and  cu.company_id =#{companyId} and r.feedback=2
+</select>
+
+<!--通过feedback获取通知面试简历信息-->
+<select id="findResumByFeedback2" resultMap="resum">
+select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resume_name,cu.company_id,r.feedback from 
+       (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resume_name,r.feedback feedback from
+		(select user_info_id,user_id,realname,education,sex,birthday from user  
+		left join user_info 
+		on 
+		user_id = user_info_id) u
+		, resume r
+		where	u.user_id=r.user_id) r
+		,com_user cu
+		where
+		r.resum_id=cu.resum_id and  cu.company_id =#{companyId} and r.feedback=1
+</select>
+
+<!--通过feedback获取不合适简历信息-->
+<select id="findResumByFeedback3" resultMap="resum">
+select r.user_info_id,r.user_id,r.realname,r.education,r.sex,r.resum_id,r.resume_name,cu.company_id,r.feedback from 
+       (select u.user_info_id,u.user_id,u.realname,u.education,u.sex,r.resum_id,r.resume_name,r.feedback feedback from
+		(select user_info_id,user_id,realname,education,sex,birthday from user  
+		left join user_info 
+		on 
+		user_id = user_info_id) u
+		, resume r
+		where	u.user_id=r.user_id) r
+		,com_user cu
+		where
+		r.resum_id=cu.resum_id and  cu.company_id =#{companyId} and r.feedback=3
 </select>
 
 <resultMap type="cn.bole.pojo.Resum" id="resum" autoMapping="true">
    <id column="resum_id" property="resumId"></id>
-   <result column="resum_name" property="resumName"/>
+   <result column="resume_name" property="resumeName"/>
   <association property="userInfo" javaType="cn.bole.pojo.UserInfo" >  
    	<id property="userInfoId" column="user_info_id"/>
    	<result column="realname" property="realname"/>
@@ -65,6 +116,8 @@
    	<result column="sex" property="sex"/>
   </association>
 </resultMap>
+
+
 
 
 

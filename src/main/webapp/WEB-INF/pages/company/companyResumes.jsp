@@ -50,6 +50,7 @@ var youdao_conv_id = 271546;
         	        	<dl class="collapsible_menu">
             	<dt>
            			<span>欢迎 ${company.companyName}&nbsp;</span> 
+           			<input type="hidden" id="companyID" value="${company.companyId}" name="companyID"/>
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
@@ -71,16 +72,16 @@ var youdao_conv_id = 271546;
      <dl class="company_center_aside">
 		<dt>我收到的简历</dt>
 		<dd>
-		<a href="javascript:void(0)">待处理简历</a>
+		<a href="/companyResumes.action" >待处理简历</a>
 			</dd>
 	<dd>
-		<a href="javascript:void(0)" onclick="location.href='dd.action'">待定简历</a>
+		<a href="javascript:void(0)" onclick="location.href='czresum.action'">待定简历</a>
 	</dd>
 	<dd>
-		<a href="javascript:void(0)" onclick="location.href='dms.action'">已通知面试简历</a>
+		<a href="javascript:void(0)" onclick="location.href='msresum.action'">已通知面试简历</a>
 	</dd>
 	<dd>
-		<a href="javascript:void(0)" onclick="location.href='bhs.action'">不合适简历</a>
+		<a href="javascript:void(0)" onclick="location.href='bhsresum.action'">不合适简历</a>
 		<span></span>
 	</dd>
 	
@@ -113,7 +114,7 @@ var youdao_conv_id = 271546;
 		                                <i></i>
 		                        	</label>
 		                            <span>全选</span>
-		                            <a id="resumeInterviewAll" href="javascript:;">待定</a>
+		                            <a id="resumedd666" >待定</a>
 		                        	<a id="resumeRefuseAll" href="javascript:;">不合适</a>
 		                            <div id="filter_btn">筛选简历 <em></em></div>
 		                        </div>
@@ -178,29 +179,31 @@ var youdao_conv_id = 271546;
 			                                    </a> -->
 			                                    <div class="resumeIntro">
 			                                        <h3 class="unread">
-			                                        <a target="_blank" title="预览jason的简历" href="resumeView.html?deliverId=1686182">
-			                                        		 ${r.resumName} 
-		                                        	</a>
+			                                         <div> 
+			                                        	${r.resumeName}
+			                                         </div>
+			                                         <input type="hidden" id="feedback" value="${r.feedback}" name="feedback"/>
+			                                         <input type="hidden" id="resumID" value="${r.resumId}" name="resumID"/>
 				                           	 		<em></em>
 			                                        </h3>
-			                                        <span class="fr">投递时间：2014-07-01 17:08</span>
+			                                        <span class="fr">投递时间：2017-09-19 </span>
 			                                        <div> 
 			                                        	${r.userInfo.realname} / ${r.userInfo.sex} / ${r.userInfo.education}			                                        	/ 3年  			                                        	/ 广州 			                                            			                                        		<br>
-			                                            	 |北京大学
+			                                            	 |大学
 			                                            			                                        </div>
 			                                        <div class="jdpublisher">
 				                                        <span>
-				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.bole.com/jobs/149594.html">随便写</a>
+				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.bole.com/jobs/149594.html"></a>
 				                                       						                                        </span>
 			                                        </div>
 			                                    </div>
 			                                    <div class="links">
-			                                       	<a data-deliverid="1686182" data-name="jason" data-positionid="149594" data-email="888888888@qq.com" class="resume_notice" href="javascript:void(0)">通知面试</a>
- 													<a data-deliverid="1686182" class="resume_refuse" href="javascript:void(0)">不合适</a>
- 													<a data-deliverid="1686182" class="resume_caninterview" href="javascript:void(0)">待定</a>
+			                                       	<a id="resumems" >通知面试</a>
+ 														<a id="resumebhs" >不合适</a>
+ 													<a id="resumedd" >待定</a>
                                                     <a data-resumename="jason的简历" data-positionname="随便写" data-deliverid="1686182" data-positionid="149594" data-resumekey="1ccca806e13637f7b1a4560f80f08057" data-forwardcount="1" class="resume_forward" href="javascript:void(0)">
                                                     	转发
-                                                  <span>(1人)</span>
+                                                
                                               </a>
 			                                    </div>
 			                                </div>
@@ -425,16 +428,83 @@ var youdao_conv_id = 271546;
 <script src="style/js/core.min.js" type="text/javascript"></script>
 <script src="style/js/popup.min.js" type="text/javascript"></script>
 
-<!--  -->
 
 <script type="text/javascript">
+$(function(){
+	$('#resumedd').click(function(){
+
+		var feedback = $("#feedback").val();
+		var resumId=$("#resumID").val();		
+		$.ajax({
+			type:'POST',
+        	data:{feedback:feedback,resumId:resumId},
+        	url:'/dd.action',
+        	dataType:'json'		
+		});
+	});
+	$('#resumems').click(function(){
+
+		var feedback = $("#feedback").val();
+		var resumId=$("#resumID").val();		
+		$.ajax({
+			type:'POST',
+        	data:{feedback:feedback,resumId:resumId},
+        	url:'/ms.action',
+        	dataType:'json'		
+		});
+	});
+	
+	$('#resumebhs').click(function(){
+
+		var feedback = $("#feedback").val();
+		var resumId=$("#resumID").val();		
+		$.ajax({
+			type:'POST',
+        	data:{feedback:feedback,resumId:resumId},
+        	url:'/bhs.action',
+        	dataType:'json'		
+		});
+	});
+
+});
+
+
+
+
+/* $(function(){
+		$('#resumedd').click(function(){
+			alert(1);
+			var feedback = $("#feedback").val();
+			alert(feddback);
+			$.ajax({
+	        	type:'POST',
+	        	data:{feedback:feedback},
+	        	url:'/dd.action',
+	        	dataType:'json'		
+		});
+	}); */
+
+
+
+<!--  
+
+/* <script type="text/javascript">
 $(function(){
 	$('#noticeDot-1').hide();
 	$('#noticeTip a.closeNT').click(function(){
 		$(this).parent().hide();
+		$('#resumedd').ajax({
+        	type:'POST',
+        	data:{feedback:feedback},
+        	url:'/login.action',
+        	dataType:'json'
+        }).done(function(result) {
+        	
+        			window.location.href='/userhome.action';	
+        	
 	});
-});
-var index = Math.floor(Math.random() * 2);
+	});
+ var index = Math.floor(Math.random() * 2);
 var ipArray = new Array('42.62.79.226','42.62.79.227');
 var url = "ws://" + ipArray[index] + ":18080/wsServlet?code=314873";
 var CallCenter = {
@@ -468,6 +538,6 @@ var CallCenter = {
 			};
 		}
 };
-CallCenter.init(url);
+CallCenter.init(url); --> */
 </script>
 

@@ -18,7 +18,7 @@
 		and city=#{city}
 		and state=1
 		order by announce_time desc
-		limit 0,10
+		
 	</select>
 	
 	<select id="findNewJob" resultMap="jobRM">
@@ -38,7 +38,7 @@
 		job.announce_time=(select max(job.announce_time) from job)
 		) 
 		order by announce_time desc
-		limit 0,10 
+		
 		
 	</select> 
 	 <select id="findHotJob" resultMap="jobRM">
@@ -53,7 +53,7 @@
 		and is_hot=1
 		and state=1
 		order by announce_time desc
-		limit 0,10
+		
 	</select>
 	
 	<select id="findJobByName" resultMap="jobRM">
@@ -65,10 +65,10 @@
 		where j.job_id=job_info.job_info_id
 		and j.company_id=c.c_id
 		and c.c_id=com_info.company_info_id
-		and job_name=#{jobname}
+		and job_name like #{jobname}
 		and state=1
 		order by announce_time desc
-		limit 0,10
+		
 	</select>
 	<select id="findJobByJobId" resultMap="jobRM">
 		select * from 
@@ -107,35 +107,30 @@
 		and salary_range=#{salaryRange}
 		and highist_education=#{highistEducation}
 		and job_nature=#{jobNature}
-		and job_id in
-		and announce_time>#{announceTimePre}
-		and announce_time &lt; #{announceTimeAft}
-		(
-			<foreach collection="list" item="jobId">
-				#{jobId}
-			</foreach>
-		)
-	
+		and announce_time between  #{announceTimePre2}
+		and #{announceTimeAft2}
+		and job_id=#{jobId}
+		
 	</select> 
 	
 	<!-- lcj根据jobId添加job -->
+	
 	 <insert id="saveJob">
-	     insert into job(job_id,job_name,job_nature,highist_Education,announce_time) values(
-			#{jobId},
-			#{jobName},
-			#{jobNature},
-			#{highistEducation},
-			#{announceTime}	
+	     insert into job(company_id,job_id,job_name,job_nature,highist_Education,announce_time) values(
+			<if test="companyId !=null">#{companyId},</if>
+			<if test="jobId !=null">#{jobId},</if>
+            <if test="jobName !=null">#{jobName},</if>
+            <if test="jobNature !=null">#{jobNature},</if>
+            <if test="highistEducation !=null">#{highistEducation},</if>
+            <if test="announceTime !=null">#{announceTime}</if>
 		)
-	 </insert>
-	 
-	 
+	 </insert> 
 	 
 	 
 	 
 	<resultMap type="cn.bole.pojo.Job" id="jobRM" autoMapping="true">
 		<id column="job_id" property="jobId"/>
-		<association property="jobInfo" resultMap="jobInfoRM">
+		<association property="jobInfo"  resultMap="jobInfoRM" >
 			<id column="job_info_id" property="jobInfoId"/>
 		</association>
 		<association property="company" resultMap="companyRM" >

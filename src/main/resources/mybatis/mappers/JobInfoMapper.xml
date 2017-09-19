@@ -6,12 +6,14 @@
 
 	
 	
-	<!-- lcj根据jobId添加job -->
+	
 	 <insert id="saveJobInfo">
-	     insert into job(city,work_experience,discription) values(
-			#{jobInfo.city},
-			#{jobInfo.workExperience},
-			#{jobInfo.discription}		
+	     insert into job_info(job_info_id,city,work_experience,discription) values(
+	      <if test="jobInfoId !=null">#{jobInfoId},</if>
+	      <if test="city !=null">#{city},</if>
+	      <if test="workExperience !=null">#{workExperience},</if>
+	      <if test="discription !=null">#{discription}</if>
+	
 		)
 	 </insert>
 	 
