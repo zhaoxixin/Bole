@@ -106,16 +106,16 @@ function test(jobId,companyId){
     			<li ><a style="color: #12CD57" href="${ctx}/companyhome" target="_blank">名企专区</a></li>
 	    		    		</ul>
         	            <ul class="loginTop">
-            	<c:if test="${ sessionScope.user1 == null }">
+            	<c:if test="${ sessionScope.user1 == null && sessionScope.admin == null && sessionScope.company==null}">
 						<a href="${ctx}/toLogin.action" rel="nofollow"><font color="6633745">登录</font></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						<a href="${ctx}/toRegister.action" rel="nofollow"><font color="6633745">注册</font></a>
 					 </c:if>
 					<!-- 如果用户已经登陆, 应该提示欢迎xxx回来 -->
-					 <c:if test="${ sessionScope.user1 != null }">
-						   <a href="${ctx}/userhome.action">欢迎 ${ user1.email } 回来</a> 
+					<c:if test="${sessionScope.user1 != null }">
+						 <font color="6633745">欢迎 ${user1.userInfo.realname }回来</font>
 						  &nbsp;|&nbsp;
-						<a href="${ ctx }/logout.action">退出</a>
-					 </c:if>
+						<a href="${ctx}/logout.action" rel="nofollow"><font color="6633745">退出</font></a>
+					</c:if>
             </ul>
                                 </div>
     </div><!-- end #header -->
